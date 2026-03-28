@@ -15,7 +15,7 @@ config/description="Game for Jerbob's silly game jam where you are a pigeon talk
 config/version="0"
 run/main_scene="uid://bvrp86m6h4ur7"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://bobw1m0ptusxj"
 
 [autoload]
 
