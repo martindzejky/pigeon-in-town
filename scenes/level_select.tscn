@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://c5rqwxrs2hixg"]
+
+[ext_resource type="Script" uid="uid://dmi63s1vx7e1x" path="res://scripts/level_select.gd" id="1_script"]
+
+[node name="level_select" type="Control" unique_id=773332606 node_paths=PackedStringArray("pigeon_icon", "town_icon", "town_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+pigeon_icon = NodePath("pigeon_icon")
+town_icon = NodePath("town_icon")
+town_label = NodePath("town_label")
+
+[node name="sky" type="ColorRect" parent="." unique_id=1662177439]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.529, 0.808, 0.922, 1)
+
+[node name="pigeon_icon" type="TextureRect" parent="." unique_id=1952450256]
+layout_mode = 1
+offset_left = 120.0
+offset_top = 240.0
+offset_right = 200.0
+offset_bottom = 320.0
+tooltip_text = "You"
+mouse_filter = 2
+
+[node name="placeholder" type="ColorRect" parent="pigeon_icon" unique_id=101881919]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6, 0.6, 0.65, 1)
+
+[node name="pigeon_label" type="Label" parent="pigeon_icon" unique_id=1743180772]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 28
+text = "You"
+horizontal_alignment = 1
+
+[node name="town_icon" type="TextureRect" parent="." unique_id=1218024154]
+layout_mode = 1
+offset_left = 560.0
+offset_top = 200.0
+offset_right = 680.0
+offset_bottom = 320.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+
+[node name="placeholder" type="ColorRect" parent="town_icon" unique_id=392551403]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.72, 0.55, 0.4, 1)
+
+[node name="town_label" type="Label" parent="." unique_id=2100792741]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -120.0
+offset_right = 150.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Go to Town"
+horizontal_alignment = 1

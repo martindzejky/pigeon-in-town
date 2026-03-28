@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://fua3iwgewl78"]
+
+[ext_resource type="Script" uid="uid://b17ntoj3nod3j" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" uid="uid://6o1qum4v3dph" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" uid="uid://b4kwghmomxwky" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" uid="uid://bngy74khot6cl" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+
+[node name="dialogue_walker" type="Node" unique_id=1314742161]
+script = ExtResource("1_walker")
+
+[node name="say_open_pig" type="Node" parent="." unique_id=478670090]
+script = ExtResource("2_say")
+speaker = 1
+text = "The mud is not filth. It is a critique of society’s obsession with shine."
+
+[node name="say_open_pigeon" type="Node" parent="." unique_id=930021472]
+script = ExtResource("2_say")
+text = "Finally. Someone who gets that we’re both underestimated city wildlife with main-character energy."
+
+[node name="say_pig_truffle" type="Node" parent="." unique_id=254807525]
+script = ExtResource("2_say")
+speaker = 1
+text = "I also really like snacks. Philosophy is just hunger with vocabulary."
+
+[node name="choose" type="Node" parent="." unique_id=40404389]
+script = ExtResource("3_choose")
+
+[node name="option_agree" type="Node" parent="choose" unique_id=1292960198]
+script = ExtResource("4_option")
+label = "Nod sagely. Snacks are truth."
+
+[node name="say_agree_pig" type="Node" parent="choose/option_agree" unique_id=1041560960]
+script = ExtResource("2_say")
+speaker = 1
+text = "Brother in crumbs. The trough and the sidewalk are one path."
+
+[node name="say_agree_pigeon" type="Node" parent="choose/option_agree" unique_id=1373066826]
+script = ExtResource("2_say")
+text = "I’m stealing that line for my dating profile. Pigeons only."
+
+[node name="option_challenge" type="Node" parent="choose" unique_id=1303029716]
+script = ExtResource("4_option")
+label = "Debate: crumbs vs slop"
+
+[node name="say_challenge_pig" type="Node" parent="choose/option_challenge" unique_id=1264868293]
+script = ExtResource("2_say")
+speaker = 1
+text = "Slop has layers. Crumbs have narrative tension. We are both art."
+
+[node name="say_challenge_pigeon" type="Node" parent="choose/option_challenge" unique_id=440565847]
+script = ExtResource("2_say")
+text = "This jam game just accidentally wrote my thesis. Cool."
+
+[node name="say_close" type="Node" parent="." unique_id=214799313]
+script = ExtResource("2_say")
+speaker = 1
+text = "Fly well, thinker. Oink if you need backup at the existential buffet."

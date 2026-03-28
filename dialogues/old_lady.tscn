@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cxtpi0w1vne1y"]
+
+[ext_resource type="Script" uid="uid://b17ntoj3nod3j" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" uid="uid://6o1qum4v3dph" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" uid="uid://b4kwghmomxwky" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" uid="uid://bngy74khot6cl" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+
+[node name="dialogue_walker" type="Node" unique_id=439901072]
+script = ExtResource("1_walker")
+
+[node name="say_open_mabel" type="Node" parent="." unique_id=2027922551]
+script = ExtResource("2_say")
+speaker = 1
+text = "Mabel: Oh my stars—a pigeon! You’re fluffier than the rumors and twice as trustworthy as the mayor."
+
+[node name="say_open_pigeon" type="Node" parent="." unique_id=1024296076]
+script = ExtResource("2_say")
+text = "High bar. I assume the mayor’s secrets are stored in a shoebox labeled not secrets."
+
+[node name="say_gossip_tease" type="Node" parent="." unique_id=300057840]
+script = ExtResource("2_say")
+speaker = 1
+text = "I feed you, you listen. That’s the social contract since 1897."
+
+[node name="choose" type="Node" parent="." unique_id=840308449]
+script = ExtResource("3_choose")
+
+[node name="option_dirt" type="Node" parent="choose" unique_id=1321146043]
+script = ExtResource("4_option")
+label = "Ask who’s dating who"
+
+[node name="say_dirt" type="Node" parent="choose/option_dirt" unique_id=1385320297]
+script = ExtResource("2_say")
+speaker = 1
+text = "The blacksmith winks at the baker. The baker winks at the clock tower. It’s complicated and windy."
+
+[node name="say_dirt_pigeon" type="Node" parent="choose/option_dirt" unique_id=1000279042]
+script = ExtResource("2_say")
+text = "I’m taking notes. My memoir is titled Wings and Wrong Opinions."
+
+[node name="option_escape" type="Node" parent="choose" unique_id=1180770998]
+script = ExtResource("4_option")
+label = "Pretend you’re late for a breadcrumb"
+
+[node name="say_escape" type="Node" parent="choose/option_escape" unique_id=1162169491]
+script = ExtResource("2_say")
+speaker = 1
+text = "Run if you must! But I already told the hydrangeas you’re shy."
+
+[node name="say_escape_pigeon" type="Node" parent="choose/option_escape" unique_id=2087800234]
+script = ExtResource("2_say")
+text = "The hydrangeas talk? This town needs a content warning."
+
+[node name="say_close" type="Node" parent="." unique_id=406362125]
+script = ExtResource("2_say")
+speaker = 1
+text = "Come back, sweet wings. I’ve got seed and absolutely no filter."

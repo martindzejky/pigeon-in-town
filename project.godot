@@ -13,7 +13,7 @@ config_version=5
 config/name="Pigeon in town"
 config/description="Game for Jerbob's silly game jam where you are a pigeon talking to people in the town."
 config/version="2"
-run/main_scene="uid://bvrp86m6h4ur7"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://bobw1m0ptusxj"
 
@@ -21,7 +21,8 @@ config/icon="uid://bobw1m0ptusxj"
 
 Game="*uid://b3uobe0s0iqgf"
 Events="*uid://yobmsvb8w87d"
-Shadows="*res://autoload/shadows.gd"
+Shadows="*uid://13x5hwif65c2"
+SceneTransition="*uid://pnnobcpbblnl"
 
 [display]
 

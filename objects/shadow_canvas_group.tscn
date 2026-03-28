@@ -1,8 +1,8 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://mt7oxu4mesgd"]
 
-[ext_resource type="Script" path="res://scripts/shadow_canvas_group.gd" id="1_shadow_canvas_group"]
+[ext_resource type="Script" uid="uid://cws1r04yvkl33" path="res://scripts/shadow_canvas_group.gd" id="1_shadow_canvas_group"]
 
-[node name="shadow_canvas_group" type="CanvasGroup"]
+[node name="shadow_canvas_group" type="CanvasGroup" unique_id=2140210482]
 self_modulate = Color(1, 1, 1, 0.15686275)
 z_index = -3
 script = ExtResource("1_shadow_canvas_group")

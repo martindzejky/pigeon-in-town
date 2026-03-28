@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bcchfhfw7g4ns"]
+
+[ext_resource type="Script" uid="uid://b17ntoj3nod3j" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" uid="uid://6o1qum4v3dph" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" uid="uid://b4kwghmomxwky" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" uid="uid://bngy74khot6cl" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+
+[node name="dialogue_walker" type="Node" unique_id=1375810157]
+script = ExtResource("1_walker")
+
+[node name="say_open_hank" type="Node" parent="." unique_id=1806302475]
+script = ExtResource("2_say")
+speaker = 1
+text = "Hank: A pigeon. In my bar. Of course. The health inspector’s week is already ruined."
+
+[node name="say_open_pigeon" type="Node" parent="." unique_id=752788107]
+script = ExtResource("2_say")
+text = "Relax. I’m not drinking—I’m judging your pour sizes for sport."
+
+[node name="say_hank_grump" type="Node" parent="." unique_id=1467225183]
+script = ExtResource("2_say")
+speaker = 1
+text = "We don’t serve birds. We barely serve humans with opinions."
+
+[node name="choose" type="Node" parent="." unique_id=119306061]
+script = ExtResource("3_choose")
+
+[node name="option_drink" type="Node" parent="choose" unique_id=945499130]
+script = ExtResource("4_option")
+label = "Order something ridiculous"
+
+[node name="say_drink_hank" type="Node" parent="choose/option_drink" unique_id=1599598466]
+script = ExtResource("2_say")
+speaker = 1
+text = "Fine. One glass of tap water, no ice, extra attitude. On the house, because I’m tired."
+
+[node name="say_drink_pigeon" type="Node" parent="choose/option_drink" unique_id=633640961]
+script = ExtResource("2_say")
+text = "Five stars. Would get side-eyed here again."
+
+[node name="option_exit" type="Node" parent="choose" unique_id=1780048848]
+script = ExtResource("4_option")
+label = "Flap away dramatically"
+
+[node name="say_exit_hank" type="Node" parent="choose/option_exit" unique_id=1504533539]
+script = ExtResource("2_say")
+speaker = 1
+text = "Yeah, flap. That’s the only customer service I’m offering today."
+
+[node name="say_exit_pigeon" type="Node" parent="choose/option_exit" unique_id=1452117613]
+script = ExtResource("2_say")
+text = "Coo. That’s French for mic drop."
+
+[node name="say_close" type="Node" parent="." unique_id=1181621497]
+script = ExtResource("2_say")
+speaker = 1
+text = "Don’t come back unless you’re paying rent or laying eggs I can sell as artisanal."

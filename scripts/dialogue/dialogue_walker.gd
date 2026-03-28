@@ -8,6 +8,8 @@ signal say(speaker: Speaker, text: String)
 signal choose(options: Array[String])
 signal finished()
 
+@export var memory: NpcMemory
+
 var _current: Node = null
 
 
@@ -49,6 +51,23 @@ func _process_current() -> void:
       options.append(option.label)
     print('[walker] -> choose: ', options)
     choose.emit(options)
+  elif _current is DialogueCondition:
+    var cond := _current as DialogueCondition
+    var flag_set := memory.has_flag(cond.flag)
+    var branch_idx := 0 if flag_set else 1
+    print('[walker] -> condition [', cond.flag, ']: ', flag_set, ' -> child ', branch_idx)
+    if branch_idx < _current.get_child_count():
+      _current = _current.get_child(branch_idx)
+      _process_current()
+    else:
+      _next()
+      _process_current()
+  elif _current is DialogueSetFlag:
+    var set_node := _current as DialogueSetFlag
+    print('[walker] -> set_flag [', set_node.flag, '] = ', set_node.value)
+    memory.set_flag(set_node.flag, set_node.value)
+    _next()
+    _process_current()
   elif _current is DialogueOption:
     print('[walker] -> entering option: ', _current.name)
     _current = _current.get_child(0)

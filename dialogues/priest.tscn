@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c7osko2smvroy"]
+
+[ext_resource type="Script" uid="uid://b17ntoj3nod3j" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" uid="uid://6o1qum4v3dph" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" uid="uid://b4kwghmomxwky" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" uid="uid://bngy74khot6cl" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+
+[node name="dialogue_walker" type="Node" unique_id=715457759]
+script = ExtResource("1_walker")
+
+[node name="say_open_npc" type="Node" parent="." unique_id=1552113579]
+script = ExtResource("2_say")
+speaker = 1
+text = "Father Cornelius: The Lord sent you. A dove of peace—no, a pigeon of… prophecy. I knew when I saw those crumbs on the altar."
+
+[node name="say_open_pigeon" type="Node" parent="." unique_id=1966717848]
+script = ExtResource("2_say")
+text = "I’m literally here for the jam sandwich someone dropped. Don’t make this cosmic."
+
+[node name="say_confess" type="Node" parent="." unique_id=450911556]
+script = ExtResource("2_say")
+speaker = 1
+text = "I once blessed a parking meter. It still ticketed me. I think God was testing my spreadsheet skills."
+
+[node name="choose" type="Node" parent="." unique_id=1133760785]
+script = ExtResource("3_choose")
+
+[node name="option_encourage" type="Node" parent="choose" unique_id=1989584481]
+script = ExtResource("4_option")
+label = "Lean into the holy pigeon bit"
+
+[node name="say_enc_npc" type="Node" parent="choose/option_encourage" unique_id=903507952]
+script = ExtResource("2_say")
+speaker = 1
+text = "Yes! Peck the doubt from my soul! Or the donut—either works."
+
+[node name="say_enc_pigeon" type="Node" parent="choose/option_encourage" unique_id=382330000]
+script = ExtResource("2_say")
+text = "I’m billing the diocese for emotional labor. Coo—with interest."
+
+[node name="option_deflect" type="Node" parent="choose" unique_id=428982428]
+script = ExtResource("4_option")
+label = "Suggest he drink some water"
+
+[node name="say_def_npc" type="Node" parent="choose/option_deflect" unique_id=1987587474]
+script = ExtResource("2_say")
+speaker = 1
+text = "Water is secular. I only hydrate with guilt and weak tea."
+
+[node name="say_def_pigeon" type="Node" parent="choose/option_deflect" unique_id=2146545135]
+script = ExtResource("2_say")
+text = "Game jam NPCs, man. I’m one feather away from becoming the final boss."
+
+[node name="say_close" type="Node" parent="." unique_id=997170082]
+script = ExtResource("2_say")
+speaker = 1
+text = "Go in peace, feathered messenger. I’ll pretend this conversation counted as pastoral care."
