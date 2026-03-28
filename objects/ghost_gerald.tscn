@@ -1,11 +1,10 @@
-[gd_scene format=3 uid="uid://cr0cxcikieqeu"]
+[gd_scene format=3 uid="uid://bcjgtr8k4hx4f"]
 
 [ext_resource type="Script" uid="uid://d1h13oi6p4q1d" path="res://scripts/npc.gd" id="1_npc_script"]
-[ext_resource type="Texture2D" uid="uid://qyytsxcognpk" path="res://sprites/regular_folk/regular_folk_idle.png" id="2_idle"]
 [ext_resource type="Material" uid="uid://dycmpk6phjwap" path="res://materials/outline.tres" id="2_p78av"]
-[ext_resource type="Texture2D" uid="uid://feahrd7ooaye" path="res://sprites/regular_folk/regular_folk_talk.png" id="3_talk"]
-[ext_resource type="Texture2D" uid="uid://baxc2v32fqpoe" path="res://sprites/regular_folk/regular_folk_run_1.png" id="4_run_1"]
-[ext_resource type="Texture2D" uid="uid://b7kgu14ka7s3j" path="res://sprites/regular_folk/regular_folk_run_2.png" id="5_run_2"]
+[ext_resource type="Texture2D" uid="uid://plmqngxjkti3" path="res://sprites/ghost/ghost_talk.png" id="3_talk"]
+[ext_resource type="Texture2D" uid="uid://b7tooseoqnsis" path="res://sprites/ghost/ghost_float.png" id="4_run_1"]
+[ext_resource type="Texture2D" uid="uid://bhc3dwm5pe8qv" path="res://sprites/ghost/ghost_idle.png" id="5_run_2"]
 [ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="6_squash_script"]
 [ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow.tscn" id="7_shadow"]
 [ext_resource type="Script" uid="uid://bexn1jrfmr1s3" path="res://scripts/states/state_machine.gd" id="8_state_machine"]
@@ -14,7 +13,7 @@
 [ext_resource type="Script" uid="uid://c64xiyiuac5wq" path="res://scripts/npc_states/dialogue_state.gd" id="11_dialogue_state"]
 [ext_resource type="Script" uid="uid://bveb7au0piwb5" path="res://scripts/npc_states/talking_state.gd" id="12_talking_state"]
 [ext_resource type="Script" uid="uid://b4qt8n87qojtp" path="res://scripts/dialogue_ui_anchor.gd" id="13_dialogue_ui_anchor"]
-[ext_resource type="PackedScene" uid="uid://bt5sp3ped3m0l" path="res://dialogues/ghost.tscn" id="14_dialogue_scene"]
+[ext_resource type="PackedScene" path="res://dialogues/ghost_gerald.tscn" id="14_dialogue_scene"]
 [ext_resource type="PackedScene" uid="uid://cas88nkps4twa" path="res://ui/say_bubble.tscn" id="15_h4j8l"]
 [ext_resource type="PackedScene" uid="uid://bks27hc7rj431" path="res://ui/choice_bubble.tscn" id="16_p78av"]
 [ext_resource type="Script" uid="uid://ug10meqw1gjf" path="res://scripts/components/npc_memory.gd" id="19_5uyk3"]
@@ -25,19 +24,19 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/path = NodePath("squash_root/Node2D/animation_root/flip/sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_idle")]
+"values": [ExtResource("5_run_2")]
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("squash_root/animation_root:position:y")
+tracks/1/path = NodePath("squash_root/Node2D/animation_root:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -48,7 +47,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("squash_root/animation_root:scale:x")
+tracks/2/path = NodePath("squash_root/Node2D/animation_root:scale:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -59,7 +58,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("squash_root/animation_root:scale:y")
+tracks/3/path = NodePath("squash_root/Node2D/animation_root:scale:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -70,7 +69,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("squash_root/animation_root:rotation")
+tracks/4/path = NodePath("squash_root/Node2D/animation_root:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -81,45 +80,46 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_idle"]
 resource_name = "idle"
+length = 1.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/path = NodePath("squash_root/Node2D/animation_root/flip/sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_idle")]
+"values": [ExtResource("5_run_2")]
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("squash_root/animation_root:scale:x")
+tracks/1/path = NodePath("squash_root/Node2D/animation_root:scale:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.036, 0.016, 1.04, -0.25, 0, 0.25, 0, 0.976, -0.25, 0, 0.25, 0, 1, -0.067, -0.014, 0.25, 0),
-"times": PackedFloat32Array(0, 0.32, 0.656, 1)
+"points": PackedFloat32Array(1, -0.25, 0, 0.036, 0.016, 1.039786, -0.25, 0, 0.25, 0, 0.97550243, -0.2666667, -0.00036770105, 0.25, 0, 0.9997313, -0.0666666, -0.01663816, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 1.2333333, 1.8)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("squash_root/animation_root:scale:y")
+tracks/2/path = NodePath("squash_root/Node2D/animation_root:scale:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.068, -0.015, 0.98, -0.25, 0, 0.25, 0, 1.032, -0.25, 0, 0.25, 0, 1, -0.055, 0.012, 0.25, 0),
-"times": PackedFloat32Array(0, 0.32, 0.656, 1)
+"points": PackedFloat32Array(1, -0.25, 0, 0.06666667, -0.01722622, 0.9798945, -0.25, 0, 0.39999998, 0, 1.0313377, -0.3333333, -0.00019192696, 0.25, 0, 0.99947363, -0.0333333, 0.01727575, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1.3, 1.8)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("squash_root/animation_root:position:y")
+tracks/3/path = NodePath("squash_root/Node2D/animation_root:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -130,7 +130,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("squash_root/animation_root:rotation")
+tracks/4/path = NodePath("squash_root/Node2D/animation_root:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -141,16 +141,16 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_run"]
 resource_name = "run"
-length = 0.533
+length = 1.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/path = NodePath("squash_root/Node2D/animation_root/flip/sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.267),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("4_run_1"), ExtResource("5_run_2")]
@@ -158,132 +158,71 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("squash_root/animation_root:position:y")
+tracks/1/path = NodePath("squash_root/Node2D/animation_root:scale:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(3, 3, 0, 3, 3),
-"points": PackedFloat32Array(0, -0.002, 24, 0.002, -24, -40, -0.075, -0.124, 0.075, 0.124, 0, -0.005, -16.4, 0.001, -16.4, -40, -0.086, -0.005, 0.086, 0.005, 0, -0.004, -16.88, 0.004, 16.88),
-"times": PackedFloat32Array(0, 0.133, 0.267, 0.4, 0.533)
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.036, 0.016, 1.039786, -0.25, 0, 0.25, 0, 0.97550243, -0.2666667, -0.00036770105, 0.25, 0, 0.9997313, -0.0666666, -0.01663816, 0.25, 0),
+"times": PackedFloat32Array(0, 0.53333336, 1.2333333, 1.8)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("squash_root/animation_root:rotation")
+tracks/2/path = NodePath("squash_root/Node2D/animation_root:scale:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(1, 1, 1),
-"points": PackedFloat32Array(-0.035, 0, 0, 0, 0, 0.035, 0, 0, 0, 0, -0.035, 0, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.267, 0.533)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("squash_root/animation_root:scale:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("squash_root/animation_root:scale:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("squash")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.267),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"squash"
-}, {
-"args": [],
-"method": &"squash"
-}]
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.06666667, -0.01722622, 0.9798945, -0.25, 0, 0.39999998, 0, 1.0313377, -0.3333333, -0.00019192696, 0.25, 0, 0.99947363, -0.0333333, 0.01727575, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1.3, 1.8)
 }
 
 [sub_resource type="Animation" id="Animation_talk"]
 resource_name = "talk"
-length = 0.3
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/path = NodePath("squash_root/Node2D/animation_root/flip/sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15),
+"times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("3_talk"), ExtResource("2_idle")]
+"values": [ExtResource("3_talk"), ExtResource("5_run_2")]
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("squash_root/animation_root:scale:x")
+tracks/1/path = NodePath("squash_root/Node2D/animation_root:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.036, 0.016, 1.04, -0.25, 0, 0.25, 0, 0.976, -0.25, 0, 0.25, 0, 1, -0.067, -0.014, 0.25, 0),
-"times": PackedFloat32Array(0, 0.096, 0.197, 0.3)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("squash_root/animation_root:scale:y")
+tracks/2/path = NodePath("squash_root/Node2D/animation_root:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.068, -0.015, 0.98, -0.25, 0, 0.25, 0, 1.032, -0.25, 0, 0.25, 0, 1, -0.055, 0.012, 0.25, 0),
-"times": PackedFloat32Array(0, 0.096, 0.197, 0.3)
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
-tracks/3/type = "bezier"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("squash_root/animation_root:position:y")
+tracks/3/path = NodePath("squash")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("squash_root/animation_root:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("squash")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -300,32 +239,92 @@ _data = {
 &"talk": SubResource("Animation_talk")
 }
 
+[sub_resource type="Animation" id="Animation_b05iq"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/Node2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squash_root/Node2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_aog7f"]
+resource_name = "floating"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/Node2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.20000002, 0, 0.20000002, 0, 0, -0.40000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.2, 2.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squash_root/Node2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(3, 3, 3),
+"points": PackedFloat32Array(0, -0.3, -0.0012092069, 0.3, 0.0012092069, -19, -0.29999995, 0.0017738342, 0.29999995, -0.0017738342, 0, -0.3333335, -0.13261461, 0.3333335, 0.13261461),
+"times": PackedFloat32Array(0, 1.2, 2.4)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b05iq"]
+_data = {
+&"RESET": SubResource("Animation_b05iq"),
+&"floating": SubResource("Animation_aog7f")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_interaction"]
 radius = 94.42987
 
-[node name="ghost" type="Node2D" unique_id=1015056895 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "dialogue_walker", "interaction_hint")]
+[node name="ghost_gerald" type="Node2D" unique_id=1015056895 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "dialogue_walker", "interaction_hint")]
 script = ExtResource("1_npc_script")
-flip_node = NodePath("squash_root/animation_root/flip")
+flip_node = NodePath("squash_root/Node2D/animation_root/flip")
 squash = NodePath("squash")
 animation = NodePath("animation")
-sprite = NodePath("squash_root/animation_root/flip/sprite")
+sprite = NodePath("squash_root/Node2D/animation_root/flip/sprite")
 dialogue_walker = NodePath("dialogue_walker")
 outline_material = ExtResource("2_p78av")
 interaction_hint = NodePath("interaction_hint")
 
 [node name="shadow" parent="." unique_id=188997925 instance=ExtResource("7_shadow")]
-scale = Vector2(0.5, 0.55)
+scale = Vector2(0.72320753, 0.66027397)
 
 [node name="squash_root" type="Node2D" parent="." unique_id=133748983]
 
-[node name="animation_root" type="Node2D" parent="squash_root" unique_id=1159663331]
+[node name="Node2D" type="Node2D" parent="squash_root" unique_id=646576399]
 
-[node name="flip" type="Node2D" parent="squash_root/animation_root" unique_id=1860119434]
+[node name="animation_root" type="Node2D" parent="squash_root/Node2D" unique_id=1159663331]
 
-[node name="sprite" type="Sprite2D" parent="squash_root/animation_root/flip" unique_id=1790166913]
+[node name="flip" type="Node2D" parent="squash_root/Node2D/animation_root" unique_id=1860119434]
+
+[node name="sprite" type="Sprite2D" parent="squash_root/Node2D/animation_root/flip" unique_id=1790166913]
 modulate = Color(0.8, 0.85, 1, 0.7)
-position = Vector2(0, -235)
-texture = ExtResource("2_idle")
+position = Vector2(0, -185.33214)
+texture = ExtResource("5_run_2")
 
 [node name="squash" type="Node" parent="." unique_id=1896743715 node_paths=PackedStringArray("target")]
 script = ExtResource("6_squash_script")
@@ -362,7 +361,7 @@ state_machine = NodePath("..")
 memory = NodePath("../memory")
 
 [node name="dialogue_ui_anchor" type="Node2D" parent="." unique_id=1941351856]
-position = Vector2(5, -513)
+position = Vector2(5, -380)
 script = ExtResource("13_dialogue_ui_anchor")
 say_bubble_scene = ExtResource("15_h4j8l")
 choice_bubble_scene = ExtResource("16_p78av")
@@ -370,6 +369,10 @@ choice_bubble_scene = ExtResource("16_p78av")
 [node name="animation" type="AnimationPlayer" parent="." unique_id=1740686627]
 libraries/ = SubResource("AnimationLibrary_main")
 autoplay = &"idle"
+
+[node name="floating" type="AnimationPlayer" parent="." unique_id=175007157]
+libraries/ = SubResource("AnimationLibrary_b05iq")
+autoplay = &"floating"
 
 [node name="interaction_area" type="Area2D" parent="." unique_id=521964502]
 collision_layer = 2
@@ -382,9 +385,9 @@ debug_color = Color(0.6956506, 0.48855472, 0.21236292, 0.23137255)
 [node name="interaction_hint" parent="." unique_id=706904321 instance=ExtResource("21_u24br")]
 visible = false
 offset_left = -97.0
-offset_top = -583.0
+offset_top = -430.0
 offset_right = 97.0
-offset_bottom = -507.0
+offset_bottom = -354.0
 
 [node name="memory" type="Node" parent="." unique_id=710878328]
 script = ExtResource("19_5uyk3")

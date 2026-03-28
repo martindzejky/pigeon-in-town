@@ -6,8 +6,9 @@
 [ext_resource type="Script" uid="uid://b7dd7pydkko1e" path="res://scripts/camera.gd" id="4_cam"]
 [ext_resource type="Script" uid="uid://lqimfot170uf" path="res://scripts/town.gd" id="5_town"]
 [ext_resource type="PackedScene" uid="uid://bslyalbthsoq3" path="res://objects/priest.tscn" id="6_priest"]
-[ext_resource type="PackedScene" uid="uid://cr0cxcikieqeu" path="res://objects/ghost.tscn" id="7_ghost"]
+[ext_resource type="PackedScene" path="res://objects/ghost_fred.tscn" id="7_ghost_fred"]
 [ext_resource type="PackedScene" uid="uid://2303i68b5pu4" path="res://objects/bartender.tscn" id="8_bartender"]
+[ext_resource type="PackedScene" uid="uid://bcjgtr8k4hx4f" path="res://objects/ghost_gerald.tscn" id="8_ckatl"]
 [ext_resource type="PackedScene" uid="uid://l3bug163acfx" path="res://objects/pig.tscn" id="9_pig"]
 [ext_resource type="PackedScene" uid="uid://c2pmu3xyhd8wp" path="res://objects/old_lady.tscn" id="10_old_lady"]
 [ext_resource type="PackedScene" uid="uid://b36xo7lkrm4nb" path="res://objects/tree.tscn" id="11_tree"]
@@ -15,10 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://b504k2unq1i0" path="res://objects/flower.tscn" id="13_flower"]
 [ext_resource type="PackedScene" uid="uid://jhdcb0axnbde" path="res://objects/grass.tscn" id="14_grass"]
 [ext_resource type="PackedScene" uid="uid://b2db5qhii7ups" path="res://objects/gravestone.tscn" id="15_gravestone"]
-[ext_resource type="PackedScene" path="res://objects/fence_1.tscn" id="16_fence_1"]
-[ext_resource type="PackedScene" path="res://objects/fence_2.tscn" id="17_fence_2"]
-[ext_resource type="PackedScene" path="res://objects/fence_3.tscn" id="18_fence_3"]
-[ext_resource type="PackedScene" path="res://objects/fence_4.tscn" id="19_fence_4"]
+[ext_resource type="PackedScene" uid="uid://hmdhkr2sd8ub" path="res://objects/fence_1.tscn" id="16_fence_1"]
+[ext_resource type="PackedScene" uid="uid://m6lymenv2iwx" path="res://objects/fence_2.tscn" id="17_fence_2"]
+[ext_resource type="PackedScene" uid="uid://bbgvy27xu6jtn" path="res://objects/fence_3.tscn" id="18_fence_3"]
+[ext_resource type="PackedScene" uid="uid://cwl48bcxgntoa" path="res://objects/fence_4.tscn" id="19_fence_4"]
 
 [node name="town" type="Node" unique_id=273960894]
 script = ExtResource("5_town")
@@ -26,7 +27,7 @@ script = ExtResource("5_town")
 [node name="shadow_canvas_group" parent="." unique_id=647489175 instance=ExtResource("1_0xm2m")]
 
 [node name="camera" type="Camera2D" parent="." unique_id=2034125516]
-zoom = Vector2(0.39, 0.39)
+zoom = Vector2(0.55, 0.55)
 limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
@@ -38,7 +39,7 @@ drag_right_margin = 0.15
 drag_bottom_margin = 0.15
 script = ExtResource("4_cam")
 dialogue_y_offset = -600.0
-dialogue_zoom = 0.72
+dialogue_zoom = 0.835
 
 [node name="world_sort" type="Node2D" parent="." unique_id=1702403875]
 y_sort_enabled = true
@@ -51,8 +52,11 @@ position = Vector2(534, 245)
 [node name="priest" parent="world_sort" unique_id=1109225838 instance=ExtResource("6_priest")]
 position = Vector2(-800, -400)
 
-[node name="ghost" parent="world_sort" unique_id=1639732553 instance=ExtResource("7_ghost")]
-position = Vector2(-400, -400)
+[node name="ghost_fred" parent="world_sort" unique_id=1332936328 instance=ExtResource("7_ghost_fred")]
+position = Vector2(-557, -756)
+
+[node name="ghost_gerald" parent="world_sort" unique_id=1015056895 instance=ExtResource("8_ckatl")]
+position = Vector2(-826, -985)
 
 [node name="bartender" parent="world_sort" unique_id=2110833916 instance=ExtResource("8_bartender")]
 position = Vector2(700, -100)
@@ -170,16 +174,16 @@ position = Vector2(-350, -540)
 [node name="gravestone_4" parent="world_sort" unique_id=1034044028 instance=ExtResource("15_gravestone")]
 position = Vector2(-480, -480)
 
-[node name="fence_farm_1" parent="world_sort" instance=ExtResource("16_fence_1")]
+[node name="fence_farm_1" parent="world_sort" unique_id=1196711136 instance=ExtResource("16_fence_1")]
 position = Vector2(-750, 450)
 
-[node name="fence_farm_2" parent="world_sort" instance=ExtResource("17_fence_2")]
+[node name="fence_farm_2" parent="world_sort" unique_id=779361925 instance=ExtResource("17_fence_2")]
 position = Vector2(-650, 450)
 
-[node name="fence_farm_3" parent="world_sort" instance=ExtResource("18_fence_3")]
+[node name="fence_farm_3" parent="world_sort" unique_id=1447603666 instance=ExtResource("18_fence_3")]
 position = Vector2(-550, 450)
 
-[node name="fence_farm_4" parent="world_sort" instance=ExtResource("19_fence_4")]
+[node name="fence_farm_4" parent="world_sort" unique_id=2001303700 instance=ExtResource("19_fence_4")]
 position = Vector2(-450, 450)
 
 [node name="flower_1" parent="world_sort" unique_id=1264634206 instance=ExtResource("13_flower")]

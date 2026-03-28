@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+
+[node name="dialogue_walker" type="Node"]
+script = ExtResource("1_walker")
+
+[node name="say_fred" type="Node" parent="."]
+script = ExtResource("2_say")
+speaker = 1
+text = "Oh great, another living visitor. Can you tell Gerald to stop rearranging the headstones?"
+
+[node name="say_pigeon" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "I'm a pigeon. I poop on headstones, I don't rearrange them."
