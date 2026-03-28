@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://6o1qum4v3dph" path="res://scripts/dialogue/dialogue_say.gd" id="15_dialogue_say"]
 [ext_resource type="PackedScene" uid="uid://cas88nkps4twa" path="res://ui/say_bubble.tscn" id="15_h4j8l"]
 [ext_resource type="Script" uid="uid://b4kwghmomxwky" path="res://scripts/dialogue/dialogue_choose.gd" id="16_dialogue_choose"]
-[ext_resource type="PackedScene" path="res://ui/choice_bubble.tscn" id="16_p78av"]
+[ext_resource type="PackedScene" uid="uid://bks27hc7rj431" path="res://ui/choice_bubble.tscn" id="16_p78av"]
 [ext_resource type="Script" uid="uid://bngy74khot6cl" path="res://scripts/dialogue/dialogue_option.gd" id="17_dialogue_option"]
 
 [sub_resource type="Animation" id="Animation_reset"]
