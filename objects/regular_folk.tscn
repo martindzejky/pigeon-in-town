@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bexn1jrfmr1s3" path="res://scripts/states/state_machine.gd" id="8_state_machine"]
 [ext_resource type="Script" uid="uid://ddocedl8ihsrb" path="res://scripts/npc_states/idle_state.gd" id="9_idle_state"]
 [ext_resource type="Script" uid="uid://cj430kpbcknjp" path="res://scripts/npc_states/wander_state.gd" id="10_wander_state"]
+[ext_resource type="Script" path="res://scripts/npc_states/dialogue_state.gd" id="11_dialogue_state"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -291,11 +292,15 @@ _data = {
 &"talk": SubResource("Animation_talk")
 }
 
-[node name="regular_folk" type="Node2D" unique_id=1083386034 node_paths=PackedStringArray("flip_node", "squash", "animation")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_interaction"]
+radius = 150.0
+
+[node name="regular_folk" type="Node2D" unique_id=1083386034 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite")]
 script = ExtResource("1_npc_script")
 flip_node = NodePath("squash_root/animation_root/flip")
 squash = NodePath("squash")
 animation = NodePath("animation")
+sprite = NodePath("squash_root/animation_root/flip/sprite")
 
 [node name="shadow" parent="." unique_id=2145865219 instance=ExtResource("7_shadow")]
 scale = Vector2(0.5, 0.55)
@@ -328,6 +333,18 @@ script = ExtResource("10_wander_state")
 npc = NodePath("../..")
 state_machine = NodePath("..")
 
+[node name="dialogue" type="Node" parent="state_machine" node_paths=PackedStringArray("npc", "state_machine")]
+script = ExtResource("11_dialogue_state")
+npc = NodePath("../..")
+state_machine = NodePath("..")
+
 [node name="animation" type="AnimationPlayer" parent="." unique_id=581940246]
 libraries/ = SubResource("AnimationLibrary_main")
 autoplay = &"idle"
+
+[node name="interaction_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="interaction_shape" type="CollisionShape2D" parent="interaction_area"]
+shape = SubResource("CircleShape2D_interaction")

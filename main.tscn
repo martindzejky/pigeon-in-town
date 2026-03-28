@@ -18,3 +18,6 @@ y_sort_enabled = true
 
 [node name="regular_folk" parent="world_sort" unique_id=1083386034 instance=ExtResource("3_h2yge")]
 position = Vector2(534, 245)
+
+[node name="regular_folk2" parent="world_sort" unique_id=1207469350 instance=ExtResource("3_h2yge")]
+position = Vector2(425, 446)

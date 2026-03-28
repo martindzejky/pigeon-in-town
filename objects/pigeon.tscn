@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="9_state_machine"]
 [ext_resource type="Script" path="res://scripts/pigeon_states/idle_state.gd" id="10_idle_state"]
 [ext_resource type="Script" path="res://scripts/pigeon_states/run_state.gd" id="11_run_state"]
+[ext_resource type="Script" path="res://scripts/npc_detector.gd" id="12_npc_detector"]
+[ext_resource type="Script" path="res://scripts/pigeon_states/dialogue_state.gd" id="13_dialogue_state"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -284,6 +286,9 @@ tracks/5/keys = {
 }]
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_detection"]
+radius = 400.0
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_main"]
 _data = {
 &"RESET": SubResource("Animation_reset"),
@@ -330,6 +335,22 @@ script = ExtResource("11_run_state")
 pigeon = NodePath("../..")
 state_machine = NodePath("..")
 
+[node name="dialogue" type="Node" parent="state_machine" node_paths=PackedStringArray("pigeon", "state_machine")]
+script = ExtResource("13_dialogue_state")
+pigeon = NodePath("../..")
+state_machine = NodePath("..")
+
 [node name="animation" type="AnimationPlayer" parent="." unique_id=1782443690]
 libraries/ = SubResource("AnimationLibrary_main")
 autoplay = &"idle"
+
+[node name="npc_detection_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("12_npc_detector")
+
+[node name="detection_shape" type="CollisionShape2D" parent="npc_detection_area"]
+shape = SubResource("CircleShape2D_detection")
+
+[connection signal="area_entered" from="npc_detection_area" to="npc_detection_area" method="_on_area_entered"]
+[connection signal="area_exited" from="npc_detection_area" to="npc_detection_area" method="_on_area_exited"]
