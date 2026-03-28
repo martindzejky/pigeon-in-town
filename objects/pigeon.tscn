@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bd7cuhw8465ax" path="res://sprites/pigeon/pigeon_run_2.png" id="5_pigeon_run_2"]
 [ext_resource type="Texture2D" uid="uid://d3phr0ob4lpuq" path="res://sprites/pigeon/pigeon_run_3.png" id="6_pigeon_run_3"]
 [ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="7_squash_script"]
+[ext_resource type="PackedScene" path="res://objects/shadow.tscn" id="8_shadow"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -87,6 +88,9 @@ flip_node = NodePath("squash_root/animation_root/flip")
 squash = NodePath("squash")
 animation = NodePath("animation")
 move_speed = 500.0
+
+[node name="shadow" parent="." unique_id=1667681757 instance=ExtResource("8_shadow")]
+scale = Vector2(0.72257257, 0.74486023)
 
 [node name="squash_root" type="Node2D" parent="." unique_id=1836551741]
 

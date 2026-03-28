@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 
 Game="*uid://b3uobe0s0iqgf"
 Events="*uid://yobmsvb8w87d"
+Shadows="*res://autoload/shadows.gd"
 
 [display]
 
@@ -65,3 +66,4 @@ move_down={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.95400304, 0.9331017, 0.8841741, 1)

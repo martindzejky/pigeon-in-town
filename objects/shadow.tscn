@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://sprites/shadow.png" id="1_shadow_texture"]
+[ext_resource type="Script" path="res://scripts/shadow.gd" id="2_shadow_script"]
+
+[node name="shadow" type="Node2D" node_paths=PackedStringArray("remote_transform", "sprite")]
+modulate = Color(1, 1, 1, 0.15686275)
+z_index = -3
+script = ExtResource("2_shadow_script")
+remote_transform = NodePath("remote_transform")
+sprite = NodePath("remote_transform/sprite")
+
+[node name="remote_transform" type="RemoteTransform2D" parent="."]
+
+[node name="sprite" type="Sprite2D" parent="remote_transform"]
+texture = ExtResource("1_shadow_texture")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
