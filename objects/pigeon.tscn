@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://d3phr0ob4lpuq" path="res://sprites/pigeon/pigeon_run_3.png" id="6_pigeon_run_3"]
 [ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="7_squash_script"]
 [ext_resource type="PackedScene" path="res://objects/shadow.tscn" id="8_shadow"]
+[ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="9_state_machine"]
+[ext_resource type="Script" path="res://scripts/pigeon_states/idle_state.gd" id="10_idle_state"]
+[ext_resource type="Script" path="res://scripts/pigeon_states/run_state.gd" id="11_run_state"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -313,6 +316,19 @@ texture = ExtResource("2_pigeon_idle")
 script = ExtResource("7_squash_script")
 target = NodePath("../squash_root")
 force = 0.5
+
+[node name="state_machine" type="Node" parent="."]
+script = ExtResource("9_state_machine")
+
+[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("pigeon", "state_machine")]
+script = ExtResource("10_idle_state")
+pigeon = NodePath("../..")
+state_machine = NodePath("..")
+
+[node name="run" type="Node" parent="state_machine" node_paths=PackedStringArray("pigeon", "state_machine")]
+script = ExtResource("11_run_state")
+pigeon = NodePath("../..")
+state_machine = NodePath("..")
 
 [node name="animation" type="AnimationPlayer" parent="." unique_id=1782443690]
 libraries/ = SubResource("AnimationLibrary_main")
