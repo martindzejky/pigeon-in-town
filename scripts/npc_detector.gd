@@ -22,11 +22,6 @@ func _on_area_exited(area: Area2D) -> void:
     _npcs_in_range.erase(npc)
 
 
-func _unhandled_input(event: InputEvent) -> void:
-  if event.is_action_pressed('interact') and Game.current_target_npc and not Game.in_dialogue:
-    Events.dialogue_started.emit(Game.current_target_npc)
-
-
 func _update_closest() -> void:
   if _npcs_in_range.is_empty():
     Game.current_target_npc = null

@@ -8,11 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://d3phr0ob4lpuq" path="res://sprites/pigeon/pigeon_run_3.png" id="6_pigeon_run_3"]
 [ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="7_squash_script"]
 [ext_resource type="PackedScene" path="res://objects/shadow.tscn" id="8_shadow"]
-[ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="9_state_machine"]
-[ext_resource type="Script" path="res://scripts/pigeon_states/idle_state.gd" id="10_idle_state"]
-[ext_resource type="Script" path="res://scripts/pigeon_states/run_state.gd" id="11_run_state"]
-[ext_resource type="Script" path="res://scripts/npc_detector.gd" id="12_npc_detector"]
-[ext_resource type="Script" path="res://scripts/pigeon_states/dialogue_state.gd" id="13_dialogue_state"]
+[ext_resource type="Script" uid="uid://bexn1jrfmr1s3" path="res://scripts/states/state_machine.gd" id="9_state_machine"]
+[ext_resource type="Script" uid="uid://dv54617h84fsl" path="res://scripts/pigeon_states/idle_state.gd" id="10_idle_state"]
+[ext_resource type="Script" uid="uid://b6xrxax5s15pg" path="res://scripts/pigeon_states/run_state.gd" id="11_run_state"]
+[ext_resource type="PackedScene" path="res://ui/say_bubble.tscn" id="12_n6d0e"]
+[ext_resource type="Script" uid="uid://dng805owyluvc" path="res://scripts/npc_detector.gd" id="12_npc_detector"]
+[ext_resource type="PackedScene" path="res://ui/choice_bubble.tscn" id="13_b2as5"]
+[ext_resource type="Script" uid="uid://bmklxhqul1ie" path="res://scripts/pigeon_states/dialogue_state.gd" id="13_dialogue_state"]
+[ext_resource type="Script" uid="uid://ca2p4b7lmngsu" path="res://scripts/pigeon_states/talking_state.gd" id="14_talking_state"]
+[ext_resource type="Script" uid="uid://cr44fmp2q46av" path="res://scripts/pigeon_states/choice_state.gd" id="15_choice_state"]
+[ext_resource type="Script" uid="uid://b4qt8n87qojtp" path="res://scripts/dialogue_ui_anchor.gd" id="16_dialogue_ui_anchor"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -286,9 +291,6 @@ tracks/5/keys = {
 }]
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_detection"]
-radius = 400.0
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_main"]
 _data = {
 &"RESET": SubResource("Animation_reset"),
@@ -297,7 +299,10 @@ _data = {
 &"talk": SubResource("Animation_talk")
 }
 
-[node name="pigeon" type="Node2D" unique_id=553052625 node_paths=PackedStringArray("flip_node", "squash", "animation")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_detection"]
+radius = 400.0
+
+[node name="pigeon" type="Node2D" unique_id=553052625 node_paths=PackedStringArray("flip_node", "squash", "animation") groups=["pigeon"]]
 script = ExtResource("1_pigeon_script")
 flip_node = NodePath("squash_root/animation_root/flip")
 squash = NodePath("squash")
@@ -322,35 +327,57 @@ script = ExtResource("7_squash_script")
 target = NodePath("../squash_root")
 force = 0.5
 
-[node name="state_machine" type="Node" parent="."]
+[node name="state_machine" type="Node" parent="." unique_id=160695681]
 script = ExtResource("9_state_machine")
 
-[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("pigeon", "state_machine")]
+[node name="idle" type="Node" parent="state_machine" unique_id=1441828684 node_paths=PackedStringArray("pigeon", "state_machine")]
 script = ExtResource("10_idle_state")
 pigeon = NodePath("../..")
 state_machine = NodePath("..")
 
-[node name="run" type="Node" parent="state_machine" node_paths=PackedStringArray("pigeon", "state_machine")]
+[node name="run" type="Node" parent="state_machine" unique_id=1234323634 node_paths=PackedStringArray("pigeon", "state_machine")]
 script = ExtResource("11_run_state")
 pigeon = NodePath("../..")
 state_machine = NodePath("..")
 
-[node name="dialogue" type="Node" parent="state_machine" node_paths=PackedStringArray("pigeon", "state_machine")]
+[node name="dialogue" type="Node" parent="state_machine" unique_id=555607380 node_paths=PackedStringArray("dialogue_ui_anchor", "talking_state", "choice_state", "pigeon", "state_machine")]
 script = ExtResource("13_dialogue_state")
+dialogue_ui_anchor = NodePath("../../dialogue_ui_anchor")
+talking_state = NodePath("../talking")
+choice_state = NodePath("../choice")
 pigeon = NodePath("../..")
 state_machine = NodePath("..")
+
+[node name="talking" type="Node" parent="state_machine" unique_id=896145434 node_paths=PackedStringArray("dialogue_ui_anchor", "pigeon", "state_machine")]
+script = ExtResource("14_talking_state")
+dialogue_ui_anchor = NodePath("../../dialogue_ui_anchor")
+pigeon = NodePath("../..")
+state_machine = NodePath("..")
+
+[node name="choice" type="Node" parent="state_machine" unique_id=533038191 node_paths=PackedStringArray("dialogue_ui_anchor", "pigeon", "state_machine")]
+script = ExtResource("15_choice_state")
+dialogue_ui_anchor = NodePath("../../dialogue_ui_anchor")
+pigeon = NodePath("../..")
+state_machine = NodePath("..")
+
+[node name="dialogue_ui_anchor" type="Node2D" parent="." unique_id=1947262283]
+position = Vector2(25, -460)
+script = ExtResource("16_dialogue_ui_anchor")
+say_bubble_scene = ExtResource("12_n6d0e")
+choice_bubble_scene = ExtResource("13_b2as5")
 
 [node name="animation" type="AnimationPlayer" parent="." unique_id=1782443690]
 libraries/ = SubResource("AnimationLibrary_main")
 autoplay = &"idle"
 
-[node name="npc_detection_area" type="Area2D" parent="."]
+[node name="npc_detection_area" type="Area2D" parent="." unique_id=734819348]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("12_npc_detector")
 
-[node name="detection_shape" type="CollisionShape2D" parent="npc_detection_area"]
+[node name="detection_shape" type="CollisionShape2D" parent="npc_detection_area" unique_id=1612375647]
 shape = SubResource("CircleShape2D_detection")
+debug_color = Color(0, 0.6, 0.69803923, 0.14117648)
 
 [connection signal="area_entered" from="npc_detection_area" to="npc_detection_area" method="_on_area_entered"]
 [connection signal="area_exited" from="npc_detection_area" to="npc_detection_area" method="_on_area_exited"]
