@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://dng805owyluvc" path="res://scripts/npc_detector.gd" id="12_npc_detector"]
 [ext_resource type="PackedScene" path="res://ui/choice_bubble.tscn" id="13_b2as5"]
 [ext_resource type="Script" uid="uid://bmklxhqul1ie" path="res://scripts/pigeon_states/dialogue_state.gd" id="13_dialogue_state"]
+[ext_resource type="PackedScene" path="res://ui/choice_button.tscn" id="14_b2as5"]
 [ext_resource type="Script" uid="uid://ca2p4b7lmngsu" path="res://scripts/pigeon_states/talking_state.gd" id="14_talking_state"]
 [ext_resource type="Script" uid="uid://cr44fmp2q46av" path="res://scripts/pigeon_states/choice_state.gd" id="15_choice_state"]
 [ext_resource type="Script" uid="uid://b4qt8n87qojtp" path="res://scripts/dialogue_ui_anchor.gd" id="16_dialogue_ui_anchor"]
@@ -365,6 +366,7 @@ position = Vector2(25, -460)
 script = ExtResource("16_dialogue_ui_anchor")
 say_bubble_scene = ExtResource("12_n6d0e")
 choice_bubble_scene = ExtResource("13_b2as5")
+choice_button_scene = ExtResource("14_b2as5")
 
 [node name="animation" type="AnimationPlayer" parent="." unique_id=1782443690]
 libraries/ = SubResource("AnimationLibrary_main")

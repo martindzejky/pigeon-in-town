@@ -7,6 +7,7 @@ signal choice_selected(index: int)
 
 @export var say_bubble_scene: PackedScene
 @export var choice_bubble_scene: PackedScene
+@export var choice_button_scene: PackedScene
 var _bubble: Control = null
 var _showing_choices := false
 
@@ -27,12 +28,11 @@ func show_choices(options: Array[String]) -> void:
 
   var choices_container := _bubble.get_node('panel/choices') as VBoxContainer
   for i in options.size():
-    var button := Button.new()
+    var button := choice_button_scene.instantiate() as Button
     button.text = options[i]
     button.pressed.connect(_on_choice_pressed.bind(i))
     choices_container.add_child(button)
 
-  # grab focus on the first button
   choices_container.get_child(0).call_deferred('grab_focus')
 
 

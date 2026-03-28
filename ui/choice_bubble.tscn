@@ -11,41 +11,6 @@ content_margin_top = 16.0
 content_margin_right = 24.0
 content_margin_bottom = 16.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_normal"]
-bg_color = Color(0, 0, 0, 0)
-content_margin_left = 12.0
-content_margin_top = 8.0
-content_margin_right = 12.0
-content_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
-bg_color = Color(1, 1, 1, 0.15)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-content_margin_left = 12.0
-content_margin_top = 8.0
-content_margin_right = 12.0
-content_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_focus"]
-bg_color = Color(1, 1, 1, 0.15)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-content_margin_left = 12.0
-content_margin_top = 8.0
-content_margin_right = 12.0
-content_margin_bottom = 8.0
-
-[sub_resource type="Theme" id="Theme_choices"]
-Button/styles/normal = SubResource("StyleBoxFlat_button_normal")
-Button/styles/hover = SubResource("StyleBoxFlat_button_hover")
-Button/styles/focus = SubResource("StyleBoxFlat_button_focus")
-Button/styles/pressed = SubResource("StyleBoxFlat_button_hover")
-
 [node name="choice_bubble" type="VBoxContainer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -62,7 +27,12 @@ grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
 [node name="choices" type="VBoxContainer" parent="panel"]
-theme = SubResource("Theme_choices")
+
+[node name="placeholder_1" parent="panel/choices" instance_placeholder="res://ui/choice_button.tscn"]
+
+[node name="placeholder_2" parent="panel/choices" instance_placeholder="res://ui/choice_button.tscn"]
+
+[node name="placeholder_3" parent="panel/choices" instance_placeholder="res://ui/choice_button.tscn"]
 
 [node name="tail" type="TextureRect" parent="."]
 layout_mode = 2
