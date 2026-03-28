@@ -23,7 +23,7 @@ script = ExtResource("5_town")
 [node name="shadow_canvas_group" parent="." unique_id=647489175 instance=ExtResource("1_0xm2m")]
 
 [node name="camera" type="Camera2D" parent="." unique_id=2034125516]
-zoom = Vector2(0.29, 0.29)
+zoom = Vector2(0.39, 0.39)
 limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
@@ -35,7 +35,7 @@ drag_right_margin = 0.15
 drag_bottom_margin = 0.15
 script = ExtResource("4_cam")
 dialogue_y_offset = -600.0
-dialogue_zoom = 0.39
+dialogue_zoom = 0.72
 
 [node name="world_sort" type="Node2D" parent="." unique_id=1702403875]
 y_sort_enabled = true
