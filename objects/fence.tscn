@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b6ssiws4sqnen"]
+
+[ext_resource type="Texture2D" uid="uid://bvdj3icgk02st" path="res://sprites/town/fence_1.png" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://nl2oqpqow06v" path="res://sprites/town/fence_2.png" id="2_tex"]
+[ext_resource type="Texture2D" uid="uid://br167hald7wcq" path="res://sprites/town/fence_3.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://bc6sawuonmcmm" path="res://sprites/town/fence_4.png" id="4_tex"]
+[ext_resource type="Script" uid="uid://cl7qwum1tj45m" path="res://scripts/components/random_sprite.gd" id="5_random_sprite"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow.tscn" id="5_shadow"]
+
+[node name="fence" type="Node2D" unique_id=1396074852]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1104309908 node_paths=PackedStringArray("update_shadow_scale")]
+position = Vector2(0, -105)
+texture = ExtResource("1_tex")
+script = ExtResource("5_random_sprite")
+sprites = Array[Texture2D]([ExtResource("1_tex"), ExtResource("2_tex"), ExtResource("3_tex"), ExtResource("4_tex")])
+update_shadow_scale = NodePath("../shadow")
+
+[node name="shadow" parent="." unique_id=1528441717 instance=ExtResource("5_shadow")]
+scale = Vector2(0.55, 0.25)

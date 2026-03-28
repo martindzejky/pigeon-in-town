@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b36xo7lkrm4nb"]
+
+[ext_resource type="Texture2D" uid="uid://ciegryhba7flj" path="res://sprites/nature/tree_1.png" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://dm2m6m1b52rx3" path="res://sprites/nature/tree_2.png" id="2_tex"]
+[ext_resource type="Texture2D" uid="uid://y8h4vvjjhewh" path="res://sprites/nature/tree_3.png" id="3_tex"]
+[ext_resource type="Script" uid="uid://cl7qwum1tj45m" path="res://scripts/components/random_sprite.gd" id="4_random_sprite"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow.tscn" id="5_shadow"]
+
+[node name="tree" type="Node2D" unique_id=1696048237]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1691229569 node_paths=PackedStringArray("update_shadow_scale")]
+position = Vector2(0, -280)
+texture = ExtResource("1_tex")
+script = ExtResource("4_random_sprite")
+sprites = Array[Texture2D]([ExtResource("1_tex"), ExtResource("2_tex"), ExtResource("3_tex")])
+update_shadow_scale = NodePath("../shadow")
+
+[node name="shadow" parent="." unique_id=151258731 instance=ExtResource("5_shadow")]
+scale = Vector2(0.9, 0.5)

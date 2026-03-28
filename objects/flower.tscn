@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b504k2unq1i0"]
+
+[ext_resource type="Texture2D" uid="uid://c05kmg6jiixjb" path="res://sprites/nature/flower_1.png" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://o37554fjudb4" path="res://sprites/nature/flower_2.png" id="2_tex"]
+[ext_resource type="Texture2D" uid="uid://fbo8ydkygl3r" path="res://sprites/nature/flower_3.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://dq87px83tarw8" path="res://sprites/nature/flower_4.png" id="4_tex"]
+[ext_resource type="Texture2D" uid="uid://dddkjpqb4uqjn" path="res://sprites/nature/flower_5.png" id="5_tex"]
+[ext_resource type="Texture2D" uid="uid://nti3mta84s7w" path="res://sprites/nature/flower_6.png" id="6_tex"]
+[ext_resource type="Script" uid="uid://cl7qwum1tj45m" path="res://scripts/components/random_sprite.gd" id="7_random_sprite"]
+
+[node name="flower" type="Node2D" unique_id=463281826]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=2124467612]
+position = Vector2(0, -47)
+texture = ExtResource("1_tex")
+script = ExtResource("7_random_sprite")
+sprites = Array[Texture2D]([ExtResource("1_tex"), ExtResource("2_tex"), ExtResource("3_tex"), ExtResource("4_tex"), ExtResource("5_tex"), ExtResource("6_tex")])

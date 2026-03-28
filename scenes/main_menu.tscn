@@ -4,6 +4,10 @@
 [ext_resource type="StyleBox" path="res://ui/button_normal_stylebox.tres" id="2_normal"]
 [ext_resource type="StyleBox" path="res://ui/button_hover_stylebox.tres" id="3_hover"]
 [ext_resource type="StyleBox" path="res://ui/button_pressed_stylebox.tres" id="4_pressed"]
+[ext_resource type="Texture2D" uid="uid://ccetbqlyd53h5" path="res://sprites/clouds/cloud_1.png" id="5_cloud_1"]
+[ext_resource type="Texture2D" uid="uid://cpiw81ly5ud11" path="res://sprites/clouds/cloud_3.png" id="6_cloud_3"]
+[ext_resource type="Texture2D" uid="uid://bgu60nx5oxgdc" path="res://sprites/clouds/cloud_2.png" id="7_cloud_2"]
+[ext_resource type="Texture2D" uid="uid://cuwlocp814ttv" path="res://sprites/clouds/cloud_5.png" id="8_cloud_5"]
 
 [node name="main_menu" type="Control" unique_id=2059424883 node_paths=PackedStringArray("start_button")]
 layout_mode = 3
@@ -24,52 +28,56 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.529, 0.808, 0.922, 1)
 
-[node name="cloud_top_left" type="ColorRect" parent="." unique_id=1225191310]
+[node name="cloud_top_left" type="TextureRect" parent="." unique_id=1988313017]
 layout_mode = 1
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 180.0
-offset_bottom = 80.0
-color = Color(1, 1, 1, 0.6)
+offset_left = -40.0
+offset_top = -20.0
+offset_right = 260.0
+offset_bottom = 164.0
+texture = ExtResource("5_cloud_1")
+stretch_mode = 5
 
-[node name="cloud_top_right" type="ColorRect" parent="." unique_id=1565676310]
+[node name="cloud_top_right" type="TextureRect" parent="." unique_id=16865068]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -200.0
-offset_top = 40.0
-offset_right = -40.0
-offset_bottom = 90.0
+offset_left = -300.0
+offset_top = -10.0
+offset_right = -28.0
+offset_bottom = 196.0
 grow_horizontal = 0
-color = Color(1, 1, 1, 0.5)
+texture = ExtResource("7_cloud_2")
+stretch_mode = 5
 
-[node name="cloud_bottom_left" type="ColorRect" parent="." unique_id=1726618707]
+[node name="cloud_bottom_left" type="TextureRect" parent="." unique_id=461765687]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 40.0
-offset_top = -100.0
-offset_right = 220.0
-offset_bottom = -50.0
+offset_left = -50.0
+offset_top = -160.0
+offset_right = 290.0
+offset_bottom = 69.0
 grow_vertical = 0
-color = Color(1, 1, 1, 0.4)
+texture = ExtResource("6_cloud_3")
+stretch_mode = 5
 
-[node name="cloud_bottom_right" type="ColorRect" parent="." unique_id=1251330794]
+[node name="cloud_bottom_right" type="TextureRect" parent="." unique_id=1404047957]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -240.0
-offset_top = -80.0
-offset_right = -60.0
-offset_bottom = -30.0
+offset_left = -350.0
+offset_top = -170.0
+offset_right = -20.0
+offset_bottom = 71.0
 grow_horizontal = 0
 grow_vertical = 0
-color = Color(1, 1, 1, 0.45)
+texture = ExtResource("8_cloud_5")
+stretch_mode = 5
 
 [node name="center" type="VBoxContainer" parent="." unique_id=1300202047]
 layout_mode = 1

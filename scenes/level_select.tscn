@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://c5rqwxrs2hixg"]
 
 [ext_resource type="Script" uid="uid://dmi63s1vx7e1x" path="res://scripts/level_select.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ev6jfvggyeea" path="res://sprites/ui/pigeon_icon.png" id="2_pigeon_icon"]
+[ext_resource type="Texture2D" uid="uid://dgsqjw4t7kdby" path="res://sprites/ui/town_icon.png" id="3_town_icon"]
+[ext_resource type="Texture2D" uid="uid://b3pt3shyvxjkm" path="res://sprites/clouds/cloud_4.png" id="4_cloud"]
+[ext_resource type="Texture2D" uid="uid://b6wd3mk7tolcn" path="res://sprites/clouds/cloud_6.png" id="5_cloud"]
 
 [node name="level_select" type="Control" unique_id=773332606 node_paths=PackedStringArray("pigeon_icon", "town_icon", "town_label")]
 layout_mode = 3
@@ -23,23 +27,40 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.529, 0.808, 0.922, 1)
 
+[node name="cloud_left" type="TextureRect" parent="." unique_id=241540460]
+layout_mode = 1
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 271.0
+mouse_filter = 2
+texture = ExtResource("4_cloud")
+stretch_mode = 5
+
+[node name="cloud_right" type="TextureRect" parent="." unique_id=1756502807]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = 50.0
+offset_right = 14.0
+offset_bottom = 281.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("5_cloud")
+stretch_mode = 5
+
 [node name="pigeon_icon" type="TextureRect" parent="." unique_id=1952450256]
 layout_mode = 1
-offset_left = 120.0
-offset_top = 240.0
-offset_right = 200.0
-offset_bottom = 320.0
+offset_left = 100.0
+offset_top = 180.0
+offset_right = 338.0
+offset_bottom = 441.0
 tooltip_text = "You"
 mouse_filter = 2
-
-[node name="placeholder" type="ColorRect" parent="pigeon_icon" unique_id=101881919]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.6, 0.6, 0.65, 1)
+texture = ExtResource("2_pigeon_icon")
+stretch_mode = 5
 
 [node name="pigeon_label" type="Label" parent="pigeon_icon" unique_id=1743180772]
 layout_mode = 1
@@ -60,21 +81,14 @@ horizontal_alignment = 1
 
 [node name="town_icon" type="TextureRect" parent="." unique_id=1218024154]
 layout_mode = 1
-offset_left = 560.0
-offset_top = 200.0
-offset_right = 680.0
-offset_bottom = 320.0
+offset_left = 520.0
+offset_top = 160.0
+offset_right = 762.0
+offset_bottom = 462.0
 mouse_filter = 0
 mouse_default_cursor_shape = 2
-
-[node name="placeholder" type="ColorRect" parent="town_icon" unique_id=392551403]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.72, 0.55, 0.4, 1)
+texture = ExtResource("3_town_icon")
+stretch_mode = 5
 
 [node name="town_label" type="Label" parent="." unique_id=2100792741]
 layout_mode = 1

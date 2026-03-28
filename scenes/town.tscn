@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://bvrp86m6h4ur7"]
 
-[ext_resource type="PackedScene" path="res://objects/shadow_canvas_group.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://mt7oxu4mesgd" path="res://objects/shadow_canvas_group.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bi13ymg3xdf50" path="res://objects/pigeon.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dilh58yingxqj" path="res://objects/regular_folk.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://b7dd7pydkko1e" path="res://scripts/camera.gd" id="4_cam"]
 [ext_resource type="Script" uid="uid://lqimfot170uf" path="res://scripts/town.gd" id="5_town"]
-[ext_resource type="PackedScene" path="res://objects/priest.tscn" id="6_priest"]
-[ext_resource type="PackedScene" path="res://objects/ghost.tscn" id="7_ghost"]
-[ext_resource type="PackedScene" path="res://objects/bartender.tscn" id="8_bartender"]
-[ext_resource type="PackedScene" path="res://objects/pig.tscn" id="9_pig"]
-[ext_resource type="PackedScene" path="res://objects/old_lady.tscn" id="10_old_lady"]
+[ext_resource type="PackedScene" uid="uid://bslyalbthsoq3" path="res://objects/priest.tscn" id="6_priest"]
+[ext_resource type="PackedScene" uid="uid://cr0cxcikieqeu" path="res://objects/ghost.tscn" id="7_ghost"]
+[ext_resource type="PackedScene" uid="uid://2303i68b5pu4" path="res://objects/bartender.tscn" id="8_bartender"]
+[ext_resource type="PackedScene" uid="uid://l3bug163acfx" path="res://objects/pig.tscn" id="9_pig"]
+[ext_resource type="PackedScene" uid="uid://c2pmu3xyhd8wp" path="res://objects/old_lady.tscn" id="10_old_lady"]
+[ext_resource type="PackedScene" uid="uid://b36xo7lkrm4nb" path="res://objects/tree.tscn" id="11_tree"]
+[ext_resource type="PackedScene" uid="uid://rmlke1ng5an0" path="res://objects/bush.tscn" id="12_bush"]
+[ext_resource type="PackedScene" uid="uid://b504k2unq1i0" path="res://objects/flower.tscn" id="13_flower"]
+[ext_resource type="PackedScene" uid="uid://jhdcb0axnbde" path="res://objects/grass.tscn" id="14_grass"]
+[ext_resource type="PackedScene" uid="uid://b2db5qhii7ups" path="res://objects/gravestone.tscn" id="15_gravestone"]
+[ext_resource type="PackedScene" uid="uid://b6ssiws4sqnen" path="res://objects/fence.tscn" id="16_fence"]
 
 [node name="town" type="Node" unique_id=273960894]
 script = ExtResource("5_town")
@@ -18,10 +24,7 @@ script = ExtResource("5_town")
 
 [node name="camera" type="Camera2D" parent="." unique_id=2034125516]
 zoom = Vector2(0.29, 0.29)
-limit_left = -1400
-limit_top = -900
-limit_right = 1400
-limit_bottom = 900
+limit_enabled = false
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 drag_horizontal_enabled = true
@@ -115,3 +118,117 @@ offset_bottom = 30.0
 theme_override_font_sizes/font_size = 32
 text = "Fountain"
 horizontal_alignment = 1
+
+[node name="tree_1" parent="world_sort" unique_id=1260288349 instance=ExtResource("11_tree")]
+position = Vector2(-1200, -600)
+
+[node name="tree_2" parent="world_sort" unique_id=487070240 instance=ExtResource("11_tree")]
+position = Vector2(-1100, 200)
+
+[node name="tree_3" parent="world_sort" unique_id=888886916 instance=ExtResource("11_tree")]
+position = Vector2(1100, -500)
+
+[node name="tree_4" parent="world_sort" unique_id=407366436 instance=ExtResource("11_tree")]
+position = Vector2(1200, 400)
+
+[node name="tree_5" parent="world_sort" unique_id=526465885 instance=ExtResource("11_tree")]
+position = Vector2(-200, -700)
+
+[node name="tree_6" parent="world_sort" unique_id=1154173799 instance=ExtResource("11_tree")]
+position = Vector2(400, 700)
+
+[node name="tree_7" parent="world_sort" unique_id=1452633610 instance=ExtResource("11_tree")]
+position = Vector2(-800, 700)
+
+[node name="bush_1" parent="world_sort" unique_id=1751145180 instance=ExtResource("12_bush")]
+position = Vector2(-1000, -300)
+
+[node name="bush_2" parent="world_sort" unique_id=1091367083 instance=ExtResource("12_bush")]
+position = Vector2(900, 200)
+
+[node name="bush_3" parent="world_sort" unique_id=1740989453 instance=ExtResource("12_bush")]
+position = Vector2(-300, 400)
+
+[node name="bush_4" parent="world_sort" unique_id=657658295 instance=ExtResource("12_bush")]
+position = Vector2(500, -500)
+
+[node name="bush_5" parent="world_sort" unique_id=1820628117 instance=ExtResource("12_bush")]
+position = Vector2(-700, 300)
+
+[node name="gravestone_1" parent="world_sort" unique_id=1968724872 instance=ExtResource("15_gravestone")]
+position = Vector2(-550, -550)
+
+[node name="gravestone_2" parent="world_sort" unique_id=1247334913 instance=ExtResource("15_gravestone")]
+position = Vector2(-450, -560)
+
+[node name="gravestone_3" parent="world_sort" unique_id=110086545 instance=ExtResource("15_gravestone")]
+position = Vector2(-350, -540)
+
+[node name="gravestone_4" parent="world_sort" unique_id=1034044028 instance=ExtResource("15_gravestone")]
+position = Vector2(-480, -480)
+
+[node name="fence_farm_1" parent="world_sort" unique_id=1028084409 instance=ExtResource("16_fence")]
+position = Vector2(-750, 450)
+
+[node name="fence_farm_2" parent="world_sort" unique_id=1382215562 instance=ExtResource("16_fence")]
+position = Vector2(-650, 450)
+
+[node name="fence_farm_3" parent="world_sort" unique_id=1679742656 instance=ExtResource("16_fence")]
+position = Vector2(-550, 450)
+
+[node name="fence_farm_4" parent="world_sort" unique_id=1514771802 instance=ExtResource("16_fence")]
+position = Vector2(-450, 450)
+
+[node name="flower_1" parent="world_sort" unique_id=1264634206 instance=ExtResource("13_flower")]
+position = Vector2(-200, 300)
+
+[node name="flower_2" parent="world_sort" unique_id=119445142 instance=ExtResource("13_flower")]
+position = Vector2(300, 400)
+
+[node name="flower_3" parent="world_sort" unique_id=1895436661 instance=ExtResource("13_flower")]
+position = Vector2(-700, 100)
+
+[node name="flower_4" parent="world_sort" unique_id=1096241084 instance=ExtResource("13_flower")]
+position = Vector2(800, 300)
+
+[node name="flower_5" parent="world_sort" unique_id=1852605099 instance=ExtResource("13_flower")]
+position = Vector2(100, -400)
+
+[node name="flower_6" parent="world_sort" unique_id=2137701657 instance=ExtResource("13_flower")]
+position = Vector2(-400, 200)
+
+[node name="flower_7" parent="world_sort" unique_id=129850169 instance=ExtResource("13_flower")]
+position = Vector2(600, 500)
+
+[node name="flower_8" parent="world_sort" unique_id=830725662 instance=ExtResource("13_flower")]
+position = Vector2(-100, 600)
+
+[node name="grass_1" parent="world_sort" unique_id=1521081654 instance=ExtResource("14_grass")]
+position = Vector2(-300, -200)
+
+[node name="grass_2" parent="world_sort" unique_id=1836717455 instance=ExtResource("14_grass")]
+position = Vector2(400, 100)
+
+[node name="grass_3" parent="world_sort" unique_id=1658802180 instance=ExtResource("14_grass")]
+position = Vector2(-600, -100)
+
+[node name="grass_4" parent="world_sort" unique_id=1072120241 instance=ExtResource("14_grass")]
+position = Vector2(200, 500)
+
+[node name="grass_5" parent="world_sort" unique_id=427548372 instance=ExtResource("14_grass")]
+position = Vector2(-900, 400)
+
+[node name="grass_6" parent="world_sort" unique_id=1694026677 instance=ExtResource("14_grass")]
+position = Vector2(700, -300)
+
+[node name="grass_7" parent="world_sort" unique_id=779083718 instance=ExtResource("14_grass")]
+position = Vector2(-100, -500)
+
+[node name="grass_8" parent="world_sort" unique_id=1546283482 instance=ExtResource("14_grass")]
+position = Vector2(1000, 100)
+
+[node name="grass_9" parent="world_sort" unique_id=172734005 instance=ExtResource("14_grass")]
+position = Vector2(-500, 700)
+
+[node name="grass_10" parent="world_sort" unique_id=655426149 instance=ExtResource("14_grass")]
+position = Vector2(500, 600)
