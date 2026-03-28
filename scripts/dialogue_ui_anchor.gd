@@ -68,8 +68,11 @@ func show_choices(options: Array[String]) -> void:
     var choice := choice_button_scene.instantiate() as ChoiceButton
     choice.button.text = _wrap_text(options[i], chars_per_line)
     choice.button.pressed.connect(_on_choice_pressed.bind(i))
-    choice.modulate.a = 0.0
-    choices_container.add_child(choice)
+    choice.scale = Vector2.ZERO
+    var wrapper := PassthroughContainer.new()
+    wrapper.center_pivot_offset = true
+    wrapper.add_child(choice)
+    choices_container.add_child(wrapper)
     _choice_buttons.append(choice.button)
     choice_items.append(choice)
 
@@ -85,8 +88,8 @@ func show_choices(options: Array[String]) -> void:
   _tween.tween_property(_bubble, 'scale', Vector2.ONE, enter_duration) \
   .set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
   for choice in choice_items:
-    _tween.tween_property(choice, 'modulate:a', 1.0, enter_duration) \
-    .set_ease(Tween.EASE_OUT)
+    _tween.tween_property(choice, 'scale', Vector2.ONE, enter_duration) \
+    .set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
   _tween.finished.connect(
     func() -> void:
       _tween = null
