@@ -22,7 +22,7 @@ func update(_delta: float) -> void:
 
 
 func _on_typing_finished() -> void:
-  npc.animation.play('idle')
+  npc.animation.play(npc.dialogue_idle_anim)
 
 
 func _on_advanced() -> void:

@@ -13,7 +13,7 @@ func _exit_tree() -> void:
 
 
 func enter() -> void:
-  npc.animation.play('idle')
+  npc.animation.play(npc.dialogue_idle_anim)
 
   var pigeon := get_tree().get_first_node_in_group('pigeon') as Node2D
   if pigeon:

@@ -13,6 +13,8 @@ class_name Npc
 ## Movement speed in pixels per second.
 @export var move_speed: float = 150.0
 
+## Animation to play when idle during dialogue (e.g. standing pose).
+@export var dialogue_idle_anim: StringName = &'idle'
 @export var outline_material: Material
 @export var interaction_hint: Control
 
