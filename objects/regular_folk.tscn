@@ -1,0 +1,333 @@
+[gd_scene format=3 uid="uid://dilh58yingxqj"]
+
+[ext_resource type="Script" uid="uid://d1h13oi6p4q1d" path="res://scripts/npc.gd" id="1_npc_script"]
+[ext_resource type="Texture2D" uid="uid://qyytsxcognpk" path="res://sprites/regular_folk/regular_folk_idle.png" id="2_idle"]
+[ext_resource type="Texture2D" uid="uid://feahrd7ooaye" path="res://sprites/regular_folk/regular_folk_talk.png" id="3_talk"]
+[ext_resource type="Texture2D" uid="uid://baxc2v32fqpoe" path="res://sprites/regular_folk/regular_folk_run_1.png" id="4_run_1"]
+[ext_resource type="Texture2D" uid="uid://b7kgu14ka7s3j" path="res://sprites/regular_folk/regular_folk_run_2.png" id="5_run_2"]
+[ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="6_squash_script"]
+[ext_resource type="PackedScene" path="res://objects/shadow.tscn" id="7_shadow"]
+[ext_resource type="Script" uid="uid://bexn1jrfmr1s3" path="res://scripts/states/state_machine.gd" id="8_state_machine"]
+[ext_resource type="Script" uid="uid://ddocedl8ihsrb" path="res://scripts/npc_states/idle_state.gd" id="9_idle_state"]
+[ext_resource type="Script" uid="uid://cj430kpbcknjp" path="res://scripts/npc_states/wander_state.gd" id="10_wander_state"]
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_idle")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squash_root/animation_root:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("squash_root/animation_root:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("squash_root/animation_root:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("squash_root/animation_root:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_idle"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_idle")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squash_root/animation_root:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.036, 0.016, 1.04, -0.25, 0, 0.25, 0, 0.976, -0.25, 0, 0.25, 0, 1, -0.067, -0.014, 0.25, 0),
+"times": PackedFloat32Array(0, 0.32, 0.656, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("squash_root/animation_root:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.068, -0.015, 0.98, -0.25, 0, 0.25, 0, 1.032, -0.25, 0, 0.25, 0, 1, -0.055, 0.012, 0.25, 0),
+"times": PackedFloat32Array(0, 0.32, 0.656, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("squash_root/animation_root:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("squash_root/animation_root:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_run"]
+resource_name = "run"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_run_1"), ExtResource("5_run_2")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squash_root/animation_root:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(3, 3, 0, 3, 3),
+"points": PackedFloat32Array(0, -0.002, 24, 0.002, -24, -40, -0.075, -0.124, 0.075, 0.124, 0, -0.005, -16.4, 0.001, -16.4, -40, -0.086, -0.005, 0.086, 0.005, 0, -0.004, -16.88, 0.004, 16.88),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("squash_root/animation_root:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1),
+"points": PackedFloat32Array(-0.035, 0, 0, 0, 0, 0.035, 0, 0, 0, 0, -0.035, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("squash_root/animation_root:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("squash_root/animation_root:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("squash")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"squash"
+}, {
+"args": [],
+"method": &"squash"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_talk"]
+resource_name = "talk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_talk"), ExtResource("2_idle")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squash_root/animation_root:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.036, 0.016, 1.04, -0.25, 0, 0.25, 0, 0.976, -0.25, 0, 0.25, 0, 1, -0.067, -0.014, 0.25, 0),
+"times": PackedFloat32Array(0, 0.192, 0.394, 0.6)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("squash_root/animation_root:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.068, -0.015, 0.98, -0.25, 0, 0.25, 0, 1.032, -0.25, 0, 0.25, 0, 1, -0.055, 0.012, 0.25, 0),
+"times": PackedFloat32Array(0, 0.192, 0.394, 0.6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("squash_root/animation_root:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("squash_root/animation_root:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("squash")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"squash"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_main"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"idle": SubResource("Animation_idle"),
+&"run": SubResource("Animation_run"),
+&"talk": SubResource("Animation_talk")
+}
+
+[node name="regular_folk" type="Node2D" unique_id=1083386034 node_paths=PackedStringArray("flip_node", "squash", "animation")]
+script = ExtResource("1_npc_script")
+flip_node = NodePath("squash_root/animation_root/flip")
+squash = NodePath("squash")
+animation = NodePath("animation")
+
+[node name="shadow" parent="." unique_id=2145865219 instance=ExtResource("7_shadow")]
+scale = Vector2(0.5, 0.55)
+
+[node name="squash_root" type="Node2D" parent="." unique_id=274388315]
+
+[node name="animation_root" type="Node2D" parent="squash_root" unique_id=1541285883]
+
+[node name="flip" type="Node2D" parent="squash_root/animation_root" unique_id=1133587725]
+
+[node name="sprite" type="Sprite2D" parent="squash_root/animation_root/flip" unique_id=494924619]
+position = Vector2(0, -235)
+texture = ExtResource("2_idle")
+
+[node name="squash" type="Node" parent="." unique_id=1178051319 node_paths=PackedStringArray("target")]
+script = ExtResource("6_squash_script")
+target = NodePath("../squash_root")
+force = 0.5
+
+[node name="state_machine" type="Node" parent="." unique_id=1200421406]
+script = ExtResource("8_state_machine")
+
+[node name="idle" type="Node" parent="state_machine" unique_id=1580314533 node_paths=PackedStringArray("npc", "state_machine")]
+script = ExtResource("9_idle_state")
+npc = NodePath("../..")
+state_machine = NodePath("..")
+
+[node name="wander" type="Node" parent="state_machine" unique_id=1427961379 node_paths=PackedStringArray("npc", "state_machine")]
+script = ExtResource("10_wander_state")
+npc = NodePath("../..")
+state_machine = NodePath("..")
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=581940246]
+libraries/ = SubResource("AnimationLibrary_main")
+autoplay = &"idle"
