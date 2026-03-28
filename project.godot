@@ -11,8 +11,17 @@ config_version=5
 [application]
 
 config/name="Pigeon in town"
+config/description="Game for Jerbob's silly game jam where you are a pigeon talking to people in the town."
+config/version="0"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [physics]
 
