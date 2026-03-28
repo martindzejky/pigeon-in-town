@@ -6,7 +6,7 @@
 shader_type canvas_item;
 
 uniform vec4 color : source_color = vec4(1.0);
-uniform float width : hint_range(0, 10) = 1.0; // outline thickness in screen pixels (scale-independent)
+uniform float width : hint_range(0, 20) = 1.0; // outline thickness in screen pixels (scale-independent)
 
 varying vec4 modulate;
 varying float scaled_width;
