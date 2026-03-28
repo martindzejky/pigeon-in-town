@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cb6svnbkp2cl6"
-path="res://.godot/imported/Sunny Script.otf-5bcf45a046e731a7de8159795d44247d.fontdata"
+uid="uid://cjh2vnac20vbc"
+path="res://.godot/imported/ShantellSans-VariableFont_BNCE,INFM,SPAC,wght.ttf-7f1e42f88734217f34d40afaade5ca9f.fontdata"
 
 [deps]
 
-source_file="res://fonts/sunny_script/Sunny Script.otf"
-dest_files=["res://.godot/imported/Sunny Script.otf-5bcf45a046e731a7de8159795d44247d.fontdata"]
+source_file="res://fonts/Shantell_Sans/ShantellSans-VariableFont_BNCE,INFM,SPAC,wght.ttf"
+dest_files=["res://.godot/imported/ShantellSans-VariableFont_BNCE,INFM,SPAC,wght.ttf-7f1e42f88734217f34d40afaade5ca9f.fontdata"]
 
 [params]
 
