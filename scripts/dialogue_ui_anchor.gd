@@ -34,7 +34,7 @@ func show_bubble(text: String) -> void:
   _bubble = say_bubble_scene.instantiate()
   add_child(_bubble)
 
-  _label = _bubble.get_node('panel/label') as Label
+  _label = (_bubble as SayBubble).label
   _label.text = wrapped
   _label.visible_characters = 0
   _bubble.scale = Vector2.ZERO
@@ -61,13 +61,13 @@ func show_choices(options: Array[String]) -> void:
   add_child(_bubble)
 
   _choice_buttons.clear()
-  var choices_container := _bubble.get_node('panel/choices') as VBoxContainer
+  var choices_container := (_bubble as ChoiceBubble).choices
   for i in options.size():
-    var button := choice_button_scene.instantiate() as Button
-    button.text = options[i]
-    button.pressed.connect(_on_choice_pressed.bind(i))
-    choices_container.add_child(button)
-    _choice_buttons.append(button)
+    var choice := choice_button_scene.instantiate() as ChoiceButton
+    choice.button.text = options[i]
+    choice.button.pressed.connect(_on_choice_pressed.bind(i))
+    choices_container.add_child(choice)
+    _choice_buttons.append(choice.button)
 
   _choice_buttons[0].call_deferred('grab_focus')
 

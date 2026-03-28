@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://dirdwnrmrt4dx"]
 
+[ext_resource type="Texture2D" uid="uid://daj0e1cq6mvog" path="res://sprites/ui/hand_indicator_right.png" id="1_pmn5n"]
+[ext_resource type="Script" uid="uid://d4m76iui0bsmq" path="res://scripts/choice_button.gd" id="1_script"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
 content_margin_left = 12.0
 content_margin_top = 8.0
@@ -29,7 +32,25 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
-[node name="choice_button" type="Button" unique_id=2000711049]
+[node name="choice_button" type="HBoxContainer" unique_id=2104520216 node_paths=PackedStringArray("button", "indicator")]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+script = ExtResource("1_script")
+button = NodePath("button")
+indicator = NodePath("indicator")
+
+[node name="indicator" type="TextureRect" parent="." unique_id=1644485920]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_pmn5n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="button" type="Button" parent="." unique_id=2000711049]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.15, 0.15, 0.15, 1)
 theme_override_colors/font_focus_color = Color(0.15, 0.15, 0.15, 1)
 theme_override_colors/font_pressed_color = Color(0.15, 0.15, 0.15, 1)
@@ -38,5 +59,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hover")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
 theme_override_styles/focus = SubResource("StyleBoxFlat_focus")
-text = "Choice"
+text = "Choice could be a multiline
+choice you know..."
 alignment = 0

@@ -1,20 +1,23 @@
 [gd_scene format=3 uid="uid://bks27hc7rj431"]
 
 [ext_resource type="StyleBox" uid="uid://b6j66t618cl5a" path="res://ui/panel_stylebox.tres" id="1_gr8rd"]
+[ext_resource type="Script" uid="uid://buy4aw3dkonxw" path="res://scripts/choice_bubble.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://etbjvgij8xnb" path="res://sprites/ui/bubble_tail.png" id="2_tail_tex"]
 
-[node name="choice_bubble" type="VBoxContainer" unique_id=375930449]
+[node name="choice_bubble" type="VBoxContainer" unique_id=375930449 node_paths=PackedStringArray("choices")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -203.5
-offset_top = -434.0
-offset_right = 203.5
+offset_left = -513.5
+offset_top = -646.0
+offset_right = 513.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = -22
+script = ExtResource("1_script")
+choices = NodePath("panel/choices")
 
 [node name="panel" type="PanelContainer" parent="." unique_id=583911993]
 layout_mode = 2

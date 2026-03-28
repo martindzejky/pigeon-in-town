@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cas88nkps4twa"]
 
 [ext_resource type="StyleBox" uid="uid://b6j66t618cl5a" path="res://ui/panel_stylebox.tres" id="1_h7hx8"]
+[ext_resource type="Script" uid="uid://dc8ohxrlq6xme" path="res://scripts/say_bubble.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://etbjvgij8xnb" path="res://sprites/ui/bubble_tail.png" id="2_tail_tex"]
 
-[node name="say_bubble" type="VBoxContainer" unique_id=813866594]
+[node name="say_bubble" type="VBoxContainer" unique_id=813866594 node_paths=PackedStringArray("label")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -15,6 +16,8 @@ offset_right = 100.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = -19
+script = ExtResource("1_script")
+label = NodePath("panel/label")
 
 [node name="panel" type="PanelContainer" parent="." unique_id=53470728]
 custom_minimum_size = Vector2(200, 0)
