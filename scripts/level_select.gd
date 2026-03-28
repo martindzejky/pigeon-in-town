@@ -47,6 +47,7 @@ func _fly_to_town() -> void:
   _set_highlight(true)
 
   var target := town_icon.global_position + town_icon.size * 0.5 - pigeon_icon.size * 0.5
+  target.y += 40.0 # lol hard-coded offset
   var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
   tween.tween_property(pigeon_icon, 'global_position', target, 0.8)
   await tween.finished
