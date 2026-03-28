@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bi13ymg3xdf50"]
+
+[ext_resource type="Script" uid="uid://bfnewcfyyk2fd" path="res://scripts/pigeon.gd" id="1_pigeon_script"]
+[ext_resource type="Texture2D" uid="uid://v86wanpdg3lg" path="res://sprites/pigeon/pigeon_idle.png" id="2_pigeon_idle"]
+[ext_resource type="Texture2D" uid="uid://rjbunh26qola" path="res://sprites/pigeon/pigeon_talk.png" id="3_pigeon_talk"]
+[ext_resource type="Texture2D" uid="uid://bo75xbqvmoaen" path="res://sprites/pigeon/pigeon_run_1.png" id="4_pigeon_run_1"]
+[ext_resource type="Texture2D" uid="uid://bd7cuhw8465ax" path="res://sprites/pigeon/pigeon_run_2.png" id="5_pigeon_run_2"]
+[ext_resource type="Texture2D" uid="uid://d3phr0ob4lpuq" path="res://sprites/pigeon/pigeon_run_3.png" id="6_pigeon_run_3"]
+[ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="7_squash_script"]
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_pigeon_idle")]
+}
+
+[sub_resource type="Animation" id="Animation_idle"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_pigeon_idle")]
+}
+
+[sub_resource type="Animation" id="Animation_run"]
+resource_name = "run"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_pigeon_run_1"), ExtResource("5_pigeon_run_2"), ExtResource("6_pigeon_run_3"), ExtResource("5_pigeon_run_2")]
+}
+
+[sub_resource type="Animation" id="Animation_talk"]
+resource_name = "talk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_pigeon_talk"), ExtResource("2_pigeon_idle")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_main"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"idle": SubResource("Animation_idle"),
+&"run": SubResource("Animation_run"),
+&"talk": SubResource("Animation_talk")
+}
+
+[node name="pigeon" type="Node2D" unique_id=553052625 node_paths=PackedStringArray("flip_node", "squash", "animation")]
+script = ExtResource("1_pigeon_script")
+flip_node = NodePath("squash_root/animation_root/flip")
+squash = NodePath("squash")
+animation = NodePath("animation")
+move_speed = 500.0
+
+[node name="squash_root" type="Node2D" parent="." unique_id=1836551741]
+
+[node name="animation_root" type="Node2D" parent="squash_root" unique_id=1679497296]
+
+[node name="flip" type="Node2D" parent="squash_root/animation_root" unique_id=434473606]
+
+[node name="sprite" type="Sprite2D" parent="squash_root/animation_root/flip" unique_id=867864240]
+position = Vector2(12, -205)
+texture = ExtResource("2_pigeon_idle")
+
+[node name="squash" type="Node" parent="." unique_id=1329607129 node_paths=PackedStringArray("target")]
+script = ExtResource("7_squash_script")
+target = NodePath("../squash_root")
+force = 0.5
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=1782443690]
+libraries/ = SubResource("AnimationLibrary_main")
+autoplay = &"idle"
