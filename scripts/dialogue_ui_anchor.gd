@@ -91,6 +91,7 @@ func show_choices(options: Array[String]) -> void:
   _tween.finished.connect(
     func() -> void:
       _tween = null
+      (_bubble as ChoiceBubble).button_indicator.visible = true
       _choice_buttons[0].grab_focus()
   )
 
