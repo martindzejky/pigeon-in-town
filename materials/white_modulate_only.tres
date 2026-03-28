@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://gci118i37dpt"]
+
+[ext_resource type="Shader" uid="uid://c4bpcfl2mojvm" path="res://shaders/white_modulate_only.gdshader" id="1_shader"]
+
+[resource]
+shader = ExtResource("1_shader")
+shader_parameter/bright_start = 0.0
+shader_parameter/bright_end = 0.239
+shader_parameter/saturation_start = 0.0
+shader_parameter/saturation_end = 0.313
+shader_parameter/falloff = 1.0
