@@ -309,7 +309,7 @@ flip_node = NodePath("squash_root/animation_root/flip")
 squash = NodePath("squash")
 animation = NodePath("animation")
 sprite = NodePath("squash_root/animation_root/flip/sprite")
-dialogue_walker = NodePath("")
+dialogue_walker = NodePath("dialogue_walker")
 outline_material = ExtResource("2_p78av")
 interaction_hint = NodePath("interaction_hint")
 

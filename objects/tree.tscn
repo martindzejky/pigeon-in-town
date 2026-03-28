@@ -9,7 +9,7 @@
 [node name="tree" type="Node2D" unique_id=1696048237]
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1691229569 node_paths=PackedStringArray("update_shadow_scale")]
-position = Vector2(0, -280)
+position = Vector2(0, -297)
 texture = ExtResource("1_tex")
 script = ExtResource("4_random_sprite")
 sprites = Array[Texture2D]([ExtResource("1_tex"), ExtResource("2_tex"), ExtResource("3_tex")])
