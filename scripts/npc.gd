@@ -15,18 +15,38 @@ class_name Npc
 
 @export var outline_material: Material
 
+var _in_dialogue: bool = false
+
 
 func _enter_tree() -> void:
   Events.npc_focus_changed.connect(_on_npc_focus_changed)
+  Events.dialogue_started.connect(_on_dialogue_started)
+  Events.dialogue_ended.connect(_on_dialogue_ended)
   face_randomly()
 
 
 func _exit_tree() -> void:
   Events.npc_focus_changed.disconnect(_on_npc_focus_changed)
+  Events.dialogue_started.disconnect(_on_dialogue_started)
+  Events.dialogue_ended.disconnect(_on_dialogue_ended)
 
 
 func _on_npc_focus_changed(npc: Npc) -> void:
+  if _in_dialogue:
+    return
   sprite.material = outline_material if npc == self else null
+
+
+func _on_dialogue_started(npc: Npc) -> void:
+  if npc != self:
+    return
+  _in_dialogue = true
+  sprite.material = null
+
+
+func _on_dialogue_ended() -> void:
+  _in_dialogue = false
+  sprite.material = outline_material if Game.current_target_npc == self else null
 
 
 ## Moves toward target position. Returns true when reached.
