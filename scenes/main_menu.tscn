@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c51unhq2bwv8h"]
 
 [ext_resource type="Script" uid="uid://dwfnvfxfo0e4u" path="res://scripts/main_menu.gd" id="1_script"]
-[ext_resource type="PackedScene" uid="uid://bthu8xs165sdx" path="res://objects/cloud.tscn" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://cjn0koay1fs67" path="res://ui/clouds.tscn" id="2_ekxnf"]
 
-[sub_resource type="Gradient" id="Gradient_tbmy8"]
+[sub_resource type="Gradient" id="Gradient_ekxnf"]
 colors = PackedColorArray(0.77304435, 0.9419222, 0.99341327, 1, 0.49150628, 0.7858084, 0.89622927, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jk1qb"]
-gradient = SubResource("Gradient_tbmy8")
+gradient = SubResource("Gradient_ekxnf")
 width = 800
 height = 600
 fill = 1
@@ -37,6 +37,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_jk1qb")
 
+[node name="clouds" parent="." unique_id=2104422092 instance=ExtResource("2_ekxnf")]
+layout_mode = 1
+
 [node name="center" type="VBoxContainer" parent="." unique_id=1300202047]
 layout_mode = 1
 anchors_preset = 8
@@ -44,10 +47,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -120.0
-offset_right = 200.0
-offset_bottom = 120.0
+offset_left = -355.5
+offset_top = -260.5
+offset_right = 355.5
+offset_bottom = 260.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -73,292 +76,3 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Quit"
-
-[node name="cloud1" parent="." unique_id=1463730299 instance=ExtResource("2_ekxnf")]
-layout_mode = 0
-
-[node name="cloud2" parent="." unique_id=1065202459 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.14
-anchor_right = 0.14
-offset_left = -72.0
-offset_top = -21.0
-offset_right = -72.0
-offset_bottom = -21.0
-
-[node name="cloud3" parent="." unique_id=1831928472 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.298
-anchor_right = 0.298
-offset_left = -110.80002
-offset_top = -5.0
-offset_right = -110.80002
-offset_bottom = -5.0
-
-[node name="cloud4" parent="." unique_id=1784910344 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.432
-anchor_right = 0.432
-offset_left = -140.20001
-offset_top = 92.0
-offset_right = -140.20001
-offset_bottom = 92.0
-
-[node name="cloud5" parent="." unique_id=363175982 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.61700004
-anchor_right = 0.61700004
-offset_left = -133.20007
-offset_top = -37.0
-offset_right = -133.20007
-offset_bottom = -37.0
-
-[node name="cloud6" parent="." unique_id=1405916754 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.74500006
-anchor_right = 0.74500006
-offset_left = -141.00012
-offset_top = 82.0
-offset_right = -141.00012
-offset_bottom = 82.0
-
-[node name="cloud7" parent="." unique_id=1228669525 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.85700005
-anchor_right = 0.85700005
-offset_left = -180.20007
-offset_top = -8.0
-offset_right = -180.20007
-offset_bottom = -8.0
-
-[node name="cloud8" parent="." unique_id=376019793 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -163.0
-offset_top = -89.0
-offset_right = -163.0
-offset_bottom = -89.0
-
-[node name="cloud9" parent="." unique_id=1898955472 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.019000001
-anchor_right = 1.0
-anchor_bottom = 0.019000001
-offset_left = -269.0
-offset_top = 141.2
-offset_right = -269.0
-offset_bottom = 141.2
-
-[node name="cloud10" parent="." unique_id=1817912079 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.39900002
-anchor_right = 1.0
-anchor_bottom = 0.39900002
-offset_left = -189.0
-offset_top = -84.80002
-offset_right = -189.0
-offset_bottom = -84.80002
-
-[node name="cloud11" parent="." unique_id=885336288 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -258.0
-offset_top = -82.0
-offset_right = -258.0
-offset_bottom = -82.0
-
-[node name="cloud12" parent="." unique_id=1757054208 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.66400003
-anchor_right = 1.0
-anchor_bottom = 0.66400003
-offset_left = -192.0
-offset_top = -94.80005
-offset_right = -192.0
-offset_bottom = -94.80005
-
-[node name="cloud13" parent="." unique_id=1039517233 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.749
-anchor_right = 1.0
-anchor_bottom = 0.749
-offset_left = -314.0
-offset_top = -91.79999
-offset_right = -314.0
-offset_bottom = -91.79999
-
-[node name="cloud14" parent="." unique_id=1390719743 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.95000005
-anchor_top = 1.0
-anchor_right = 0.95000005
-anchor_bottom = 1.0
-offset_left = -457.00012
-offset_top = -168.0
-offset_right = -457.00012
-offset_bottom = -168.0
-
-[node name="cloud15" parent="." unique_id=2042896061 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -229.0
-offset_top = -99.0
-offset_right = -229.0
-offset_bottom = -99.0
-
-[node name="cloud16" parent="." unique_id=829106220 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.0
-anchor_top = 0.87000006
-anchor_right = 1.0
-anchor_bottom = 0.87000006
-offset_left = -148.0
-offset_top = -76.00012
-offset_right = -148.0
-offset_bottom = -76.00012
-
-[node name="cloud17" parent="." unique_id=1810678983 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.651
-anchor_top = 1.0
-anchor_right = 0.651
-anchor_bottom = 1.0
-offset_left = -264.6001
-offset_top = -101.0
-offset_right = -264.6001
-offset_bottom = -101.0
-
-[node name="cloud18" parent="." unique_id=195201779 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.46800002
-anchor_top = 1.0
-anchor_right = 0.46800002
-anchor_bottom = 1.0
-offset_left = -210.80005
-offset_top = -177.0
-offset_right = -210.80005
-offset_bottom = -177.0
-
-[node name="cloud19" parent="." unique_id=676849016 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.37
-anchor_top = 1.0
-anchor_right = 0.37
-anchor_bottom = 1.0
-offset_left = -233.0
-offset_top = -103.0
-offset_right = -233.0
-offset_bottom = -103.0
-
-[node name="cloud20" parent="." unique_id=2066325364 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.22500001
-anchor_top = 1.0
-anchor_right = 0.22500001
-anchor_bottom = 1.0
-offset_left = -102.0
-offset_top = -138.0
-offset_right = -102.0
-offset_bottom = -138.0
-
-[node name="cloud21" parent="." unique_id=1027340563 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.061000004
-anchor_top = 1.0
-anchor_right = 0.061000004
-anchor_bottom = 1.0
-offset_left = -25.600006
-offset_top = -218.0
-offset_right = -25.600006
-offset_bottom = -218.0
-
-[node name="cloud22" parent="." unique_id=814355305 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -106.0
-offset_right = -64.0
-offset_bottom = -106.0
-
-[node name="cloud23" parent="." unique_id=645975993 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.73300004
-anchor_bottom = 0.73300004
-offset_left = -135.0
-offset_top = -91.60004
-offset_right = -135.0
-offset_bottom = -91.60004
-
-[node name="cloud24" parent="." unique_id=468521296 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.56
-anchor_bottom = 0.56
-offset_left = -77.0
-offset_top = -82.0
-offset_right = -77.0
-offset_bottom = -82.0
-
-[node name="cloud25" parent="." unique_id=651070474 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.42900002
-anchor_bottom = 0.42900002
-offset_left = -123.0
-offset_top = -101.80005
-offset_right = -123.0
-offset_bottom = -101.80005
-
-[node name="cloud26" parent="." unique_id=1043423805 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.33800003
-anchor_bottom = 0.33800003
-offset_left = -61.0
-offset_top = -84.60004
-offset_right = -61.0
-offset_bottom = -84.60004
-
-[node name="cloud27" parent="." unique_id=756679753 instance=ExtResource("2_ekxnf")]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.16600001
-anchor_bottom = 0.16600001
-offset_left = -105.0
-offset_top = -41.200012
-offset_right = -105.0
-offset_bottom = -41.200012
