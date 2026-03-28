@@ -9,6 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://bgu60nx5oxgdc" path="res://sprites/clouds/cloud_2.png" id="7_cloud_2"]
 [ext_resource type="Texture2D" uid="uid://cuwlocp814ttv" path="res://sprites/clouds/cloud_5.png" id="8_cloud_5"]
 
+[sub_resource type="Gradient" id="Gradient_tbmy8"]
+colors = PackedColorArray(0.77304435, 0.9419222, 0.99341327, 1, 0.49150628, 0.7858084, 0.89622927, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jk1qb"]
+gradient = SubResource("Gradient_tbmy8")
+width = 800
+height = 600
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="main_menu" type="Control" unique_id=2059424883 node_paths=PackedStringArray("start_button")]
 layout_mode = 3
 anchors_preset = 15
@@ -19,14 +29,14 @@ grow_vertical = 2
 script = ExtResource("1_script")
 start_button = NodePath("center/start_button")
 
-[node name="sky" type="ColorRect" parent="." unique_id=675283394]
+[node name="sky" type="TextureRect" parent="." unique_id=1844136315]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.529, 0.808, 0.922, 1)
+texture = SubResource("GradientTexture2D_jk1qb")
 
 [node name="cloud_top_left" type="TextureRect" parent="." unique_id=1988313017]
 layout_mode = 1
@@ -112,3 +122,13 @@ theme_override_styles/pressed = ExtResource("4_pressed")
 theme_override_styles/hover = ExtResource("3_hover")
 theme_override_styles/focus = ExtResource("3_hover")
 text = "Start"
+
+[node name="exit_button" type="Button" parent="center" unique_id=1252416295]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = ExtResource("2_normal")
+theme_override_styles/pressed = ExtResource("4_pressed")
+theme_override_styles/hover = ExtResource("3_hover")
+theme_override_styles/focus = ExtResource("3_hover")
+text = "Quit"
