@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dff4y8f1u48if"]
+
+[ext_resource type="FontFile" uid="uid://cb6svnbkp2cl6" path="res://fonts/sunny_script/Sunny Script.otf" id="1_g1fjd"]
+
+[resource]
+default_font = ExtResource("1_g1fjd")
+default_font_size = 28
