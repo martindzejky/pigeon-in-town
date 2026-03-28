@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://hmdhkr2sd8ub"]
+
+[ext_resource type="Texture2D" uid="uid://bvdj3icgk02st" path="res://sprites/town/fence_1.png" id="1_tex"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow.tscn" id="2_shadow"]
+
+[node name="fence_1" type="Node2D" unique_id=1084320072]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1639581874]
+position = Vector2(0, -101)
+texture = ExtResource("1_tex")
+
+[node name="shadow" parent="." unique_id=1506883413 instance=ExtResource("2_shadow")]
+position = Vector2(-91.99999, 0)
+scale = Vector2(0.43930364, 0.4793213)
+
+[node name="shadow2" parent="." unique_id=115606452 instance=ExtResource("2_shadow")]
+position = Vector2(81.99999, 0)
+scale = Vector2(0.43930364, 0.4793213)
