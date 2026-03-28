@@ -28,8 +28,6 @@ func exit() -> void:
   _walker.say.disconnect(_on_say)
   _walker.choose.disconnect(_on_choose)
   _walker.finished.disconnect(_on_finished)
-  _walker = null
-  _npc = null
 
 
 func update(_delta: float) -> void:

@@ -3,7 +3,6 @@ extends NpcState
 @export var dialogue_ui_anchor: DialogueUiAnchor
 
 var line_text: String
-var walker: DialogueWalker
 
 
 func enter() -> void:
@@ -22,5 +21,5 @@ func update(_delta: float) -> void:
 
 func _on_advanced() -> void:
   dialogue_ui_anchor.hide_bubble()
-  walker.advance()
+  npc.dialogue_walker.advance()
   state_machine.pop()

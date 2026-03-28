@@ -3,8 +3,6 @@ extends NpcState
 @export var dialogue_ui_anchor: DialogueUiAnchor
 @export var talking_state: State
 
-var _walker: DialogueWalker
-
 
 func _enter_tree() -> void:
   Events.dialogue_started.connect(_on_dialogue_started)
@@ -21,16 +19,13 @@ func enter() -> void:
   if pigeon:
     npc.face_towards(pigeon.global_position)
 
-  _walker = npc.dialogue_walker
-  _walker.say.connect(_on_say)
-  _walker.finished.connect(_on_finished)
-  _walker.reset()
+  npc.dialogue_walker.say.connect(_on_say)
+  npc.dialogue_walker.finished.connect(_on_finished)
 
 
 func exit() -> void:
-  _walker.say.disconnect(_on_say)
-  _walker.finished.disconnect(_on_finished)
-  _walker = null
+  npc.dialogue_walker.say.disconnect(_on_say)
+  npc.dialogue_walker.finished.disconnect(_on_finished)
 
 
 func update(_delta: float) -> void:
@@ -40,12 +35,12 @@ func update(_delta: float) -> void:
 func _on_dialogue_started(target_npc: Npc) -> void:
   if target_npc == npc:
     state_machine.push(name)
+    npc.dialogue_walker.call_deferred('reset')
 
 
 func _on_say(speaker: int, text: String) -> void:
   if speaker == DialogueWalker.Speaker.NPC:
     talking_state.line_text = text
-    talking_state.walker = _walker
     state_machine.push(talking_state.name)
 
 
