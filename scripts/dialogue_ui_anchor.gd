@@ -57,19 +57,42 @@ func show_bubble(text: String) -> void:
 func show_choices(options: Array[String]) -> void:
   hide_bubble()
   _showing_choices = true
+  _exiting = false
   _bubble = choice_bubble_scene.instantiate()
   add_child(_bubble)
 
   _choice_buttons.clear()
   var choices_container := (_bubble as ChoiceBubble).choices
+  var choice_items: Array[ChoiceButton] = []
   for i in options.size():
     var choice := choice_button_scene.instantiate() as ChoiceButton
-    choice.button.text = options[i]
+    choice.button.text = _wrap_text(options[i], chars_per_line)
     choice.button.pressed.connect(_on_choice_pressed.bind(i))
+    choice.scale = Vector2.ZERO
     choices_container.add_child(choice)
     _choice_buttons.append(choice.button)
+    choice_items.append(choice)
 
-  _choice_buttons[0].call_deferred('grab_focus')
+  _bubble.scale = Vector2.ZERO
+
+  await get_tree().process_frame
+  if not _bubble:
+    return
+
+  _bubble.pivot_offset = Vector2(_bubble.size.x / 2.0, _bubble.size.y)
+
+  _tween = create_tween()
+  _tween.tween_property(_bubble, 'scale', Vector2.ONE, enter_duration) \
+  .set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+  for choice in choice_items:
+    choice.pivot_offset = Vector2(choice.size.x / 2.0, choice.size.y / 2.0)
+    _tween.tween_property(choice, 'scale', Vector2.ONE, enter_duration) \
+    .set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+  _tween.finished.connect(
+    func() -> void:
+      _tween = null
+      _choice_buttons[0].grab_focus()
+  )
 
 
 func hide_bubble() -> void:
@@ -153,7 +176,12 @@ func _handle_choice_input(event: InputEvent) -> void:
 
 
 func _on_choice_pressed(index: int) -> void:
-  choice_selected.emit(index)
+  _kill_tween()
+  _exiting = true
+  _tween = create_tween()
+  _tween.tween_property(_bubble, 'scale', Vector2.ZERO, exit_duration) \
+  .set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
+  _tween.finished.connect(func() -> void: choice_selected.emit(index))
 
 
 func _wrap_text(text: String, max_chars: int) -> String:
