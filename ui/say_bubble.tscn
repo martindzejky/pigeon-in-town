@@ -3,8 +3,48 @@
 [ext_resource type="StyleBox" uid="uid://b6j66t618cl5a" path="res://ui/panel_stylebox.tres" id="1_h7hx8"]
 [ext_resource type="Script" uid="uid://dc8ohxrlq6xme" path="res://scripts/say_bubble.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://etbjvgij8xnb" path="res://sprites/ui/bubble_tail.png" id="2_tail_tex"]
+[ext_resource type="Texture2D" uid="uid://cfavlhxg6xsii" path="res://sprites/ui/button_up.png" id="3_y8xlb"]
+[ext_resource type="Texture2D" uid="uid://b2o1vyl1u228p" path="res://sprites/ui/button_pressed.png" id="5_lc4fo"]
 
-[node name="say_bubble" type="VBoxContainer" unique_id=813866594 node_paths=PackedStringArray("label")]
+[sub_resource type="Animation" id="Animation_wfsjp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_y8xlb")]
+}
+
+[sub_resource type="Animation" id="Animation_u7mup"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_y8xlb"), ExtResource("5_lc4fo")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lc4fo"]
+_data = {
+&"RESET": SubResource("Animation_wfsjp"),
+&"run": SubResource("Animation_u7mup")
+}
+
+[node name="say_bubble" type="VBoxContainer" unique_id=813866594 node_paths=PackedStringArray("label", "button_indicator")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -18,6 +58,7 @@ grow_vertical = 0
 theme_override_constants/separation = -19
 script = ExtResource("1_script")
 label = NodePath("panel/label")
+button_indicator = NodePath("bottom/button_indicator")
 
 [node name="panel" type="PanelContainer" parent="." unique_id=53470728]
 custom_minimum_size = Vector2(200, 0)
@@ -33,3 +74,26 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_tail_tex")
+
+[node name="bottom" type="Control" parent="." unique_id=401036843]
+layout_mode = 2
+
+[node name="button_indicator" type="TextureRect" parent="bottom" unique_id=239501495]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -89.0
+offset_top = -79.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_y8xlb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="animation" type="AnimationPlayer" parent="bottom/button_indicator" unique_id=1327282823]
+libraries/ = SubResource("AnimationLibrary_lc4fo")
+autoplay = &"run"

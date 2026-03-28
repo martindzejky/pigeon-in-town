@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://b6xrxax5s15pg" path="res://scripts/pigeon_states/run_state.gd" id="11_run_state"]
 [ext_resource type="PackedScene" uid="uid://cas88nkps4twa" path="res://ui/say_bubble.tscn" id="12_n6d0e"]
 [ext_resource type="Script" uid="uid://dng805owyluvc" path="res://scripts/npc_detector.gd" id="12_npc_detector"]
-[ext_resource type="PackedScene" path="res://ui/choice_bubble.tscn" id="13_b2as5"]
+[ext_resource type="PackedScene" uid="uid://bks27hc7rj431" path="res://ui/choice_bubble.tscn" id="13_b2as5"]
 [ext_resource type="Script" uid="uid://bmklxhqul1ie" path="res://scripts/pigeon_states/dialogue_state.gd" id="13_dialogue_state"]
 [ext_resource type="PackedScene" uid="uid://dirdwnrmrt4dx" path="res://ui/choice_button.tscn" id="14_b2as5"]
 [ext_resource type="Script" uid="uid://ca2p4b7lmngsu" path="res://scripts/pigeon_states/talking_state.gd" id="14_talking_state"]
@@ -141,7 +141,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_run"]
 resource_name = "run"
-length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false

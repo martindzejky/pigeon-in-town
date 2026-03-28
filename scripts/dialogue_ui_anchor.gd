@@ -103,6 +103,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_typing_done() -> void:
   _typing_done = true
   _tween = null
+  (_bubble as SayBubble).button_indicator.visible = true
   typing_finished.emit()
 
 
