@@ -2,12 +2,19 @@
 
 [ext_resource type="PackedScene" path="res://objects/shadow_canvas_group.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bi13ymg3xdf50" path="res://objects/pigeon.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dilh58yingxqj" path="res://objects/regular_folk.tscn" id="3_h2yge"]
 
 [node name="main" type="Node" unique_id=1458451637]
 
 [node name="shadow_canvas_group" parent="." unique_id=1130259802 instance=ExtResource("1_0xm2m")]
 
 [node name="camera" type="Camera2D" parent="." unique_id=1203253204]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.29, 0.29)
 
-[node name="pigeon" parent="." unique_id=553052625 instance=ExtResource("1_ig7tw")]
+[node name="world_sort" type="Node2D" parent="." unique_id=743191100]
+y_sort_enabled = true
+
+[node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
+
+[node name="regular_folk" parent="world_sort" unique_id=1083386034 instance=ExtResource("3_h2yge")]
+position = Vector2(534, 245)
