@@ -1,36 +1,32 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cas88nkps4twa"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
-bg_color = Color(0.15, 0.15, 0.15, 0.9)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-content_margin_left = 24.0
-content_margin_top = 16.0
-content_margin_right = 24.0
-content_margin_bottom = 16.0
+[ext_resource type="StyleBox" uid="uid://b6j66t618cl5a" path="res://ui/panel_stylebox.tres" id="1_h7hx8"]
+[ext_resource type="Texture2D" uid="uid://etbjvgij8xnb" path="res://sprites/ui/bubble_tail.png" id="2_tail_tex"]
 
-[node name="say_bubble" type="VBoxContainer"]
-anchors_preset = 8
+[node name="say_bubble" type="VBoxContainer" unique_id=813866594]
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 offset_left = -150.0
-offset_top = -80.0
+offset_top = -301.0
 offset_right = 150.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = -33
 
-[node name="panel" type="PanelContainer" parent="."]
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+[node name="panel" type="PanelContainer" parent="." unique_id=53470728]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_h7hx8")
 
-[node name="label" type="Label" parent="panel"]
+[node name="label" type="Label" parent="panel" unique_id=48107721]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.15, 0.15, 1)
+text = "Hello world!"
 horizontal_alignment = 1
-autowrap_mode = 2
 
-[node name="tail" type="TextureRect" parent="."]
+[node name="tail" type="TextureRect" parent="." unique_id=1264587882]
 layout_mode = 2
 size_flags_horizontal = 4
-custom_minimum_size = Vector2(24, 16)
+texture = ExtResource("2_tail_tex")

@@ -11,11 +11,11 @@
 [ext_resource type="Script" uid="uid://bexn1jrfmr1s3" path="res://scripts/states/state_machine.gd" id="9_state_machine"]
 [ext_resource type="Script" uid="uid://dv54617h84fsl" path="res://scripts/pigeon_states/idle_state.gd" id="10_idle_state"]
 [ext_resource type="Script" uid="uid://b6xrxax5s15pg" path="res://scripts/pigeon_states/run_state.gd" id="11_run_state"]
-[ext_resource type="PackedScene" path="res://ui/say_bubble.tscn" id="12_n6d0e"]
+[ext_resource type="PackedScene" uid="uid://cas88nkps4twa" path="res://ui/say_bubble.tscn" id="12_n6d0e"]
 [ext_resource type="Script" uid="uid://dng805owyluvc" path="res://scripts/npc_detector.gd" id="12_npc_detector"]
 [ext_resource type="PackedScene" path="res://ui/choice_bubble.tscn" id="13_b2as5"]
 [ext_resource type="Script" uid="uid://bmklxhqul1ie" path="res://scripts/pigeon_states/dialogue_state.gd" id="13_dialogue_state"]
-[ext_resource type="PackedScene" path="res://ui/choice_button.tscn" id="14_b2as5"]
+[ext_resource type="PackedScene" uid="uid://dirdwnrmrt4dx" path="res://ui/choice_button.tscn" id="14_b2as5"]
 [ext_resource type="Script" uid="uid://ca2p4b7lmngsu" path="res://scripts/pigeon_states/talking_state.gd" id="14_talking_state"]
 [ext_resource type="Script" uid="uid://cr44fmp2q46av" path="res://scripts/pigeon_states/choice_state.gd" id="15_choice_state"]
 [ext_resource type="Script" uid="uid://b4qt8n87qojtp" path="res://scripts/dialogue_ui_anchor.gd" id="16_dialogue_ui_anchor"]
@@ -362,7 +362,7 @@ pigeon = NodePath("../..")
 state_machine = NodePath("..")
 
 [node name="dialogue_ui_anchor" type="Node2D" parent="." unique_id=1947262283]
-position = Vector2(25, -460)
+position = Vector2(25, -470)
 script = ExtResource("16_dialogue_ui_anchor")
 say_bubble_scene = ExtResource("12_n6d0e")
 choice_bubble_scene = ExtResource("13_b2as5")

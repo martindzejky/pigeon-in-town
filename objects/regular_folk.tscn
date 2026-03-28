@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://b4qt8n87qojtp" path="res://scripts/dialogue_ui_anchor.gd" id="13_dialogue_ui_anchor"]
 [ext_resource type="Script" uid="uid://b17ntoj3nod3j" path="res://scripts/dialogue/dialogue_walker.gd" id="14_dialogue_walker"]
 [ext_resource type="Script" uid="uid://6o1qum4v3dph" path="res://scripts/dialogue/dialogue_say.gd" id="15_dialogue_say"]
-[ext_resource type="PackedScene" path="res://ui/say_bubble.tscn" id="15_h4j8l"]
+[ext_resource type="PackedScene" uid="uid://cas88nkps4twa" path="res://ui/say_bubble.tscn" id="15_h4j8l"]
 [ext_resource type="Script" uid="uid://b4kwghmomxwky" path="res://scripts/dialogue/dialogue_choose.gd" id="16_dialogue_choose"]
 [ext_resource type="PackedScene" path="res://ui/choice_bubble.tscn" id="16_p78av"]
 [ext_resource type="Script" uid="uid://bngy74khot6cl" path="res://scripts/dialogue/dialogue_option.gd" id="17_dialogue_option"]
@@ -400,7 +400,7 @@ speaker = 1
 text = "Well, nice meeting you!"
 
 [node name="dialogue_ui_anchor" type="Node2D" parent="." unique_id=1410963628]
-position = Vector2(5, -511)
+position = Vector2(5, -513)
 script = ExtResource("13_dialogue_ui_anchor")
 say_bubble_scene = ExtResource("15_h4j8l")
 choice_bubble_scene = ExtResource("16_p78av")

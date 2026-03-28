@@ -1,40 +1,38 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bks27hc7rj431"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
-bg_color = Color(0.15, 0.15, 0.15, 0.9)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-content_margin_left = 24.0
-content_margin_top = 16.0
-content_margin_right = 24.0
-content_margin_bottom = 16.0
+[ext_resource type="StyleBox" uid="uid://b6j66t618cl5a" path="res://ui/panel_stylebox.tres" id="1_gr8rd"]
+[ext_resource type="Texture2D" uid="uid://etbjvgij8xnb" path="res://sprites/ui/bubble_tail.png" id="2_tail_tex"]
 
-[node name="choice_bubble" type="VBoxContainer"]
-anchors_preset = 8
+[node name="choice_bubble" type="VBoxContainer" unique_id=375930449]
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -80.0
-offset_right = 150.0
+anchor_bottom = 1.0
+offset_left = -153.5
+offset_top = -409.0
+offset_right = 153.5
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/separation = -32
 
-[node name="panel" type="PanelContainer" parent="."]
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+[node name="panel" type="PanelContainer" parent="." unique_id=583911993]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_gr8rd")
 
-[node name="choices" type="VBoxContainer" parent="panel"]
+[node name="choices" type="VBoxContainer" parent="panel" unique_id=946470808]
+layout_mode = 2
 
-[node name="placeholder_1" parent="panel/choices" instance_placeholder="res://ui/choice_button.tscn"]
+[node name="placeholder_1" parent="panel/choices" unique_id=218872983 instance_placeholder="res://ui/choice_button.tscn"]
+layout_mode = 2
 
-[node name="placeholder_2" parent="panel/choices" instance_placeholder="res://ui/choice_button.tscn"]
+[node name="placeholder_2" parent="panel/choices" unique_id=1693089453 instance_placeholder="res://ui/choice_button.tscn"]
+layout_mode = 2
 
-[node name="placeholder_3" parent="panel/choices" instance_placeholder="res://ui/choice_button.tscn"]
+[node name="placeholder_3" parent="panel/choices" unique_id=92332481 instance_placeholder="res://ui/choice_button.tscn"]
+layout_mode = 2
 
-[node name="tail" type="TextureRect" parent="."]
+[node name="tail" type="TextureRect" parent="." unique_id=1592166201]
 layout_mode = 2
 size_flags_horizontal = 4
-custom_minimum_size = Vector2(24, 16)
+texture = ExtResource("2_tail_tex")
