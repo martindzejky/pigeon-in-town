@@ -34,6 +34,7 @@ func _process_current() -> void:
   if _current == null:
     print('[walker] -> finished')
     finished.emit()
+    Events.dialogue_ended.emit()
     return
 
   if _current is DialogueSay:

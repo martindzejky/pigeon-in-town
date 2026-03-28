@@ -4,3 +4,4 @@ extends Node
 
 signal npc_focus_changed(npc: Npc)
 signal dialogue_started(npc: Npc)
+signal dialogue_ended()
