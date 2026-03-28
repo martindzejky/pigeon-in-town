@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://b4kwghmomxwky" path="res://scripts/dialogue/dialogue_choose.gd" id="16_dialogue_choose"]
 [ext_resource type="PackedScene" uid="uid://bks27hc7rj431" path="res://ui/choice_bubble.tscn" id="16_p78av"]
 [ext_resource type="Script" uid="uid://bngy74khot6cl" path="res://scripts/dialogue/dialogue_option.gd" id="17_dialogue_option"]
+[ext_resource type="PackedScene" uid="uid://cfj7ylxguuhqh" path="res://ui/interaction_hint.tscn" id="21_u24br"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -304,7 +305,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_interaction"]
 radius = 94.42987
 
-[node name="regular_folk" type="Node2D" unique_id=1083386034 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "dialogue_walker")]
+[node name="regular_folk" type="Node2D" unique_id=1083386034 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "dialogue_walker", "interaction_hint")]
 script = ExtResource("1_npc_script")
 flip_node = NodePath("squash_root/animation_root/flip")
 squash = NodePath("squash")
@@ -312,6 +313,7 @@ animation = NodePath("animation")
 sprite = NodePath("squash_root/animation_root/flip/sprite")
 dialogue_walker = NodePath("dialogue_walker")
 outline_material = ExtResource("2_p78av")
+interaction_hint = NodePath("interaction_hint")
 
 [node name="shadow" parent="." unique_id=2145865219 instance=ExtResource("7_shadow")]
 scale = Vector2(0.5, 0.55)
@@ -416,3 +418,10 @@ collision_mask = 0
 [node name="interaction_shape" type="CollisionShape2D" parent="interaction_area" unique_id=1075258342]
 shape = SubResource("CircleShape2D_interaction")
 debug_color = Color(0.6956506, 0.48855472, 0.21236292, 0.23137255)
+
+[node name="interaction_hint" parent="." unique_id=1609719045 instance=ExtResource("21_u24br")]
+visible = false
+offset_left = -97.0
+offset_top = -583.0
+offset_right = 97.0
+offset_bottom = -507.0

@@ -14,6 +14,7 @@ class_name Npc
 @export var move_speed: float = 150.0
 
 @export var outline_material: Material
+@export var interaction_hint: Control
 
 var _in_dialogue: bool = false
 
@@ -34,7 +35,9 @@ func _exit_tree() -> void:
 func _on_npc_focus_changed(npc: Npc) -> void:
   if _in_dialogue:
     return
-  sprite.material = outline_material if npc == self else null
+  var focused := npc == self
+  sprite.material = outline_material if focused else null
+  interaction_hint.visible = focused
 
 
 func _on_dialogue_started(npc: Npc) -> void:
@@ -42,11 +45,14 @@ func _on_dialogue_started(npc: Npc) -> void:
     return
   _in_dialogue = true
   sprite.material = null
+  interaction_hint.visible = false
 
 
 func _on_dialogue_ended() -> void:
   _in_dialogue = false
-  sprite.material = outline_material if Game.current_target_npc == self else null
+  var focused := Game.current_target_npc == self
+  sprite.material = outline_material if focused else null
+  interaction_hint.visible = focused
 
 
 ## Moves toward target position. Returns true when reached.

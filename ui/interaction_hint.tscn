@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cfj7ylxguuhqh"]
+
+[ext_resource type="Texture2D" uid="uid://cfavlhxg6xsii" path="res://sprites/ui/button_up.png" id="1_btn_up"]
+[ext_resource type="Texture2D" uid="uid://b2o1vyl1u228p" path="res://sprites/ui/button_pressed.png" id="2_btn_pressed"]
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_btn_up")]
+}
+
+[sub_resource type="Animation" id="Animation_run"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_btn_up"), ExtResource("2_btn_pressed")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hint"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"run": SubResource("Animation_run")
+}
+
+[node name="interaction_hint" type="HBoxContainer" unique_id=1253944932]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -64.0
+offset_right = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="icon" type="TextureRect" parent="." unique_id=1137054784]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("1_btn_up")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="animation" type="AnimationPlayer" parent="icon" unique_id=1104879035]
+libraries/ = SubResource("AnimationLibrary_hint")
+autoplay = &"run"
+
+[node name="label" type="Label" parent="." unique_id=86941826]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.15, 0.15, 0.15, 1)
+text = "Talk"
+vertical_alignment = 1

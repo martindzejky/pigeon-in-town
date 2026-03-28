@@ -51,6 +51,7 @@ stretch_mode = 5
 
 [node name="button" type="Button" parent="." unique_id=2000711049]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.15, 0.15, 0.15, 1)
 theme_override_colors/font_focus_color = Color(0.15, 0.15, 0.15, 1)
 theme_override_colors/font_pressed_color = Color(0.15, 0.15, 0.15, 1)
