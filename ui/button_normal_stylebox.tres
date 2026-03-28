@@ -1,11 +1,11 @@
-[gd_resource type="StyleBoxTexture" format=3]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://m0lcs6dlp1gq"]
 
-[ext_resource type="Texture2D" path="res://sprites/ui/speech_bubble.png" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://b03exc1cnqao5" path="res://sprites/ui/speech_bubble.png" id="1_tex"]
 
 [resource]
-content_margin_left = 49.0
+content_margin_left = 84.0
 content_margin_top = 49.0
-content_margin_right = 49.0
+content_margin_right = 84.0
 content_margin_bottom = 49.0
 texture = ExtResource("1_tex")
 texture_margin_left = 103.0

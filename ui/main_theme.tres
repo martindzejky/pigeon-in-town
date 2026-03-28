@@ -1,7 +1,19 @@
 [gd_resource type="Theme" format=3 uid="uid://dff4y8f1u48if"]
 
 [ext_resource type="FontFile" uid="uid://xopru5mam6b7" path="res://fonts/Shantell_Sans/static/ShantellSans-Bold.ttf" id="1_g1fjd"]
+[ext_resource type="StyleBox" uid="uid://m0lcs6dlp1gq" path="res://ui/button_normal_stylebox.tres" id="2_normal"]
+[ext_resource type="StyleBox" uid="uid://4sdlh611fwkn" path="res://ui/button_hover_stylebox.tres" id="3_hover"]
+[ext_resource type="StyleBox" uid="uid://bp0628tn1e4yw" path="res://ui/button_pressed_stylebox.tres" id="4_pressed"]
 
 [resource]
 default_font = ExtResource("1_g1fjd")
 default_font_size = 56
+Button/colors/font_color = Color(0.09019608, 0.12156863, 0.13333334, 1)
+Button/colors/font_focus_color = Color(0.25, 0.2, 0.15, 1)
+Button/colors/font_hover_color = Color(0.15, 0.13, 0.1, 1)
+Button/colors/font_pressed_color = Color(0.09019608, 0.12156863, 0.13333334, 1)
+Button/constants/h_separation = 8
+Button/styles/focus = ExtResource("3_hover")
+Button/styles/hover = ExtResource("3_hover")
+Button/styles/normal = ExtResource("2_normal")
+Button/styles/pressed = ExtResource("4_pressed")
