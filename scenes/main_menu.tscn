@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dwfnvfxfo0e4u" path="res://scripts/main_menu.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://cjn0koay1fs67" path="res://ui/clouds.tscn" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://v86wanpdg3lg" path="res://sprites/pigeon/pigeon_idle.png" id="3_bqqt6"]
+[ext_resource type="Script" uid="uid://blylbt4dsnj6o" path="res://scripts/components/passthrough_container.gd" id="3_oa1go"]
+[ext_resource type="Texture2D" uid="uid://dnplg77uwt4iv" path="res://sprites/title/title1.png" id="3_wu84c"]
+[ext_resource type="Texture2D" uid="uid://d21olpprk4eox" path="res://sprites/title/title2.png" id="4_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://yepuufocmgdk" path="res://sprites/title/title3.png" id="5_oa1go"]
 
 [sub_resource type="Gradient" id="Gradient_ekxnf"]
 colors = PackedColorArray(0.77304435, 0.9419222, 0.99341327, 1, 0.49150628, 0.7858084, 0.89622927, 1)
@@ -13,9 +18,270 @@ height = 600
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
-font_size = 90
-font_color = Color(0.09803922, 0.13333334, 0.16470589, 1)
+[sub_resource type="Animation" id="Animation_tbmy8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("1/1:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("1/1:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_oa1go"]
+resource_name = "loop"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("1/1:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25555557, 0, 0.24444443, 0, 0, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.5333334, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("1/1:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 3, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -13.665, -0.49999988, 0.021418571, 0.49999988, -0.021418571, 0, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.5333334, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbmy8"]
+_data = {
+&"RESET": SubResource("Animation_tbmy8"),
+&"loop": SubResource("Animation_oa1go")
+}
+
+[sub_resource type="Animation" id="Animation_p2_reset"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("2/2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("2/2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_p2_loop"]
+resource_name = "loop"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("2/2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25555557, 0, 0.24444443, 0, 0, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.5333334, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("2/2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 3, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -13.665, -0.49999988, 0.021418571, 0.49999988, -0.021418571, 0, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.5333334, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p2"]
+_data = {
+&"RESET": SubResource("Animation_p2_reset"),
+&"loop": SubResource("Animation_p2_loop")
+}
+
+[sub_resource type="Animation" id="Animation_p3_reset"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("3/3:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("3/3:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_p3_loop"]
+resource_name = "loop"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("3/3:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25555557, 0, 0.24444443, 0, 0, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.5333334, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("3/3:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 3, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -13.665, -0.49999988, 0.021418571, 0.49999988, -0.021418571, 0, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 1.5333334, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3"]
+_data = {
+&"RESET": SubResource("Animation_p3_reset"),
+&"loop": SubResource("Animation_p3_loop")
+}
+
+[sub_resource type="Animation" id="Animation_wu84c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(321, 209)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-52.5, -170.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bqqt6"]
+resource_name = "enter"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(321, 17.5), Vector2(321, 209)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-52.5, 21), Vector2(-52.5, -170.5)]
+}
+
+[sub_resource type="Animation" id="Animation_8ln24"]
+resource_name = "loop"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wu84c"]
+_data = {
+&"RESET": SubResource("Animation_wu84c"),
+&"enter": SubResource("Animation_bqqt6"),
+&"loop": SubResource("Animation_8ln24")
+}
 
 [node name="main_menu" type="Control" unique_id=2059424883 node_paths=PackedStringArray("start_button", "exit_button")]
 layout_mode = 3
@@ -29,6 +295,7 @@ start_button = NodePath("center/start_button")
 exit_button = NodePath("center/exit_button")
 
 [node name="sky" type="TextureRect" parent="." unique_id=1844136315]
+z_index = -10
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,6 +308,7 @@ texture = SubResource("GradientTexture2D_jk1qb")
 layout_mode = 1
 
 [node name="center" type="VBoxContainer" parent="." unique_id=1300202047]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,21 +316,61 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -355.5
-offset_top = -260.5
+offset_top = -310.0
 offset_right = 355.5
-offset_bottom = 260.5
+offset_bottom = 371.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="title" type="Label" parent="center" unique_id=324743616]
+[node name="title" type="HBoxContainer" parent="center" unique_id=202000063]
 layout_mode = 2
-text = "Pigeon in Town"
-label_settings = SubResource("LabelSettings_ekxnf")
-horizontal_alignment = 1
+theme_override_constants/separation = -12
+
+[node name="animation_1" type="AnimationPlayer" parent="center/title" unique_id=1594632994]
+libraries/ = SubResource("AnimationLibrary_tbmy8")
+autoplay = &"loop"
+
+[node name="animation_2" type="AnimationPlayer" parent="center/title"]
+libraries/ = SubResource("AnimationLibrary_p2")
+autoplay = &"loop"
+
+[node name="animation_3" type="AnimationPlayer" parent="center/title"]
+libraries/ = SubResource("AnimationLibrary_p3")
+autoplay = &"loop"
+
+[node name="1" type="Container" parent="center/title" unique_id=786581002]
+custom_minimum_size = Vector2(575, 292)
+layout_mode = 2
+script = ExtResource("3_oa1go")
+metadata/_custom_type_script = "uid://blylbt4dsnj6o"
+
+[node name="1" type="TextureRect" parent="center/title/1" unique_id=1182247225]
+layout_mode = 2
+texture = ExtResource("3_wu84c")
+
+[node name="2" type="Container" parent="center/title" unique_id=497229469]
+custom_minimum_size = Vector2(235, 292)
+layout_mode = 2
+script = ExtResource("3_oa1go")
+metadata/_custom_type_script = "uid://blylbt4dsnj6o"
+
+[node name="2" type="TextureRect" parent="center/title/2" unique_id=1764437276]
+layout_mode = 2
+texture = ExtResource("4_rtw2f")
+
+[node name="3" type="Container" parent="center/title" unique_id=514452045]
+custom_minimum_size = Vector2(529, 292)
+layout_mode = 2
+script = ExtResource("3_oa1go")
+metadata/_custom_type_script = "uid://blylbt4dsnj6o"
+
+[node name="3" type="TextureRect" parent="center/title/3" unique_id=895732876]
+layout_mode = 2
+texture = ExtResource("5_oa1go")
 
 [node name="spacer" type="Control" parent="center" unique_id=23868148]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
 [node name="start_button" type="Button" parent="center" unique_id=417116919]
@@ -70,6 +378,27 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Start"
+
+[node name="pigeon" type="TextureRect" parent="center/start_button" unique_id=726136333]
+z_index = -1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -52.5
+offset_top = -170.5
+offset_right = -52.5
+offset_bottom = 38.5
+grow_horizontal = 2
+pivot_offset = Vector2(161, 209)
+texture = ExtResource("3_bqqt6")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="animation" type="AnimationPlayer" parent="center/start_button/pigeon" unique_id=1160941460]
+libraries/ = SubResource("AnimationLibrary_wu84c")
+autoplay = &"enter"
+next/enter = &"loop"
 
 [node name="exit_button" type="Button" parent="center" unique_id=1252416295]
 custom_minimum_size = Vector2(200, 80)

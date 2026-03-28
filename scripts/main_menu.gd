@@ -8,6 +8,10 @@ func _ready() -> void:
   start_button.pressed.connect(_on_start_pressed)
   exit_button.pressed.connect(_on_exit_pressed)
 
+  # stagger the title float animations
+  $center/title/animation_2.seek(0.5)
+  $center/title/animation_3.seek(1.0)
+
 
 func _on_start_pressed() -> void:
   SceneTransition.change_scene('res://scenes/level_select.tscn')

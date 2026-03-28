@@ -39,9 +39,9 @@ anchors_preset = -1
 anchor_left = 0.432
 anchor_right = 0.432
 offset_left = -140.20001
-offset_top = 92.0
+offset_top = -75.0
 offset_right = -140.20001
-offset_bottom = 92.0
+offset_bottom = -75.0
 
 [node name="cloud5" parent="." unique_id=625479977 instance=ExtResource("1_7m2wn")]
 layout_mode = 1
