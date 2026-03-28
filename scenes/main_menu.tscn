@@ -13,6 +13,10 @@ height = 600
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
+font_size = 90
+font_color = Color(0.09803922, 0.13333334, 0.16470589, 1)
+
 [node name="main_menu" type="Control" unique_id=2059424883 node_paths=PackedStringArray("start_button", "exit_button")]
 layout_mode = 3
 anchors_preset = 15
@@ -51,6 +55,7 @@ alignment = 1
 [node name="title" type="Label" parent="center" unique_id=324743616]
 layout_mode = 2
 text = "Pigeon in Town"
+label_settings = SubResource("LabelSettings_ekxnf")
 horizontal_alignment = 1
 
 [node name="spacer" type="Control" parent="center" unique_id=23868148]
