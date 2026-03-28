@@ -17,6 +17,7 @@ var _outline_material: Material = preload('res://materials/outline.tres')
 
 func _enter_tree() -> void:
   Events.npc_focus_changed.connect(_on_npc_focus_changed)
+  face_randomly()
 
 
 func _exit_tree() -> void:
@@ -41,3 +42,19 @@ func move_to_position(target: Vector2, delta: float, threshold: float = 10.0) ->
     flip_node.scale.x = sign(direction.x)
 
   return false
+
+
+func face_right() -> void:
+  flip_node.scale.x = 1
+
+
+func face_left() -> void:
+  flip_node.scale.x = -1
+
+
+func face_towards(target: Vector2) -> void:
+  flip_node.scale.x = sign(target.x - global_position.x)
+
+
+func face_randomly() -> void:
+  flip_node.scale.x = [-1, 1].pick_random()
