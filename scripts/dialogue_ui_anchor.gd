@@ -70,7 +70,7 @@ func show_choices(options: Array[String]) -> void:
     choice.button.pressed.connect(_on_choice_pressed.bind(i))
     choice.scale = Vector2.ZERO
     var wrapper := PassthroughContainer.new()
-    wrapper.center_pivot_offset = true
+    wrapper.pivot_anchor = Vector2(0.0, 0.5)
     wrapper.add_child(choice)
     choices_container.add_child(wrapper)
     _choice_buttons.append(choice.button)

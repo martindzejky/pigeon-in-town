@@ -3,9 +3,10 @@ extends Container
 
 class_name PassthroughContainer
 
-@export var center_pivot_offset := false:
+## Normalized pivot anchor (0,0 = top-left, 1,1 = bottom-right).
+@export var pivot_anchor := Vector2(-1.0, -1.0):
   set(value):
-    center_pivot_offset = value
+    pivot_anchor = value
     queue_sort()
 
 
@@ -47,8 +48,8 @@ func do_sort() -> void:
     custom_minimum_size = root_child.get_combined_minimum_size()
     root_child.size = size
 
-    if center_pivot_offset:
-      root_child.pivot_offset = root_child.size / 2.0
+    if pivot_anchor.x >= 0.0:
+      root_child.pivot_offset = root_child.size * pivot_anchor
     else:
       root_child.pivot_offset = Vector2.ZERO
     pivot_offset = root_child.pivot_offset
@@ -57,7 +58,7 @@ func do_sort() -> void:
       root_child.position = Vector2.ZERO
 
   for pt in passthrough_list:
-    pt.center_pivot_offset = center_pivot_offset
+    pt.pivot_anchor = pivot_anchor
     pt.size_flags_horizontal = size_flags_horizontal
     pt.size_flags_vertical = size_flags_vertical
     pt.custom_minimum_size = custom_minimum_size
