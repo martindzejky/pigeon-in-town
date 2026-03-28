@@ -22,5 +22,5 @@ func update(_delta: float) -> void:
 
 func _on_choice_selected(index: int) -> void:
   dialogue_ui_anchor.hide_bubble()
-  walker.select_choice(index)
   state_machine.pop()
+  walker.call_deferred('select_choice', index)

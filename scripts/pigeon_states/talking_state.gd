@@ -22,5 +22,5 @@ func update(_delta: float) -> void:
 
 func _on_advanced() -> void:
   dialogue_ui_anchor.hide_bubble()
-  walker.advance()
   state_machine.pop()
+  walker.call_deferred('advance')
