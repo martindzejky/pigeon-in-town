@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dycmpk6phjwap"]
+
+[ext_resource type="Shader" uid="uid://dgxfwv0v65fp6" path="res://shaders/outline.gdshader" id="1_povrl"]
+
+[resource]
+shader = ExtResource("1_povrl")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 10.0
