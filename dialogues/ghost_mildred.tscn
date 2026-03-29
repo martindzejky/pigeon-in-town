@@ -23,33 +23,50 @@ global = true
 
 [node name="ending" type="Node" parent="cond_talked/return_visit/cond_someone_scared" unique_id=1685245285]
 
-[node name="say_ending_1" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending" unique_id=2043637739]
+[node name="cond_done_ending" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending" unique_id=1292664459]
+script = ExtResource("5_condition")
+flag = "done_ending"
+
+[node name="repeat_ending" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending/cond_done_ending" unique_id=1171026638]
+
+[node name="say_ending_short" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending/cond_done_ending/repeat_ending" unique_id=902956432]
+script = ExtResource("2_say")
+speaker = 1
+text = "I'm a proper ghost now. The innkeeper still won't come near the graveyard. [i]Wonderful.[/i]"
+
+[node name="first_ending" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending/cond_done_ending" unique_id=1154048035]
+
+[node name="say_ending_1" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending/cond_done_ending/first_ending" unique_id=2043637739]
 script = ExtResource("2_say")
 speaker = 1
 text = "Wait. Is it true? Someone was actually [color=#a8554c]scared[/color]?! Of [i]me[/i]?!"
 
-[node name="say_pigeon_yep" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending" unique_id=1263710223]
+[node name="say_pigeon_yep" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending/cond_done_ending/first_ending" unique_id=1263710223]
 script = ExtResource("2_say")
 text = "The innkeeper. He panicked when I told him about you. Completely lost it."
 
-[node name="say_ending_2" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending" unique_id=1604249585]
+[node name="say_ending_2" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending/cond_done_ending/first_ending" unique_id=1604249585]
 script = ExtResource("2_say")
 speaker = 1
 text = "[shake rate=30.0 level=20]SOMEONE WAS SCARED OF ME![/shake]"
 
-[node name="say_ending_3" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending" unique_id=1444601326]
+[node name="say_ending_3" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending/cond_done_ending/first_ending" unique_id=1444601326]
 script = ExtResource("2_say")
 speaker = 1
 text = "I... I can finally rest in peace. Well, not rest. But exist in peace. With [color=#6b8e5e]pride[/color]."
 
-[node name="say_pigeon_end" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending" unique_id=1370909485]
+[node name="say_pigeon_end" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending/cond_done_ending/first_ending" unique_id=1370909485]
 script = ExtResource("2_say")
 text = "Happy to help, Mildred."
 
-[node name="say_jeff_end" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending" unique_id=235367249]
+[node name="say_jeff_end" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending/cond_done_ending/first_ending" unique_id=235367249]
 script = ExtResource("2_say")
 speaker = 1
 text = "I'm happy for you. Really. This is my happy face."
+
+[node name="set_done_ending" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending/cond_done_ending/first_ending" unique_id=1976996459]
+script = ExtResource("6_set_flag")
+flag = "done_ending"
 
 [node name="no_ending" type="Node" parent="cond_talked/return_visit/cond_someone_scared" unique_id=755528260]
 

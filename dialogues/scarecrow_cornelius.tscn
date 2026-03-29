@@ -22,19 +22,36 @@ flag = "became_friends"
 
 [node name="friends_branch" type="Node" parent="cond_talked/return_visit/cond_friends" unique_id=443070788]
 
-[node name="say_friend_return" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch" unique_id=911727730]
+[node name="cond_done_friends" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch" unique_id=1647007543]
+script = ExtResource("5_condition")
+flag = "done_friends_return"
+
+[node name="repeat_friends" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends" unique_id=181385024]
+
+[node name="say_friend_short" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends/repeat_friends" unique_id=1787796000]
+script = ExtResource("2_say")
+speaker = 1
+text = "...You're here. Good. Now stop standing around. You're making me look lazy."
+
+[node name="first_friends" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends" unique_id=734777313]
+
+[node name="say_friend_return" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends/first_friends" unique_id=911727730]
 script = ExtResource("2_say")
 speaker = 1
 text = "Oh. It's you. ...Good."
 
-[node name="say_pigeon_friend" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch" unique_id=1839916806]
+[node name="say_pigeon_friend" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends/first_friends" unique_id=1839916806]
 script = ExtResource("2_say")
 text = "Good to see you too, Cornelius."
 
-[node name="say_nice" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch" unique_id=490337254]
+[node name="say_nice" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends/first_friends" unique_id=490337254]
 script = ExtResource("2_say")
 speaker = 1
 text = "Don't make it weird. I still don't like birds. You're just... an exception."
+
+[node name="set_done_friends" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends/first_friends" unique_id=534719840]
+script = ExtResource("6_set_flag")
+flag = "done_friends_return"
 
 [node name="not_friends" type="Node" parent="cond_talked/return_visit/cond_friends" unique_id=1871665365]
 

@@ -16,19 +16,36 @@ flag = "talked_to"
 
 [node name="return_visit" type="Node" parent="cond_talked" unique_id=2049560301]
 
-[node name="say_return" type="Node" parent="cond_talked/return_visit" unique_id=2093081177]
+[node name="cond_done_greeting" type="Node" parent="cond_talked/return_visit" unique_id=712907371]
+script = ExtResource("5_condition")
+flag = "done_greeting"
+
+[node name="repeat_greeting" type="Node" parent="cond_talked/return_visit/cond_done_greeting" unique_id=797833149]
+
+[node name="say_return_short" type="Node" parent="cond_talked/return_visit/cond_done_greeting/repeat_greeting" unique_id=1516817245]
+script = ExtResource("2_say")
+speaker = 1
+text = "Oh. You again. ...Still not dead."
+
+[node name="first_greeting" type="Node" parent="cond_talked/return_visit/cond_done_greeting" unique_id=558275861]
+
+[node name="say_return" type="Node" parent="cond_talked/return_visit/cond_done_greeting/first_greeting" unique_id=2093081177]
 script = ExtResource("2_say")
 speaker = 1
 text = "You're back. Bold choice, visiting a graveyard twice."
 
-[node name="say_pigeon_back" type="Node" parent="cond_talked/return_visit" unique_id=579266103]
+[node name="say_pigeon_back" type="Node" parent="cond_talked/return_visit/cond_done_greeting/first_greeting" unique_id=579266103]
 script = ExtResource("2_say")
 text = "I like the quiet."
 
-[node name="say_quiet" type="Node" parent="cond_talked/return_visit" unique_id=1057946312]
+[node name="say_quiet" type="Node" parent="cond_talked/return_visit/cond_done_greeting/first_greeting" unique_id=1057946312]
 script = ExtResource("2_say")
 speaker = 1
 text = "You'll fit right in. It's very quiet here. Except when Mildred is practicing her screaming."
+
+[node name="set_done_greeting" type="Node" parent="cond_talked/return_visit/cond_done_greeting/first_greeting" unique_id=493666564]
+script = ExtResource("6_set_flag")
+flag = "done_greeting"
 
 [node name="cond_prophet" type="Node" parent="cond_talked/return_visit" unique_id=295900422]
 script = ExtResource("5_condition")
