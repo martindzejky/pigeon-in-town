@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dm2m6m1b52rx3" path="res://sprites/nature/tree_2.png" id="2_tex"]
 [ext_resource type="Texture2D" uid="uid://y8h4vvjjhewh" path="res://sprites/nature/tree_3.png" id="3_tex"]
 [ext_resource type="Script" uid="uid://cl7qwum1tj45m" path="res://scripts/components/random_sprite.gd" id="4_random_sprite"]
-[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow.tscn" id="5_shadow"]
-[ext_resource type="Material" path="res://materials/white_modulate_only.tres" id="6_material"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="5_shadow"]
+[ext_resource type="Material" uid="uid://gci118i37dpt" path="res://materials/white_modulate_only.tres" id="6_material"]
 [ext_resource type="Script" uid="uid://fma4r3v31i0u" path="res://scripts/components/random_color.gd" id="7_random_color"]
 
 [sub_resource type="Gradient" id="Gradient_foliage"]

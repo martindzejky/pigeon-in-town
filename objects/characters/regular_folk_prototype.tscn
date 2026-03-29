@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://baxc2v32fqpoe" path="res://sprites/regular_folk/regular_folk_run_1.png" id="4_run_1"]
 [ext_resource type="Texture2D" uid="uid://b7kgu14ka7s3j" path="res://sprites/regular_folk/regular_folk_run_2.png" id="5_run_2"]
 [ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="6_squash_script"]
-[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow.tscn" id="7_shadow"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="7_shadow"]
 [ext_resource type="Script" uid="uid://bexn1jrfmr1s3" path="res://scripts/states/state_machine.gd" id="8_state_machine"]
 [ext_resource type="Script" uid="uid://ddocedl8ihsrb" path="res://scripts/npc_states/idle_state.gd" id="9_idle_state"]
 [ext_resource type="Script" uid="uid://cj430kpbcknjp" path="res://scripts/npc_states/wander_state.gd" id="10_wander_state"]

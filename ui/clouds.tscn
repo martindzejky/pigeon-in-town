@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjn0koay1fs67"]
 
-[ext_resource type="PackedScene" uid="uid://bthu8xs165sdx" path="res://objects/cloud.tscn" id="1_7m2wn"]
+[ext_resource type="PackedScene" uid="uid://bthu8xs165sdx" path="res://ui/cloud.tscn" id="1_7m2wn"]
 
 [node name="clouds" type="Control" unique_id=2104422092]
 layout_mode = 3

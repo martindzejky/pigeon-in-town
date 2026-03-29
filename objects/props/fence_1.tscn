@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://hmdhkr2sd8ub"]
 
 [ext_resource type="Texture2D" uid="uid://bvdj3icgk02st" path="res://sprites/town/fence_1.png" id="1_tex"]
-[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow.tscn" id="2_shadow"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="2_shadow"]
 
 [node name="fence_1" type="Node2D" unique_id=1084320072]
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://25cag2schcdt" path="res://sprites/nature/bush_2.png" id="2_tex"]
 [ext_resource type="Texture2D" uid="uid://b2o8aqieeud8y" path="res://sprites/nature/bush_3.png" id="3_tex"]
 [ext_resource type="Script" uid="uid://cl7qwum1tj45m" path="res://scripts/components/random_sprite.gd" id="4_random_sprite"]
-[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow.tscn" id="5_shadow"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="5_shadow"]
 [ext_resource type="Material" uid="uid://gci118i37dpt" path="res://materials/white_modulate_only.tres" id="6_material"]
 [ext_resource type="Script" uid="uid://fma4r3v31i0u" path="res://scripts/components/random_color.gd" id="7_random_color"]
 

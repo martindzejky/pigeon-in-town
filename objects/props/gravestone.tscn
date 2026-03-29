@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bkjiuxahooo5p" path="res://sprites/town/gravestone_2.png" id="2_tex"]
 [ext_resource type="Texture2D" uid="uid://vi06l65l8sun" path="res://sprites/town/cross.png" id="3_tex"]
 [ext_resource type="Script" uid="uid://cl7qwum1tj45m" path="res://scripts/components/random_sprite.gd" id="4_random_sprite"]
-[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow.tscn" id="5_shadow"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="5_shadow"]
 
 [node name="gravestone" type="Node2D" unique_id=389703134]
 
