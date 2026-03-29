@@ -92,7 +92,7 @@ text = "You know the graveyard up by the church? It's haunted. Actual ghosts. I 
 [node name="say_panic" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=20.0 level=10]GHOSTS?![/shake] I KNEW the graveyard was too quiet! That's NOT normal quiet! That's [color=#a8554c]ghost quiet[/color]!"
+text = "[shake rate=30.0 level=20]GHOSTS?![/shake] I KNEW the graveyard was too quiet! That's NOT normal quiet! That's [color=#a8554c]ghost quiet[/color]!"
 
 [node name="say_pigeon_calm" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts"]
 script = ExtResource("2_say")

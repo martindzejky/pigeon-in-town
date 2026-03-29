@@ -86,7 +86,7 @@ text = "Not anymore! I have a pigeon friend now!"
 [node name="say_excited" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "Oh! [shake rate=20.0 level=10]OH![/shake] Someone is talking to me! Nobody talks to me! Come here, come closer!"
+text = "Oh! [shake rate=30.0 level=20]OH![/shake] Someone is talking to me! Nobody talks to me! Come here, come closer!"
 
 [node name="say_pigeon_hi" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")

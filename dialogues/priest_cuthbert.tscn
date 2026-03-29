@@ -95,7 +95,7 @@ text = "Fine. I bless this... ground. And that rock over there. You're all bless
 [node name="say_bless_reply" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch/choose_bless/option_bless"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=20.0 level=10]MAGNIFICENT![/shake] Did you feel that? The air just got holier! I could weep!"
+text = "[shake rate=30.0 level=20]MAGNIFICENT![/shake] Did you feel that? The air just got holier! I could weep!"
 
 [node name="option_no_bless" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch/choose_bless"]
 script = ExtResource("4_option")
@@ -126,7 +126,7 @@ global = true
 [node name="say_shock_k" type="Node" parent="cond_talked/first_visit/knight_first"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=20.0 level=10]BY THE SAINTS![/shake] A [color=#a8554c]talking bird[/color]! AND you carry a knightly title?!"
+text = "[shake rate=30.0 level=20]BY THE SAINTS![/shake] A [color=#a8554c]talking bird[/color]! AND you carry a knightly title?!"
 
 [node name="say_pigeon_k" type="Node" parent="cond_talked/first_visit/knight_first"]
 script = ExtResource("2_say")
@@ -165,7 +165,7 @@ global = true
 [node name="say_shock" type="Node" parent="cond_talked/first_visit/normal_first"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=20.0 level=10]BY THE SAINTS![/shake] A [color=#a8554c]talking bird[/color]! The ancient scrolls foretold this!"
+text = "[shake rate=30.0 level=20]BY THE SAINTS![/shake] A [color=#a8554c]talking bird[/color]! The ancient scrolls foretold this!"
 
 [node name="choose_react" type="Node" parent="cond_talked/first_visit/normal_first"]
 script = ExtResource("3_choose")

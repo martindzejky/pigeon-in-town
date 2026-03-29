@@ -91,9 +91,9 @@ func _next() -> void:
   while node and node != self:
     var parent := node.get_parent()
 
-    # when exiting an option branch, skip past the entire choose node
-    if parent is DialogueChoose:
-      print('[walker] _next: skipping up from option ', node.name, ' past choose')
+    # when exiting a branch, skip past the entire choose/condition node
+    if parent is DialogueChoose or parent is DialogueCondition:
+      print('[walker] _next: skipping up from ', node.name, ' past ', parent.name)
       node = parent
       continue
 

@@ -39,7 +39,7 @@ text = "The innkeeper. He panicked when I told him about you. Completely lost it
 [node name="say_ending_2" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=20.0 level=10]SOMEONE WAS SCARED OF ME![/shake]"
+text = "[shake rate=30.0 level=20]SOMEONE WAS SCARED OF ME![/shake]"
 
 [node name="say_ending_3" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending"]
 script = ExtResource("2_say")
@@ -154,7 +154,7 @@ text = "Forty years. Not a single scream. Maybe I'm just not cut out for hauntin
 [node name="say_boo" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=20.0 level=10]BOOOOO![/shake] Fear me! I am the [color=#a8554c]terror[/color] of this graveyard!"
+text = "[shake rate=30.0 level=20]BOOOOO![/shake] Fear me! I am the [color=#a8554c]terror[/color] of this graveyard!"
 
 [node name="choose_react" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("3_choose")
@@ -191,12 +191,12 @@ label = "AAAGH!"
 
 [node name="say_pigeon_scream" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
 script = ExtResource("2_say")
-text = "[shake rate=20.0 level=10]AAAGH![/shake] A ghost! Oh no! So scary!"
+text = "[shake rate=30.0 level=20]AAAGH![/shake] A ghost! Oh no! So scary!"
 
 [node name="say_thrilled" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
 script = ExtResource("2_say")
 speaker = 1
-text = "Did you hear that, Jeff?! [shake rate=20.0 level=10]SOMEONE SCREAMED![/shake] After [color=#a8554c]forty years[/color]!"
+text = "Did you hear that, Jeff?! [shake rate=30.0 level=20]SOMEONE SCREAMED![/shake] After [color=#a8554c]forty years[/color]!"
 
 [node name="say_jeff_react" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
 script = ExtResource("2_say")

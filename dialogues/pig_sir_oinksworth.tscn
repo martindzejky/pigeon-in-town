@@ -118,7 +118,7 @@ text = "He's ALWAYS doing a monologue. Very hard to get good guards around here.
 [node name="say_halt" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=20.0 level=10]HALT![/shake] State your name and title before the Third of His Name, [color=#a8554c]Sir Oinksworth[/color], Lord of the Mud Patch, Duke of the Feed Bin!"
+text = "[shake rate=30.0 level=20]HALT![/shake] State your name and title before the Third of His Name, [color=#a8554c]Sir Oinksworth[/color], Lord of the Mud Patch, Duke of the Feed Bin!"
 
 [node name="choose_react" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("3_choose")
@@ -151,7 +151,7 @@ text = "You're a pig. In a pen. With mud on your face."
 [node name="say_outrage" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=20.0 level=10]HOW DARE![/shake] Guards! Seize this bird! ...We don't have guards. HAMLET! BE A GUARD!"
+text = "[shake rate=30.0 level=20]HOW DARE![/shake] Guards! Seize this bird! ...We don't have guards. HAMLET! BE A GUARD!"
 
 [node name="say_hamlet" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
 script = ExtResource("2_say")
