@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bwckx1rsiu0u2"]
+
+[ext_resource type="AudioStream" uid="uid://dly70lwiq3152" path="res://sounds/pigeon_talk_1.wav" id="1_talk1"]
+[ext_resource type="AudioStream" uid="uid://ckr6ksi42w1y0" path="res://sounds/pigeon_talk_2.wav" id="2_talk2"]
+[ext_resource type="AudioStream" uid="uid://bcnhyhro5b7v5" path="res://sounds/pigeon_talk_3.wav" id="3_talk3"]
+
+[resource]
+random_pitch = 1.05
+random_volume_offset_db = 1.0
+streams_count = 3
+stream_0/stream = ExtResource("1_talk1")
+stream_1/stream = ExtResource("2_talk2")
+stream_2/stream = ExtResource("3_talk3")
