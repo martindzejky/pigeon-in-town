@@ -8,12 +8,12 @@ script = ExtResource("1_walker")
 
 [node name="say_1" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "Well well well... a whole [u]town[/u]! With roofs and everything. How fancy."
+text = "Huh. A whole [u]town[/u]. With roofs and everything."
 
 [node name="say_2" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "Right. I am a pigeon of [color=orange]refined curiosity[/color]. Let us see what manner of folk live in this charming pile of stones."
+text = "Alright. Let's see what kind of people live in this place."
 
 [node name="say_3" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "And if anyone's got [color=tan]breadcrumbs[/color]... I shan't say no."
+text = "And if anyone has [color=#a8554c]breadcrumbs[/color]... I won't say no."
