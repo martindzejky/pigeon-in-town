@@ -9,9 +9,10 @@ var _achievement_id: String = ''
 var _unlocked: bool = false
 
 
-func setup(id: String, art_path: String) -> void:
+func setup(id: String, art_path: String, hint: String) -> void:
   _achievement_id = id
   card_art.texture = load(art_path)
+  tooltip_text = hint
   refresh()
 
 

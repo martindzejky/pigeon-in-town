@@ -5,6 +5,17 @@
 [ext_resource type="StyleBox" uid="uid://4sdlh611fwkn" path="res://ui/button_hover_stylebox.tres" id="3_hover"]
 [ext_resource type="StyleBox" uid="uid://bp0628tn1e4yw" path="res://ui/button_pressed_stylebox.tres" id="4_pressed"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_joxlk"]
+content_margin_left = 26.0
+content_margin_top = 6.0
+content_margin_right = 26.0
+content_margin_bottom = 6.0
+bg_color = Color(0.0896, 0.12245333, 0.16, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [resource]
 default_font = ExtResource("1_g1fjd")
 default_font_size = 56
@@ -17,3 +28,5 @@ Button/styles/focus = ExtResource("3_hover")
 Button/styles/hover = ExtResource("3_hover")
 Button/styles/normal = ExtResource("2_normal")
 Button/styles/pressed = ExtResource("4_pressed")
+TooltipLabel/font_sizes/font_size = 46
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_joxlk")

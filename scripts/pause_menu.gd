@@ -56,7 +56,7 @@ func _build_cards() -> void:
   for def: Dictionary in Achievements.DEFINITIONS:
     var card: Node = card_scene.instantiate()
     cards_container.add_child(card)
-    card.setup(def['id'], def['art'])
+    card.setup(def['id'], def['art'], def['hint'])
     _cards[def['id']] = card
 
 

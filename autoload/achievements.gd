@@ -5,11 +5,11 @@ extends Node
 signal achievement_unlocked(ids: Array[String])
 
 const DEFINITIONS: Array[Dictionary] = [
-  { 'id': 'feathered_prophet', 'title': 'The Feathered Prophet', 'art': 'res://sprites/ui/card_feathered_prophet.png' },
-  { 'id': 'sir_pigeon', 'title': 'Sir Pigeon of the Puddle', 'art': 'res://sprites/ui/card_sir_pigeon.png' },
-  { 'id': 'prophet_and_knight', 'title': 'Prophet and Knight', 'art': 'res://sprites/ui/card_prophet_and_knight.png' },
-  { 'id': 'great_haunting', 'title': 'The Great Haunting', 'art': 'res://sprites/ui/card_great_haunting.png' },
-  { 'id': 'unlikely_friends', 'title': 'Unlikely Friends', 'art': 'res://sprites/ui/card_unlikely_friends.png' },
+  { 'id': 'feathered_prophet', 'title': 'The Feathered Prophet', 'hint': 'Receive a divine calling.', 'art': 'res://sprites/ui/card_feathered_prophet.png' },
+  { 'id': 'sir_pigeon', 'title': 'Sir Pigeon of the Puddle', 'hint': 'Earn a noble title.', 'art': 'res://sprites/ui/card_sir_pigeon.png' },
+  { 'id': 'prophet_and_knight', 'title': 'Prophet and Knight', 'hint': 'Be both holy and noble.', 'art': 'res://sprites/ui/card_prophet_and_knight.png' },
+  { 'id': 'great_haunting', 'title': 'The Great Haunting', 'hint': 'Spread a spooky rumor.', 'art': 'res://sprites/ui/card_great_haunting.png' },
+  { 'id': 'unlikely_friends', 'title': 'Unlikely Friends', 'hint': 'Befriend someone lonely.', 'art': 'res://sprites/ui/card_unlikely_friends.png' },
 ]
 
 var _achieved: Dictionary[String, bool] = { }
