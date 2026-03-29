@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="AudioStream" path="res://sounds/ghost_talk_random.tres" id="1_talk_random"]
+
+[node name="ghost_talk_sound" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_talk_random")
+max_polyphony = 3
