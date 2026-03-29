@@ -48,7 +48,8 @@ func _on_town_input(event: InputEvent) -> void:
 
 func _fly_to_town() -> void:
   _flying = true
-  _set_highlight(true)
+  _set_highlight(false)
+  town_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
   town_squash.squash()
 
   var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
