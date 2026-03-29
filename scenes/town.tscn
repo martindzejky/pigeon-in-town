@@ -30,6 +30,8 @@
 [ext_resource type="PackedScene" path="res://objects/characters/pig_hamlet.tscn" id="23_8m6oo"]
 [ext_resource type="PackedScene" path="res://objects/characters/pig_sir_oinksworth.tscn" id="23_qflhy"]
 [ext_resource type="PackedScene" path="res://objects/characters/pig_truffles.tscn" id="23_uvrjk"]
+[ext_resource type="Script" uid="uid://dvawjdkc4g4hg" path="res://scripts/intro_cutscene.gd" id="31_oej6q"]
+[ext_resource type="PackedScene" path="res://dialogues/dialogue_intro.tscn" id="32_dialogue_intro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie20d"]
 size = Vector2(20143, 1461)
@@ -743,5 +745,20 @@ position = Vector2(-1475, 8038)
 
 [node name="scarecrow_cornelius" parent="world_sort/field" unique_id=1896554786 instance=ExtResource("23_2dnfj")]
 position = Vector2(-4097, 6600)
+
+[node name="intro_cutscene" type="Node" parent="." unique_id=1248851468 node_paths=PackedStringArray("pigeon", "start_position", "end_position", "dialogue")]
+script = ExtResource("31_oej6q")
+pigeon = NodePath("../world_sort/pigeon")
+start_position = NodePath("start")
+end_position = NodePath("end")
+dialogue = NodePath("dialogue")
+
+[node name="start" type="Marker2D" parent="intro_cutscene" unique_id=1891976985]
+position = Vector2(-705, 11032)
+
+[node name="end" type="Marker2D" parent="intro_cutscene" unique_id=693661370]
+position = Vector2(-862, 9781)
+
+[node name="dialogue" parent="intro_cutscene" instance=ExtResource("32_dialogue_intro")]
 
 [editable path="world_sort/graveyard/grass"]

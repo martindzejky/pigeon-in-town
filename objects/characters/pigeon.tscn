@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dirdwnrmrt4dx" path="res://ui/choice_button.tscn" id="14_b2as5"]
 [ext_resource type="Script" uid="uid://ca2p4b7lmngsu" path="res://scripts/pigeon_states/talking_state.gd" id="14_talking_state"]
 [ext_resource type="Script" uid="uid://cr44fmp2q46av" path="res://scripts/pigeon_states/choice_state.gd" id="15_choice_state"]
+[ext_resource type="Script" path="res://scripts/pigeon_states/cutscene_state.gd" id="16_cutscene_state"]
 [ext_resource type="Script" uid="uid://b4qt8n87qojtp" path="res://scripts/dialogue_ui_anchor.gd" id="16_dialogue_ui_anchor"]
 [ext_resource type="PackedScene" uid="uid://bj35dosskjegc" path="res://objects/step_sound.tscn" id="17_step_sound"]
 
@@ -379,6 +380,11 @@ state_machine = NodePath("..")
 [node name="choice" type="Node" parent="state_machine" unique_id=533038191 node_paths=PackedStringArray("dialogue_ui_anchor", "pigeon", "state_machine")]
 script = ExtResource("15_choice_state")
 dialogue_ui_anchor = NodePath("../../dialogue_ui_anchor")
+pigeon = NodePath("../..")
+state_machine = NodePath("..")
+
+[node name="cutscene" type="Node" parent="state_machine" node_paths=PackedStringArray("pigeon", "state_machine")]
+script = ExtResource("16_cutscene_state")
 pigeon = NodePath("../..")
 state_machine = NodePath("..")
 
