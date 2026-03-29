@@ -1,0 +1,3 @@
+Name: Truffles
+Type: Pig
+Personality: Obsessed with food and smells. Can sniff out anything buried underground. Always following his nose, which leads to dubious discoveries near the church. Not picky about whether it's truffles or a corpse.

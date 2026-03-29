@@ -1,0 +1,3 @@
+Name: Hamlet
+Type: Pig
+Personality: Philosophical and dramatic. Ponders deep existential questions about oinking and the nature of pig existence. Speaks in a theatrical, Shakespearean manner.

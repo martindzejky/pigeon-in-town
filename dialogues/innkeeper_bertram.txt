@@ -1,0 +1,3 @@
+Name: Bertram
+Type: Innkeeper
+Personality: Very low intelligence. Says dumb, simple-minded things with full confidence. Not illogical per se, just genuinely dim. Proudly waters down the stew to make more of it. Sprite looks dopey.
