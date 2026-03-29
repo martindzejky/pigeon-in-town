@@ -1,48 +1,45 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cmm8h6hga4ltw"]
 
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_condition.gd" id="3_condition"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_set_flag.gd" id="4_set_flag"]
+[ext_resource type="Script" uid="uid://b17ntoj3nod3j" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" uid="uid://6o1qum4v3dph" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" uid="uid://x14vq2g8by13" path="res://scripts/dialogue/dialogue_condition.gd" id="3_condition"]
+[ext_resource type="Script" uid="uid://fcepmhl2eb11" path="res://scripts/dialogue/dialogue_set_flag.gd" id="4_set_flag"]
 
-[node name="folk_edmund" type="Node"]
+[node name="folk_edmund" type="Node" unique_id=1131726390]
 script = ExtResource("1_walker")
 
-; --- check if we already talked ---
-[node name="cond_talked" type="Node" parent="."]
+[node name="cond_talked" type="Node" parent="." unique_id=1120144431]
 script = ExtResource("3_condition")
 flag = "talked_to"
 
-; === RETURN VISIT (child 0 = true) ===
-[node name="return_visit" type="Node" parent="cond_talked"]
+[node name="return_visit" type="Node" parent="cond_talked" unique_id=2136742282]
 
-[node name="say_return" type="Node" parent="cond_talked/return_visit"]
+[node name="say_return" type="Node" parent="cond_talked/return_visit" unique_id=1858727796]
 script = ExtResource("2_say")
 speaker = 1
 text = "Oh, you again. Still dry, are you? Must be nice having feathers."
 
-; === FIRST VISIT (child 1 = false) ===
-[node name="first_visit" type="Node" parent="cond_talked"]
+[node name="first_visit" type="Node" parent="cond_talked" unique_id=1763440201]
 
-[node name="say_greet" type="Node" parent="cond_talked/first_visit"]
+[node name="say_greet" type="Node" parent="cond_talked/first_visit" unique_id=1009895009]
 script = ExtResource("2_say")
 speaker = 1
 text = "Another mouth to feed. Or beak. Whatever you've got there."
 
-[node name="say_pigeon" type="Node" parent="cond_talked/first_visit"]
+[node name="say_pigeon" type="Node" parent="cond_talked/first_visit" unique_id=1781576913]
 script = ExtResource("2_say")
 text = "I'm just passing through."
 
-[node name="say_reply" type="Node" parent="cond_talked/first_visit"]
+[node name="say_reply" type="Node" parent="cond_talked/first_visit" unique_id=849321217]
 script = ExtResource("2_say")
 speaker = 1
 text = "That's what everyone says. Then they stay. And then they need [color=#a8554c]clean linens[/color]. And guess who washes them?"
 
-[node name="say_guess" type="Node" parent="cond_talked/first_visit"]
+[node name="say_guess" type="Node" parent="cond_talked/first_visit" unique_id=1238949130]
 script = ExtResource("2_say")
 speaker = 1
 text = "Me. It's always me. The mud here never dries. I wash a sheet, I turn around, it's filthy again. I think the mud is alive."
 
-[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+[node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=1107586455]
 script = ExtResource("4_set_flag")
 flag = "talked_to"

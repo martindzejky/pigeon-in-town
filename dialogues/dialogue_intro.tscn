@@ -1,35 +1,35 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cy4xf0mmhswwa"]
 
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" uid="uid://b17ntoj3nod3j" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" uid="uid://6o1qum4v3dph" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
 
-[node name="dialogue_intro" type="Node"]
+[node name="dialogue_intro" type="Node" unique_id=43721711]
 script = ExtResource("1_walker")
 
-[node name="say_1" type="Node" parent="."]
+[node name="say_1" type="Node" parent="." unique_id=2021319805]
 script = ExtResource("2_say")
 text = "Huh. A whole [u]town[/u]. With roofs and everything."
 
-[node name="say_2" type="Node" parent="."]
+[node name="say_2" type="Node" parent="." unique_id=11637006]
 script = ExtResource("2_say")
 text = "Let me stretch my legs. [color=#a8554c]WASD[/color] or the [color=#a8554c]arrow keys[/color] to waddle around."
 
-[node name="say_3" type="Node" parent="."]
+[node name="say_3" type="Node" parent="." unique_id=1728339636]
 script = ExtResource("2_say")
 text = "If someone looks interesting, I walk up and press [color=#a8554c]E[/color], [color=#a8554c]Space[/color], or [color=#a8554c]Enter[/color] to talk."
 
-[node name="say_4" type="Node" parent="."]
+[node name="say_4" type="Node" parent="." unique_id=553416692]
 script = ExtResource("2_say")
 text = "Same keys to keep the conversation going. Very advanced stuff."
 
-[node name="say_5" type="Node" parent="."]
+[node name="say_5" type="Node" parent="." unique_id=1277955215]
 script = ExtResource("2_say")
 text = "And [color=#a8554c]Escape[/color] if I need a break. Opens some kind of menu."
 
-[node name="say_6" type="Node" parent="."]
+[node name="say_6" type="Node" parent="." unique_id=583974454]
 script = ExtResource("2_say")
 text = "Alright. I'm sure the locals are [i]very[/i] interesting and [i]absolutely[/i] worth getting to know."
 
-[node name="say_7" type="Node" parent="."]
+[node name="say_7" type="Node" parent="." unique_id=1052542704]
 script = ExtResource("2_say")
 text = "And if anyone has [color=#a8554c]breadcrumbs[/color]... I won't say no."

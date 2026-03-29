@@ -1,122 +1,147 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://v7bf7qoopeoi"]
 
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_condition.gd" id="5_condition"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_set_flag.gd" id="6_set_flag"]
+[ext_resource type="Script" uid="uid://b17ntoj3nod3j" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" uid="uid://6o1qum4v3dph" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" uid="uid://b4kwghmomxwky" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" uid="uid://bngy74khot6cl" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+[ext_resource type="Script" uid="uid://x14vq2g8by13" path="res://scripts/dialogue/dialogue_condition.gd" id="5_condition"]
+[ext_resource type="Script" uid="uid://fcepmhl2eb11" path="res://scripts/dialogue/dialogue_set_flag.gd" id="6_set_flag"]
 
-[node name="ghost_jeff" type="Node"]
+[node name="ghost_jeff" type="Node" unique_id=1461392729]
 script = ExtResource("1_walker")
 
-; --- check if we already talked ---
-[node name="cond_talked" type="Node" parent="."]
+[node name="cond_talked" type="Node" parent="." unique_id=1268699385]
 script = ExtResource("5_condition")
 flag = "talked_to"
 
-; === RETURN VISIT (child 0 = true) ===
-[node name="return_visit" type="Node" parent="cond_talked"]
+[node name="return_visit" type="Node" parent="cond_talked" unique_id=2049560301]
 
-[node name="say_return" type="Node" parent="cond_talked/return_visit"]
+[node name="say_return" type="Node" parent="cond_talked/return_visit" unique_id=2093081177]
 script = ExtResource("2_say")
 speaker = 1
 text = "You're back. Bold choice, visiting a graveyard twice."
 
-[node name="say_pigeon_back" type="Node" parent="cond_talked/return_visit"]
+[node name="say_pigeon_back" type="Node" parent="cond_talked/return_visit" unique_id=579266103]
 script = ExtResource("2_say")
 text = "I like the quiet."
 
-[node name="say_quiet" type="Node" parent="cond_talked/return_visit"]
+[node name="say_quiet" type="Node" parent="cond_talked/return_visit" unique_id=1057946312]
 script = ExtResource("2_say")
 speaker = 1
 text = "You'll fit right in. It's very quiet here. Except when Mildred is practicing her screaming."
 
-; -- check for prophet flag --
-[node name="cond_prophet" type="Node" parent="cond_talked/return_visit"]
+[node name="cond_prophet" type="Node" parent="cond_talked/return_visit" unique_id=295900422]
 script = ExtResource("5_condition")
 flag = "g_pigeon_is_prophet"
 global = true
 
-; -- prophet reaction --
-[node name="prophet_branch" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+[node name="prophet_branch" type="Node" parent="cond_talked/return_visit/cond_prophet" unique_id=371206699]
 
-[node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+[node name="cond_reacted_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch" unique_id=701913576]
+script = ExtResource("5_condition")
+flag = "reacted_to_prophet"
+
+[node name="already_reacted_p" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet" unique_id=376540012]
+
+[node name="say_prophet_short" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/already_reacted_p" unique_id=1810680951]
+script = ExtResource("2_say")
+speaker = 1
+text = "Still propheting? Or whatever it is you do."
+
+[node name="first_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet" unique_id=1163065108]
+
+[node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=1470130193]
 script = ExtResource("2_say")
 speaker = 1
 text = "I hear you're a prophet now. A prophet pigeon. Death is full of surprises. Actually, no. It isn't. This is the one surprise."
 
-; -- no prophet, skip --
-[node name="no_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+[node name="set_reacted_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=101370855]
+script = ExtResource("6_set_flag")
+flag = "reacted_to_prophet"
 
-; -- check for ghost rumor --
-[node name="cond_rumor" type="Node" parent="cond_talked/return_visit"]
+[node name="no_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet" unique_id=608287171]
+
+[node name="cond_rumor" type="Node" parent="cond_talked/return_visit" unique_id=1362012139]
 script = ExtResource("5_condition")
 flag = "g_ghost_rumor"
 global = true
 
-; -- ghost rumor reaction --
-[node name="rumor_branch" type="Node" parent="cond_talked/return_visit/cond_rumor"]
+[node name="rumor_branch" type="Node" parent="cond_talked/return_visit/cond_rumor" unique_id=656120697]
 
-[node name="say_rumor" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch"]
+[node name="cond_reacted_rumor" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch" unique_id=649531425]
+script = ExtResource("5_condition")
+flag = "reacted_to_rumor"
+
+[node name="already_reacted_r" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_reacted_rumor" unique_id=728825236]
+
+[node name="say_rumor_short" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_reacted_rumor/already_reacted_r" unique_id=1958149409]
+script = ExtResource("2_say")
+speaker = 1
+text = "Mildred is still going on about the whole 'people know about us' thing."
+
+[node name="first_rumor" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_reacted_rumor" unique_id=552591709]
+
+[node name="say_rumor" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_reacted_rumor/first_rumor" unique_id=663181482]
 script = ExtResource("2_say")
 speaker = 1
 text = "I heard you're telling people about us. Mildred won't shut up about it. Which is saying something because she never shuts up anyway."
 
-; -- no rumor, skip --
-[node name="no_rumor" type="Node" parent="cond_talked/return_visit/cond_rumor"]
+[node name="set_reacted_rumor" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_reacted_rumor/first_rumor" unique_id=263464541]
+script = ExtResource("6_set_flag")
+flag = "reacted_to_rumor"
 
-[node name="say_bye" type="Node" parent="cond_talked/return_visit"]
+[node name="no_rumor" type="Node" parent="cond_talked/return_visit/cond_rumor" unique_id=1219812627]
+
+[node name="say_bye" type="Node" parent="cond_talked/return_visit" unique_id=1462845336]
 script = ExtResource("2_say")
 speaker = 1
 text = "Well. Nice seeing you. That's not something I say often. Or ever."
 
-; === FIRST VISIT (child 1 = false) ===
-[node name="first_visit" type="Node" parent="cond_talked"]
+[node name="first_visit" type="Node" parent="cond_talked" unique_id=1626337933]
 
-[node name="say_intro" type="Node" parent="cond_talked/first_visit"]
+[node name="say_intro" type="Node" parent="cond_talked/first_visit" unique_id=386750808]
 script = ExtResource("2_say")
 speaker = 1
 text = "Oh. A pigeon. That's... new, I guess. I'm Jeff. I'm dead."
 
-[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
+[node name="choose_react" type="Node" parent="cond_talked/first_visit" unique_id=1380979006]
 script = ExtResource("3_choose")
 
-[node name="option_how" type="Node" parent="cond_talked/first_visit/choose_react"]
+[node name="option_how" type="Node" parent="cond_talked/first_visit/choose_react" unique_id=435952568]
 script = ExtResource("4_option")
 label = "How did you die?"
 
-[node name="say_pigeon_how" type="Node" parent="cond_talked/first_visit/choose_react/option_how"]
+[node name="say_pigeon_how" type="Node" parent="cond_talked/first_visit/choose_react/option_how" unique_id=1142164529]
 script = ExtResource("2_say")
 text = "So... how did you die? If you don't mind me asking."
 
-[node name="say_how_reply" type="Node" parent="cond_talked/first_visit/choose_react/option_how"]
+[node name="say_how_reply" type="Node" parent="cond_talked/first_visit/choose_react/option_how" unique_id=2125848113]
 script = ExtResource("2_say")
 speaker = 1
 text = "Honestly? I forget. It was a long time ago. Might have been the plague. Might have been boredom. Both were going around."
 
-[node name="option_what" type="Node" parent="cond_talked/first_visit/choose_react"]
+[node name="option_what" type="Node" parent="cond_talked/first_visit/choose_react" unique_id=1687476971]
 script = ExtResource("4_option")
 label = "What do you do here?"
 
-[node name="say_pigeon_what" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
+[node name="say_pigeon_what" type="Node" parent="cond_talked/first_visit/choose_react/option_what" unique_id=1299414785]
 script = ExtResource("2_say")
 text = "What do you do here all day? Just... stand around?"
 
-[node name="say_what_reply" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
+[node name="say_what_reply" type="Node" parent="cond_talked/first_visit/choose_react/option_what" unique_id=854116476]
 script = ExtResource("2_say")
 speaker = 1
 text = "Stand here. Exist. Watch Mildred try to scare people. That's about it. Death is surprisingly boring."
 
-[node name="say_outro" type="Node" parent="cond_talked/first_visit"]
+[node name="say_outro" type="Node" parent="cond_talked/first_visit" unique_id=1504048481]
 script = ExtResource("2_say")
 text = "Sounds rough."
 
-[node name="say_rough" type="Node" parent="cond_talked/first_visit"]
+[node name="say_rough" type="Node" parent="cond_talked/first_visit" unique_id=1319228320]
 script = ExtResource("2_say")
 speaker = 1
 text = "It's fine. I wasn't doing much when I was alive either."
 
-[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+[node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=937402742]
 script = ExtResource("6_set_flag")
 flag = "talked_to"

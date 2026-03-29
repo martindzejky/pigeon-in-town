@@ -46,7 +46,7 @@ script = ExtResource("2_7qplt")
 speaker = 1
 text = "Not much of a talker, huh?"
 
-[node name="say_bbcode_test" type="Node" parent="."]
+[node name="say_bbcode_test" type="Node" parent="." unique_id=2025771876]
 script = ExtResource("2_7qplt")
 speaker = 1
 text = "The [i]harvest[/i] is coming, and I feel [color=red]dread[/color] in me bones. They say the [i]omens[/i] point to a [color=green]good[/color] year, but I ain't so sure."
