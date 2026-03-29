@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://ug10meqw1gjf" path="res://scripts/components/npc_memory.gd" id="19_memory"]
 [ext_resource type="PackedScene" uid="uid://cfj7ylxguuhqh" path="res://ui/interaction_hint.tscn" id="21_u24br"]
 [ext_resource type="Script" uid="uid://d0q00i8th6b0" path="res://scripts/components/wind_sway.gd" id="22_wind_sway"]
+[ext_resource type="PackedScene" path="res://objects/scarecrow_talk_sound.tscn" id="23_scarecrow_talk_sound"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -93,7 +94,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_talk"]
 resource_name = "talk"
-length = 0.5
+length = 0.3
 loop_mode = 1
 tracks/0/type = "method"
 tracks/0/imported = false
@@ -107,6 +108,20 @@ tracks/0/keys = {
 "values": [{
 "args": [],
 "method": &"squash"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("scarecrow_talk_sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
 }]
 }
 
@@ -203,3 +218,5 @@ offset_bottom = -612.0
 
 [node name="memory" type="Node" parent="." unique_id=1313725597]
 script = ExtResource("19_memory")
+
+[node name="scarecrow_talk_sound" parent="." unique_id=256443753 instance=ExtResource("23_scarecrow_talk_sound")]
