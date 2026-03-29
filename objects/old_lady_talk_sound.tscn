@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dta4obddrkvc"]
+
+[ext_resource type="AudioStream" path="res://sounds/old_lady_talk_random.tres" id="1_talk_random"]
+
+[node name="old_lady_talk_sound" type="AudioStreamPlayer2D" unique_id=1603694277]
+stream = ExtResource("1_talk_random")
+volume_db = 4.26
+max_polyphony = 3
