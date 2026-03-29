@@ -1,0 +1,34 @@
+Town Layout: A small medieval crossroads village
+
+The town is built around a dirt crossroads. Roads lead north, south, east, and west.
+
+NORTH — Church & Graveyard
+  The wooden church stands at the top of the village with Father Cuthbert stationed outside.
+  To the right of the church to the northeast sits the graveyard, fenced in with a simple wooden fence.
+  The ghosts Jeff and Mildred haunt the graveyard. Or, just chill there.
+
+WEST — Houses
+  A cluster of small houses lines the western road. Generic townsfolk live here.
+
+EAST — Houses & Inn
+  More houses along the eastern road. The tavern sits at the northeast corner of the
+  crossroads, where Bertram the innkeeper works.
+
+CENTER — The Well
+  The well marks the center of the crossroads. Agnes the old lady stands near it,
+  waiting for someone to talk to her.
+
+SOUTHWEST — The Field
+  A large crop field enclosed by fences. Cornelius the scarecrow guards it from birds.
+
+SOUTHEAST — The Farm
+  A fenced-off farm area with the barn, the farmhouse, and the three pigs:
+  Hamlet, Truffles, and Sir Oinksworth the Third.
+
+SOUTH — Entrance
+  The pigeon enters the town from the very south, walking up toward the crossroads.
+
+Landmarks characters might reference:
+  - the church, the graveyard, the well, the tavern/inn, the field, the farm
+  - the crossroads as the center of town
+  - muddy paths connecting everything
