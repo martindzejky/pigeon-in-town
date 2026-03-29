@@ -2,7 +2,7 @@ extends Node
 
 # background music that persists across scenes
 
-const FULL_VOLUME_DB := -3.0
+const FULL_VOLUME_DB := -8.0
 const SILENT_DB := -40.0
 const FADE_DURATION := 5.0
 
