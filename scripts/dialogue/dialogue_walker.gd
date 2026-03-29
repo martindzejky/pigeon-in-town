@@ -53,9 +53,10 @@ func _process_current() -> void:
     choose.emit(options)
   elif _current is DialogueCondition:
     var cond := _current as DialogueCondition
-    var flag_set := memory.has_flag(cond.flag)
+    var mem := Game.npc_memory if cond.global else memory
+    var flag_set := mem.has_flag(cond.flag)
     var branch_idx := 0 if flag_set else 1
-    print('[walker] -> condition [', cond.flag, ']: ', flag_set, ' -> child ', branch_idx)
+    print('[walker] -> condition [', cond.flag, '] (global=', cond.global, '): ', flag_set, ' -> child ', branch_idx)
     if branch_idx < _current.get_child_count():
       _current = _current.get_child(branch_idx)
       _process_current()
@@ -64,8 +65,9 @@ func _process_current() -> void:
       _process_current()
   elif _current is DialogueSetFlag:
     var set_node := _current as DialogueSetFlag
-    print('[walker] -> set_flag [', set_node.flag, '] = ', set_node.value)
-    memory.set_flag(set_node.flag, set_node.value)
+    var mem := Game.npc_memory if set_node.global else memory
+    print('[walker] -> set_flag [', set_node.flag, '] (global=', set_node.global, ') = ', set_node.value)
+    mem.set_flag(set_node.flag, set_node.value)
     _next()
     _process_current()
   elif _current is DialogueOption:
