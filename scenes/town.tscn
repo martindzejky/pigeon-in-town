@@ -19,6 +19,18 @@
 [ext_resource type="PackedScene" uid="uid://bbgvy27xu6jtn" path="res://objects/props/fence_3.tscn" id="18_fence_3"]
 [ext_resource type="PackedScene" uid="uid://cwl48bcxgntoa" path="res://objects/props/fence_4.tscn" id="19_fence_4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie20d"]
+size = Vector2(20143, 1461)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55swn"]
+size = Vector2(20143, 1311)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckatl"]
+size = Vector2(3924.5, 14637)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0havn"]
+size = Vector2(3296, 14637)
+
 [node name="town" type="Node" unique_id=273960894]
 script = ExtResource("5_town")
 
@@ -26,9 +38,9 @@ script = ExtResource("5_town")
 
 [node name="camera" type="Camera2D" parent="." unique_id=2034125516]
 zoom = Vector2(0.55, 0.55)
-limit_left = -8412
+limit_left = -8435
 limit_top = -2439
-limit_right = 5649
+limit_right = 5884
 limit_bottom = 10708
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
@@ -41,6 +53,30 @@ drag_bottom_margin = 0.15
 script = ExtResource("4_cam")
 dialogue_y_offset = -600.0
 dialogue_zoom = 0.835
+
+[node name="bounds" type="Node2D" parent="." unique_id=2132177613]
+
+[node name="collider" type="StaticBody2D" parent="bounds" unique_id=2040083627]
+
+[node name="shape1" type="CollisionShape2D" parent="bounds/collider" unique_id=1061464894]
+position = Vector2(-1742.5, -2494.5)
+shape = SubResource("RectangleShape2D_ie20d")
+debug_color = Color(0.92, 0.2392, 0.3413197, 0.05882353)
+
+[node name="shape2" type="CollisionShape2D" parent="bounds/collider" unique_id=259448483]
+position = Vector2(-1642, 10739.5)
+shape = SubResource("RectangleShape2D_55swn")
+debug_color = Color(0.92, 0.2392, 0.3413197, 0.05882353)
+
+[node name="shape3" type="CollisionShape2D" parent="bounds/collider" unique_id=458867252]
+position = Vector2(-9751.25, 4076.5)
+shape = SubResource("RectangleShape2D_ckatl")
+debug_color = Color(0.92, 0.2392, 0.3413197, 0.05882353)
+
+[node name="shape4" type="CollisionShape2D" parent="bounds/collider" unique_id=667538950]
+position = Vector2(6751, 4076.5)
+shape = SubResource("RectangleShape2D_0havn")
+debug_color = Color(0.92, 0.2392, 0.3413197, 0.05882353)
 
 [node name="ground" type="Node2D" parent="." unique_id=118990941]
 z_index = -16
@@ -175,7 +211,7 @@ position = Vector2(2602, -47)
 position = Vector2(2598, 236)
 
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
-position = Vector2(-2572, 5514)
+position = Vector2(-1126, -862)
 
 [node name="tavern" parent="world_sort" unique_id=79349673 instance=ExtResource("13_icc4n")]
 position = Vector2(1348, 2581)
