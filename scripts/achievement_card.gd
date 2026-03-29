@@ -1,6 +1,5 @@
 extends PanelContainer
 
-@export var title_label: Label
 @export var checkbox: TextureRect
 @export var card_art: TextureRect
 
@@ -8,9 +7,9 @@ var _achievement_id: String = ''
 var _unlocked: bool = false
 
 
-func setup(id: String, title: String) -> void:
+func setup(id: String, art_path: String) -> void:
   _achievement_id = id
-  title_label.text = title
+  card_art.texture = load(art_path)
   refresh()
 
 

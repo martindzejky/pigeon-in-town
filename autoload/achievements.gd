@@ -5,11 +5,11 @@ extends Node
 signal achievement_unlocked(ids: Array[String])
 
 const DEFINITIONS: Array[Dictionary] = [
-  { 'id': 'feathered_prophet', 'title': 'The Feathered Prophet' },
-  { 'id': 'sir_pigeon', 'title': 'Sir Pigeon of the Puddle' },
-  { 'id': 'prophet_and_knight', 'title': 'Prophet and Knight' },
-  { 'id': 'great_haunting', 'title': 'The Great Haunting' },
-  { 'id': 'unlikely_friends', 'title': 'Unlikely Friends' },
+  { 'id': 'feathered_prophet', 'title': 'The Feathered Prophet', 'art': 'res://sprites/ui/card_feathered_prophet.png' },
+  { 'id': 'sir_pigeon', 'title': 'Sir Pigeon of the Puddle', 'art': 'res://sprites/ui/card_sir_pigeon.png' },
+  { 'id': 'prophet_and_knight', 'title': 'Prophet and Knight', 'art': 'res://sprites/ui/card_prophet_and_knight.png' },
+  { 'id': 'great_haunting', 'title': 'The Great Haunting', 'art': 'res://sprites/ui/card_great_haunting.png' },
+  { 'id': 'unlikely_friends', 'title': 'Unlikely Friends', 'art': 'res://sprites/ui/card_unlikely_friends.png' },
 ]
 
 var _achieved: Dictionary[String, bool] = { }
