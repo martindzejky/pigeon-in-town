@@ -2,15 +2,216 @@
 
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_condition.gd" id="5_condition"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_set_flag.gd" id="6_set_flag"]
 
 [node name="scarecrow_cornelius" type="Node"]
 script = ExtResource("1_walker")
 
-[node name="say_1" type="Node" parent="."]
+; --- check if we already talked ---
+[node name="cond_talked" type="Node" parent="."]
+script = ExtResource("5_condition")
+flag = "talked_to"
+
+; === FIRST VISIT ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_scream" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=20 level=10][color=red]BEGONE, FOUL FEATHERED FIEND!!![/color] SHOO! [color=red]SHOO!!![/color] THIS FIELD IS [u]PROTECTED[/u]![/shake]"
+text = "[shake]BIRD! BIRD IN THE FIELD![/shake] THIS IS A RESTRICTED AREA! LEAVE IMMEDIATELY!"
 
-[node name="say_2" type="Node" parent="."]
+[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("3_choose")
+
+[node name="option_pigeon" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "I'm not a crow"
+
+[node name="say_pigeon_not_crow" type="Node" parent="cond_talked/first_visit/choose_react/option_pigeon"]
 script = ExtResource("2_say")
-text = "OK."
+text = "Relax. I'm a pigeon, not a crow. I don't even like crops."
+
+[node name="say_all_birds" type="Node" parent="cond_talked/first_visit/choose_react/option_pigeon"]
+script = ExtResource("2_say")
+speaker = 1
+text = "ALL birds are the enemy! I don't [i]discriminate[/i]! Pigeons, crows, sparrows, ducks. ALL OF THEM!"
+
+[node name="option_peace" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "I come in peace"
+
+[node name="say_pigeon_peace" type="Node" parent="cond_talked/first_visit/choose_react/option_peace"]
+script = ExtResource("2_say")
+text = "Easy there. I come in peace. Not here for your crops."
+
+[node name="say_sparrow" type="Node" parent="cond_talked/first_visit/choose_react/option_peace"]
+script = ExtResource("2_say")
+speaker = 1
+text = "That's [i]exactly[/i] what the last sparrow said! And then he ate a seed! [shake]A SEED![/shake] Right in front of me!"
+
+[node name="say_calm" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Fine. FINE. You can stay. But I'm [color=#a8554c]watching[/color] you. Don't touch the wheat."
+
+[node name="say_pigeon_ok" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+text = "Wouldn't dream of it."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("6_set_flag")
+flag = "talked_to"
+
+; === RETURN VISIT ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+[node name="cond_friends" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("5_condition")
+flag = "became_friends"
+
+; -- already friends --
+[node name="friends_branch" type="Node" parent="cond_talked/return_visit/cond_friends"]
+
+[node name="say_friend_return" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Oh. It's you. ...Good."
+
+[node name="say_pigeon_friend" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch"]
+script = ExtResource("2_say")
+text = "Good to see you too, Cornelius."
+
+[node name="say_nice" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Don't make it weird. I still don't like birds. You're just... an exception."
+
+; -- not friends yet --
+[node name="not_friends" type="Node" parent="cond_talked/return_visit/cond_friends"]
+
+[node name="say_return_greet" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Oh. You again. At least you haven't eaten any crops. ...Have you?"
+
+[node name="say_pigeon_no" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends"]
+script = ExtResource("2_say")
+text = "No. Still not interested in your crops."
+
+; -- check if pigeon knows the secret from agnes --
+[node name="cond_secret" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends"]
+script = ExtResource("5_condition")
+flag = "g_cornelius_secret"
+global = true
+
+; -- knows the secret: 3 choices including the special one --
+[node name="secret_known" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret"]
+
+[node name="choose_return" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known"]
+script = ExtResource("3_choose")
+
+[node name="option_compliment" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return"]
+script = ExtResource("4_option")
+label = "You're doing a great job"
+
+[node name="say_pigeon_good" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_compliment"]
+script = ExtResource("2_say")
+text = "I mean it. You're doing a really good job out here."
+
+[node name="say_touched" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_compliment"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I... nobody has ever said that to me. Not once. ...Thank you."
+
+[node name="set_complimented" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_compliment"]
+script = ExtResource("6_set_flag")
+flag = "complimented"
+
+[node name="option_boring" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return"]
+script = ExtResource("4_option")
+label = "Isn't this boring?"
+
+[node name="say_pigeon_bored" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_boring"]
+script = ExtResource("2_say")
+text = "Don't you get bored? Just standing here all day?"
+
+[node name="say_boring_reply" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_boring"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[shake]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take EVERYTHING!"
+
+; -- the secret option (Unlikely Friends ending) --
+[node name="option_agnes" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return"]
+script = ExtResource("4_option")
+label = "Agnes told me something..."
+
+[node name="say_pigeon_agnes" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes"]
+script = ExtResource("2_say")
+text = "Agnes told me you've been standing here for thirty years. Alone."
+
+[node name="say_quiet" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes"]
+script = ExtResource("2_say")
+speaker = 1
+text = "..."
+
+[node name="say_thirty" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes"]
+script = ExtResource("2_say")
+speaker = 1
+text = "...Thirty years. Nobody's counted but her."
+
+[node name="say_pigeon_long" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes"]
+script = ExtResource("2_say")
+text = "That's a long time to stand alone."
+
+[node name="say_it_is" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes"]
+script = ExtResource("2_say")
+speaker = 1
+text = "...It is."
+
+[node name="say_pause" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes"]
+script = ExtResource("2_say")
+speaker = 1
+text = "You're alright. [color=#6b8e5e]For a bird.[/color]"
+
+[node name="set_friends" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes"]
+script = ExtResource("6_set_flag")
+flag = "became_friends"
+
+; -- doesn't know the secret: 2 choices --
+[node name="secret_unknown" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret"]
+
+[node name="choose_return_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown"]
+script = ExtResource("3_choose")
+
+[node name="option_compliment_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2"]
+script = ExtResource("4_option")
+label = "You're doing a great job"
+
+[node name="say_pigeon_good_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_compliment_2"]
+script = ExtResource("2_say")
+text = "I mean it. You're doing a really good job out here."
+
+[node name="say_touched_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_compliment_2"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I... nobody has ever said that to me. Not once. ...Thank you."
+
+[node name="set_complimented_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_compliment_2"]
+script = ExtResource("6_set_flag")
+flag = "complimented"
+
+[node name="option_boring_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2"]
+script = ExtResource("4_option")
+label = "Isn't this boring?"
+
+[node name="say_pigeon_bored_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_boring_2"]
+script = ExtResource("2_say")
+text = "Don't you get bored? Just standing here all day?"
+
+[node name="say_boring_reply_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_boring_2"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[shake]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take EVERYTHING!"

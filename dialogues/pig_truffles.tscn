@@ -2,15 +2,108 @@
 
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_condition.gd" id="5_condition"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_set_flag.gd" id="6_set_flag"]
 
 [node name="pig_truffles" type="Node"]
 script = ExtResource("1_walker")
 
-[node name="say_1" type="Node" parent="."]
+; --- check if we already talked ---
+[node name="cond_talked" type="Node" parent="."]
+script = ExtResource("5_condition")
+flag = "talked_to"
+
+; === FIRST VISIT ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_sniff" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "I can [color=brown]smell[/color] something [color=green]delicious[/color] buried near the church. Might be [i]truffles[/i]. Might be a [color=gray]corpse[/color]."
+text = "Snff... snfff... I smell something. [i]Underground.[/i] Could be truffles. Could be a turnip. Could be a [color=#a8554c]body[/color]."
 
-[node name="say_2" type="Node" parent="."]
+[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("3_choose")
+
+[node name="option_what" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "What are you digging for?"
+
+[node name="say_pigeon_what" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
 script = ExtResource("2_say")
-text = "OK."
+text = "What exactly are you digging for down there?"
+
+[node name="say_everything" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
+script = ExtResource("2_say")
+speaker = 1
+text = "EVERYTHING! The ground is full of [i]secrets[/i]! And worms. Mostly worms. But sometimes secrets!"
+
+[node name="say_pigeon_worms" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
+script = ExtResource("2_say")
+text = "I like worms."
+
+[node name="say_bonding" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
+script = ExtResource("2_say")
+speaker = 1
+text = "See?! You get it! The ground provides for those who DIG!"
+
+[node name="set_encouraged" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
+script = ExtResource("6_set_flag")
+flag = "encouraged"
+
+[node name="option_dont" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "Maybe don't dig there"
+
+[node name="say_pigeon_dont" type="Node" parent="cond_talked/first_visit/choose_react/option_dont"]
+script = ExtResource("2_say")
+text = "Maybe you should stop digging. What if it really is a body?"
+
+[node name="say_nose" type="Node" parent="cond_talked/first_visit/choose_react/option_dont"]
+script = ExtResource("2_say")
+speaker = 1
+text = "My nose says DIG. I trust my nose more than I trust [i]anything[/i]. My nose has never been wrong."
+
+[node name="say_pigeon_never" type="Node" parent="cond_talked/first_visit/choose_react/option_dont"]
+script = ExtResource("2_say")
+text = "Never?"
+
+[node name="say_once" type="Node" parent="cond_talked/first_visit/choose_react/option_dont"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Well, once it said there were truffles and it was a rock. But it was a very [i]truffle-like[/i] rock."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("6_set_flag")
+flag = "talked_to"
+
+; === RETURN VISIT ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+[node name="say_found" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I found something near the [color=#a8554c]church[/color]! It smells like... soil and regret. And mushrooms. Lots of mushrooms."
+
+[node name="say_pigeon_church" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+text = "Near the church? That's close to the graveyard."
+
+[node name="say_better" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Even BETTER! Dead things make the best soil! And the best soil makes the best [i]truffles[/i]! It's the circle of life!"
+
+[node name="say_pigeon_circle" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+text = "That's... one way to look at it."
+
+[node name="say_sniff_2" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Snff... I can smell you too, by the way. You smell like breadcrumbs and [color=#6b8e5e]adventure[/color]."
+
+[node name="say_pigeon_thanks" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+text = "Thanks. I think."

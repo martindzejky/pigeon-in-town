@@ -2,15 +2,200 @@
 
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_condition.gd" id="5_condition"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_set_flag.gd" id="6_set_flag"]
 
 [node name="innkeeper_bertram" type="Node"]
 script = ExtResource("1_walker")
 
-[node name="say_1" type="Node" parent="."]
+; --- check if we already talked ---
+[node name="cond_talked" type="Node" parent="."]
+script = ExtResource("5_condition")
+flag = "talked_to"
+
+; === FIRST VISIT ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_welcome" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "Welcome to the... uh... [color=yellow]tavern[/color]. We got [color=brown]stew[/color]. I put [color=green]water[/color] in it today so there's more of it."
+text = "Welcome to the tavern! Best stew in town! Well, [i]only[/i] stew in town. But still the best!"
 
-[node name="say_2" type="Node" parent="."]
+[node name="say_pigeon_hi" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
-text = "OK."
+text = "Thanks. What's in the stew?"
+
+[node name="say_recipe" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Water! And sometimes a carrot. Today is a [color=#a8554c]no carrot[/color] day, though. So it's extra watery. Very smooth."
+
+[node name="choose_stew" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("3_choose")
+
+[node name="option_water" type="Node" parent="cond_talked/first_visit/choose_stew"]
+script = ExtResource("4_option")
+label = "This is just water"
+
+[node name="say_pigeon_water" type="Node" parent="cond_talked/first_visit/choose_stew/option_water"]
+script = ExtResource("2_say")
+text = "Bertram, this is just warm water. There's nothing in it."
+
+[node name="say_secret" type="Node" parent="cond_talked/first_visit/choose_stew/option_water"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Water is the [i]secret ingredient[/i]. Most cooks use too much food. I figured out you don't need any!"
+
+[node name="say_pigeon_genius" type="Node" parent="cond_talked/first_visit/choose_stew/option_water"]
+script = ExtResource("2_say")
+text = "That's not how cooking works."
+
+[node name="say_works" type="Node" parent="cond_talked/first_visit/choose_stew/option_water"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Then why does everyone keep coming back? ...Nobody comes back. But they [i]could[/i]!"
+
+[node name="set_criticized" type="Node" parent="cond_talked/first_visit/choose_stew/option_water"]
+script = ExtResource("6_set_flag")
+flag = "criticized_stew"
+
+[node name="option_great" type="Node" parent="cond_talked/first_visit/choose_stew"]
+script = ExtResource("4_option")
+label = "Smells great!"
+
+[node name="say_pigeon_great" type="Node" parent="cond_talked/first_visit/choose_stew/option_great"]
+script = ExtResource("2_say")
+text = "You know what? It smells great. Pour me another bowl."
+
+[node name="say_happy" type="Node" parent="cond_talked/first_visit/choose_stew/option_great"]
+script = ExtResource("2_say")
+speaker = 1
+text = "A customer with [i]taste[/i]! Here, have a second bowl! Same water, fresh temperature!"
+
+[node name="set_liked" type="Node" parent="cond_talked/first_visit/choose_stew/option_great"]
+script = ExtResource("6_set_flag")
+flag = "liked_stew"
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("6_set_flag")
+flag = "talked_to"
+
+; === RETURN VISIT ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+[node name="say_return" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "The pigeon is back! Want a room? I've got a bucket under a table. Very cozy."
+
+; -- check for prophet flag --
+[node name="cond_prophet" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("5_condition")
+flag = "g_pigeon_is_prophet"
+global = true
+
+; -- prophet reaction --
+[node name="prophet_branch" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+
+[node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Wait, you're a [i]prophet[/i]? Can you tell me if the stew will be ready by noon? ...It's just water. It's always ready."
+
+[node name="say_pigeon_stew" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+text = "Yes, Bertram. The water is ready."
+
+; -- no prophet, skip --
+[node name="no_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+
+; -- check for ghost rumor flag (pigeon can tell Bertram) --
+[node name="cond_rumor" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("5_condition")
+flag = "g_ghost_rumor"
+global = true
+
+; -- ghost rumor: can tell him --
+[node name="rumor_branch" type="Node" parent="cond_talked/return_visit/cond_rumor"]
+
+; -- check if already scared him --
+[node name="cond_scared" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch"]
+script = ExtResource("5_condition")
+flag = "told_about_ghosts"
+
+; -- already told him --
+[node name="already_told" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared"]
+
+[node name="say_still_scared" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/already_told"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I keep hearing noises from the graveyard. Or maybe it's the wind. Or maybe it's [color=#a8554c]GHOSTS[/color]. I can't sleep!"
+
+[node name="say_pigeon_sleep" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/already_told"]
+script = ExtResource("2_say")
+text = "You'll be fine, Bertram."
+
+[node name="say_fine" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/already_told"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Easy for you to say! You can FLY away!"
+
+; -- haven't told him yet --
+[node name="not_told" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared"]
+
+[node name="choose_ghost" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told"]
+script = ExtResource("3_choose")
+
+[node name="option_ghosts" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost"]
+script = ExtResource("4_option")
+label = "The graveyard is haunted"
+
+[node name="say_pigeon_ghosts" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts"]
+script = ExtResource("2_say")
+text = "You know the graveyard up by the church? It's haunted. Actual ghosts. I talked to them."
+
+[node name="say_panic" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[shake]GHOSTS?![/shake] I KNEW the graveyard was too quiet! That's NOT normal quiet! That's [color=#a8554c]ghost quiet[/color]!"
+
+[node name="say_pigeon_calm" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts"]
+script = ExtResource("2_say")
+text = "They seemed pretty harmless."
+
+[node name="say_no_harmless" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts"]
+script = ExtResource("2_say")
+speaker = 1
+text = "HARMLESS?! Ghosts are NEVER harmless! I'm putting garlic on the door! And the windows! And the stew! ...The stew already has nothing in it so garlic might help actually."
+
+[node name="set_told_ghosts" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts"]
+script = ExtResource("6_set_flag")
+flag = "told_about_ghosts"
+
+[node name="set_scared" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts"]
+script = ExtResource("6_set_flag")
+flag = "g_someone_scared"
+global = true
+
+[node name="option_nevermind" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost"]
+script = ExtResource("4_option")
+label = "Never mind"
+
+[node name="say_pigeon_nvm" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_nevermind"]
+script = ExtResource("2_say")
+text = "Actually, never mind. Forget I said anything."
+
+[node name="say_ok" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_nevermind"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Said what? I already forgot. ...What were we talking about?"
+
+; -- no ghost rumor, skip --
+[node name="no_rumor" type="Node" parent="cond_talked/return_visit/cond_rumor"]
+
+[node name="say_bye" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Come back anytime! The stew is always... here. The stew is always here."

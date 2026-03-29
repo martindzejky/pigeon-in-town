@@ -2,15 +2,140 @@
 
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_condition.gd" id="5_condition"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_set_flag.gd" id="6_set_flag"]
 
 [node name="pig_hamlet" type="Node"]
 script = ExtResource("1_walker")
 
-[node name="say_1" type="Node" parent="."]
+; --- check if we already talked ---
+[node name="cond_talked" type="Node" parent="."]
+script = ExtResource("5_condition")
+flag = "talked_to"
+
+; === FIRST VISIT ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_monologue" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "To [color=red]oink[/color], or [color=blue]not to oink[/color]... that is the [i]question[/i]."
+text = "To [i]oink[/i]... or not to oink... THAT is the question."
 
-[node name="say_2" type="Node" parent="."]
+[node name="say_monologue_2" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
-text = "OK."
+speaker = 1
+text = "Whether it is nobler in the trough to suffer the slops of outrageous fortune..."
+
+[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("3_choose")
+
+[node name="option_question" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "That IS the question"
+
+[node name="say_pigeon_yes" type="Node" parent="cond_talked/first_visit/choose_react/option_question"]
+script = ExtResource("2_say")
+text = "You know what? That [i]is[/i] the question. To oink or not to oink. Deep stuff."
+
+[node name="say_delighted" type="Node" parent="cond_talked/first_visit/choose_react/option_question"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Finally! A [color=#6b8e5e]kindred spirit[/color]! Someone who UNDERSTANDS the weight of existence!"
+
+[node name="say_weight" type="Node" parent="cond_talked/first_visit/choose_react/option_question"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Oinksworth thinks I'm being dramatic. But is it dramatic to ask [i]why[/i] we eat from a trough? Is it dramatic to wonder what lies beyond the fence?"
+
+[node name="say_pigeon_fence" type="Node" parent="cond_talked/first_visit/choose_react/option_question"]
+script = ExtResource("2_say")
+text = "More mud, mostly."
+
+[node name="say_poetic" type="Node" parent="cond_talked/first_visit/choose_react/option_question"]
+script = ExtResource("2_say")
+speaker = 1
+text = "...Poetic."
+
+[node name="set_art" type="Node" parent="cond_talked/first_visit/choose_react/option_question"]
+script = ExtResource("6_set_flag")
+flag = "appreciates_art"
+
+[node name="option_stop" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "Please stop"
+
+[node name="say_pigeon_stop" type="Node" parent="cond_talked/first_visit/choose_react/option_stop"]
+script = ExtResource("2_say")
+text = "Please stop. I just walked over to say hello."
+
+[node name="say_hurt" type="Node" parent="cond_talked/first_visit/choose_react/option_stop"]
+script = ExtResource("2_say")
+speaker = 1
+text = "The world is full of those who cannot see [i]art[/i]. But art does not stop for them. Art OINKS on."
+
+[node name="say_pigeon_oinks" type="Node" parent="cond_talked/first_visit/choose_react/option_stop"]
+script = ExtResource("2_say")
+text = "Did you just say art oinks on?"
+
+[node name="say_yes" type="Node" parent="cond_talked/first_visit/choose_react/option_stop"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I did. And I meant every word."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("6_set_flag")
+flag = "talked_to"
+
+; === RETURN VISIT ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+; -- check for prophet flag --
+[node name="cond_prophet" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("5_condition")
+flag = "g_pigeon_is_prophet"
+global = true
+
+; -- prophet reaction --
+[node name="prophet_branch" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+
+[node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "A [i]prophet[/i]! Tell me, wise one. Is there meaning beyond the trough? Is there a world past the fence?"
+
+[node name="say_pigeon_meaning" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+text = "I've seen beyond the fence. There's a field and some more mud."
+
+[node name="say_beautiful" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "A field... and mud... How [color=#a8554c]beautifully[/color] simple. The universe gives us only what we need."
+
+; -- no prophet --
+[node name="no_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+
+[node name="say_return_hi" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Ah, the pigeon returns. I have been thinking about the nature of flight. You can fly. I cannot. And yet we both eat from the ground. What does that [i]mean[/i]?"
+
+[node name="say_pigeon_nothing" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet"]
+script = ExtResource("2_say")
+text = "I think it means we both like food."
+
+[node name="say_deep" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[i]Exactly.[/i] Food is the great equalizer. The trough does not care if you have wings."
+
+[node name="say_pigeon_sure" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+text = "Sure, Hamlet."
+
+[node name="say_farewell" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Go well, pigeon. And remember. To oink... is to [i]live[/i]."

@@ -2,15 +2,153 @@
 
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_condition.gd" id="5_condition"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_set_flag.gd" id="6_set_flag"]
 
 [node name="old_lady_agnes" type="Node"]
 script = ExtResource("1_walker")
 
-[node name="say_1" type="Node" parent="."]
+; --- check if we already talked ---
+[node name="cond_talked" type="Node" parent="."]
+script = ExtResource("5_condition")
+flag = "talked_to"
+
+; === FIRST VISIT ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_excited" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "Oh! OH! A [color=yellow]visitor[/color]! For [color=red]ME[/color]?! Nobody's talked to me since the [color=gray]Michaelmas fair[/color]! Oh, this is the [i]best day[/i] of me life!"
+text = "Oh! [shake]OH![/shake] Someone is talking to me! Nobody talks to me! Come here, come closer!"
 
-[node name="say_2" type="Node" parent="."]
+[node name="say_pigeon_hi" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
-text = "OK."
+text = "Hello. I'm a pigeon."
+
+[node name="say_wonderful" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "A [i]talking[/i] pigeon! That's the most exciting thing that has happened here in [color=#a8554c]twenty years[/color]. Last exciting thing was when Bertram dropped a pot on his foot."
+
+[node name="choose_gossip" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("3_choose")
+
+[node name="option_town" type="Node" parent="cond_talked/first_visit/choose_gossip"]
+script = ExtResource("4_option")
+label = "Tell me about this town"
+
+[node name="say_pigeon_town" type="Node" parent="cond_talked/first_visit/choose_gossip/option_town"]
+script = ExtResource("2_say")
+text = "So what's this place like? Seems quiet."
+
+[node name="say_town_reply" type="Node" parent="cond_talked/first_visit/choose_gossip/option_town"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Quiet? Oh, it's [i]full[/i] of things! There's the church up north where Father Cuthbert talks to himself. The tavern where Bertram serves water and calls it stew. And the farm has three pigs who think they're people."
+
+[node name="option_scarecrow" type="Node" parent="cond_talked/first_visit/choose_gossip"]
+script = ExtResource("4_option")
+label = "What about the scarecrow?"
+
+[node name="say_pigeon_scarecrow" type="Node" parent="cond_talked/first_visit/choose_gossip/option_scarecrow"]
+script = ExtResource("2_say")
+text = "I saw a scarecrow in the field. He was... screaming."
+
+[node name="say_cornelius_gossip" type="Node" parent="cond_talked/first_visit/choose_gossip/option_scarecrow"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Poor [color=#a8554c]Cornelius[/color]... he's been standing in that field for [i]thirty years[/i]. Nobody visits him. He just yells at birds all day. I think he's lonely, but don't tell him I said that."
+
+[node name="set_cornelius_secret" type="Node" parent="cond_talked/first_visit/choose_gossip/option_scarecrow"]
+script = ExtResource("6_set_flag")
+flag = "g_cornelius_secret"
+global = true
+
+[node name="option_graveyard" type="Node" parent="cond_talked/first_visit/choose_gossip"]
+script = ExtResource("4_option")
+label = "Anyone in the graveyard?"
+
+[node name="say_pigeon_grave" type="Node" parent="cond_talked/first_visit/choose_gossip/option_graveyard"]
+script = ExtResource("2_say")
+text = "Is there anything going on in the graveyard? It looks... odd."
+
+[node name="say_grave_reply" type="Node" parent="cond_talked/first_visit/choose_gossip/option_graveyard"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I've heard strange noises from there at night. Could be the wind. Could be ghosts. I don't go near it. My knees can't handle running away."
+
+[node name="say_goodbye" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Oh, please come back and talk to me again! You're the best conversation I've had since the goat escaped in '08."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("6_set_flag")
+flag = "talked_to"
+
+; === RETURN VISIT ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+[node name="say_return" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "You came [color=#a8554c]back[/color]! Nobody comes back! Oh, this is wonderful!"
+
+; -- check for prophet flag --
+[node name="cond_prophet" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("5_condition")
+flag = "g_pigeon_is_prophet"
+global = true
+
+; -- prophet reaction --
+[node name="prophet_branch" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+
+[node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Father Cuthbert says you're a [i]prophet[/i]! Can you bless my knees? They ache something terrible."
+
+[node name="say_pigeon_knees" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+text = "I don't think pigeon blessings work on knees."
+
+[node name="say_worth_try" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Worth a try! Nothing else has worked. Not even the turnip poultice."
+
+; -- no prophet, skip --
+[node name="no_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+
+; -- check for ghost rumor --
+[node name="cond_ghost" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("5_condition")
+flag = "g_ghost_rumor"
+global = true
+
+; -- ghost rumor reaction --
+[node name="ghost_branch" type="Node" parent="cond_talked/return_visit/cond_ghost"]
+
+[node name="say_ghost" type="Node" parent="cond_talked/return_visit/cond_ghost/ghost_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[color=#a8554c]Ghosts[/color]?! In the graveyard?! I [i]knew[/i] that place was cursed! I am never going near it again. Not that I went near it before."
+
+; -- no ghost rumor, skip --
+[node name="no_ghost" type="Node" parent="cond_talked/return_visit/cond_ghost"]
+
+[node name="say_return_bye" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Come visit whenever you like! I'll be right here. I'm always here. I have nowhere else to go."
+
+[node name="say_pigeon_bye" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+text = "That's... a bit sad."
+
+[node name="say_not_sad" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Not anymore! I have a pigeon friend now!"

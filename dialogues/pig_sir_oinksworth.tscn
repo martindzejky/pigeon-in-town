@@ -2,15 +2,162 @@
 
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
 [ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_choose.gd" id="3_choose"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_option.gd" id="4_option"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_condition.gd" id="5_condition"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_set_flag.gd" id="6_set_flag"]
 
 [node name="pig_sir_oinksworth" type="Node"]
 script = ExtResource("1_walker")
 
-[node name="say_1" type="Node" parent="."]
+; --- check if we already talked ---
+[node name="cond_talked" type="Node" parent="."]
+script = ExtResource("5_condition")
+flag = "talked_to"
+
+; === FIRST VISIT ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_halt" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "I am [color=gold]Sir Oinksworth[/color] the Third, rightful heir to the [color=brown]mud puddle[/color] by the well."
+text = "[shake]HALT![/shake] State your name and title before the Third of His Name, [color=#a8554c]Sir Oinksworth[/color], Lord of the Mud Patch, Duke of the Feed Bin!"
 
-[node name="say_2" type="Node" parent="."]
+[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("3_choose")
+
+[node name="option_majesty" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "Your Majesty"
+
+[node name="say_pigeon_bow" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty"]
 script = ExtResource("2_say")
-text = "OK."
+text = "My apologies, Your Majesty. I am but a humble pigeon passing through your... lands."
+
+[node name="say_pleased" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Ah! Finally, someone with [i]breeding[/i]. You may stay. But do not touch the mud. That is [color=#a8554c]royal mud[/color]."
+
+[node name="set_respect" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty"]
+script = ExtResource("6_set_flag")
+flag = "showed_respect"
+
+[node name="option_pig" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "You're a pig in a pen"
+
+[node name="say_pigeon_pig" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
+script = ExtResource("2_say")
+text = "You're a pig. In a pen. With mud on your face."
+
+[node name="say_outrage" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[shake]HOW DARE![/shake] Guards! Seize this bird! ...We don't have guards. HAMLET! BE A GUARD!"
+
+[node name="say_hamlet" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
+script = ExtResource("2_say")
+speaker = 1
+text = "...Hamlet is doing a monologue. Useless. You may go. But I shall [i]remember[/i] this insult."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("6_set_flag")
+flag = "talked_to"
+
+; === RETURN VISIT ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+; -- check if showed respect --
+[node name="cond_respect" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("5_condition")
+flag = "showed_respect"
+
+; -- showed respect: knighting path --
+[node name="respect_branch" type="Node" parent="cond_talked/return_visit/cond_respect"]
+
+; -- check if already knighted --
+[node name="cond_knight" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch"]
+script = ExtResource("5_condition")
+flag = "g_pigeon_is_knight"
+global = true
+
+; -- already knighted --
+[node name="already_knight" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight"]
+
+[node name="say_knight_return" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/already_knight"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Sir Pigeon! How goes the knighting? Have you conquered any lands? Claimed any puddles?"
+
+[node name="say_pigeon_puddle" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/already_knight"]
+script = ExtResource("2_say")
+text = "I found a nice puddle by the well. I'm claiming that one."
+
+[node name="say_excellent" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/already_knight"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[i]Excellent![/i] The empire grows! Soon we shall have TWO puddles!"
+
+; -- not knighted yet: offer the title --
+[node name="not_knight" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight"]
+
+[node name="say_title_offer" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Pigeon! For your loyal service and good manners, I shall grant you a [color=#a8554c]title[/color]. Kneel! ...Or just stand there. Birds don't have knees."
+
+[node name="choose_knight" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight"]
+script = ExtResource("3_choose")
+
+[node name="option_accept" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight"]
+script = ExtResource("4_option")
+label = "I accept the title"
+
+[node name="say_pigeon_accept" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_accept"]
+script = ExtResource("2_say")
+text = "Sure. Why not. Knight me."
+
+[node name="say_dub" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_accept"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I dub thee [color=#6b8e5e]Sir Pigeon of the Puddle[/color], Knight of the Crossroads! Rise! ...You're already standing. Good enough!"
+
+[node name="say_pigeon_thanks" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_accept"]
+script = ExtResource("2_say")
+text = "I'm honored. I think."
+
+[node name="set_knight" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_accept"]
+script = ExtResource("6_set_flag")
+flag = "g_pigeon_is_knight"
+global = true
+
+[node name="option_decline" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight"]
+script = ExtResource("4_option")
+label = "I'm good, thanks"
+
+[node name="say_pigeon_decline" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_decline"]
+script = ExtResource("2_say")
+text = "That's kind of you, but I don't really need a title."
+
+[node name="say_shocked" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_decline"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Refusing a title?! Unheard of! The offer stands. Come back when you've come to your senses."
+
+; -- didn't show respect: cold return --
+[node name="no_respect" type="Node" parent="cond_talked/return_visit/cond_respect"]
+
+[node name="say_cold" type="Node" parent="cond_talked/return_visit/cond_respect/no_respect"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Oh. It's the rude one. I have not forgotten your insult. Hamlet has been told to glare at you."
+
+[node name="say_pigeon_sorry" type="Node" parent="cond_talked/return_visit/cond_respect/no_respect"]
+script = ExtResource("2_say")
+text = "Is he? He looks like he's doing a monologue."
+
+[node name="say_always" type="Node" parent="cond_talked/return_visit/cond_respect/no_respect"]
+script = ExtResource("2_say")
+speaker = 1
+text = "He's ALWAYS doing a monologue. Very hard to get good guards around here."
