@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://cl7qwum1tj45m" path="res://scripts/components/random_sprite.gd" id="4_random_sprite"]
 [ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="5_shadow"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_huhf6"]
+radius = 41.01219
+
 [node name="gravestone" type="Node2D" unique_id=389703134]
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1907402890 node_paths=PackedStringArray("update_shadow_scale")]
@@ -17,3 +20,9 @@ update_shadow_scale = NodePath("../shadow")
 
 [node name="shadow" parent="." unique_id=504974507 instance=ExtResource("5_shadow")]
 scale = Vector2(0.58286905, 0.37635717)
+
+[node name="collider" type="StaticBody2D" parent="." unique_id=2063356171]
+
+[node name="shape" type="CollisionShape2D" parent="collider" unique_id=752399918]
+position = Vector2(2, -7)
+shape = SubResource("CircleShape2D_huhf6")

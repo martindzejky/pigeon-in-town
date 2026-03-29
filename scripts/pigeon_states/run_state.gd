@@ -20,7 +20,8 @@ func update(delta: float) -> void:
   var direction := Input.get_vector('move_left', 'move_right', 'move_up', 'move_down')
 
   if direction.length() > 0.0:
-    pigeon.global_position += direction * pigeon.move_speed * delta
+    pigeon.velocity = direction * pigeon.move_speed
+    pigeon.move_and_slide()
 
     if direction.x != 0.0:
       pigeon.flip_node.scale.x = sign(direction.x)

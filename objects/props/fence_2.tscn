@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://nl2oqpqow06v" path="res://sprites/town/fence_2.png" id="1_tex"]
 [ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="2_shadow"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb6ll"]
+size = Vector2(172, 32)
+
 [node name="fence_2" type="Node2D" unique_id=2017961269]
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=274837230]
@@ -11,3 +14,9 @@ texture = ExtResource("1_tex")
 
 [node name="shadow" parent="." unique_id=17675728 instance=ExtResource("2_shadow")]
 scale = Vector2(0.4, 0.3)
+
+[node name="collider" type="StaticBody2D" parent="." unique_id=521258346]
+
+[node name="shape" type="CollisionShape2D" parent="collider" unique_id=759435717]
+position = Vector2(59, -7)
+shape = SubResource("RectangleShape2D_cb6ll")

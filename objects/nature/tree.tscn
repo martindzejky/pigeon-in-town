@@ -12,6 +12,9 @@
 offsets = PackedFloat32Array(0, 0.4977169, 1)
 colors = PackedColorArray(0.5137255, 0.72156864, 0.45882353, 1, 0.58431375, 0.76862746, 0.49019608, 1, 0.7254902, 0.76862746, 0.49019608, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4c57"]
+radius = 39.012817
+
 [node name="tree" type="Node2D" unique_id=1696048237]
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1691229569 node_paths=PackedStringArray("update_shadow_scale")]
@@ -29,3 +32,9 @@ gradient = SubResource("Gradient_foliage")
 
 [node name="shadow" parent="." unique_id=151258731 instance=ExtResource("5_shadow")]
 scale = Vector2(0.9, 0.5)
+
+[node name="collider" type="StaticBody2D" parent="." unique_id=1393790761]
+
+[node name="shape" type="CollisionShape2D" parent="collider" unique_id=81516178]
+position = Vector2(2, -7)
+shape = SubResource("CircleShape2D_s4c57")

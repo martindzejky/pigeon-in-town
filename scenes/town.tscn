@@ -5,6 +5,13 @@
 [ext_resource type="Script" uid="uid://b7dd7pydkko1e" path="res://scripts/camera.gd" id="4_cam"]
 [ext_resource type="PackedScene" uid="uid://b1wibpa6f5rno" path="res://objects/buildings/church.tscn" id="4_eruj1"]
 [ext_resource type="Script" uid="uid://lqimfot170uf" path="res://scripts/town.gd" id="5_town"]
+[ext_resource type="PackedScene" uid="uid://b36xo7lkrm4nb" path="res://objects/nature/tree.tscn" id="11_tree"]
+[ext_resource type="PackedScene" uid="uid://rmlke1ng5an0" path="res://objects/nature/bush.tscn" id="12_bush"]
+[ext_resource type="PackedScene" uid="uid://b2db5qhii7ups" path="res://objects/props/gravestone.tscn" id="15_gravestone"]
+[ext_resource type="PackedScene" uid="uid://hmdhkr2sd8ub" path="res://objects/props/fence_1.tscn" id="16_fence_1"]
+[ext_resource type="PackedScene" uid="uid://m6lymenv2iwx" path="res://objects/props/fence_2.tscn" id="17_fence_2"]
+[ext_resource type="PackedScene" uid="uid://bbgvy27xu6jtn" path="res://objects/props/fence_3.tscn" id="18_fence_3"]
+[ext_resource type="PackedScene" uid="uid://cwl48bcxgntoa" path="res://objects/props/fence_4.tscn" id="19_fence_4"]
 
 [node name="town" type="Node" unique_id=273960894]
 script = ExtResource("5_town")
@@ -33,6 +40,123 @@ z_index = -1
 y_sort_enabled = true
 
 [node name="church" parent="world_sort" unique_id=1314122662 instance=ExtResource("4_eruj1")]
+
+[node name="graveyard" type="Node2D" parent="world_sort" unique_id=677215186]
+y_sort_enabled = true
+
+[node name="gravestone" parent="world_sort/graveyard" unique_id=389703134 instance=ExtResource("15_gravestone")]
+position = Vector2(1291, -284)
+
+[node name="gravestone2" parent="world_sort/graveyard" unique_id=1394346306 instance=ExtResource("15_gravestone")]
+position = Vector2(1426, -59)
+
+[node name="gravestone3" parent="world_sort/graveyard" unique_id=1311505383 instance=ExtResource("15_gravestone")]
+position = Vector2(1623, -182)
+
+[node name="gravestone4" parent="world_sort/graveyard" unique_id=1168467901 instance=ExtResource("15_gravestone")]
+position = Vector2(1822, -446)
+
+[node name="gravestone5" parent="world_sort/graveyard" unique_id=99746715 instance=ExtResource("15_gravestone")]
+position = Vector2(1943, -236)
+
+[node name="gravestone6" parent="world_sort/graveyard" unique_id=442932723 instance=ExtResource("15_gravestone")]
+position = Vector2(2121, 12)
+
+[node name="gravestone7" parent="world_sort/graveyard" unique_id=1375638207 instance=ExtResource("15_gravestone")]
+position = Vector2(1105, 85)
+
+[node name="tree" parent="world_sort/graveyard" unique_id=1696048237 instance=ExtResource("11_tree")]
+position = Vector2(1484, -582)
+
+[node name="tree2" parent="world_sort/graveyard" unique_id=28946182 instance=ExtResource("11_tree")]
+position = Vector2(2254, -314)
+
+[node name="tree3" parent="world_sort/graveyard" unique_id=1537381090 instance=ExtResource("11_tree")]
+position = Vector2(1133, -491)
+
+[node name="bush" parent="world_sort/graveyard" unique_id=1039988564 instance=ExtResource("12_bush")]
+position = Vector2(2003, 133)
+
+[node name="bush2" parent="world_sort/graveyard" unique_id=1902058525 instance=ExtResource("12_bush")]
+position = Vector2(2257, 214)
+
+[node name="bush3" parent="world_sort/graveyard" unique_id=1837430739 instance=ExtResource("12_bush")]
+position = Vector2(987, -59)
+
+[node name="fence_1" parent="world_sort/graveyard" unique_id=1084320072 instance=ExtResource("16_fence_1")]
+position = Vector2(1353, 280)
+
+[node name="fence_2" parent="world_sort/graveyard" unique_id=609933179 instance=ExtResource("16_fence_1")]
+position = Vector2(2520, 284)
+
+[node name="fence_11" parent="world_sort/graveyard" unique_id=172898515 instance=ExtResource("16_fence_1")]
+position = Vector2(1939, 277)
+
+[node name="fence_3" parent="world_sort/graveyard" unique_id=1395055982 instance=ExtResource("16_fence_1")]
+position = Vector2(2346, -779)
+
+[node name="fence_14" parent="world_sort/graveyard" unique_id=208698578 instance=ExtResource("16_fence_1")]
+position = Vector2(1697, -784)
+
+[node name="fence_4" parent="world_sort/graveyard" unique_id=2017961269 instance=ExtResource("17_fence_2")]
+position = Vector2(1123, 278)
+
+[node name="fence_5" parent="world_sort/graveyard" unique_id=1502568163 instance=ExtResource("17_fence_2")]
+position = Vector2(974, 277)
+
+[node name="fence_6" parent="world_sort/graveyard" unique_id=2016561805 instance=ExtResource("17_fence_2")]
+position = Vector2(826, 275)
+
+[node name="fence_7" parent="world_sort/graveyard" unique_id=1723923926 instance=ExtResource("17_fence_2")]
+position = Vector2(682, 273)
+
+[node name="fence_8" parent="world_sort/graveyard" unique_id=977375522 instance=ExtResource("17_fence_2")]
+position = Vector2(2282, 283)
+
+[node name="fence_9" parent="world_sort/graveyard" unique_id=1057987415 instance=ExtResource("17_fence_2")]
+position = Vector2(2122, 276)
+
+[node name="fence_10" parent="world_sort/graveyard" unique_id=1240612697 instance=ExtResource("17_fence_2")]
+position = Vector2(2122, 276)
+
+[node name="fence_12" parent="world_sort/graveyard" unique_id=1626977485 instance=ExtResource("17_fence_2")]
+position = Vector2(2097, -785)
+
+[node name="fence_13" parent="world_sort/graveyard" unique_id=1385725894 instance=ExtResource("17_fence_2")]
+position = Vector2(1937, -786)
+
+[node name="fence_15" parent="world_sort/graveyard" unique_id=615460618 instance=ExtResource("17_fence_2")]
+position = Vector2(1440, -780)
+
+[node name="fence_16" parent="world_sort/graveyard" unique_id=1406550514 instance=ExtResource("17_fence_2")]
+position = Vector2(1289, -782)
+
+[node name="fence_17" parent="world_sort/graveyard" unique_id=766405608 instance=ExtResource("18_fence_3")]
+position = Vector2(957, -768)
+
+[node name="fence_18" parent="world_sort/graveyard" unique_id=40178552 instance=ExtResource("18_fence_3")]
+position = Vector2(834, -770)
+
+[node name="fence_19" parent="world_sort/graveyard" unique_id=1963428296 instance=ExtResource("18_fence_3")]
+position = Vector2(2593, -684)
+
+[node name="fence_20" parent="world_sort/graveyard" unique_id=1537985781 instance=ExtResource("19_fence_4")]
+position = Vector2(717, -471)
+
+[node name="fence_21" parent="world_sort/graveyard" unique_id=1400234205 instance=ExtResource("19_fence_4")]
+position = Vector2(708, -201)
+
+[node name="fence_22" parent="world_sort/graveyard" unique_id=831355846 instance=ExtResource("19_fence_4")]
+position = Vector2(700, 74)
+
+[node name="fence_23" parent="world_sort/graveyard" unique_id=559426177 instance=ExtResource("19_fence_4")]
+position = Vector2(2607, -317)
+
+[node name="fence_24" parent="world_sort/graveyard" unique_id=344159380 instance=ExtResource("19_fence_4")]
+position = Vector2(2602, -47)
+
+[node name="fence_25" parent="world_sort/graveyard" unique_id=1274846415 instance=ExtResource("19_fence_4")]
+position = Vector2(2598, 236)
 
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
 position = Vector2(19, 296)

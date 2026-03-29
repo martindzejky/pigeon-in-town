@@ -303,7 +303,10 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_detection"]
 radius = 400.0
 
-[node name="pigeon" type="Node2D" unique_id=553052625 node_paths=PackedStringArray("flip_node", "squash", "animation") groups=["pigeon"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 69.115845
+
+[node name="pigeon" type="CharacterBody2D" unique_id=553052625 node_paths=PackedStringArray("flip_node", "squash", "animation") groups=["pigeon"]]
 script = ExtResource("1_pigeon_script")
 flip_node = NodePath("squash_root/animation_root/flip")
 squash = NodePath("squash")
@@ -380,6 +383,9 @@ script = ExtResource("12_npc_detector")
 [node name="detection_shape" type="CollisionShape2D" parent="npc_detection_area" unique_id=1612375647]
 shape = SubResource("CircleShape2D_detection")
 debug_color = Color(0, 0.6, 0.69803923, 0.14117648)
+
+[node name="body_shape" type="CollisionShape2D" parent="." unique_id=1564531847]
+shape = SubResource("CircleShape2D_body")
 
 [connection signal="area_entered" from="npc_detection_area" to="npc_detection_area" method="_on_area_entered"]
 [connection signal="area_exited" from="npc_detection_area" to="npc_detection_area" method="_on_area_exited"]
