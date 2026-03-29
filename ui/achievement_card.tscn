@@ -8,9 +8,10 @@
 custom_minimum_size = Vector2(243, 366)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 243.0
+offset_left = -1.0
+offset_right = 242.0
 offset_bottom = 366.0
-pivot_offset = Vector2(70, 90)
+pivot_offset = Vector2(121, 183)
 size_flags_horizontal = 4
 script = ExtResource("1_script")
 checkbox = NodePath("check")
@@ -20,6 +21,7 @@ card_art = NodePath("art")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+pivot_offset = Vector2(121, 182)
 texture = ExtResource("2_8oclm")
 
 [node name="check" type="TextureRect" parent="." unique_id=2010826658]
@@ -28,4 +30,5 @@ offset_left = 144.0
 offset_top = 255.0
 offset_right = 289.0
 offset_bottom = 409.0
+pivot_offset = Vector2(72, 77)
 texture = ExtResource("2_checkbox")
