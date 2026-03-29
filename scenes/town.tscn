@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://objects/characters/priest_cuthbert.tscn" id="6_f72b0"]
 [ext_resource type="PackedScene" uid="uid://b36xo7lkrm4nb" path="res://objects/nature/tree.tscn" id="11_tree"]
 [ext_resource type="PackedScene" uid="uid://rmlke1ng5an0" path="res://objects/nature/bush.tscn" id="12_bush"]
+[ext_resource type="PackedScene" uid="uid://b504k2unq1i0" path="res://objects/nature/flower.tscn" id="13_flower"]
 [ext_resource type="PackedScene" uid="uid://cy74wli8s6fw3" path="res://objects/buildings/tavern.tscn" id="13_icc4n"]
 [ext_resource type="PackedScene" uid="uid://dp8tpseim0ftg" path="res://objects/buildings/house.tscn" id="14_b0eaf"]
 [ext_resource type="PackedScene" uid="uid://jhdcb0axnbde" path="res://objects/nature/grass.tscn" id="14_grass"]
@@ -140,176 +141,179 @@ metadata/_edit_lock_ = true
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
 position = Vector2(-871, 9800)
 
-[node name="church" parent="world_sort" unique_id=1314122662 instance=ExtResource("4_eruj1")]
-
-[node name="priest_cuthbert" parent="world_sort" unique_id=1193914342 instance=ExtResource("6_f72b0")]
-position = Vector2(169, 171)
-
-[node name="graveyard" type="Node2D" parent="world_sort" unique_id=677215186]
+[node name="town" type="Node2D" parent="world_sort" unique_id=568757174]
 y_sort_enabled = true
 
-[node name="grass" parent="world_sort/graveyard" unique_id=818048649 instance=ExtResource("19_0havn")]
+[node name="church" parent="world_sort/town" unique_id=1314122662 instance=ExtResource("4_eruj1")]
+
+[node name="priest_cuthbert" parent="world_sort/town" unique_id=1193914342 instance=ExtResource("6_f72b0")]
+position = Vector2(169, 171)
+
+[node name="graveyard" type="Node2D" parent="world_sort/town" unique_id=677215186]
+y_sort_enabled = true
+
+[node name="grass" parent="world_sort/town/graveyard" unique_id=818048649 instance=ExtResource("19_0havn")]
 position = Vector2(4, 0)
 objects = Array[PackedScene]([ExtResource("14_grass")])
 density = 0.3
 
-[node name="polygon" parent="world_sort/graveyard/grass" index="0"]
+[node name="polygon" parent="world_sort/town/graveyard/grass" index="0"]
 polygon = PackedVector2Array(808, -718, 2522, -745, 2502, 190, 762, 206)
 
-[node name="gravestone" parent="world_sort/graveyard" unique_id=389703134 instance=ExtResource("15_gravestone")]
+[node name="gravestone" parent="world_sort/town/graveyard" unique_id=389703134 instance=ExtResource("15_gravestone")]
 position = Vector2(1291, -284)
 
-[node name="gravestone2" parent="world_sort/graveyard" unique_id=1394346306 instance=ExtResource("15_gravestone")]
+[node name="gravestone2" parent="world_sort/town/graveyard" unique_id=1394346306 instance=ExtResource("15_gravestone")]
 position = Vector2(1426, -59)
 
-[node name="gravestone3" parent="world_sort/graveyard" unique_id=1311505383 instance=ExtResource("15_gravestone")]
+[node name="gravestone3" parent="world_sort/town/graveyard" unique_id=1311505383 instance=ExtResource("15_gravestone")]
 position = Vector2(1623, -182)
 
-[node name="gravestone4" parent="world_sort/graveyard" unique_id=1168467901 instance=ExtResource("15_gravestone")]
+[node name="gravestone4" parent="world_sort/town/graveyard" unique_id=1168467901 instance=ExtResource("15_gravestone")]
 position = Vector2(1822, -446)
 
-[node name="gravestone5" parent="world_sort/graveyard" unique_id=99746715 instance=ExtResource("15_gravestone")]
+[node name="gravestone5" parent="world_sort/town/graveyard" unique_id=99746715 instance=ExtResource("15_gravestone")]
 position = Vector2(1943, -236)
 
-[node name="gravestone6" parent="world_sort/graveyard" unique_id=442932723 instance=ExtResource("15_gravestone")]
+[node name="gravestone6" parent="world_sort/town/graveyard" unique_id=442932723 instance=ExtResource("15_gravestone")]
 position = Vector2(2121, 12)
 
-[node name="gravestone7" parent="world_sort/graveyard" unique_id=1375638207 instance=ExtResource("15_gravestone")]
+[node name="gravestone7" parent="world_sort/town/graveyard" unique_id=1375638207 instance=ExtResource("15_gravestone")]
 position = Vector2(1105, 85)
 
-[node name="tree" parent="world_sort/graveyard" unique_id=1696048237 instance=ExtResource("11_tree")]
+[node name="tree" parent="world_sort/town/graveyard" unique_id=1696048237 instance=ExtResource("11_tree")]
 position = Vector2(1484, -582)
 
-[node name="tree2" parent="world_sort/graveyard" unique_id=28946182 instance=ExtResource("11_tree")]
+[node name="tree2" parent="world_sort/town/graveyard" unique_id=28946182 instance=ExtResource("11_tree")]
 position = Vector2(2254, -314)
 
-[node name="tree3" parent="world_sort/graveyard" unique_id=1537381090 instance=ExtResource("11_tree")]
+[node name="tree3" parent="world_sort/town/graveyard" unique_id=1537381090 instance=ExtResource("11_tree")]
 position = Vector2(1133, -491)
 
-[node name="bush" parent="world_sort/graveyard" unique_id=1039988564 instance=ExtResource("12_bush")]
+[node name="bush" parent="world_sort/town/graveyard" unique_id=1039988564 instance=ExtResource("12_bush")]
 position = Vector2(2003, 133)
 
-[node name="bush2" parent="world_sort/graveyard" unique_id=1902058525 instance=ExtResource("12_bush")]
+[node name="bush2" parent="world_sort/town/graveyard" unique_id=1902058525 instance=ExtResource("12_bush")]
 position = Vector2(2257, 214)
 
-[node name="bush3" parent="world_sort/graveyard" unique_id=1837430739 instance=ExtResource("12_bush")]
+[node name="bush3" parent="world_sort/town/graveyard" unique_id=1837430739 instance=ExtResource("12_bush")]
 position = Vector2(987, -59)
 
-[node name="fence_1" parent="world_sort/graveyard" unique_id=1084320072 instance=ExtResource("16_fence_1")]
+[node name="fence_1" parent="world_sort/town/graveyard" unique_id=1084320072 instance=ExtResource("16_fence_1")]
 position = Vector2(1353, 280)
 
-[node name="fence_2" parent="world_sort/graveyard" unique_id=609933179 instance=ExtResource("16_fence_1")]
+[node name="fence_2" parent="world_sort/town/graveyard" unique_id=609933179 instance=ExtResource("16_fence_1")]
 position = Vector2(2520, 284)
 
-[node name="fence_11" parent="world_sort/graveyard" unique_id=172898515 instance=ExtResource("16_fence_1")]
+[node name="fence_11" parent="world_sort/town/graveyard" unique_id=172898515 instance=ExtResource("16_fence_1")]
 position = Vector2(1939, 277)
 
-[node name="fence_3" parent="world_sort/graveyard" unique_id=1395055982 instance=ExtResource("16_fence_1")]
+[node name="fence_3" parent="world_sort/town/graveyard" unique_id=1395055982 instance=ExtResource("16_fence_1")]
 position = Vector2(2346, -779)
 
-[node name="fence_14" parent="world_sort/graveyard" unique_id=208698578 instance=ExtResource("16_fence_1")]
+[node name="fence_14" parent="world_sort/town/graveyard" unique_id=208698578 instance=ExtResource("16_fence_1")]
 position = Vector2(1697, -784)
 
-[node name="fence_4" parent="world_sort/graveyard" unique_id=2017961269 instance=ExtResource("17_fence_2")]
+[node name="fence_4" parent="world_sort/town/graveyard" unique_id=2017961269 instance=ExtResource("17_fence_2")]
 position = Vector2(1123, 278)
 
-[node name="fence_5" parent="world_sort/graveyard" unique_id=1502568163 instance=ExtResource("17_fence_2")]
+[node name="fence_5" parent="world_sort/town/graveyard" unique_id=1502568163 instance=ExtResource("17_fence_2")]
 position = Vector2(974, 277)
 
-[node name="fence_6" parent="world_sort/graveyard" unique_id=2016561805 instance=ExtResource("17_fence_2")]
+[node name="fence_6" parent="world_sort/town/graveyard" unique_id=2016561805 instance=ExtResource("17_fence_2")]
 position = Vector2(826, 275)
 
-[node name="fence_7" parent="world_sort/graveyard" unique_id=1723923926 instance=ExtResource("17_fence_2")]
+[node name="fence_7" parent="world_sort/town/graveyard" unique_id=1723923926 instance=ExtResource("17_fence_2")]
 position = Vector2(682, 273)
 
-[node name="fence_8" parent="world_sort/graveyard" unique_id=977375522 instance=ExtResource("17_fence_2")]
+[node name="fence_8" parent="world_sort/town/graveyard" unique_id=977375522 instance=ExtResource("17_fence_2")]
 position = Vector2(2282, 283)
 
-[node name="fence_9" parent="world_sort/graveyard" unique_id=1057987415 instance=ExtResource("17_fence_2")]
+[node name="fence_9" parent="world_sort/town/graveyard" unique_id=1057987415 instance=ExtResource("17_fence_2")]
 position = Vector2(2122, 276)
 
-[node name="fence_10" parent="world_sort/graveyard" unique_id=1240612697 instance=ExtResource("17_fence_2")]
+[node name="fence_10" parent="world_sort/town/graveyard" unique_id=1240612697 instance=ExtResource("17_fence_2")]
 position = Vector2(2122, 276)
 
-[node name="fence_12" parent="world_sort/graveyard" unique_id=1626977485 instance=ExtResource("17_fence_2")]
+[node name="fence_12" parent="world_sort/town/graveyard" unique_id=1626977485 instance=ExtResource("17_fence_2")]
 position = Vector2(2097, -785)
 
-[node name="fence_13" parent="world_sort/graveyard" unique_id=1385725894 instance=ExtResource("17_fence_2")]
+[node name="fence_13" parent="world_sort/town/graveyard" unique_id=1385725894 instance=ExtResource("17_fence_2")]
 position = Vector2(1937, -786)
 
-[node name="fence_15" parent="world_sort/graveyard" unique_id=615460618 instance=ExtResource("17_fence_2")]
+[node name="fence_15" parent="world_sort/town/graveyard" unique_id=615460618 instance=ExtResource("17_fence_2")]
 position = Vector2(1440, -780)
 
-[node name="fence_16" parent="world_sort/graveyard" unique_id=1406550514 instance=ExtResource("17_fence_2")]
+[node name="fence_16" parent="world_sort/town/graveyard" unique_id=1406550514 instance=ExtResource("17_fence_2")]
 position = Vector2(1289, -782)
 
-[node name="fence_17" parent="world_sort/graveyard" unique_id=766405608 instance=ExtResource("18_fence_3")]
+[node name="fence_17" parent="world_sort/town/graveyard" unique_id=766405608 instance=ExtResource("18_fence_3")]
 position = Vector2(957, -768)
 
-[node name="fence_18" parent="world_sort/graveyard" unique_id=40178552 instance=ExtResource("18_fence_3")]
+[node name="fence_18" parent="world_sort/town/graveyard" unique_id=40178552 instance=ExtResource("18_fence_3")]
 position = Vector2(834, -770)
 
-[node name="fence_19" parent="world_sort/graveyard" unique_id=1963428296 instance=ExtResource("18_fence_3")]
+[node name="fence_19" parent="world_sort/town/graveyard" unique_id=1963428296 instance=ExtResource("18_fence_3")]
 position = Vector2(2593, -684)
 
-[node name="fence_20" parent="world_sort/graveyard" unique_id=1537985781 instance=ExtResource("19_fence_4")]
+[node name="fence_20" parent="world_sort/town/graveyard" unique_id=1537985781 instance=ExtResource("19_fence_4")]
 position = Vector2(717, -471)
 
-[node name="fence_21" parent="world_sort/graveyard" unique_id=1400234205 instance=ExtResource("19_fence_4")]
+[node name="fence_21" parent="world_sort/town/graveyard" unique_id=1400234205 instance=ExtResource("19_fence_4")]
 position = Vector2(708, -201)
 
-[node name="fence_22" parent="world_sort/graveyard" unique_id=831355846 instance=ExtResource("19_fence_4")]
+[node name="fence_22" parent="world_sort/town/graveyard" unique_id=831355846 instance=ExtResource("19_fence_4")]
 position = Vector2(700, 74)
 
-[node name="fence_23" parent="world_sort/graveyard" unique_id=559426177 instance=ExtResource("19_fence_4")]
+[node name="fence_23" parent="world_sort/town/graveyard" unique_id=559426177 instance=ExtResource("19_fence_4")]
 position = Vector2(2607, -317)
 
-[node name="fence_24" parent="world_sort/graveyard" unique_id=344159380 instance=ExtResource("19_fence_4")]
+[node name="fence_24" parent="world_sort/town/graveyard" unique_id=344159380 instance=ExtResource("19_fence_4")]
 position = Vector2(2602, -47)
 
-[node name="fence_25" parent="world_sort/graveyard" unique_id=1274846415 instance=ExtResource("19_fence_4")]
+[node name="fence_25" parent="world_sort/town/graveyard" unique_id=1274846415 instance=ExtResource("19_fence_4")]
 position = Vector2(2598, 236)
 
-[node name="ghost_jeff" parent="world_sort/graveyard" unique_id=193257682 instance=ExtResource("15_0havn")]
+[node name="ghost_jeff" parent="world_sort/town/graveyard" unique_id=193257682 instance=ExtResource("15_0havn")]
 position = Vector2(1418, -435)
 
-[node name="ghost_mildred" parent="world_sort/graveyard" unique_id=85686780 instance=ExtResource("16_ov17k")]
+[node name="ghost_mildred" parent="world_sort/town/graveyard" unique_id=85686780 instance=ExtResource("16_ov17k")]
 position = Vector2(2045, -85)
 
-[node name="tavern" parent="world_sort" unique_id=79349673 instance=ExtResource("13_icc4n")]
+[node name="tavern" parent="world_sort/town" unique_id=79349673 instance=ExtResource("13_icc4n")]
 position = Vector2(1348, 2581)
 
-[node name="innkeeper_bertram" parent="world_sort" unique_id=1333699907 instance=ExtResource("20_s6ipg")]
+[node name="innkeeper_bertram" parent="world_sort/town" unique_id=1333699907 instance=ExtResource("20_s6ipg")]
 position = Vector2(1559, 2912)
 
-[node name="house" parent="world_sort" unique_id=402885739 instance=ExtResource("14_b0eaf")]
+[node name="house" parent="world_sort/town" unique_id=402885739 instance=ExtResource("14_b0eaf")]
 position = Vector2(2134, 2545)
 
-[node name="house2" parent="world_sort" unique_id=1361795868 instance=ExtResource("14_b0eaf")]
+[node name="house2" parent="world_sort/town" unique_id=1361795868 instance=ExtResource("14_b0eaf")]
 position = Vector2(3180, 2466)
 
-[node name="house3" parent="world_sort" unique_id=2065740248 instance=ExtResource("14_b0eaf")]
+[node name="house3" parent="world_sort/town" unique_id=2065740248 instance=ExtResource("14_b0eaf")]
 position = Vector2(3526, 4197)
 
-[node name="house4" parent="world_sort" unique_id=1038486650 instance=ExtResource("14_b0eaf")]
+[node name="house4" parent="world_sort/town" unique_id=1038486650 instance=ExtResource("14_b0eaf")]
 position = Vector2(2762, 4240)
 
-[node name="house5" parent="world_sort" unique_id=865621446 instance=ExtResource("14_b0eaf")]
+[node name="house5" parent="world_sort/town" unique_id=865621446 instance=ExtResource("14_b0eaf")]
 position = Vector2(-2047, 2654)
 
-[node name="house6" parent="world_sort" unique_id=1361363652 instance=ExtResource("14_b0eaf")]
+[node name="house6" parent="world_sort/town" unique_id=1361363652 instance=ExtResource("14_b0eaf")]
 position = Vector2(-2833, 2611)
 
-[node name="house7" parent="world_sort" unique_id=1494243525 instance=ExtResource("14_b0eaf")]
+[node name="house7" parent="world_sort/town" unique_id=1494243525 instance=ExtResource("14_b0eaf")]
 position = Vector2(-3684, 3274)
 
-[node name="house8" parent="world_sort" unique_id=450784128 instance=ExtResource("14_b0eaf")]
+[node name="house8" parent="world_sort/town" unique_id=450784128 instance=ExtResource("14_b0eaf")]
 position = Vector2(-2898, 4031)
 
-[node name="well" parent="world_sort" unique_id=504125226 instance=ExtResource("15_uutfq")]
+[node name="well" parent="world_sort/town" unique_id=504125226 instance=ExtResource("15_uutfq")]
 position = Vector2(-1339, 3508)
 
-[node name="old_lady_agnes" parent="world_sort" unique_id=906858158 instance=ExtResource("22_5qoex")]
+[node name="old_lady_agnes" parent="world_sort/town" unique_id=906858158 instance=ExtResource("22_5qoex")]
 position = Vector2(-1611, 3656)
 
 [node name="farm" type="Node2D" parent="world_sort" unique_id=559153735]
@@ -321,6 +325,14 @@ position = Vector2(1224, 4437)
 
 [node name="barn" parent="world_sort/farm" unique_id=858790705 instance=ExtResource("17_i0mj0")]
 position = Vector2(3774, 4907)
+
+[node name="bush_below_farm" parent="world_sort/farm" unique_id=1649967662 instance=ExtResource("19_0havn")]
+position = Vector2(0, 1)
+objects = Array[PackedScene]([ExtResource("12_bush")])
+density = 0.05
+
+[node name="polygon" parent="world_sort/farm/bush_below_farm" index="0"]
+polygon = PackedVector2Array(626, 6501, 290, 6626, -33, 7685, 1557, 8173, 4291, 8449, 4930, 6512, 4465, 5956, 3912, 6006, 3762, 6312, 3251, 6634)
 
 [node name="fence_1" parent="world_sort/farm" unique_id=1315839310 instance=ExtResource("16_fence_1")]
 position = Vector2(1417, 4958)
@@ -516,24 +528,6 @@ position = Vector2(3830, 5947)
 
 [node name="bush8" parent="world_sort/farm" unique_id=304857083 instance=ExtResource("12_bush")]
 position = Vector2(3680, 6150)
-
-[node name="bush9" parent="world_sort/farm" unique_id=933739660 instance=ExtResource("12_bush")]
-position = Vector2(1867, 6567)
-
-[node name="bush10" parent="world_sort/farm" unique_id=560819720 instance=ExtResource("12_bush")]
-position = Vector2(1672, 6700)
-
-[node name="bush11" parent="world_sort/farm" unique_id=1173761776 instance=ExtResource("12_bush")]
-position = Vector2(1867, 6903)
-
-[node name="bush12" parent="world_sort/farm" unique_id=911559258 instance=ExtResource("12_bush")]
-position = Vector2(797, 6920)
-
-[node name="bush13" parent="world_sort/farm" unique_id=1139822506 instance=ExtResource("12_bush")]
-position = Vector2(880, 7031)
-
-[node name="bush14" parent="world_sort/farm" unique_id=2051653283 instance=ExtResource("12_bush")]
-position = Vector2(4169, 4318)
 
 [node name="pig_sir_oinksworth" parent="world_sort/farm" unique_id=1039468760 instance=ExtResource("23_qflhy")]
 position = Vector2(1803, 5880)
@@ -746,8 +740,41 @@ position = Vector2(-1475, 8038)
 [node name="scarecrow_cornelius" parent="world_sort/field" unique_id=1896554786 instance=ExtResource("23_2dnfj")]
 position = Vector2(-4097, 6600)
 
+[node name="south" type="Node2D" parent="world_sort" unique_id=1962820043]
+y_sort_enabled = true
+
+[node name="tree" parent="world_sort/south" unique_id=743530014 instance=ExtResource("11_tree")]
+position = Vector2(-3709, 9229)
+
+[node name="tree2" parent="world_sort/south" unique_id=2003159998 instance=ExtResource("11_tree")]
+position = Vector2(-4073, 9336)
+
+[node name="tree3" parent="world_sort/south" unique_id=227803444 instance=ExtResource("11_tree")]
+position = Vector2(-7053, 8835)
+
+[node name="tree4" parent="world_sort/south" unique_id=878875451 instance=ExtResource("11_tree")]
+position = Vector2(-7214, 5224)
+
+[node name="tree5" parent="world_sort/south" unique_id=1130860646 instance=ExtResource("11_tree")]
+position = Vector2(-7417, 4980)
+
+[node name="grass" parent="world_sort/south" unique_id=1054625755 instance=ExtResource("19_0havn")]
+objects = Array[PackedScene]([ExtResource("14_grass"), ExtResource("13_flower")])
+density = 0.3
+
+[node name="polygon" parent="world_sort/south/grass" index="0"]
+polygon = PackedVector2Array(-8608, 4374, -6845, 4788, -6904, 7378, -6825, 8348, -5968, 8708, -1969, 8764, -1560, 8848, -1487, 10092, -1890, 10773, -8702, 10771)
+
+[node name="grass2" parent="world_sort/south" unique_id=1826091371 instance=ExtResource("19_0havn")]
+objects = Array[PackedScene]([ExtResource("14_grass"), ExtResource("13_flower")])
+density = 0.3
+
+[node name="polygon" parent="world_sort/south/grass2" index="0"]
+polygon = PackedVector2Array(346, 7035, -12, 7765, -114, 8604, -354, 9576, -114, 10720, 5405, 10948, 5973, 10263, 5848, 3928, 4926, 4243, 4447, 4873, 4357, 5349, 3791, 5528, 3709, 6444, 3319, 6721, 2198, 6740, 987, 6668)
+
 [node name="intro_cutscene" type="Node" parent="." unique_id=1248851468 node_paths=PackedStringArray("pigeon", "start_position", "end_position", "dialogue")]
 script = ExtResource("31_oej6q")
+enabled = false
 pigeon = NodePath("../world_sort/pigeon")
 start_position = NodePath("start")
 end_position = NodePath("end")
@@ -759,6 +786,9 @@ position = Vector2(-705, 11032)
 [node name="end" type="Marker2D" parent="intro_cutscene" unique_id=693661370]
 position = Vector2(-862, 9781)
 
-[node name="dialogue" parent="intro_cutscene" instance=ExtResource("32_dialogue_intro")]
+[node name="dialogue" parent="intro_cutscene" unique_id=1072563245 instance=ExtResource("32_dialogue_intro")]
 
-[editable path="world_sort/graveyard/grass"]
+[editable path="world_sort/town/graveyard/grass"]
+[editable path="world_sort/farm/bush_below_farm"]
+[editable path="world_sort/south/grass"]
+[editable path="world_sort/south/grass2"]

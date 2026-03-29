@@ -8,7 +8,7 @@ script = ExtResource("1_walker")
 
 [node name="say_1" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "Well well well... a whole [color=yellow]town[/color]! With roofs and everything. How fancy."
+text = "Well well well... a whole [u]town[/u]! With roofs and everything. How fancy."
 
 [node name="say_2" type="Node" parent="."]
 script = ExtResource("2_say")
