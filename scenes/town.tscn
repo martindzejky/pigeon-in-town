@@ -37,6 +37,7 @@
 [ext_resource type="Script" uid="uid://dvawjdkc4g4hg" path="res://scripts/intro_cutscene.gd" id="31_oej6q"]
 [ext_resource type="PackedScene" path="res://dialogues/dialogue_intro.tscn" id="32_dialogue_intro"]
 [ext_resource type="PackedScene" path="res://objects/characters/folk_hugh.tscn" id="35_8svx7"]
+[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="36_pause"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie20d"]
 size = Vector2(20143, 1461)
@@ -878,6 +879,8 @@ position = Vector2(-705, 11032)
 position = Vector2(-862, 9781)
 
 [node name="dialogue" parent="intro_cutscene" unique_id=1072563245 instance=ExtResource("32_dialogue_intro")]
+
+[node name="pause_menu" parent="." unique_id=1075472186 instance=ExtResource("36_pause")]
 
 [editable path="world_sort/town/graveyard/grass"]
 [editable path="world_sort/farm/bush_below_farm"]

@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://gokyjm1wxgtb"]
+
+[ext_resource type="Script" uid="uid://bhv3jg8er2jha" path="res://scripts/pause_menu.gd" id="1_script"]
+[ext_resource type="StyleBox" uid="uid://jrtvkwk1elat" path="res://ui/dark_panel_stylebox.tres" id="2_fob5h"]
+[ext_resource type="PackedScene" uid="uid://cma61sgomrj6y" path="res://ui/button_sounds.tscn" id="2_sounds"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ejwgg"]
+font_size = 33
+
+[node name="pause_menu" type="CanvasLayer" unique_id=1375568042 node_paths=PackedStringArray("overlay", "panel", "resume_button", "exit_button")]
+process_mode = 3
+layer = 90
+script = ExtResource("1_script")
+overlay = NodePath("overlay")
+panel = NodePath("center/panel")
+resume_button = NodePath("center/panel/margin/content/resume_button")
+exit_button = NodePath("center/panel/margin/content/exit_button")
+
+[node name="overlay" type="ColorRect" parent="." unique_id=1053459210]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.08, 0.12, 0.6)
+
+[node name="center" type="CenterContainer" parent="." unique_id=556472196]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panel" type="PanelContainer" parent="center" unique_id=114146363]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_fob5h")
+
+[node name="margin" type="MarginContainer" parent="center/panel" unique_id=1550874206]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="content" type="VBoxContainer" parent="center/panel/margin" unique_id=1134558006]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="title" type="Label" parent="center/panel/margin/content" unique_id=1440496237]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Paused"
+
+[node name="spacer" type="Control" parent="center/panel/margin/content" unique_id=239433609]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="resume_button" type="Button" parent="center/panel/margin/content" unique_id=1626154568]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Resume"
+
+[node name="button_sounds" parent="center/panel/margin/content/resume_button" unique_id=481961514 instance=ExtResource("2_sounds")]
+
+[node name="exit_button" type="Button" parent="center/panel/margin/content" unique_id=1361844055]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Exit to menu"
+
+[node name="button_sounds" parent="center/panel/margin/content/exit_button" unique_id=818101233 instance=ExtResource("2_sounds")]
+
+[node name="spacer2" type="Control" parent="center/panel/margin/content" unique_id=505837187]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="warning" type="Label" parent="center/panel/margin/content" unique_id=875484516]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "There's no save system.
+Exiting loses all progress."
+label_settings = SubResource("LabelSettings_ejwgg")
+horizontal_alignment = 1
+vertical_alignment = 1
