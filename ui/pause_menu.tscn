@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://bhv3jg8er2jha" path="res://scripts/pause_menu.gd" id="1_script"]
 [ext_resource type="StyleBox" uid="uid://jrtvkwk1elat" path="res://ui/dark_panel_stylebox.tres" id="2_fob5h"]
 [ext_resource type="PackedScene" uid="uid://cma61sgomrj6y" path="res://ui/button_sounds.tscn" id="2_sounds"]
+[ext_resource type="PackedScene" path="res://ui/achievement_card.tscn" id="3_card"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ejwgg"]
 font_size = 33
 
-[node name="pause_menu" type="CanvasLayer" unique_id=1375568042 node_paths=PackedStringArray("overlay", "panel", "resume_button", "exit_button")]
+[node name="pause_menu" type="CanvasLayer" unique_id=1375568042 node_paths=PackedStringArray("overlay", "panel", "resume_button", "exit_button", "cards_container")]
 process_mode = 3
 layer = 90
 script = ExtResource("1_script")
@@ -15,6 +16,8 @@ overlay = NodePath("overlay")
 panel = NodePath("center/panel")
 resume_button = NodePath("center/panel/margin/content/resume_button")
 exit_button = NodePath("center/panel/margin/content/exit_button")
+cards_container = NodePath("center/panel/margin/content/cards")
+card_scene = ExtResource("3_card")
 
 [node name="overlay" type="ColorRect" parent="." unique_id=1053459210]
 anchors_preset = 15
@@ -71,6 +74,16 @@ size_flags_horizontal = 4
 text = "Exit to menu"
 
 [node name="button_sounds" parent="center/panel/margin/content/exit_button" unique_id=818101233 instance=ExtResource("2_sounds")]
+
+[node name="achievements_label" type="Label" parent="center/panel/margin/content" unique_id=1537531708]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Achievements"
+
+[node name="cards" type="HBoxContainer" parent="center/panel/margin/content" unique_id=1948658771]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
 
 [node name="spacer2" type="Control" parent="center/panel/margin/content" unique_id=505837187]
 custom_minimum_size = Vector2(0, 8)

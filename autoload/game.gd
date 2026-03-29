@@ -18,6 +18,13 @@ func _ready() -> void:
   # pigeon learned from agnes that cornelius has been alone for 30 years
   npc_memory.set_flag('g_cornelius_secret', false)
 
+  # relay global memory changes to the event bus (connected after init
+  # so the startup false-flags above don't fire)
+  npc_memory.flag_set.connect(
+    func(flag: String, value: bool) -> void:
+      Events.global_flag_set.emit(flag, value)
+  )
+
 ## the npc character the pigeon is currently interacting with
 var current_target_npc: Npc = null:
   set(value):
