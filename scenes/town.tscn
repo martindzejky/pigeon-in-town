@@ -261,13 +261,13 @@ position = Vector2(1418, -435)
 position = Vector2(2045, -85)
 
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
-position = Vector2(-421, 6086)
+position = Vector2(-2841, 6708)
 
 [node name="tavern" parent="world_sort" unique_id=79349673 instance=ExtResource("13_icc4n")]
 position = Vector2(1348, 2581)
 
 [node name="innkeeper_bertram" parent="world_sort" unique_id=1333699907 instance=ExtResource("20_s6ipg")]
-position = Vector2(1559, 2914)
+position = Vector2(1559, 2912)
 
 [node name="house" parent="world_sort" unique_id=402885739 instance=ExtResource("14_b0eaf")]
 position = Vector2(2134, 2545)

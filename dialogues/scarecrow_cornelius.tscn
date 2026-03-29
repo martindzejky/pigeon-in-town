@@ -9,7 +9,7 @@ script = ExtResource("1_walker")
 [node name="say_1" type="Node" parent="."]
 script = ExtResource("2_say")
 speaker = 1
-text = "[color=red]BEGONE, FOUL FEATHERED FIEND!!![/color] SHOO! [color=red]SHOO!!![/color] THIS FIELD IS [u]PROTECTED[/u]!"
+text = "[shake rate=20 level=10][color=red]BEGONE, FOUL FEATHERED FIEND!!![/color] SHOO! [color=red]SHOO!!![/color] THIS FIELD IS [u]PROTECTED[/u]![/shake]"
 
 [node name="say_2" type="Node" parent="."]
 script = ExtResource("2_say")
