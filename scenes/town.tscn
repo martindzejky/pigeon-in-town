@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bvrp86m6h4ur7"]
 
 [ext_resource type="PackedScene" uid="uid://mt7oxu4mesgd" path="res://objects/shadow/shadow_canvas_group.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bi13ymg3xdf50" path="res://objects/characters/pigeon.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://b7dd7pydkko1e" path="res://scripts/camera.gd" id="4_cam"]
+[ext_resource type="PackedScene" uid="uid://b1wibpa6f5rno" path="res://objects/buildings/church.tscn" id="4_eruj1"]
 [ext_resource type="Script" uid="uid://lqimfot170uf" path="res://scripts/town.gd" id="5_town"]
 
 [node name="town" type="Node" unique_id=273960894]
@@ -29,3 +31,8 @@ z_index = -1
 
 [node name="world_sort" type="Node2D" parent="." unique_id=1702403875]
 y_sort_enabled = true
+
+[node name="church" parent="world_sort" unique_id=1314122662 instance=ExtResource("4_eruj1")]
+
+[node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
+position = Vector2(19, 296)
