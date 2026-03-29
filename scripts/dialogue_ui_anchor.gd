@@ -198,7 +198,7 @@ func _wrap_text(text: String, max_chars: int) -> String:
       wrapped.append('')
       continue
 
-    var words := paragraph.split(' ')
+    var words := _split_words(paragraph)
     var current_line := ''
     var current_visible_len := 0
 
@@ -219,6 +219,33 @@ func _wrap_text(text: String, max_chars: int) -> String:
       wrapped.append(current_line)
 
   return '\n'.join(wrapped)
+
+
+func _split_words(text: String) -> PackedStringArray:
+  var result: PackedStringArray = []
+  var current := ''
+  var in_tag := false
+  var i := 0
+
+  while i < text.length():
+    var ch := text[i]
+    if ch == '[':
+      in_tag = true
+      current += ch
+    elif ch == ']':
+      in_tag = false
+      current += ch
+    elif ch == ' ' and not in_tag:
+      if not current.is_empty():
+        result.append(current)
+        current = ''
+    else:
+      current += ch
+    i += 1
+
+  if not current.is_empty():
+    result.append(current)
+  return result
 
 
 func _strip_bbcode(text: String) -> String:
