@@ -12,8 +12,24 @@ text = "Huh. A whole [u]town[/u]. With roofs and everything."
 
 [node name="say_2" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "Alright. Let's see what kind of people live in this place."
+text = "Let me stretch my legs. [color=#a8554c]WASD[/color] or the [color=#a8554c]arrow keys[/color] to waddle around."
 
 [node name="say_3" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "If someone looks interesting, I walk up and press [color=#a8554c]E[/color], [color=#a8554c]Space[/color], or [color=#a8554c]Enter[/color] to talk."
+
+[node name="say_4" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "Same keys to keep the conversation going. Very advanced stuff."
+
+[node name="say_5" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "And [color=#a8554c]Escape[/color] if I need a break. Opens some kind of menu."
+
+[node name="say_6" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "Alright. I'm sure the locals are [i]very[/i] interesting and [i]absolutely[/i] worth getting to know."
+
+[node name="say_7" type="Node" parent="."]
 script = ExtResource("2_say")
 text = "And if anyone has [color=#a8554c]breadcrumbs[/color]... I won't say no."
