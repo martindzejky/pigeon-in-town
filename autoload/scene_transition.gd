@@ -9,7 +9,7 @@ var _is_transitioning: bool = false
 func _ready() -> void:
   layer = 100
   _overlay = ColorRect.new()
-  _overlay.color = Color(0, 0, 0, 0)
+  _overlay.color = Color(0.05, 0.08, 0.12, 0)
   _overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
   _overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
   add_child(_overlay)
@@ -27,8 +27,7 @@ func change_scene(path: String) -> void:
 
   get_tree().change_scene_to_file(path)
 
-  # wait a frame for the new scene to initialize
-  await get_tree().process_frame
+  await get_tree().create_timer(0.5).timeout
 
   var fade_in := create_tween()
   fade_in.tween_property(_overlay, 'color:a', 0.0, 0.4)
