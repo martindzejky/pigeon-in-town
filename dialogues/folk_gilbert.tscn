@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_condition.gd" id="3_condition"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_set_flag.gd" id="4_set_flag"]
+
+[node name="folk_gilbert" type="Node"]
+script = ExtResource("1_walker")
+
+; --- check if we already talked ---
+[node name="cond_talked" type="Node" parent="."]
+script = ExtResource("3_condition")
+flag = "talked_to"
+
+; === RETURN VISIT (child 0 = true) ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+[node name="say_return" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Nothing new to report. Well, Bertram burned his stew again. But that happens every day."
+
+; === FIRST VISIT (child 1 = false) ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_greet" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[i]Psst.[/i] You didn't hear this from me. But old Agnes? By the well? She talks to it. The well. Like it's a person."
+
+[node name="say_pigeon" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+text = "Maybe the well talks back."
+
+[node name="say_reply" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[shake rate=30.0 level=20]Don't even joke about that![/shake] This village has enough problems. Father Cuthbert thinks everything is a [color=#a8554c]sign from God[/color]. Even puddles."
+
+[node name="say_gossip" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "And now there's a talking pigeon walking around. He'll have a field day with this one."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("4_set_flag")
+flag = "talked_to"

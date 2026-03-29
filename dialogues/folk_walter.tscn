@@ -1,0 +1,48 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_condition.gd" id="3_condition"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_set_flag.gd" id="4_set_flag"]
+
+[node name="folk_walter" type="Node"]
+script = ExtResource("1_walker")
+
+; --- check if we already talked ---
+[node name="cond_talked" type="Node" parent="."]
+script = ExtResource("3_condition")
+flag = "talked_to"
+
+; === RETURN VISIT (child 0 = true) ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+[node name="say_return" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Still no crows on you, I see. Good. Good. Can't trust birds. No offense."
+
+; === FIRST VISIT (child 1 = false) ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_greet" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Don't step on my turnips! I've been growing those for... well, a long time. I lost count."
+
+[node name="say_pigeon" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+text = "I'm not stepping on anything."
+
+[node name="say_reply" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Good. [i]Good.[/i] The crows already took half of them. And that scarecrow over in the field? [color=#a8554c]Cornelius?[/color] Just stands there! Smiling!"
+
+[node name="say_rant" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I swear the crows land ON him sometimes. On purpose. Like they're friends."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("4_set_flag")
+flag = "talked_to"

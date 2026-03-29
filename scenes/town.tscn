@@ -31,8 +31,12 @@
 [ext_resource type="PackedScene" path="res://objects/characters/pig_hamlet.tscn" id="23_8m6oo"]
 [ext_resource type="PackedScene" path="res://objects/characters/pig_sir_oinksworth.tscn" id="23_qflhy"]
 [ext_resource type="PackedScene" path="res://objects/characters/pig_truffles.tscn" id="23_uvrjk"]
+[ext_resource type="PackedScene" path="res://objects/characters/folk_edmund.tscn" id="25_vcpp3"]
+[ext_resource type="PackedScene" path="res://objects/characters/folk_walter.tscn" id="26_pklil"]
+[ext_resource type="PackedScene" path="res://objects/characters/folk_gilbert.tscn" id="27_bnnb0"]
 [ext_resource type="Script" uid="uid://dvawjdkc4g4hg" path="res://scripts/intro_cutscene.gd" id="31_oej6q"]
 [ext_resource type="PackedScene" path="res://dialogues/dialogue_intro.tscn" id="32_dialogue_intro"]
+[ext_resource type="PackedScene" path="res://objects/characters/folk_hugh.tscn" id="35_8svx7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie20d"]
 size = Vector2(20143, 1461)
@@ -139,7 +143,7 @@ y_sort_enabled = true
 metadata/_edit_lock_ = true
 
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
-position = Vector2(-695, 9544)
+position = Vector2(-718, 9560)
 
 [node name="town" type="Node2D" parent="world_sort" unique_id=568757174]
 y_sort_enabled = true
@@ -315,6 +319,15 @@ position = Vector2(-1339, 3508)
 
 [node name="old_lady_agnes" parent="world_sort/town" unique_id=906858158 instance=ExtResource("22_5qoex")]
 position = Vector2(-1611, 3656)
+
+[node name="folk_edmund" parent="world_sort/town" unique_id=111755333 instance=ExtResource("25_vcpp3")]
+position = Vector2(589, 3702)
+
+[node name="folk_walter" parent="world_sort/town" unique_id=351213663 instance=ExtResource("26_pklil")]
+position = Vector2(-2154, 5358)
+
+[node name="folk_gilbert" parent="world_sort/town" unique_id=2146073288 instance=ExtResource("27_bnnb0")]
+position = Vector2(3740, 3855)
 
 [node name="farm" type="Node2D" parent="world_sort" unique_id=559153735]
 y_sort_enabled = true
@@ -847,6 +860,9 @@ position = Vector2(4849, 537)
 
 [node name="tree7" parent="world_sort/east" unique_id=673780369 instance=ExtResource("11_tree")]
 position = Vector2(5104, 1306)
+
+[node name="folk_hugh" parent="world_sort" unique_id=2141811125 instance=ExtResource("35_8svx7")]
+position = Vector2(-1642, 2651)
 
 [node name="intro_cutscene" type="Node" parent="." unique_id=1248851468 node_paths=PackedStringArray("pigeon", "start_position", "end_position", "dialogue")]
 script = ExtResource("31_oej6q")

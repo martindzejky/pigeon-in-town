@@ -408,6 +408,7 @@ shape = SubResource("CircleShape2D_interaction")
 debug_color = Color(0.6956506, 0.48855472, 0.21236292, 0.23137255)
 
 [node name="interaction_hint" parent="." unique_id=885225560 instance=ExtResource("21_u24br")]
+visible = false
 offset_left = -151.5
 offset_top = -691.0
 offset_right = 151.5
@@ -418,4 +419,4 @@ script = ExtResource("19_memory")
 
 [node name="step_sound" parent="." unique_id=1405361698 instance=ExtResource("22_step_sound")]
 
-[node name="folk_talk_sound" parent="." instance=ExtResource("23_folk_talk_sound")]
+[node name="folk_talk_sound" parent="." unique_id=1119890982 instance=ExtResource("23_folk_talk_sound")]
