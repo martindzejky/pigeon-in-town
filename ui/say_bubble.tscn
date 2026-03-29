@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dc8ohxrlq6xme" path="res://scripts/say_bubble.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://etbjvgij8xnb" path="res://sprites/ui/bubble_tail.png" id="2_tail_tex"]
 [ext_resource type="Texture2D" uid="uid://cfavlhxg6xsii" path="res://sprites/ui/button_up.png" id="3_y8xlb"]
+[ext_resource type="FontFile" uid="uid://xopru5mam6b7" path="res://fonts/Shantell_Sans/static/ShantellSans-Bold.ttf" id="4_gemn0"]
+[ext_resource type="FontFile" uid="uid://cb5kgq30hkvi3" path="res://fonts/Shantell_Sans/static/ShantellSans-BoldItalic.ttf" id="5_gp8kt"]
 [ext_resource type="Texture2D" uid="uid://b2o1vyl1u228p" path="res://sprites/ui/button_pressed.png" id="5_lc4fo"]
 
 [sub_resource type="Animation" id="Animation_wfsjp"]
@@ -62,13 +64,23 @@ label = NodePath("panel/label")
 button_indicator = NodePath("bottom/button_indicator")
 
 [node name="panel" type="PanelContainer" parent="." unique_id=53470728]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(200, 150)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("1_h7hx8")
 
-[node name="label" type="Label" parent="panel" unique_id=48107721]
+[node name="label" type="RichTextLabel" parent="panel" unique_id=48107721]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_colors/default_color = Color(0.15, 0.15, 0.15, 1)
+theme_override_fonts/normal_font = ExtResource("4_gemn0")
+theme_override_fonts/bold_font = ExtResource("4_gemn0")
+theme_override_fonts/bold_italics_font = ExtResource("5_gp8kt")
+theme_override_fonts/italics_font = ExtResource("5_gp8kt")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 2
+shortcut_keys_enabled = false
 vertical_alignment = 1
 
 [node name="tail" type="TextureRect" parent="." unique_id=1264587882]

@@ -20,7 +20,8 @@ var _choice_buttons: Array[Button] = []
 var _tween: Tween = null
 var _typing_done := false
 var _exiting := false
-var _label: Label = null
+var _bbcode_regex: RegEx
+var _label: RichTextLabel = null
 
 
 func show_bubble(text: String) -> void:
@@ -46,11 +47,12 @@ func show_bubble(text: String) -> void:
 
   _bubble.pivot_offset = Vector2(_bubble.size.x / 2.0, _bubble.size.y)
 
-  var type_duration := float(wrapped.length()) / chars_per_second
+  var char_count := _label.get_total_character_count()
+  var type_duration := float(char_count) / chars_per_second
   _tween = create_tween()
   _tween.tween_property(_bubble, 'scale', Vector2.ONE, enter_duration) \
   .set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
-  _tween.tween_property(_label, 'visible_characters', wrapped.length(), type_duration)
+  _tween.tween_property(_label, 'visible_characters', char_count, type_duration)
   _tween.finished.connect(_on_typing_done)
 
 
@@ -198,17 +200,29 @@ func _wrap_text(text: String, max_chars: int) -> String:
 
     var words := paragraph.split(' ')
     var current_line := ''
+    var current_visible_len := 0
 
     for word in words:
+      var word_visible_len := _strip_bbcode(word).length()
       if current_line.is_empty():
         current_line = word
-      elif current_line.length() + 1 + word.length() <= max_chars:
+        current_visible_len = word_visible_len
+      elif current_visible_len + 1 + word_visible_len <= max_chars:
         current_line += ' ' + word
+        current_visible_len += 1 + word_visible_len
       else:
         wrapped.append(current_line)
         current_line = word
+        current_visible_len = word_visible_len
 
     if not current_line.is_empty():
       wrapped.append(current_line)
 
   return '\n'.join(wrapped)
+
+
+func _strip_bbcode(text: String) -> String:
+  if not _bbcode_regex:
+    _bbcode_regex = RegEx.new()
+    _bbcode_regex.compile('\\[.*?\\]')
+  return _bbcode_regex.sub(text, '', true)
