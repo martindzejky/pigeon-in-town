@@ -2,15 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://mt7oxu4mesgd" path="res://objects/shadow_canvas_group.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bi13ymg3xdf50" path="res://objects/pigeon.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://dilh58yingxqj" path="res://objects/regular_folk.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dilh58yingxqj" path="res://objects/regular_folk_prototype.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://b7dd7pydkko1e" path="res://scripts/camera.gd" id="4_cam"]
 [ext_resource type="Script" uid="uid://lqimfot170uf" path="res://scripts/town.gd" id="5_town"]
-[ext_resource type="PackedScene" uid="uid://bslyalbthsoq3" path="res://objects/priest.tscn" id="6_priest"]
 [ext_resource type="PackedScene" path="res://objects/ghost_fred.tscn" id="7_ghost_fred"]
-[ext_resource type="PackedScene" uid="uid://2303i68b5pu4" path="res://objects/bartender.tscn" id="8_bartender"]
 [ext_resource type="PackedScene" uid="uid://bcjgtr8k4hx4f" path="res://objects/ghost_gerald.tscn" id="8_ckatl"]
 [ext_resource type="PackedScene" uid="uid://l3bug163acfx" path="res://objects/pig.tscn" id="9_pig"]
-[ext_resource type="PackedScene" uid="uid://c2pmu3xyhd8wp" path="res://objects/old_lady.tscn" id="10_old_lady"]
 [ext_resource type="PackedScene" uid="uid://b36xo7lkrm4nb" path="res://objects/tree.tscn" id="11_tree"]
 [ext_resource type="PackedScene" uid="uid://rmlke1ng5an0" path="res://objects/bush.tscn" id="12_bush"]
 [ext_resource type="PackedScene" uid="uid://b504k2unq1i0" path="res://objects/flower.tscn" id="13_flower"]
@@ -49,82 +46,14 @@ y_sort_enabled = true
 [node name="regular_folk" parent="world_sort" unique_id=1269615729 instance=ExtResource("3_h2yge")]
 position = Vector2(534, 245)
 
-[node name="priest" parent="world_sort" unique_id=1109225838 instance=ExtResource("6_priest")]
-position = Vector2(-800, -400)
-
 [node name="ghost_fred" parent="world_sort" unique_id=1332936328 instance=ExtResource("7_ghost_fred")]
 position = Vector2(-557, -756)
 
 [node name="ghost_gerald" parent="world_sort" unique_id=1015056895 instance=ExtResource("8_ckatl")]
 position = Vector2(-826, -985)
 
-[node name="bartender" parent="world_sort" unique_id=2110833916 instance=ExtResource("8_bartender")]
-position = Vector2(700, -100)
-
 [node name="pig" parent="world_sort" unique_id=450804156 instance=ExtResource("9_pig")]
 position = Vector2(-500, 600)
-
-[node name="old_lady" parent="world_sort" unique_id=1175016227 instance=ExtResource("10_old_lady")]
-position = Vector2(100, 100)
-
-[node name="church" type="Node2D" parent="world_sort" unique_id=294705283]
-position = Vector2(-900, -500)
-
-[node name="label" type="Label" parent="world_sort/church" unique_id=907464991]
-offset_left = -80.0
-offset_top = -30.0
-offset_right = 80.0
-offset_bottom = 30.0
-theme_override_font_sizes/font_size = 32
-text = "Church"
-horizontal_alignment = 1
-
-[node name="graveyard" type="Node2D" parent="world_sort" unique_id=2101003948]
-position = Vector2(-500, -500)
-
-[node name="label" type="Label" parent="world_sort/graveyard" unique_id=925055766]
-offset_left = -80.0
-offset_top = -30.0
-offset_right = 80.0
-offset_bottom = 30.0
-theme_override_font_sizes/font_size = 32
-text = "Graveyard"
-horizontal_alignment = 1
-
-[node name="saloon" type="Node2D" parent="world_sort" unique_id=516853744]
-position = Vector2(600, -200)
-
-[node name="label" type="Label" parent="world_sort/saloon" unique_id=610130419]
-offset_left = -80.0
-offset_top = -30.0
-offset_right = 80.0
-offset_bottom = 30.0
-theme_override_font_sizes/font_size = 32
-text = "Saloon"
-horizontal_alignment = 1
-
-[node name="farm" type="Node2D" parent="world_sort" unique_id=278190359]
-position = Vector2(-600, 500)
-
-[node name="label" type="Label" parent="world_sort/farm" unique_id=83005185]
-offset_left = -80.0
-offset_top = -30.0
-offset_right = 80.0
-offset_bottom = 30.0
-theme_override_font_sizes/font_size = 32
-text = "Farm"
-horizontal_alignment = 1
-
-[node name="fountain" type="Node2D" parent="world_sort" unique_id=204853727]
-
-[node name="label" type="Label" parent="world_sort/fountain" unique_id=1934058989]
-offset_left = -80.0
-offset_top = -30.0
-offset_right = 80.0
-offset_bottom = 30.0
-theme_override_font_sizes/font_size = 32
-text = "Fountain"
-horizontal_alignment = 1
 
 [node name="tree_1" parent="world_sort" unique_id=1260288349 instance=ExtResource("11_tree")]
 position = Vector2(-1200, -600)
