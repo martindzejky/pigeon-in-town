@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cma61sgomrj6y"]
+
+[ext_resource type="Script" uid="uid://wi5jl02spc6u" path="res://scripts/components/button_sounds.gd" id="1_script"]
+[ext_resource type="AudioStream" path="res://sounds/click_random.tres" id="2_click"]
+[ext_resource type="AudioStream" path="res://sounds/hover_random.tres" id="3_hover"]
+
+[node name="button_sounds" type="Node" unique_id=1184681934 node_paths=PackedStringArray("click_player", "hover_player")]
+script = ExtResource("1_script")
+click_player = NodePath("click")
+hover_player = NodePath("hover")
+
+[node name="click" type="AudioStreamPlayer" parent="." unique_id=746777134]
+stream = ExtResource("2_click")
+
+[node name="hover" type="AudioStreamPlayer" parent="." unique_id=1849998068]
+stream = ExtResource("3_hover")
+volume_db = -1.444
