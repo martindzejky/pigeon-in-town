@@ -15,57 +15,7 @@ script = ExtResource("1_walker")
 script = ExtResource("5_condition")
 flag = "talked_to"
 
-; === FIRST VISIT ===
-[node name="first_visit" type="Node" parent="cond_talked"]
-
-[node name="say_intro" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Oh. A pigeon. That's... new, I guess. I'm Jeff. I'm dead."
-
-[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("3_choose")
-
-[node name="option_how" type="Node" parent="cond_talked/first_visit/choose_react"]
-script = ExtResource("4_option")
-label = "How did you die?"
-
-[node name="say_pigeon_how" type="Node" parent="cond_talked/first_visit/choose_react/option_how"]
-script = ExtResource("2_say")
-text = "So... how did you die? If you don't mind me asking."
-
-[node name="say_how_reply" type="Node" parent="cond_talked/first_visit/choose_react/option_how"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Honestly? I forget. It was a long time ago. Might have been the plague. Might have been boredom. Both were going around."
-
-[node name="option_what" type="Node" parent="cond_talked/first_visit/choose_react"]
-script = ExtResource("4_option")
-label = "What do you do here?"
-
-[node name="say_pigeon_what" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
-script = ExtResource("2_say")
-text = "What do you do here all day? Just... stand around?"
-
-[node name="say_what_reply" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Stand here. Exist. Watch Mildred try to scare people. That's about it. Death is surprisingly boring."
-
-[node name="say_outro" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("2_say")
-text = "Sounds rough."
-
-[node name="say_rough" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "It's fine. I wasn't doing much when I was alive either."
-
-[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("6_set_flag")
-flag = "talked_to"
-
-; === RETURN VISIT ===
+; === RETURN VISIT (child 0 = true) ===
 [node name="return_visit" type="Node" parent="cond_talked"]
 
 [node name="say_return" type="Node" parent="cond_talked/return_visit"]
@@ -120,3 +70,53 @@ text = "I heard you're telling people about us. Mildred won't shut up about it. 
 script = ExtResource("2_say")
 speaker = 1
 text = "Well. Nice seeing you. That's not something I say often. Or ever."
+
+; === FIRST VISIT (child 1 = false) ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_intro" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Oh. A pigeon. That's... new, I guess. I'm Jeff. I'm dead."
+
+[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("3_choose")
+
+[node name="option_how" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "How did you die?"
+
+[node name="say_pigeon_how" type="Node" parent="cond_talked/first_visit/choose_react/option_how"]
+script = ExtResource("2_say")
+text = "So... how did you die? If you don't mind me asking."
+
+[node name="say_how_reply" type="Node" parent="cond_talked/first_visit/choose_react/option_how"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Honestly? I forget. It was a long time ago. Might have been the plague. Might have been boredom. Both were going around."
+
+[node name="option_what" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "What do you do here?"
+
+[node name="say_pigeon_what" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
+script = ExtResource("2_say")
+text = "What do you do here all day? Just... stand around?"
+
+[node name="say_what_reply" type="Node" parent="cond_talked/first_visit/choose_react/option_what"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Stand here. Exist. Watch Mildred try to scare people. That's about it. Death is surprisingly boring."
+
+[node name="say_outro" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+text = "Sounds rough."
+
+[node name="say_rough" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "It's fine. I wasn't doing much when I was alive either."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("6_set_flag")
+flag = "talked_to"

@@ -74,6 +74,16 @@ func _process_current() -> void:
     print('[walker] -> entering option: ', _current.name)
     _current = _current.get_child(0)
     _process_current()
+  else:
+    # plain node used as a container, enter first child or skip
+    if _current.get_child_count() > 0:
+      print('[walker] -> container: ', _current.name, ' (entering first child)')
+      _current = _current.get_child(0)
+      _process_current()
+    else:
+      print('[walker] -> empty node: ', _current.name, ' (skipping)')
+      _next()
+      _process_current()
 
 
 func _next() -> void:

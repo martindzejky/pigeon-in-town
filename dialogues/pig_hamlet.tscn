@@ -15,7 +15,59 @@ script = ExtResource("1_walker")
 script = ExtResource("5_condition")
 flag = "talked_to"
 
-; === FIRST VISIT ===
+; === RETURN VISIT (child 0 = true) ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+; -- check for prophet flag --
+[node name="cond_prophet" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("5_condition")
+flag = "g_pigeon_is_prophet"
+global = true
+
+; -- prophet reaction --
+[node name="prophet_branch" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+
+[node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "A [i]prophet[/i]! Tell me, wise one. Is there meaning beyond the trough? Is there a world past the fence?"
+
+[node name="say_pigeon_meaning" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+text = "I've seen beyond the fence. There's a field and some more mud."
+
+[node name="say_beautiful" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "A field... and mud... How [color=#a8554c]beautifully[/color] simple. The universe gives us only what we need."
+
+; -- no prophet --
+[node name="no_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+
+[node name="say_return_hi" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Ah, the pigeon returns. I have been thinking about the nature of flight. You can fly. I cannot. And yet we both eat from the ground. What does that [i]mean[/i]?"
+
+[node name="say_pigeon_nothing" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet"]
+script = ExtResource("2_say")
+text = "I think it means we both like food."
+
+[node name="say_deep" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[i]Exactly.[/i] Food is the great equalizer. The trough does not care if you have wings."
+
+[node name="say_pigeon_sure" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+text = "Sure, Hamlet."
+
+[node name="say_farewell" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Go well, pigeon. And remember. To oink... is to [i]live[/i]."
+
+; === FIRST VISIT (child 1 = false) ===
 [node name="first_visit" type="Node" parent="cond_talked"]
 
 [node name="say_monologue" type="Node" parent="cond_talked/first_visit"]
@@ -87,55 +139,3 @@ text = "I did. And I meant every word."
 [node name="set_talked" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("6_set_flag")
 flag = "talked_to"
-
-; === RETURN VISIT ===
-[node name="return_visit" type="Node" parent="cond_talked"]
-
-; -- check for prophet flag --
-[node name="cond_prophet" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("5_condition")
-flag = "g_pigeon_is_prophet"
-global = true
-
-; -- prophet reaction --
-[node name="prophet_branch" type="Node" parent="cond_talked/return_visit/cond_prophet"]
-
-[node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
-script = ExtResource("2_say")
-speaker = 1
-text = "A [i]prophet[/i]! Tell me, wise one. Is there meaning beyond the trough? Is there a world past the fence?"
-
-[node name="say_pigeon_meaning" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
-script = ExtResource("2_say")
-text = "I've seen beyond the fence. There's a field and some more mud."
-
-[node name="say_beautiful" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
-script = ExtResource("2_say")
-speaker = 1
-text = "A field... and mud... How [color=#a8554c]beautifully[/color] simple. The universe gives us only what we need."
-
-; -- no prophet --
-[node name="no_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet"]
-
-[node name="say_return_hi" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Ah, the pigeon returns. I have been thinking about the nature of flight. You can fly. I cannot. And yet we both eat from the ground. What does that [i]mean[/i]?"
-
-[node name="say_pigeon_nothing" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet"]
-script = ExtResource("2_say")
-text = "I think it means we both like food."
-
-[node name="say_deep" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet"]
-script = ExtResource("2_say")
-speaker = 1
-text = "[i]Exactly.[/i] Food is the great equalizer. The trough does not care if you have wings."
-
-[node name="say_pigeon_sure" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-text = "Sure, Hamlet."
-
-[node name="say_farewell" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Go well, pigeon. And remember. To oink... is to [i]live[/i]."

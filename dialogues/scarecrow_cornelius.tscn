@@ -15,57 +15,7 @@ script = ExtResource("1_walker")
 script = ExtResource("5_condition")
 flag = "talked_to"
 
-; === FIRST VISIT ===
-[node name="first_visit" type="Node" parent="cond_talked"]
-
-[node name="say_scream" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "[shake]BIRD! BIRD IN THE FIELD![/shake] THIS IS A RESTRICTED AREA! LEAVE IMMEDIATELY!"
-
-[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("3_choose")
-
-[node name="option_pigeon" type="Node" parent="cond_talked/first_visit/choose_react"]
-script = ExtResource("4_option")
-label = "I'm not a crow"
-
-[node name="say_pigeon_not_crow" type="Node" parent="cond_talked/first_visit/choose_react/option_pigeon"]
-script = ExtResource("2_say")
-text = "Relax. I'm a pigeon, not a crow. I don't even like crops."
-
-[node name="say_all_birds" type="Node" parent="cond_talked/first_visit/choose_react/option_pigeon"]
-script = ExtResource("2_say")
-speaker = 1
-text = "ALL birds are the enemy! I don't [i]discriminate[/i]! Pigeons, crows, sparrows, ducks. ALL OF THEM!"
-
-[node name="option_peace" type="Node" parent="cond_talked/first_visit/choose_react"]
-script = ExtResource("4_option")
-label = "I come in peace"
-
-[node name="say_pigeon_peace" type="Node" parent="cond_talked/first_visit/choose_react/option_peace"]
-script = ExtResource("2_say")
-text = "Easy there. I come in peace. Not here for your crops."
-
-[node name="say_sparrow" type="Node" parent="cond_talked/first_visit/choose_react/option_peace"]
-script = ExtResource("2_say")
-speaker = 1
-text = "That's [i]exactly[/i] what the last sparrow said! And then he ate a seed! [shake]A SEED![/shake] Right in front of me!"
-
-[node name="say_calm" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Fine. FINE. You can stay. But I'm [color=#a8554c]watching[/color] you. Don't touch the wheat."
-
-[node name="say_pigeon_ok" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("2_say")
-text = "Wouldn't dream of it."
-
-[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("6_set_flag")
-flag = "talked_to"
-
-; === RETURN VISIT ===
+; === RETURN VISIT (child 0 = true) ===
 [node name="return_visit" type="Node" parent="cond_talked"]
 
 [node name="cond_friends" type="Node" parent="cond_talked/return_visit"]
@@ -141,7 +91,7 @@ text = "Don't you get bored? Just standing here all day?"
 [node name="say_boring_reply" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_boring"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take EVERYTHING!"
+text = "[shake rate=20.0 level=10]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take EVERYTHING!"
 
 ; -- the secret option (Unlikely Friends ending) --
 [node name="option_agnes" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return"]
@@ -214,4 +164,54 @@ text = "Don't you get bored? Just standing here all day?"
 [node name="say_boring_reply_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_boring_2"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take EVERYTHING!"
+text = "[shake rate=20.0 level=10]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take EVERYTHING!"
+
+; === FIRST VISIT (child 1 = false) ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_scream" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[shake rate=20.0 level=10]BIRD! BIRD IN THE FIELD![/shake] THIS IS A RESTRICTED AREA! LEAVE IMMEDIATELY!"
+
+[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("3_choose")
+
+[node name="option_pigeon" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "I'm not a crow"
+
+[node name="say_pigeon_not_crow" type="Node" parent="cond_talked/first_visit/choose_react/option_pigeon"]
+script = ExtResource("2_say")
+text = "Relax. I'm a pigeon, not a crow. I don't even like crops."
+
+[node name="say_all_birds" type="Node" parent="cond_talked/first_visit/choose_react/option_pigeon"]
+script = ExtResource("2_say")
+speaker = 1
+text = "ALL birds are the enemy! I don't [i]discriminate[/i]! Pigeons, crows, sparrows, ducks. ALL OF THEM!"
+
+[node name="option_peace" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "I come in peace"
+
+[node name="say_pigeon_peace" type="Node" parent="cond_talked/first_visit/choose_react/option_peace"]
+script = ExtResource("2_say")
+text = "Easy there. I come in peace. Not here for your crops."
+
+[node name="say_sparrow" type="Node" parent="cond_talked/first_visit/choose_react/option_peace"]
+script = ExtResource("2_say")
+speaker = 1
+text = "That's [i]exactly[/i] what the last sparrow said! And then he ate a seed! [shake rate=20.0 level=10]A SEED![/shake] Right in front of me!"
+
+[node name="say_calm" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Fine. FINE. You can stay. But I'm [color=#a8554c]watching[/color] you. Don't touch the wheat."
+
+[node name="say_pigeon_ok" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+text = "Wouldn't dream of it."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("6_set_flag")
+flag = "talked_to"

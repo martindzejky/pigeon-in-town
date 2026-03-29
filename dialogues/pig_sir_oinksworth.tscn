@@ -15,57 +15,7 @@ script = ExtResource("1_walker")
 script = ExtResource("5_condition")
 flag = "talked_to"
 
-; === FIRST VISIT ===
-[node name="first_visit" type="Node" parent="cond_talked"]
-
-[node name="say_halt" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "[shake]HALT![/shake] State your name and title before the Third of His Name, [color=#a8554c]Sir Oinksworth[/color], Lord of the Mud Patch, Duke of the Feed Bin!"
-
-[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("3_choose")
-
-[node name="option_majesty" type="Node" parent="cond_talked/first_visit/choose_react"]
-script = ExtResource("4_option")
-label = "Your Majesty"
-
-[node name="say_pigeon_bow" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty"]
-script = ExtResource("2_say")
-text = "My apologies, Your Majesty. I am but a humble pigeon passing through your... lands."
-
-[node name="say_pleased" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Ah! Finally, someone with [i]breeding[/i]. You may stay. But do not touch the mud. That is [color=#a8554c]royal mud[/color]."
-
-[node name="set_respect" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty"]
-script = ExtResource("6_set_flag")
-flag = "showed_respect"
-
-[node name="option_pig" type="Node" parent="cond_talked/first_visit/choose_react"]
-script = ExtResource("4_option")
-label = "You're a pig in a pen"
-
-[node name="say_pigeon_pig" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
-script = ExtResource("2_say")
-text = "You're a pig. In a pen. With mud on your face."
-
-[node name="say_outrage" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
-script = ExtResource("2_say")
-speaker = 1
-text = "[shake]HOW DARE![/shake] Guards! Seize this bird! ...We don't have guards. HAMLET! BE A GUARD!"
-
-[node name="say_hamlet" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
-script = ExtResource("2_say")
-speaker = 1
-text = "...Hamlet is doing a monologue. Useless. You may go. But I shall [i]remember[/i] this insult."
-
-[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("6_set_flag")
-flag = "talked_to"
-
-; === RETURN VISIT ===
+; === RETURN VISIT (child 0 = true) ===
 [node name="return_visit" type="Node" parent="cond_talked"]
 
 ; -- check if showed respect --
@@ -161,3 +111,53 @@ text = "Is he? He looks like he's doing a monologue."
 script = ExtResource("2_say")
 speaker = 1
 text = "He's ALWAYS doing a monologue. Very hard to get good guards around here."
+
+; === FIRST VISIT (child 1 = false) ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_halt" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[shake rate=20.0 level=10]HALT![/shake] State your name and title before the Third of His Name, [color=#a8554c]Sir Oinksworth[/color], Lord of the Mud Patch, Duke of the Feed Bin!"
+
+[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("3_choose")
+
+[node name="option_majesty" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "Your Majesty"
+
+[node name="say_pigeon_bow" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty"]
+script = ExtResource("2_say")
+text = "My apologies, Your Majesty. I am but a humble pigeon passing through your... lands."
+
+[node name="say_pleased" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Ah! Finally, someone with [i]breeding[/i]. You may stay. But do not touch the mud. That is [color=#a8554c]royal mud[/color]."
+
+[node name="set_respect" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty"]
+script = ExtResource("6_set_flag")
+flag = "showed_respect"
+
+[node name="option_pig" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "You're a pig in a pen"
+
+[node name="say_pigeon_pig" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
+script = ExtResource("2_say")
+text = "You're a pig. In a pen. With mud on your face."
+
+[node name="say_outrage" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[shake rate=20.0 level=10]HOW DARE![/shake] Guards! Seize this bird! ...We don't have guards. HAMLET! BE A GUARD!"
+
+[node name="say_hamlet" type="Node" parent="cond_talked/first_visit/choose_react/option_pig"]
+script = ExtResource("2_say")
+speaker = 1
+text = "...Hamlet is doing a monologue. Useless. You may go. But I shall [i]remember[/i] this insult."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("6_set_flag")
+flag = "talked_to"

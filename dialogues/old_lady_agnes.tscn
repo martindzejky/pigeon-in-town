@@ -15,13 +15,78 @@ script = ExtResource("1_walker")
 script = ExtResource("5_condition")
 flag = "talked_to"
 
-; === FIRST VISIT ===
+; === RETURN VISIT (child 0 = true) ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+[node name="say_return" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "You came [color=#a8554c]back[/color]! Nobody comes back! Oh, this is wonderful!"
+
+; -- check for prophet flag --
+[node name="cond_prophet" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("5_condition")
+flag = "g_pigeon_is_prophet"
+global = true
+
+; -- prophet reaction --
+[node name="prophet_branch" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+
+[node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Father Cuthbert says you're a [i]prophet[/i]! Can you bless my knees? They ache something terrible."
+
+[node name="say_pigeon_knees" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+text = "I don't think pigeon blessings work on knees."
+
+[node name="say_worth_try" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Worth a try! Nothing else has worked. Not even the turnip poultice."
+
+; -- no prophet, skip --
+[node name="no_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet"]
+
+; -- check for ghost rumor --
+[node name="cond_ghost" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("5_condition")
+flag = "g_ghost_rumor"
+global = true
+
+; -- ghost rumor reaction --
+[node name="ghost_branch" type="Node" parent="cond_talked/return_visit/cond_ghost"]
+
+[node name="say_ghost" type="Node" parent="cond_talked/return_visit/cond_ghost/ghost_branch"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[color=#a8554c]Ghosts[/color]?! In the graveyard?! I [i]knew[/i] that place was cursed! I am never going near it again. Not that I went near it before."
+
+; -- no ghost rumor, skip --
+[node name="no_ghost" type="Node" parent="cond_talked/return_visit/cond_ghost"]
+
+[node name="say_return_bye" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Come visit whenever you like! I'll be right here. I'm always here. I have nowhere else to go."
+
+[node name="say_pigeon_bye" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+text = "That's... a bit sad."
+
+[node name="say_not_sad" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Not anymore! I have a pigeon friend now!"
+
+; === FIRST VISIT (child 1 = false) ===
 [node name="first_visit" type="Node" parent="cond_talked"]
 
 [node name="say_excited" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "Oh! [shake]OH![/shake] Someone is talking to me! Nobody talks to me! Come here, come closer!"
+text = "Oh! [shake rate=20.0 level=10]OH![/shake] Someone is talking to me! Nobody talks to me! Come here, come closer!"
 
 [node name="say_pigeon_hi" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
@@ -87,68 +152,3 @@ text = "Oh, please come back and talk to me again! You're the best conversation 
 [node name="set_talked" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("6_set_flag")
 flag = "talked_to"
-
-; === RETURN VISIT ===
-[node name="return_visit" type="Node" parent="cond_talked"]
-
-[node name="say_return" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "You came [color=#a8554c]back[/color]! Nobody comes back! Oh, this is wonderful!"
-
-; -- check for prophet flag --
-[node name="cond_prophet" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("5_condition")
-flag = "g_pigeon_is_prophet"
-global = true
-
-; -- prophet reaction --
-[node name="prophet_branch" type="Node" parent="cond_talked/return_visit/cond_prophet"]
-
-[node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Father Cuthbert says you're a [i]prophet[/i]! Can you bless my knees? They ache something terrible."
-
-[node name="say_pigeon_knees" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
-script = ExtResource("2_say")
-text = "I don't think pigeon blessings work on knees."
-
-[node name="say_worth_try" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Worth a try! Nothing else has worked. Not even the turnip poultice."
-
-; -- no prophet, skip --
-[node name="no_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet"]
-
-; -- check for ghost rumor --
-[node name="cond_ghost" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("5_condition")
-flag = "g_ghost_rumor"
-global = true
-
-; -- ghost rumor reaction --
-[node name="ghost_branch" type="Node" parent="cond_talked/return_visit/cond_ghost"]
-
-[node name="say_ghost" type="Node" parent="cond_talked/return_visit/cond_ghost/ghost_branch"]
-script = ExtResource("2_say")
-speaker = 1
-text = "[color=#a8554c]Ghosts[/color]?! In the graveyard?! I [i]knew[/i] that place was cursed! I am never going near it again. Not that I went near it before."
-
-; -- no ghost rumor, skip --
-[node name="no_ghost" type="Node" parent="cond_talked/return_visit/cond_ghost"]
-
-[node name="say_return_bye" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Come visit whenever you like! I'll be right here. I'm always here. I have nowhere else to go."
-
-[node name="say_pigeon_bye" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-text = "That's... a bit sad."
-
-[node name="say_not_sad" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Not anymore! I have a pigeon friend now!"

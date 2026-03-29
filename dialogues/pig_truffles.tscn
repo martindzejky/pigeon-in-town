@@ -15,7 +15,37 @@ script = ExtResource("1_walker")
 script = ExtResource("5_condition")
 flag = "talked_to"
 
-; === FIRST VISIT ===
+; === RETURN VISIT (child 0 = true) ===
+[node name="return_visit" type="Node" parent="cond_talked"]
+
+[node name="say_found" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I found something near the [color=#a8554c]church[/color]! It smells like... soil and regret. And mushrooms. Lots of mushrooms."
+
+[node name="say_pigeon_church" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+text = "Near the church? That's close to the graveyard."
+
+[node name="say_better" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Even BETTER! Dead things make the best soil! And the best soil makes the best [i]truffles[/i]! It's the circle of life!"
+
+[node name="say_pigeon_circle" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+text = "That's... one way to look at it."
+
+[node name="say_sniff_2" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Snff... I can smell you too, by the way. You smell like breadcrumbs and [color=#6b8e5e]adventure[/color]."
+
+[node name="say_pigeon_thanks" type="Node" parent="cond_talked/return_visit"]
+script = ExtResource("2_say")
+text = "Thanks. I think."
+
+; === FIRST VISIT (child 1 = false) ===
 [node name="first_visit" type="Node" parent="cond_talked"]
 
 [node name="say_sniff" type="Node" parent="cond_talked/first_visit"]
@@ -77,33 +107,3 @@ text = "Well, once it said there were truffles and it was a rock. But it was a v
 [node name="set_talked" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("6_set_flag")
 flag = "talked_to"
-
-; === RETURN VISIT ===
-[node name="return_visit" type="Node" parent="cond_talked"]
-
-[node name="say_found" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "I found something near the [color=#a8554c]church[/color]! It smells like... soil and regret. And mushrooms. Lots of mushrooms."
-
-[node name="say_pigeon_church" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-text = "Near the church? That's close to the graveyard."
-
-[node name="say_better" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Even BETTER! Dead things make the best soil! And the best soil makes the best [i]truffles[/i]! It's the circle of life!"
-
-[node name="say_pigeon_circle" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-text = "That's... one way to look at it."
-
-[node name="say_sniff_2" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Snff... I can smell you too, by the way. You smell like breadcrumbs and [color=#6b8e5e]adventure[/color]."
-
-[node name="say_pigeon_thanks" type="Node" parent="cond_talked/return_visit"]
-script = ExtResource("2_say")
-text = "Thanks. I think."

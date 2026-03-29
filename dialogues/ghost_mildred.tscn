@@ -15,70 +15,7 @@ script = ExtResource("1_walker")
 script = ExtResource("5_condition")
 flag = "talked_to"
 
-; === FIRST VISIT ===
-[node name="first_visit" type="Node" parent="cond_talked"]
-
-[node name="say_boo" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("2_say")
-speaker = 1
-text = "[shake]BOOOOO![/shake] Fear me! I am the [color=#a8554c]terror[/color] of this graveyard!"
-
-[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("3_choose")
-
-[node name="option_awful" type="Node" parent="cond_talked/first_visit/choose_react"]
-script = ExtResource("4_option")
-label = "That was terrible"
-
-[node name="say_pigeon_awful" type="Node" parent="cond_talked/first_visit/choose_react/option_awful"]
-script = ExtResource("2_say")
-text = "...Was that it? That was really not scary."
-
-[node name="say_crushed" type="Node" parent="cond_talked/first_visit/choose_react/option_awful"]
-script = ExtResource("2_say")
-speaker = 1
-text = "I... forty years. Forty years I've been practicing that. And nothing. Not a single scream."
-
-[node name="say_pigeon_sorry" type="Node" parent="cond_talked/first_visit/choose_react/option_awful"]
-script = ExtResource("2_say")
-text = "Sorry. Maybe try jumping out from behind a gravestone next time?"
-
-[node name="say_tried" type="Node" parent="cond_talked/first_visit/choose_react/option_awful"]
-script = ExtResource("2_say")
-speaker = 1
-text = "I [i]have[/i]. They just walk right through me. Literally."
-
-[node name="set_insulted" type="Node" parent="cond_talked/first_visit/choose_react/option_awful"]
-script = ExtResource("6_set_flag")
-flag = "insulted"
-
-[node name="option_scream" type="Node" parent="cond_talked/first_visit/choose_react"]
-script = ExtResource("4_option")
-label = "AAAGH!"
-
-[node name="say_pigeon_scream" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
-script = ExtResource("2_say")
-text = "[shake]AAAGH![/shake] A ghost! Oh no! So scary!"
-
-[node name="say_thrilled" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
-script = ExtResource("2_say")
-speaker = 1
-text = "Did you hear that, Jeff?! [shake]SOMEONE SCREAMED![/shake] After [color=#a8554c]forty years[/color]!"
-
-[node name="say_jeff_react" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
-script = ExtResource("2_say")
-speaker = 1
-text = "This is the greatest day of my afterlife!"
-
-[node name="set_screamed" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
-script = ExtResource("6_set_flag")
-flag = "screamed"
-
-[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
-script = ExtResource("6_set_flag")
-flag = "talked_to"
-
-; === RETURN VISIT ===
+; === RETURN VISIT (child 0 = true) ===
 [node name="return_visit" type="Node" parent="cond_talked"]
 
 ; -- check if the Great Haunting ending is ready --
@@ -102,7 +39,7 @@ text = "The innkeeper. He panicked when I told him about you. Completely lost it
 [node name="say_ending_2" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending"]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake]SOMEONE WAS SCARED OF ME![/shake]"
+text = "[shake rate=20.0 level=10]SOMEONE WAS SCARED OF ME![/shake]"
 
 [node name="say_ending_3" type="Node" parent="cond_talked/return_visit/cond_someone_scared/ending"]
 script = ExtResource("2_say")
@@ -210,3 +147,66 @@ text = "Still not scared. Sorry."
 script = ExtResource("2_say")
 speaker = 1
 text = "Forty years. Not a single scream. Maybe I'm just not cut out for haunting."
+
+; === FIRST VISIT (child 1 = false) ===
+[node name="first_visit" type="Node" parent="cond_talked"]
+
+[node name="say_boo" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "[shake rate=20.0 level=10]BOOOOO![/shake] Fear me! I am the [color=#a8554c]terror[/color] of this graveyard!"
+
+[node name="choose_react" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("3_choose")
+
+[node name="option_awful" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "That was terrible"
+
+[node name="say_pigeon_awful" type="Node" parent="cond_talked/first_visit/choose_react/option_awful"]
+script = ExtResource("2_say")
+text = "...Was that it? That was really not scary."
+
+[node name="say_crushed" type="Node" parent="cond_talked/first_visit/choose_react/option_awful"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I... forty years. Forty years I've been practicing that. And nothing. Not a single scream."
+
+[node name="say_pigeon_sorry" type="Node" parent="cond_talked/first_visit/choose_react/option_awful"]
+script = ExtResource("2_say")
+text = "Sorry. Maybe try jumping out from behind a gravestone next time?"
+
+[node name="say_tried" type="Node" parent="cond_talked/first_visit/choose_react/option_awful"]
+script = ExtResource("2_say")
+speaker = 1
+text = "I [i]have[/i]. They just walk right through me. Literally."
+
+[node name="set_insulted" type="Node" parent="cond_talked/first_visit/choose_react/option_awful"]
+script = ExtResource("6_set_flag")
+flag = "insulted"
+
+[node name="option_scream" type="Node" parent="cond_talked/first_visit/choose_react"]
+script = ExtResource("4_option")
+label = "AAAGH!"
+
+[node name="say_pigeon_scream" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
+script = ExtResource("2_say")
+text = "[shake rate=20.0 level=10]AAAGH![/shake] A ghost! Oh no! So scary!"
+
+[node name="say_thrilled" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Did you hear that, Jeff?! [shake rate=20.0 level=10]SOMEONE SCREAMED![/shake] After [color=#a8554c]forty years[/color]!"
+
+[node name="say_jeff_react" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
+script = ExtResource("2_say")
+speaker = 1
+text = "This is the greatest day of my afterlife!"
+
+[node name="set_screamed" type="Node" parent="cond_talked/first_visit/choose_react/option_scream"]
+script = ExtResource("6_set_flag")
+flag = "screamed"
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("6_set_flag")
+flag = "talked_to"
