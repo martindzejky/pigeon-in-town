@@ -41,6 +41,11 @@ _data = {
 &"run": SubResource("Animation_run")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_68ltb"]
+font_size = 74
+outline_size = 46
+outline_color = Color(0.09803922, 0.13333334, 0.16470589, 1)
+
 [node name="interaction_hint" type="HBoxContainer" unique_id=1253944932]
 anchors_preset = 7
 anchor_left = 0.5
@@ -69,4 +74,5 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.15, 0.15, 0.15, 1)
 text = "Talk"
+label_settings = SubResource("LabelSettings_68ltb")
 vertical_alignment = 1
