@@ -37,6 +37,7 @@
 [ext_resource type="Script" uid="uid://dvawjdkc4g4hg" path="res://scripts/intro_cutscene.gd" id="31_oej6q"]
 [ext_resource type="PackedScene" uid="uid://cy4xf0mmhswwa" path="res://dialogues/dialogue_intro.tscn" id="32_dialogue_intro"]
 [ext_resource type="PackedScene" uid="uid://b0jilux028iir" path="res://objects/characters/folk_cedric.tscn" id="33_idu3t"]
+[ext_resource type="PackedScene" uid="uid://djnyd6a00mgsu" path="res://objects/nature/wheat.tscn" id="34_pwx13"]
 [ext_resource type="PackedScene" path="res://objects/characters/folk_hugh.tscn" id="35_8svx7"]
 [ext_resource type="PackedScene" uid="uid://gokyjm1wxgtb" path="res://ui/pause_menu.tscn" id="36_pause"]
 [ext_resource type="Script" uid="uid://dywregod52bd2" path="res://scripts/ending_cutscene.gd" id="37_ending"]
@@ -562,6 +563,13 @@ position = Vector2(3255, 5088)
 y_sort_enabled = true
 position = Vector2(0, -1)
 
+[node name="wheat" parent="world_sort/field" unique_id=1755829330 instance=ExtResource("19_0havn")]
+objects = Array[PackedScene]([ExtResource("34_pwx13")])
+density = 0.5
+
+[node name="polygon" parent="world_sort/field/wheat" index="0"]
+polygon = PackedVector2Array(-5862, 4882, -6089, 4865, -6345, 5002, -6399, 5449, -6363, 6660, -6434, 7810, -6321, 8144, -5337, 8276, -4031, 8228, -2970, 8311, -1879, 8276, -1783, 8055, -1783, 6719, -1718, 5968, -2040, 5199, -2529, 5038, -3512, 5002, -3918, 5085)
+
 [node name="fence_1" parent="world_sort/field" unique_id=535863878 instance=ExtResource("16_fence_1")]
 position = Vector2(-4589, 4800)
 
@@ -845,7 +853,7 @@ objects = Array[PackedScene]([ExtResource("14_grass")])
 density = 0.2
 
 [node name="polygon" parent="world_sort/east/grass" index="0"]
-polygon = PackedVector2Array(695, 683, 2726, 606, 2958, 456, 2994, -2068, 5602, -2585, 6351, -1836, 6279, 1710, 4621, 2018, 3579, 1579, 1619, 1304, 786, 1271)
+polygon = PackedVector2Array(695, 683, 2726, 606, 2958, 456, 2913, -875, 2785, -1222, -386, -1096, -1048, -2521, 5602, -2585, 6351, -1836, 6279, 1710, 4621, 2018, 3579, 1579, 1619, 1304, 786, 1271)
 
 [node name="tree" parent="world_sort/east" unique_id=747361600 instance=ExtResource("11_tree")]
 position = Vector2(4204, -769)
@@ -858,6 +866,15 @@ position = Vector2(3717, -5)
 
 [node name="tree4" parent="world_sort/east" unique_id=218873565 instance=ExtResource("11_tree")]
 position = Vector2(3500, -265)
+
+[node name="tree8" parent="world_sort/east" unique_id=1794345742 instance=ExtResource("11_tree")]
+position = Vector2(643, -1306)
+
+[node name="tree9" parent="world_sort/east" unique_id=424220721 instance=ExtResource("11_tree")]
+position = Vector2(926, -1360)
+
+[node name="tree10" parent="world_sort/east" unique_id=1035361124 instance=ExtResource("11_tree")]
+position = Vector2(1449, -1288)
 
 [node name="tree5" parent="world_sort/east" unique_id=993851130 instance=ExtResource("11_tree")]
 position = Vector2(4638, 873)
@@ -897,6 +914,7 @@ dialogue = NodePath("dialogue")
 
 [editable path="world_sort/town/graveyard/grass"]
 [editable path="world_sort/farm/bush_below_farm"]
+[editable path="world_sort/field/wheat"]
 [editable path="world_sort/south/grass"]
 [editable path="world_sort/south/flowers"]
 [editable path="world_sort/south/grass2"]
