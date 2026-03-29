@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://rmlke1ng5an0" path="res://objects/nature/bush.tscn" id="12_bush"]
 [ext_resource type="PackedScene" uid="uid://cy74wli8s6fw3" path="res://objects/buildings/tavern.tscn" id="13_icc4n"]
 [ext_resource type="PackedScene" uid="uid://dp8tpseim0ftg" path="res://objects/buildings/house.tscn" id="14_b0eaf"]
+[ext_resource type="PackedScene" uid="uid://jhdcb0axnbde" path="res://objects/nature/grass.tscn" id="14_grass"]
 [ext_resource type="PackedScene" uid="uid://b2db5qhii7ups" path="res://objects/props/gravestone.tscn" id="15_gravestone"]
 [ext_resource type="PackedScene" uid="uid://dmuoa3sbvp6wx" path="res://objects/buildings/well.tscn" id="15_uutfq"]
 [ext_resource type="PackedScene" uid="uid://blfwvm3tffpsv" path="res://objects/buildings/farmhouse.tscn" id="16_b00ts"]
@@ -17,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://m6lymenv2iwx" path="res://objects/props/fence_2.tscn" id="17_fence_2"]
 [ext_resource type="PackedScene" uid="uid://d3s08yov8k4fp" path="res://objects/buildings/barn.tscn" id="17_i0mj0"]
 [ext_resource type="PackedScene" uid="uid://bbgvy27xu6jtn" path="res://objects/props/fence_3.tscn" id="18_fence_3"]
+[ext_resource type="PackedScene" path="res://objects/area_spawner.tscn" id="19_0havn"]
 [ext_resource type="PackedScene" uid="uid://cwl48bcxgntoa" path="res://objects/props/fence_4.tscn" id="19_fence_4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie20d"]
@@ -94,8 +96,20 @@ metadata/_edit_lock_ = true
 texture_repeat = 2
 position = Vector2(-3354, 4892)
 texture = ExtResource("4_ie20d")
-polygon = PackedVector2Array(1143, 51, 1752, 1171, 1643, 2474, 1659, 3373, 1578, 3497, -1077, 3470, -3070, 3362, -3184, 3069, -3016, 25, -2675, -94, -627, 84, -226, 9)
+polygon = PackedVector2Array(1143, 51, 1415, 293, 1662, 771, 1752, 1171, 1643, 2474, 1659, 3373, 1578, 3497, 1031, 3539, -134, 3478, -527, 3407, -1077, 3470, -2457, 3445, -2655, 3418, -3070, 3362, -3152, 3215, -3184, 3069, -3086, 1082, -3123, 241, -3016, 25, -2893, -43, -2675, -94, -627, 84, -418, 72, -226, 9, 214, -14)
 uv = PackedVector2Array(1143, 51, 1752, 1171, 1643, 2474, 1659, 3373, 1578, 3497, -1077, 3470, -3070, 3362, -3184, 3069, -3016, 25, -2675, -94, -627, 84, -226, 9)
+
+[node name="graveyard" type="Polygon2D" parent="ground" unique_id=1566998525]
+color = Color(0.6532031, 0.6473865, 0.5670963, 0.4627451)
+polygon = PackedVector2Array(626, -672, 955, -864, 1678, -839, 2472, -764, 2553, -701, 2579, -612, 2637, -541, 2660, 102, 2601, 307, 2118, 311, 1169, 222, 676, 126, 601, -229, 638, -493)
+
+[node name="pigs" type="Polygon2D" parent="ground" unique_id=664654580]
+color = Color(0.7, 0.5698, 0.48299998, 0.45882353)
+polygon = PackedVector2Array(437, 4900, 314, 5021, 310, 5092, 335, 5211, 375, 5339, 345, 5543, 283, 5763, 274, 5884, 352, 6068, 433, 6195, 496, 6345, 646, 6414, 840, 6450, 1041, 6460, 1321, 6421, 1682, 6318, 1853, 6314, 2196, 6318, 2518, 6429, 2785, 6423, 2965, 6412, 3265, 6335, 3361, 6139, 3353, 5869, 3326, 5731, 3426, 5545, 3529, 5410, 3806, 5257, 4015, 5278, 4216, 5197, 4287, 4973, 4249, 4758, 4159, 4570, 3848, 4509, 3712, 4505, 3336, 4560, 3071, 4631, 2852, 4775, 2298, 4856, 2052, 4860, 1856, 4877, 1605, 4911, 1212, 4988, 889, 4938, 653, 4900)
+
+[node name="road" type="Polygon2D" parent="ground" unique_id=1391133911]
+color = Color(0.67, 0.47056335, 0.35509998, 0.27450982)
+polygon = PackedVector2Array(-1215, 10166, -870, 8014, -905, 7580, -989, 6920, -1427, 5423, -1501, 4950, -1427, 4620, -1186, 3670, -1284, 3505, -1695, 3471, -2174, 3655, -2819, 3708, -3224, 3532, -3330, 3138, -3155, 2860, -2813, 2762, -2146, 2771, -1562, 2799, -1039, 2721, -606, 2579, -242, 1706, -264, 1189, -272, 764, -97, 686, 25, 739, 92, 841, 39, 1022, -33, 1322, -2, 1723, -50, 1981, -205, 2470, -161, 2790, 692, 2882, 1565, 2882, 2394, 2799, 3236, 2665, 3849, 2570, 4839, 2501, 5597, 2501, 6213, 2467, 7468, 2579, 7879, 3293, 7064, 3653, 4800, 3827, 3488, 3617, 2673, 3625, 2168, 3625, 1321, 3696, 893, 3672, 422, 3577, -95, 3604, -572, 3614, -701, 3730, -906, 4017, -970, 4375, -1058, 4947, -1009, 5360, -756, 5846, -487, 6381, -321, 7167, -285, 7980, -398, 8476, -600, 9155, -688, 9879, -572, 10258, -199, 11326, 12, 12242, 99, 13553, -486, 13781, -1397, 13564, -1093, 12144, -1055, 11066)
 
 [node name="world_sort" type="Node2D" parent="." unique_id=1702403875]
 y_sort_enabled = true
@@ -105,6 +119,14 @@ metadata/_edit_lock_ = true
 
 [node name="graveyard" type="Node2D" parent="world_sort" unique_id=677215186]
 y_sort_enabled = true
+
+[node name="grass" parent="world_sort/graveyard" unique_id=818048649 instance=ExtResource("19_0havn")]
+position = Vector2(4, 0)
+objects = Array[PackedScene]([ExtResource("14_grass")])
+density = 0.3
+
+[node name="polygon" parent="world_sort/graveyard/grass" index="0"]
+polygon = PackedVector2Array(808, -718, 2522, -745, 2502, 190, 762, 206)
 
 [node name="gravestone" parent="world_sort/graveyard" unique_id=389703134 instance=ExtResource("15_gravestone")]
 position = Vector2(1291, -284)
@@ -221,7 +243,7 @@ position = Vector2(2602, -47)
 position = Vector2(2598, 236)
 
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
-position = Vector2(-1126, -862)
+position = Vector2(-421, 6086)
 
 [node name="tavern" parent="world_sort" unique_id=79349673 instance=ExtResource("13_icc4n")]
 position = Vector2(1348, 2581)
@@ -674,3 +696,5 @@ position = Vector2(-1449, 7093)
 
 [node name="fence_68" parent="world_sort/field" unique_id=18896072 instance=ExtResource("18_fence_3")]
 position = Vector2(-1475, 8038)
+
+[editable path="world_sort/graveyard/grass"]
