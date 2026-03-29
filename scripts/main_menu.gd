@@ -12,6 +12,8 @@ func _ready() -> void:
   $center/title/animation_2.seek(0.5)
   $center/title/animation_3.seek(1.0)
 
+  Events.main_menu_entered.emit()
+
 
 func _on_start_pressed() -> void:
   SceneTransition.change_scene('res://scenes/level_select.tscn')

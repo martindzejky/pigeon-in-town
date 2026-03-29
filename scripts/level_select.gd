@@ -62,6 +62,7 @@ func _fly_to_town() -> void:
   pigeon_squash.squash()
   town_squash.squash()
   enter_sound.play()
+  Events.level_select_exiting.emit()
   var scale_tween := create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
   scale_tween.tween_property(scale_root, 'scale', Vector2.ZERO, 0.3)
   await scale_tween.finished
