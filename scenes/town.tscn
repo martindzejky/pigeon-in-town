@@ -26,7 +26,10 @@ script = ExtResource("5_town")
 
 [node name="camera" type="Camera2D" parent="." unique_id=2034125516]
 zoom = Vector2(0.55, 0.55)
-limit_enabled = false
+limit_left = -8412
+limit_top = -2439
+limit_right = 5649
+limit_bottom = 10708
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 drag_horizontal_enabled = true
