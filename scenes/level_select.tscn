@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://7m20yu2vxucl" path="res://sprites/ui/arrow.png" id="5_r77uv"]
 [ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="6_4nqmc"]
 [ext_resource type="PackedScene" path="res://ui/button_sounds.tscn" id="7_sounds"]
+[ext_resource type="AudioStream" path="res://sounds/path.wav" id="7_path"]
+[ext_resource type="AudioStream" path="res://sounds/enter.wav" id="7_enter"]
 [ext_resource type="PackedScene" uid="uid://s0se3on64np3" path="res://ui/map_hill.tscn" id="8_7plkq"]
 [ext_resource type="PackedScene" uid="uid://c7ax1vtgdimw3" path="res://ui/map_tree.tscn" id="9_ckc44"]
 
@@ -110,7 +112,7 @@ _data = {
 &"loop": SubResource("Animation_4nqmc")
 }
 
-[node name="level_select" type="Control" unique_id=773332606 node_paths=PackedStringArray("pigeon_icon", "town_icon", "town_label", "follower", "scale_root", "town_squash", "pigeon_squash")]
+[node name="level_select" type="Control" unique_id=773332606 node_paths=PackedStringArray("pigeon_icon", "town_icon", "town_label", "follower", "scale_root", "town_squash", "pigeon_squash", "path_sound", "enter_sound")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -125,6 +127,8 @@ follower = NodePath("center/path_sprite/path/follower")
 scale_root = NodePath("center/path_sprite/path/follower/scale_root")
 town_squash = NodePath("center/town_icon_parent/squash")
 pigeon_squash = NodePath("center/path_sprite/path/follower/scale_root/pigeon_icon_parent/pigeon_icon/squash")
+path_sound = NodePath("path_sound")
+enter_sound = NodePath("enter_sound")
 
 [node name="ground" type="TextureRect" parent="." unique_id=909091529]
 layout_mode = 1
@@ -285,6 +289,12 @@ label_settings = SubResource("LabelSettings_r77uv")
 [node name="animation" type="AnimationPlayer" parent="center/arrow" unique_id=22620334]
 libraries/ = SubResource("AnimationLibrary_7plkq")
 autoplay = &"loop"
+
+[node name="path_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_path")
+
+[node name="enter_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_enter")
 
 [node name="stuff" type="Control" parent="." unique_id=1348507492]
 layout_mode = 1

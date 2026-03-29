@@ -7,6 +7,8 @@ extends Control
 @export var scale_root: Node2D
 @export var town_squash: Squash
 @export var pigeon_squash: Squash
+@export var path_sound: AudioStreamPlayer
+@export var enter_sound: AudioStreamPlayer
 
 var _flying: bool = false
 var _outline_material: Material
@@ -51,6 +53,7 @@ func _fly_to_town() -> void:
   _set_highlight(false)
   town_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
   town_squash.squash()
+  path_sound.play()
 
   var tween := create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
   tween.tween_property(follower, 'progress_ratio', 1.0, 3.0)
@@ -58,6 +61,7 @@ func _fly_to_town() -> void:
 
   pigeon_squash.squash()
   town_squash.squash()
+  enter_sound.play()
   var scale_tween := create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
   scale_tween.tween_property(scale_root, 'scale', Vector2.ZERO, 0.3)
   await scale_tween.finished
