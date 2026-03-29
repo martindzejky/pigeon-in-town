@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bks27hc7rj431" path="res://ui/choice_bubble.tscn" id="16_p78av"]
 [ext_resource type="PackedScene" uid="uid://cfj7ylxguuhqh" path="res://ui/interaction_hint.tscn" id="21_u24br"]
 [ext_resource type="Script" uid="uid://ug10meqw1gjf" path="res://scripts/components/npc_memory.gd" id="22_v4s4v"]
-[ext_resource type="PackedScene" path="res://objects/step_sound.tscn" id="23_step_sound"]
+[ext_resource type="PackedScene" uid="uid://bj35dosskjegc" path="res://objects/step_sound.tscn" id="23_step_sound"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -320,13 +320,12 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_interaction"]
 radius = 94.42987
 
-[node name="regular_folk" type="Node2D" unique_id=1083386034 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "dialogue_walker", "interaction_hint")]
+[node name="regular_folk" type="Node2D" unique_id=1083386034 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "interaction_hint")]
 script = ExtResource("1_npc_script")
 flip_node = NodePath("squash_root/animation_root/flip")
 squash = NodePath("squash")
 animation = NodePath("animation")
 sprite = NodePath("squash_root/animation_root/flip/sprite")
-dialogue_walker = NodePath("")
 outline_material = ExtResource("2_p78av")
 interaction_hint = NodePath("interaction_hint")
 
@@ -358,6 +357,7 @@ state_machine = NodePath("..")
 
 [node name="wander" type="Node" parent="state_machine" unique_id=1427961379 node_paths=PackedStringArray("npc", "state_machine")]
 script = ExtResource("10_wander_state")
+wander_radius = 500.0
 npc = NodePath("../..")
 state_machine = NodePath("..")
 
@@ -403,4 +403,4 @@ offset_bottom = -507.0
 script = ExtResource("22_v4s4v")
 metadata/_custom_type_script = "uid://ug10meqw1gjf"
 
-[node name="step_sound" parent="." instance=ExtResource("23_step_sound")]
+[node name="step_sound" parent="." unique_id=1671909510 instance=ExtResource("23_step_sound")]

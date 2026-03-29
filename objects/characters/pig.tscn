@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cfj7ylxguuhqh" path="res://ui/interaction_hint.tscn" id="21_u24br"]
 [ext_resource type="Texture2D" uid="uid://dst4dubk5aqmr" path="res://sprites/pig/pig_idle_2.png" id="22_idle_2"]
 [ext_resource type="Texture2D" uid="uid://docmf0wtfffyc" path="res://sprites/pig/pig_talk_2.png" id="23_talk_2"]
-[ext_resource type="PackedScene" path="res://objects/step_sound.tscn" id="24_step_sound"]
+[ext_resource type="PackedScene" uid="uid://bj35dosskjegc" path="res://objects/step_sound.tscn" id="24_step_sound"]
 [ext_resource type="PackedScene" path="res://objects/pig_talk_sound.tscn" id="25_pig_talk_sound"]
 
 [sub_resource type="Animation" id="Animation_reset"]
@@ -398,13 +398,12 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_interaction"]
 radius = 94.42987
 
-[node name="pig" type="Node2D" unique_id=1987418568 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "dialogue_walker", "interaction_hint")]
+[node name="pig" type="Node2D" unique_id=1987418568 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "interaction_hint")]
 script = ExtResource("1_npc_script")
 flip_node = NodePath("squash_root/animation_root/flip")
 squash = NodePath("squash")
 animation = NodePath("animation")
 sprite = NodePath("squash_root/animation_root/flip/sprite")
-dialogue_walker = NodePath("")
 dialogue_idle_anim = &"talking_idle"
 outline_material = ExtResource("2_p78av")
 interaction_hint = NodePath("interaction_hint")
@@ -437,6 +436,7 @@ state_machine = NodePath("..")
 
 [node name="wander" type="Node" parent="state_machine" unique_id=861356021 node_paths=PackedStringArray("npc", "state_machine")]
 script = ExtResource("10_wander_state")
+wander_radius = 400.0
 npc = NodePath("../..")
 state_machine = NodePath("..")
 
@@ -482,6 +482,6 @@ offset_bottom = -507.0
 script = ExtResource("19_mkbio")
 metadata/_custom_type_script = "uid://ug10meqw1gjf"
 
-[node name="step_sound" parent="." instance=ExtResource("24_step_sound")]
+[node name="step_sound" parent="." unique_id=684144551 instance=ExtResource("24_step_sound")]
 
-[node name="pig_talk_sound" parent="." instance=ExtResource("25_pig_talk_sound")]
+[node name="pig_talk_sound" parent="." unique_id=1034906041 instance=ExtResource("25_pig_talk_sound")]

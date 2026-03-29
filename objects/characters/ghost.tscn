@@ -339,6 +339,7 @@ state_machine = NodePath("..")
 
 [node name="wander" type="Node" parent="state_machine" unique_id=970689639 node_paths=PackedStringArray("npc", "state_machine")]
 script = ExtResource("10_wander_state")
+wander_radius = 300.0
 npc = NodePath("../..")
 state_machine = NodePath("..")
 
