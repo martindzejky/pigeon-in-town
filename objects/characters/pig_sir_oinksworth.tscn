@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://objects/characters/pig.tscn" id="1_base"]
+[ext_resource type="PackedScene" path="res://dialogues/pig_sir_oinksworth.tscn" id="2_dialogue"]
+
+[node name="pig_sir_oinksworth" node_paths=PackedStringArray("dialogue_walker") instance=ExtResource("1_base")]
+dialogue_walker = NodePath("dialogue")
+
+[node name="dialogue" parent="." node_paths=PackedStringArray("memory") instance=ExtResource("2_dialogue")]
+memory = NodePath("../memory")

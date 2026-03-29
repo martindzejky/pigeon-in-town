@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+
+[node name="old_lady_agnes" type="Node"]
+script = ExtResource("1_walker")
+
+[node name="say_1" type="Node" parent="."]
+script = ExtResource("2_say")
+speaker = 1
+text = "Oh! OH! A [color=yellow]visitor[/color]! For [color=red]ME[/color]?! Nobody's talked to me since the [color=gray]Michaelmas fair[/color]! Oh, this is the [i]best day[/i] of me life!"
+
+[node name="say_2" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "OK."

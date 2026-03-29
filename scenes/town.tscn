@@ -6,20 +6,29 @@
 [ext_resource type="PackedScene" uid="uid://b1wibpa6f5rno" path="res://objects/buildings/church.tscn" id="4_eruj1"]
 [ext_resource type="Texture2D" uid="uid://cra0xk5mvgult" path="res://sprites/ground/field.png" id="4_ie20d"]
 [ext_resource type="Script" uid="uid://lqimfot170uf" path="res://scripts/town.gd" id="5_town"]
+[ext_resource type="PackedScene" path="res://objects/characters/priest_cuthbert.tscn" id="6_f72b0"]
 [ext_resource type="PackedScene" uid="uid://b36xo7lkrm4nb" path="res://objects/nature/tree.tscn" id="11_tree"]
 [ext_resource type="PackedScene" uid="uid://rmlke1ng5an0" path="res://objects/nature/bush.tscn" id="12_bush"]
 [ext_resource type="PackedScene" uid="uid://cy74wli8s6fw3" path="res://objects/buildings/tavern.tscn" id="13_icc4n"]
 [ext_resource type="PackedScene" uid="uid://dp8tpseim0ftg" path="res://objects/buildings/house.tscn" id="14_b0eaf"]
 [ext_resource type="PackedScene" uid="uid://jhdcb0axnbde" path="res://objects/nature/grass.tscn" id="14_grass"]
+[ext_resource type="PackedScene" path="res://objects/characters/ghost_jeff.tscn" id="15_0havn"]
 [ext_resource type="PackedScene" uid="uid://b2db5qhii7ups" path="res://objects/props/gravestone.tscn" id="15_gravestone"]
 [ext_resource type="PackedScene" uid="uid://dmuoa3sbvp6wx" path="res://objects/buildings/well.tscn" id="15_uutfq"]
 [ext_resource type="PackedScene" uid="uid://blfwvm3tffpsv" path="res://objects/buildings/farmhouse.tscn" id="16_b00ts"]
 [ext_resource type="PackedScene" uid="uid://hmdhkr2sd8ub" path="res://objects/props/fence_1.tscn" id="16_fence_1"]
+[ext_resource type="PackedScene" path="res://objects/characters/ghost_mildred.tscn" id="16_ov17k"]
 [ext_resource type="PackedScene" uid="uid://m6lymenv2iwx" path="res://objects/props/fence_2.tscn" id="17_fence_2"]
 [ext_resource type="PackedScene" uid="uid://d3s08yov8k4fp" path="res://objects/buildings/barn.tscn" id="17_i0mj0"]
 [ext_resource type="PackedScene" uid="uid://bbgvy27xu6jtn" path="res://objects/props/fence_3.tscn" id="18_fence_3"]
 [ext_resource type="PackedScene" path="res://objects/area_spawner.tscn" id="19_0havn"]
 [ext_resource type="PackedScene" uid="uid://cwl48bcxgntoa" path="res://objects/props/fence_4.tscn" id="19_fence_4"]
+[ext_resource type="PackedScene" path="res://objects/characters/innkeeper_bertram.tscn" id="20_s6ipg"]
+[ext_resource type="PackedScene" path="res://objects/characters/old_lady_agnes.tscn" id="22_5qoex"]
+[ext_resource type="PackedScene" path="res://objects/characters/scarecrow_cornelius.tscn" id="23_2dnfj"]
+[ext_resource type="PackedScene" path="res://objects/characters/pig_hamlet.tscn" id="23_8m6oo"]
+[ext_resource type="PackedScene" path="res://objects/characters/pig_sir_oinksworth.tscn" id="23_qflhy"]
+[ext_resource type="PackedScene" path="res://objects/characters/pig_truffles.tscn" id="23_uvrjk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie20d"]
 size = Vector2(20143, 1461)
@@ -116,6 +125,9 @@ y_sort_enabled = true
 metadata/_edit_lock_ = true
 
 [node name="church" parent="world_sort" unique_id=1314122662 instance=ExtResource("4_eruj1")]
+
+[node name="priest_cuthbert" parent="world_sort" unique_id=1193914342 instance=ExtResource("6_f72b0")]
+position = Vector2(169, 171)
 
 [node name="graveyard" type="Node2D" parent="world_sort" unique_id=677215186]
 y_sort_enabled = true
@@ -242,11 +254,20 @@ position = Vector2(2602, -47)
 [node name="fence_25" parent="world_sort/graveyard" unique_id=1274846415 instance=ExtResource("19_fence_4")]
 position = Vector2(2598, 236)
 
+[node name="ghost_jeff" parent="world_sort/graveyard" unique_id=193257682 instance=ExtResource("15_0havn")]
+position = Vector2(1418, -435)
+
+[node name="ghost_mildred" parent="world_sort/graveyard" unique_id=85686780 instance=ExtResource("16_ov17k")]
+position = Vector2(2045, -85)
+
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
 position = Vector2(-421, 6086)
 
 [node name="tavern" parent="world_sort" unique_id=79349673 instance=ExtResource("13_icc4n")]
 position = Vector2(1348, 2581)
+
+[node name="innkeeper_bertram" parent="world_sort" unique_id=1333699907 instance=ExtResource("20_s6ipg")]
+position = Vector2(1559, 2914)
 
 [node name="house" parent="world_sort" unique_id=402885739 instance=ExtResource("14_b0eaf")]
 position = Vector2(2134, 2545)
@@ -274,6 +295,9 @@ position = Vector2(-2898, 4031)
 
 [node name="well" parent="world_sort" unique_id=504125226 instance=ExtResource("15_uutfq")]
 position = Vector2(-1565, 3959)
+
+[node name="old_lady_agnes" parent="world_sort" unique_id=906858158 instance=ExtResource("22_5qoex")]
+position = Vector2(-1837, 4107)
 
 [node name="farm" type="Node2D" parent="world_sort" unique_id=559153735]
 y_sort_enabled = true
@@ -498,6 +522,15 @@ position = Vector2(880, 7031)
 [node name="bush14" parent="world_sort/farm" unique_id=2051653283 instance=ExtResource("12_bush")]
 position = Vector2(4169, 4318)
 
+[node name="pig_sir_oinksworth" parent="world_sort/farm" unique_id=1039468760 instance=ExtResource("23_qflhy")]
+position = Vector2(1803, 5880)
+
+[node name="pig_truffles" parent="world_sort/farm" unique_id=975143971 instance=ExtResource("23_uvrjk")]
+position = Vector2(2542, 5555)
+
+[node name="pig_hamlet" parent="world_sort/farm" unique_id=1810334285 instance=ExtResource("23_8m6oo")]
+position = Vector2(1281, 5437)
+
 [node name="field" type="Node2D" parent="world_sort" unique_id=2083222913]
 y_sort_enabled = true
 position = Vector2(0, -1)
@@ -696,5 +729,8 @@ position = Vector2(-1449, 7093)
 
 [node name="fence_68" parent="world_sort/field" unique_id=18896072 instance=ExtResource("18_fence_3")]
 position = Vector2(-1475, 8038)
+
+[node name="scarecrow_cornelius" parent="world_sort/field" unique_id=1896554786 instance=ExtResource("23_2dnfj")]
+position = Vector2(-4097, 6600)
 
 [editable path="world_sort/graveyard/grass"]

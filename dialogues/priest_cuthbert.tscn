@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+
+[node name="priest_cuthbert" type="Node"]
+script = ExtResource("1_walker")
+
+[node name="say_1" type="Node" parent="."]
+script = ExtResource("2_say")
+speaker = 1
+text = "A [color=gold]talking pigeon[/color]?! 'Tis surely a [color=red]sign[/color]! The scrolls warned of [i]birds that speak[/i] before the [color=purple]second moon of reckoning[/color]!"
+
+[node name="say_2" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "OK."

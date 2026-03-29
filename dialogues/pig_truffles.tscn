@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+
+[node name="pig_truffles" type="Node"]
+script = ExtResource("1_walker")
+
+[node name="say_1" type="Node" parent="."]
+script = ExtResource("2_say")
+speaker = 1
+text = "I can [color=brown]smell[/color] something [color=green]delicious[/color] buried near the church. Might be [i]truffles[/i]. Might be a [color=gray]corpse[/color]."
+
+[node name="say_2" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "OK."

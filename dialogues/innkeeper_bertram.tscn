@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+
+[node name="innkeeper_bertram" type="Node"]
+script = ExtResource("1_walker")
+
+[node name="say_1" type="Node" parent="."]
+script = ExtResource("2_say")
+speaker = 1
+text = "Welcome to the... uh... [color=yellow]tavern[/color]. We got [color=brown]stew[/color]. I put [color=green]water[/color] in it today so there's more of it."
+
+[node name="say_2" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "OK."
