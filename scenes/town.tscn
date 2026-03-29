@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://mt7oxu4mesgd" path="res://objects/shadow/shadow_canvas_group.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bi13ymg3xdf50" path="res://objects/characters/pigeon.tscn" id="1_ig7tw"]
+[ext_resource type="AudioStream" uid="uid://bbldwpap0ef4m" path="res://sounds/ambience_loop.mp3" id="4_8qite"]
 [ext_resource type="Script" uid="uid://b7dd7pydkko1e" path="res://scripts/camera.gd" id="4_cam"]
 [ext_resource type="PackedScene" uid="uid://b1wibpa6f5rno" path="res://objects/buildings/church.tscn" id="4_eruj1"]
 [ext_resource type="Texture2D" uid="uid://cra0xk5mvgult" path="res://sprites/ground/field.png" id="4_ie20d"]
@@ -67,6 +68,11 @@ dialogue_y_offset = -600.0
 dialogue_zoom = 0.835
 metadata/_edit_lock_ = true
 
+[node name="ambience" type="AudioStreamPlayer" parent="." unique_id=786186696]
+stream = ExtResource("4_8qite")
+volume_db = -7.62
+autoplay = true
+
 [node name="bounds" type="Node2D" parent="." unique_id=2132177613]
 metadata/_edit_lock_ = true
 
@@ -107,18 +113,22 @@ position = Vector2(-3354, 4892)
 texture = ExtResource("4_ie20d")
 polygon = PackedVector2Array(1143, 51, 1415, 293, 1662, 771, 1752, 1171, 1643, 2474, 1659, 3373, 1578, 3497, 1031, 3539, -134, 3478, -527, 3407, -1077, 3470, -2457, 3445, -2655, 3418, -3070, 3362, -3152, 3215, -3184, 3069, -3086, 1082, -3123, 241, -3016, 25, -2893, -43, -2675, -94, -627, 84, -418, 72, -226, 9, 214, -14)
 uv = PackedVector2Array(1143, 51, 1752, 1171, 1643, 2474, 1659, 3373, 1578, 3497, -1077, 3470, -3070, 3362, -3184, 3069, -3016, 25, -2675, -94, -627, 84, -226, 9)
+metadata/_edit_lock_ = true
 
 [node name="graveyard" type="Polygon2D" parent="ground" unique_id=1566998525]
 color = Color(0.6532031, 0.6473865, 0.5670963, 0.4627451)
 polygon = PackedVector2Array(626, -672, 955, -864, 1678, -839, 2472, -764, 2553, -701, 2579, -612, 2637, -541, 2660, 102, 2601, 307, 2118, 311, 1169, 222, 676, 126, 601, -229, 638, -493)
+metadata/_edit_lock_ = true
 
 [node name="pigs" type="Polygon2D" parent="ground" unique_id=664654580]
 color = Color(0.7, 0.5698, 0.48299998, 0.45882353)
 polygon = PackedVector2Array(437, 4900, 314, 5021, 310, 5092, 335, 5211, 375, 5339, 345, 5543, 283, 5763, 274, 5884, 352, 6068, 433, 6195, 496, 6345, 646, 6414, 840, 6450, 1041, 6460, 1321, 6421, 1682, 6318, 1853, 6314, 2196, 6318, 2518, 6429, 2785, 6423, 2965, 6412, 3265, 6335, 3361, 6139, 3353, 5869, 3326, 5731, 3426, 5545, 3529, 5410, 3806, 5257, 4015, 5278, 4216, 5197, 4287, 4973, 4249, 4758, 4159, 4570, 3848, 4509, 3712, 4505, 3336, 4560, 3071, 4631, 2852, 4775, 2298, 4856, 2052, 4860, 1856, 4877, 1605, 4911, 1212, 4988, 889, 4938, 653, 4900)
+metadata/_edit_lock_ = true
 
 [node name="road" type="Polygon2D" parent="ground" unique_id=1391133911]
 color = Color(0.67, 0.47056335, 0.35509998, 0.27450982)
 polygon = PackedVector2Array(-1215, 10166, -870, 8014, -905, 7580, -989, 6920, -1427, 5423, -1501, 4950, -1427, 4620, -1186, 3670, -1284, 3505, -1695, 3471, -2174, 3655, -2819, 3708, -3224, 3532, -3330, 3138, -3155, 2860, -2813, 2762, -2146, 2771, -1562, 2799, -1039, 2721, -606, 2579, -242, 1706, -264, 1189, -272, 764, -97, 686, 25, 739, 92, 841, 39, 1022, -33, 1322, -2, 1723, -50, 1981, -205, 2470, -161, 2790, 692, 2882, 1565, 2882, 2394, 2799, 3236, 2665, 3849, 2570, 4839, 2501, 5597, 2501, 6213, 2467, 7468, 2579, 7879, 3293, 7064, 3653, 4800, 3827, 3488, 3617, 2673, 3625, 2168, 3625, 1321, 3696, 893, 3672, 422, 3577, -95, 3604, -572, 3614, -701, 3730, -906, 4017, -970, 4375, -1058, 4947, -1009, 5360, -756, 5846, -487, 6381, -321, 7167, -285, 7980, -398, 8476, -600, 9155, -688, 9879, -572, 10258, -199, 11326, 12, 12242, 99, 13553, -486, 13781, -1397, 13564, -1093, 12144, -1055, 11066)
+metadata/_edit_lock_ = true
 
 [node name="world_sort" type="Node2D" parent="." unique_id=1702403875]
 y_sort_enabled = true
