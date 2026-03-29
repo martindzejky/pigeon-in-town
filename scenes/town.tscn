@@ -7,9 +7,14 @@
 [ext_resource type="Script" uid="uid://lqimfot170uf" path="res://scripts/town.gd" id="5_town"]
 [ext_resource type="PackedScene" uid="uid://b36xo7lkrm4nb" path="res://objects/nature/tree.tscn" id="11_tree"]
 [ext_resource type="PackedScene" uid="uid://rmlke1ng5an0" path="res://objects/nature/bush.tscn" id="12_bush"]
+[ext_resource type="PackedScene" uid="uid://cy74wli8s6fw3" path="res://objects/buildings/tavern.tscn" id="13_icc4n"]
+[ext_resource type="PackedScene" uid="uid://dp8tpseim0ftg" path="res://objects/buildings/house.tscn" id="14_b0eaf"]
 [ext_resource type="PackedScene" uid="uid://b2db5qhii7ups" path="res://objects/props/gravestone.tscn" id="15_gravestone"]
+[ext_resource type="PackedScene" uid="uid://dmuoa3sbvp6wx" path="res://objects/buildings/well.tscn" id="15_uutfq"]
+[ext_resource type="PackedScene" uid="uid://blfwvm3tffpsv" path="res://objects/buildings/farmhouse.tscn" id="16_b00ts"]
 [ext_resource type="PackedScene" uid="uid://hmdhkr2sd8ub" path="res://objects/props/fence_1.tscn" id="16_fence_1"]
 [ext_resource type="PackedScene" uid="uid://m6lymenv2iwx" path="res://objects/props/fence_2.tscn" id="17_fence_2"]
+[ext_resource type="PackedScene" uid="uid://d3s08yov8k4fp" path="res://objects/buildings/barn.tscn" id="17_i0mj0"]
 [ext_resource type="PackedScene" uid="uid://bbgvy27xu6jtn" path="res://objects/props/fence_3.tscn" id="18_fence_3"]
 [ext_resource type="PackedScene" uid="uid://cwl48bcxgntoa" path="res://objects/props/fence_4.tscn" id="19_fence_4"]
 
@@ -159,4 +164,257 @@ position = Vector2(2602, -47)
 position = Vector2(2598, 236)
 
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
-position = Vector2(19, 296)
+position = Vector2(61, 2230)
+
+[node name="tavern" parent="world_sort" unique_id=79349673 instance=ExtResource("13_icc4n")]
+position = Vector2(1348, 2581)
+
+[node name="house" parent="world_sort" unique_id=402885739 instance=ExtResource("14_b0eaf")]
+position = Vector2(2134, 2545)
+
+[node name="house2" parent="world_sort" unique_id=1361795868 instance=ExtResource("14_b0eaf")]
+position = Vector2(3180, 2466)
+
+[node name="house3" parent="world_sort" unique_id=2065740248 instance=ExtResource("14_b0eaf")]
+position = Vector2(3526, 4197)
+
+[node name="house4" parent="world_sort" unique_id=1038486650 instance=ExtResource("14_b0eaf")]
+position = Vector2(2762, 4240)
+
+[node name="house5" parent="world_sort" unique_id=865621446 instance=ExtResource("14_b0eaf")]
+position = Vector2(-2047, 2654)
+
+[node name="house6" parent="world_sort" unique_id=1361363652 instance=ExtResource("14_b0eaf")]
+position = Vector2(-2833, 2611)
+
+[node name="house7" parent="world_sort" unique_id=1494243525 instance=ExtResource("14_b0eaf")]
+position = Vector2(-3684, 3274)
+
+[node name="house8" parent="world_sort" unique_id=450784128 instance=ExtResource("14_b0eaf")]
+position = Vector2(-2898, 4031)
+
+[node name="well" parent="world_sort" unique_id=504125226 instance=ExtResource("15_uutfq")]
+position = Vector2(-1565, 3959)
+
+[node name="farm" type="Node2D" parent="world_sort" unique_id=559153735]
+y_sort_enabled = true
+position = Vector2(0, -1)
+
+[node name="farmhouse" parent="world_sort/farm" unique_id=131394172 instance=ExtResource("16_b00ts")]
+position = Vector2(1224, 4437)
+
+[node name="barn" parent="world_sort/farm" unique_id=858790705 instance=ExtResource("17_i0mj0")]
+position = Vector2(3774, 4907)
+
+[node name="fence_1" parent="world_sort/farm" unique_id=1315839310 instance=ExtResource("16_fence_1")]
+position = Vector2(1417, 4958)
+
+[node name="fence_4" parent="world_sort/farm" unique_id=851431364 instance=ExtResource("17_fence_2")]
+position = Vector2(1187, 4956)
+
+[node name="fence_5" parent="world_sort/farm" unique_id=750025068 instance=ExtResource("17_fence_2")]
+position = Vector2(1038, 4955)
+
+[node name="fence_6" parent="world_sort/farm" unique_id=938879507 instance=ExtResource("17_fence_2")]
+position = Vector2(890, 4953)
+
+[node name="fence_7" parent="world_sort/farm" unique_id=813737350 instance=ExtResource("17_fence_2")]
+position = Vector2(746, 4951)
+
+[node name="fence_2" parent="world_sort/farm" unique_id=1769993869 instance=ExtResource("16_fence_1")]
+position = Vector2(2839, 4978)
+
+[node name="fence_8" parent="world_sort/farm" unique_id=479711979 instance=ExtResource("17_fence_2")]
+position = Vector2(2609, 4976)
+
+[node name="fence_9" parent="world_sort/farm" unique_id=709211158 instance=ExtResource("17_fence_2")]
+position = Vector2(2460, 4975)
+
+[node name="fence_10" parent="world_sort/farm" unique_id=705448987 instance=ExtResource("17_fence_2")]
+position = Vector2(2312, 4973)
+
+[node name="fence_11" parent="world_sort/farm" unique_id=93758073 instance=ExtResource("17_fence_2")]
+position = Vector2(2168, 4971)
+
+[node name="fence_12" parent="world_sort/farm" unique_id=689021462 instance=ExtResource("17_fence_2")]
+position = Vector2(2031, 4973)
+
+[node name="fence_13" parent="world_sort/farm" unique_id=618793901 instance=ExtResource("17_fence_2")]
+position = Vector2(1882, 4972)
+
+[node name="fence_14" parent="world_sort/farm" unique_id=1545433072 instance=ExtResource("17_fence_2")]
+position = Vector2(1734, 4970)
+
+[node name="fence_15" parent="world_sort/farm" unique_id=1491412092 instance=ExtResource("17_fence_2")]
+position = Vector2(1590, 4968)
+
+[node name="fence_3" parent="world_sort/farm" unique_id=197389909 instance=ExtResource("16_fence_1")]
+position = Vector2(1969, 6388)
+
+[node name="fence_16" parent="world_sort/farm" unique_id=1345903023 instance=ExtResource("17_fence_2")]
+position = Vector2(1739, 6386)
+
+[node name="fence_17" parent="world_sort/farm" unique_id=859102118 instance=ExtResource("17_fence_2")]
+position = Vector2(1590, 6385)
+
+[node name="fence_18" parent="world_sort/farm" unique_id=1023952475 instance=ExtResource("17_fence_2")]
+position = Vector2(1442, 6383)
+
+[node name="fence_19" parent="world_sort/farm" unique_id=1796458006 instance=ExtResource("17_fence_2")]
+position = Vector2(1298, 6381)
+
+[node name="fence_24" parent="world_sort/farm" unique_id=327621314 instance=ExtResource("16_fence_1")]
+position = Vector2(3214, 6399)
+
+[node name="fence_25" parent="world_sort/farm" unique_id=1144995948 instance=ExtResource("17_fence_2")]
+position = Vector2(2984, 6397)
+
+[node name="fence_46" parent="world_sort/farm" unique_id=803586267 instance=ExtResource("16_fence_1")]
+position = Vector2(4089, 5229)
+
+[node name="fence_47" parent="world_sort/farm" unique_id=467777674 instance=ExtResource("17_fence_2")]
+position = Vector2(3859, 5227)
+
+[node name="fence_26" parent="world_sort/farm" unique_id=887341705 instance=ExtResource("17_fence_2")]
+position = Vector2(2835, 6396)
+
+[node name="fence_27" parent="world_sort/farm" unique_id=1510074498 instance=ExtResource("17_fence_2")]
+position = Vector2(2687, 6394)
+
+[node name="fence_28" parent="world_sort/farm" unique_id=2133530042 instance=ExtResource("17_fence_2")]
+position = Vector2(2543, 6392)
+
+[node name="fence_20" parent="world_sort/farm" unique_id=317883954 instance=ExtResource("17_fence_2")]
+position = Vector2(1161, 6383)
+
+[node name="fence_21" parent="world_sort/farm" unique_id=305196174 instance=ExtResource("17_fence_2")]
+position = Vector2(1012, 6382)
+
+[node name="fence_22" parent="world_sort/farm" unique_id=1282423514 instance=ExtResource("17_fence_2")]
+position = Vector2(864, 6380)
+
+[node name="fence_23" parent="world_sort/farm" unique_id=18419889 instance=ExtResource("17_fence_2")]
+position = Vector2(720, 6378)
+
+[node name="fence_29" parent="world_sort/farm" unique_id=804384658 instance=ExtResource("19_fence_4")]
+position = Vector2(3447, 6127)
+
+[node name="fence_30" parent="world_sort/farm" unique_id=2094831501 instance=ExtResource("19_fence_4")]
+position = Vector2(3442, 6397)
+
+[node name="fence_31" parent="world_sort/farm" unique_id=1995468707 instance=ExtResource("19_fence_4")]
+position = Vector2(3466, 5582)
+
+[node name="fence_32" parent="world_sort/farm" unique_id=201721485 instance=ExtResource("19_fence_4")]
+position = Vector2(3461, 5852)
+
+[node name="fence_33" parent="world_sort/farm" unique_id=393983802 instance=ExtResource("19_fence_4")]
+position = Vector2(454, 6377)
+
+[node name="fence_34" parent="world_sort/farm" unique_id=1029858660 instance=ExtResource("19_fence_4")]
+position = Vector2(473, 5832)
+
+[node name="fence_35" parent="world_sort/farm" unique_id=1199684966 instance=ExtResource("19_fence_4")]
+position = Vector2(468, 6102)
+
+[node name="fence_36" parent="world_sort/farm" unique_id=477219595 instance=ExtResource("19_fence_4")]
+position = Vector2(485, 5558)
+
+[node name="fence_38" parent="world_sort/farm" unique_id=287120201 instance=ExtResource("19_fence_4")]
+position = Vector2(499, 5283)
+
+[node name="fence_37" parent="world_sort/farm" unique_id=1000527505 instance=ExtResource("18_fence_3")]
+position = Vector2(636, 4960)
+
+[node name="fence_39" parent="world_sort/farm" unique_id=1095425228 instance=ExtResource("18_fence_3")]
+position = Vector2(506, 4960)
+
+[node name="fence_40" parent="world_sort/farm" unique_id=1005227067 instance=ExtResource("18_fence_3")]
+position = Vector2(459, 6503)
+
+[node name="fence_41" parent="world_sort/farm" unique_id=90493375 instance=ExtResource("18_fence_3")]
+position = Vector2(2962, 4838)
+
+[node name="fence_42" parent="world_sort/farm" unique_id=1989152637 instance=ExtResource("18_fence_3")]
+position = Vector2(3089, 4826)
+
+[node name="fence_43" parent="world_sort/farm" unique_id=1480247423 instance=ExtResource("18_fence_3")]
+position = Vector2(3312, 4741)
+
+[node name="fence_44" parent="world_sort/farm" unique_id=192312459 instance=ExtResource("18_fence_3")]
+position = Vector2(3198, 4768)
+
+[node name="fence_45" parent="world_sort/farm" unique_id=1651202279 instance=ExtResource("18_fence_3")]
+position = Vector2(4155, 5161)
+
+[node name="tree" parent="world_sort/farm" unique_id=1132266395 instance=ExtResource("11_tree")]
+position = Vector2(3705, 5506)
+
+[node name="tree2" parent="world_sort/farm" unique_id=353528073 instance=ExtResource("11_tree")]
+position = Vector2(3986, 5618)
+
+[node name="tree3" parent="world_sort/farm" unique_id=700072254 instance=ExtResource("11_tree")]
+position = Vector2(4400, 4739)
+
+[node name="tree4" parent="world_sort/farm" unique_id=185912644 instance=ExtResource("11_tree")]
+position = Vector2(3147, 4466)
+
+[node name="tree5" parent="world_sort/farm" unique_id=1770189445 instance=ExtResource("11_tree")]
+position = Vector2(2962, 4625)
+
+[node name="tree6" parent="world_sort/farm" unique_id=1223976380 instance=ExtResource("11_tree")]
+position = Vector2(2327, 4416)
+
+[node name="tree7" parent="world_sort/farm" unique_id=1970264399 instance=ExtResource("11_tree")]
+position = Vector2(2058, 4266)
+
+[node name="tree8" parent="world_sort/farm" unique_id=1030048710 instance=ExtResource("11_tree")]
+position = Vector2(487, 4499)
+
+[node name="tree9" parent="world_sort/farm" unique_id=1553702192 instance=ExtResource("11_tree")]
+position = Vector2(143, 4666)
+
+[node name="tree10" parent="world_sort/farm" unique_id=250744675 instance=ExtResource("11_tree")]
+position = Vector2(-111, 4423)
+
+[node name="bush" parent="world_sort/farm" unique_id=2031768213 instance=ExtResource("12_bush")]
+position = Vector2(415, 4649)
+
+[node name="bush2" parent="world_sort/farm" unique_id=1369731878 instance=ExtResource("12_bush")]
+position = Vector2(-116, 4613)
+
+[node name="bush3" parent="world_sort/farm" unique_id=239355638 instance=ExtResource("12_bush")]
+position = Vector2(-249, 4810)
+
+[node name="bush4" parent="world_sort/farm" unique_id=873725749 instance=ExtResource("12_bush")]
+position = Vector2(1956, 4504)
+
+[node name="bush5" parent="world_sort/farm" unique_id=1792734199 instance=ExtResource("12_bush")]
+position = Vector2(1856, 4649)
+
+[node name="bush6" parent="world_sort/farm" unique_id=1848351890 instance=ExtResource("12_bush")]
+position = Vector2(2115, 4724)
+
+[node name="bush7" parent="world_sort/farm" unique_id=918246872 instance=ExtResource("12_bush")]
+position = Vector2(3830, 5947)
+
+[node name="bush8" parent="world_sort/farm" unique_id=304857083 instance=ExtResource("12_bush")]
+position = Vector2(3680, 6150)
+
+[node name="bush9" parent="world_sort/farm" unique_id=933739660 instance=ExtResource("12_bush")]
+position = Vector2(1867, 6567)
+
+[node name="bush10" parent="world_sort/farm" unique_id=560819720 instance=ExtResource("12_bush")]
+position = Vector2(1672, 6700)
+
+[node name="bush11" parent="world_sort/farm" unique_id=1173761776 instance=ExtResource("12_bush")]
+position = Vector2(1867, 6903)
+
+[node name="bush12" parent="world_sort/farm" unique_id=911559258 instance=ExtResource("12_bush")]
+position = Vector2(797, 6920)
+
+[node name="bush13" parent="world_sort/farm" unique_id=1139822506 instance=ExtResource("12_bush")]
+position = Vector2(880, 7031)
+
+[node name="bush14" parent="world_sort/farm" unique_id=2051653283 instance=ExtResource("12_bush")]
+position = Vector2(4169, 4318)

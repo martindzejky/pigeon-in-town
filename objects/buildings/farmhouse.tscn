@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://blfwvm3tffpsv"]
+
+[ext_resource type="Texture2D" uid="uid://cvhllkab4vt6d" path="res://sprites/buildings/farmhouse.png" id="1_tex"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="2_shadow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(978, 215)
+
+[node name="farmhouse" type="Node2D" unique_id=131394172]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=915766176]
+position = Vector2(0, -341)
+texture = ExtResource("1_tex")
+
+[node name="shadow" parent="." unique_id=1526756490 instance=ExtResource("2_shadow")]
+scale = Vector2(4.5, 1)
+
+[node name="collider" type="StaticBody2D" parent="." unique_id=2106306501]
+
+[node name="shape" type="CollisionShape2D" parent="collider" unique_id=1574452949]
+position = Vector2(-8, -107.5)
+shape = SubResource("RectangleShape2D_body")

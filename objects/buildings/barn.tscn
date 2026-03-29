@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d3s08yov8k4fp"]
+
+[ext_resource type="Texture2D" uid="uid://g3ntwefe3ufx" path="res://sprites/buildings/barn.png" id="1_tex"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="2_shadow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(650, 387)
+
+[node name="barn" type="Node2D" unique_id=858790705]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1710814915]
+position = Vector2(0, -412)
+texture = ExtResource("1_tex")
+
+[node name="shadow" parent="." unique_id=2035724306 instance=ExtResource("2_shadow")]
+scale = Vector2(3.5, 1)
+
+[node name="collider" type="StaticBody2D" parent="." unique_id=216239240]
+
+[node name="shape" type="CollisionShape2D" parent="collider" unique_id=1027590543]
+position = Vector2(0, -193.5)
+shape = SubResource("RectangleShape2D_body")
