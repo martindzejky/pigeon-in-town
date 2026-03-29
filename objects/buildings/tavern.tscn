@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cy74wli8s6fw3"]
+
+[ext_resource type="Texture2D" uid="uid://dsrbty204s5rm" path="res://sprites/buildings/tavern.png" id="1_tex"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="2_shadow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(531, 443)
+
+[node name="tavern" type="Node2D" unique_id=79349673]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1663638198]
+position = Vector2(0, -447)
+texture = ExtResource("1_tex")
+
+[node name="shadow" parent="." unique_id=58468124 instance=ExtResource("2_shadow")]
+scale = Vector2(3.2, 1)
+
+[node name="collider" type="StaticBody2D" parent="." unique_id=595736484]
+
+[node name="shape" type="CollisionShape2D" parent="collider" unique_id=706203009]
+position = Vector2(-42.5, -221.5)
+shape = SubResource("RectangleShape2D_body")
