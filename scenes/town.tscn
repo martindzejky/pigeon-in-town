@@ -55,10 +55,10 @@ metadata/_edit_lock_ = true
 [node name="camera" type="Camera2D" parent="." unique_id=2034125516]
 position = Vector2(-827, 10096)
 zoom = Vector2(0.55, 0.55)
-limit_left = -8435
-limit_top = -2439
-limit_right = 5884
-limit_bottom = 10708
+limit_left = -8098
+limit_top = -2340
+limit_right = 5368
+limit_bottom = 10323
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 drag_horizontal_enabled = true
