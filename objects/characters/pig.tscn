@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cfj7ylxguuhqh" path="res://ui/interaction_hint.tscn" id="21_u24br"]
 [ext_resource type="Texture2D" uid="uid://dst4dubk5aqmr" path="res://sprites/pig/pig_idle_2.png" id="22_idle_2"]
 [ext_resource type="Texture2D" uid="uid://docmf0wtfffyc" path="res://sprites/pig/pig_talk_2.png" id="23_talk_2"]
+[ext_resource type="PackedScene" path="res://objects/step_sound.tscn" id="24_step_sound"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -215,6 +216,23 @@ tracks/5/keys = {
 }, {
 "args": [],
 "method": &"squash"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("step_sound")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.267),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
 }]
 }
 
@@ -448,3 +466,5 @@ offset_bottom = -507.0
 [node name="memory" type="Node" parent="." unique_id=602861568]
 script = ExtResource("19_mkbio")
 metadata/_custom_type_script = "uid://ug10meqw1gjf"
+
+[node name="step_sound" parent="." instance=ExtResource("24_step_sound")]
