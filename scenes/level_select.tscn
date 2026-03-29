@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dmi63s1vx7e1x" path="res://scripts/level_select.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://ev6jfvggyeea" path="res://sprites/ui/pigeon_icon.png" id="2_pigeon_icon"]
-[ext_resource type="PackedScene" uid="uid://cjn0koay1fs67" path="res://ui/clouds.tscn" id="2_rif6e"]
 [ext_resource type="Texture2D" uid="uid://dgsqjw4t7kdby" path="res://sprites/ui/town_icon.png" id="3_town_icon"]
 [ext_resource type="Material" uid="uid://dycmpk6phjwap" path="res://materials/outline.tres" id="4_chg43"]
+[ext_resource type="Texture2D" uid="uid://cl7qs17byie7w" path="res://sprites/ui/path.png" id="4_r77uv"]
+[ext_resource type="Texture2D" uid="uid://7m20yu2vxucl" path="res://sprites/ui/arrow.png" id="5_r77uv"]
+[ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="6_4nqmc"]
 
 [sub_resource type="Gradient" id="Gradient_tbmy8"]
-colors = PackedColorArray(0.9408, 0.98, 0.95713335, 1, 0.5481, 0.87, 0.68222505, 1)
+colors = PackedColorArray(0.90746313, 0.95471174, 0.90558094, 1, 0.7387667, 0.817412, 0.67955375, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_chg43"]
 gradient = SubResource("Gradient_tbmy8")
@@ -21,7 +23,91 @@ font_size = 64
 font_color = Color(0.09803922, 0.13333334, 0.16470589, 1)
 outline_size = 65
 
-[node name="level_select" type="Control" unique_id=773332606 node_paths=PackedStringArray("pigeon_icon", "town_icon", "town_label")]
+[sub_resource type="Curve2D" id="Curve2D_r77uv"]
+_data = {
+"points": PackedVector2Array(-12.14461, 52.81942, 12.14461, -52.81942, 167, 711, -7.676104, 14.628047, 7.676104, -14.628047, 190, 640, -9.124425, 11.731404, 9.124425, -11.731404, 234, 586, -6.807111, 26.79395, 6.807111, -26.79395, 282, 510, 2.0276499, 20.421331, -2.0276499, -20.421331, 287, 444, 15.931537, 23.752472, -15.931537, -23.752472, 265, 378, 20.421333, 3.041475, -20.421333, -3.041475, 199, 353, 22.304152, 6.9519434, -22.304152, -6.9519434, 97, 331, 9.269258, 17.52469, -9.269258, -17.52469, 53, 294, -2.7518108, 24.621466, 2.7518108, -24.621466, 46, 236, -9.442583, 11.600888, 9.442583, -11.600888, 70, 185, -18.34559, -1.8885167, 18.34559, 1.8885167, 148, 168, -24.730576, 3.687104, 24.730576, -3.687104, 228, 173, -4.6763268, 8.723148, 4.6763268, -8.723148, 289, 107, -18.038462, 31.310669, 18.038462, -31.310669, 328, 33, -62.672825, 7.241608, 62.672825, -7.241608, 422, -22)
+}
+point_count = 16
+
+[sub_resource type="Animation" id="Animation_r77uv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_chg43"]
+resource_name = "loop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.06, 1.09), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r77uv"]
+_data = {
+&"RESET": SubResource("Animation_r77uv"),
+&"loop": SubResource("Animation_chg43")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_r77uv"]
+font_size = 54
+font_color = Color(0.09803922, 0.13333334, 0.16470589, 1)
+
+[sub_resource type="Animation" id="Animation_7plkq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4nqmc"]
+resource_name = "loop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.02, 1.02), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7plkq"]
+_data = {
+&"RESET": SubResource("Animation_7plkq"),
+&"loop": SubResource("Animation_4nqmc")
+}
+
+[node name="level_select" type="Control" unique_id=773332606 node_paths=PackedStringArray("pigeon_icon", "town_icon", "town_label", "follower", "scale_root", "town_squash", "pigeon_squash")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,9 +115,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
-pigeon_icon = NodePath("pigeon_icon")
-town_icon = NodePath("town_icon")
-town_label = NodePath("town_icon/town_label")
+pigeon_icon = NodePath("center/path_sprite/path/follower/scale_root/pigeon_icon_parent/pigeon_icon")
+town_icon = NodePath("center/town_icon_parent/town_icon")
+town_label = NodePath("center/label")
+follower = NodePath("center/path_sprite/path/follower")
+scale_root = NodePath("center/path_sprite/path/follower/scale_root")
+town_squash = NodePath("center/town_icon_parent/squash")
+pigeon_squash = NodePath("center/path_sprite/path/follower/scale_root/pigeon_icon_parent/pigeon_icon/squash")
 
 [node name="ground" type="TextureRect" parent="." unique_id=909091529]
 layout_mode = 1
@@ -42,22 +132,34 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_chg43")
 
-[node name="clouds" parent="." unique_id=2104422092 instance=ExtResource("2_rif6e")]
-layout_mode = 1
-
-[node name="town_icon" type="TextureRect" parent="." unique_id=1218024154]
-z_index = 1
-material = ExtResource("4_chg43")
+[node name="center" type="Control" parent="." unique_id=1766957351]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -121.0
-offset_top = -230.0
-offset_right = 121.0
-offset_bottom = 135.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="town_icon_parent" type="Node2D" parent="center" unique_id=1665780154]
+
+[node name="town_icon" type="TextureRect" parent="center/town_icon_parent" unique_id=1218024154]
+z_index = 3
+material = ExtResource("4_chg43")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -210.0
+offset_right = 141.0
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
@@ -66,34 +168,113 @@ mouse_default_cursor_shape = 2
 texture = ExtResource("3_town_icon")
 stretch_mode = 5
 
-[node name="town_label" type="Label" parent="town_icon" unique_id=2100792741]
+[node name="squash" type="Node" parent="center/town_icon_parent" unique_id=1043599339 node_paths=PackedStringArray("target")]
+script = ExtResource("6_4nqmc")
+target = NodePath("..")
+metadata/_custom_type_script = "uid://bh0dnd5ra0qst"
+
+[node name="label" type="Label" parent="center" unique_id=2100792741]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -71.5
-offset_top = 22.5
-offset_right = 71.5
-offset_bottom = 109.5
+offset_left = -172.5
+offset_top = 137.5
+offset_right = 172.5
+offset_bottom = 224.5
 grow_horizontal = 2
 grow_vertical = 0
 text = "Go to Town"
 label_settings = SubResource("LabelSettings_rif6e")
 horizontal_alignment = 1
 
-[node name="pigeon_icon" type="TextureRect" parent="." unique_id=1952450256]
-z_index = 2
+[node name="path_sprite" type="TextureRect" parent="center" unique_id=35054442]
+show_behind_parent = true
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.70400006
+anchor_right = 0.5
+anchor_bottom = 0.70400006
+offset_left = -425.0
+offset_top = 34.839996
+offset_right = -12.0
+offset_bottom = 772.84
+texture = ExtResource("4_r77uv")
+
+[node name="path" type="Path2D" parent="center/path_sprite" unique_id=387376265]
+curve = SubResource("Curve2D_r77uv")
+
+[node name="follower" type="PathFollow2D" parent="center/path_sprite/path" unique_id=1961337260]
+position = Vector2(167, 711)
+rotates = false
+loop = false
+
+[node name="scale_root" type="Node2D" parent="center/path_sprite/path/follower" unique_id=1669815649]
+
+[node name="pigeon_icon_parent" type="Node2D" parent="center/path_sprite/path/follower/scale_root" unique_id=1571953462]
+
+[node name="pigeon_icon" type="TextureRect" parent="center/path_sprite/path/follower/scale_root/pigeon_icon_parent" unique_id=1952450256]
+z_index = 8
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -248.0
+offset_left = -119.0
 offset_top = -130.5
-offset_right = -10.0
+offset_right = 119.0
 offset_bottom = 130.5
+grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(119, 130)
 tooltip_text = "You"
 mouse_filter = 2
 texture = ExtResource("2_pigeon_icon")
 stretch_mode = 5
+
+[node name="animation" type="AnimationPlayer" parent="center/path_sprite/path/follower/scale_root/pigeon_icon_parent/pigeon_icon" unique_id=1738007072]
+libraries/ = SubResource("AnimationLibrary_r77uv")
+autoplay = &"loop"
+
+[node name="squash" type="Node" parent="center/path_sprite/path/follower/scale_root/pigeon_icon_parent/pigeon_icon" unique_id=210578429 node_paths=PackedStringArray("target")]
+script = ExtResource("6_4nqmc")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://bh0dnd5ra0qst"
+
+[node name="arrow" type="TextureRect" parent="center" unique_id=1792654021]
+modulate = Color(1, 1, 1, 0.5921569)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.92600006
+anchor_top = 0.89000005
+anchor_right = 0.92600006
+anchor_bottom = 0.89000005
+offset_left = 188.95999
+offset_top = 55.399998
+offset_right = 258.96
+offset_bottom = 132.4
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_r77uv")
+
+[node name="hint" type="Label" parent="center/arrow" unique_id=546365618]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = 9.0
+offset_right = 126.0
+offset_bottom = 85.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Click"
+label_settings = SubResource("LabelSettings_r77uv")
+
+[node name="animation" type="AnimationPlayer" parent="center/arrow" unique_id=22620334]
+libraries/ = SubResource("AnimationLibrary_7plkq")
+autoplay = &"loop"
