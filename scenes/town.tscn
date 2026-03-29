@@ -35,9 +35,11 @@
 [ext_resource type="PackedScene" path="res://objects/characters/folk_walter.tscn" id="26_pklil"]
 [ext_resource type="PackedScene" path="res://objects/characters/folk_gilbert.tscn" id="27_bnnb0"]
 [ext_resource type="Script" uid="uid://dvawjdkc4g4hg" path="res://scripts/intro_cutscene.gd" id="31_oej6q"]
-[ext_resource type="PackedScene" path="res://dialogues/dialogue_intro.tscn" id="32_dialogue_intro"]
+[ext_resource type="PackedScene" uid="uid://cy4xf0mmhswwa" path="res://dialogues/dialogue_intro.tscn" id="32_dialogue_intro"]
 [ext_resource type="PackedScene" path="res://objects/characters/folk_hugh.tscn" id="35_8svx7"]
 [ext_resource type="PackedScene" uid="uid://gokyjm1wxgtb" path="res://ui/pause_menu.tscn" id="36_pause"]
+[ext_resource type="Script" uid="uid://dywregod52bd2" path="res://scripts/ending_cutscene.gd" id="37_ending"]
+[ext_resource type="PackedScene" path="res://dialogues/dialogue_ending.tscn" id="38_dialogue_ending"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie20d"]
 size = Vector2(20143, 1461)
@@ -881,6 +883,13 @@ position = Vector2(-862, 9781)
 [node name="dialogue" parent="intro_cutscene" unique_id=1072563245 instance=ExtResource("32_dialogue_intro")]
 
 [node name="pause_menu" parent="." unique_id=1075472186 instance=ExtResource("36_pause")]
+
+[node name="ending_cutscene" type="Node" parent="." unique_id=1363929966 node_paths=PackedStringArray("pigeon", "dialogue")]
+script = ExtResource("37_ending")
+pigeon = NodePath("../world_sort/pigeon")
+dialogue = NodePath("dialogue")
+
+[node name="dialogue" parent="ending_cutscene" unique_id=1623772478 instance=ExtResource("38_dialogue_ending")]
 
 [editable path="world_sort/town/graveyard/grass"]
 [editable path="world_sort/farm/bush_below_farm"]

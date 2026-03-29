@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+
+[node name="dialogue_ending" type="Node"]
+script = ExtResource("1_walker")
+
+[node name="say_1" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "Huh. That was... all of it."
+
+[node name="say_2" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "A prophet, a knight, a ghost whisperer, and a friend. Not bad for one afternoon."
+
+[node name="say_3" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "I don't think there's anything left to uncover here. Just the mud and the memories."
+
+[node name="say_4" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "But hey. If you want to keep waddling around, I'm not stopping you."
+
+[node name="say_5" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "Thank you for playing. [color=#a8554c]Seriously[/color]. You're pretty great."
+
+[node name="say_6" type="Node" parent="."]
+script = ExtResource("2_say")
+text = "Now if you'll excuse me, I think I saw some breadcrumbs by the well."

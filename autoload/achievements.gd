@@ -39,6 +39,10 @@ func mark_revealed(id: String) -> void:
   _revealed[id] = true
 
 
+func all_achieved() -> bool:
+  return not _achieved.values().has(false)
+
+
 func _on_global_flag_set(flag: String, value: bool) -> void:
   # just plain old hardcoded logic...
   if not value:
