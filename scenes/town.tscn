@@ -144,7 +144,7 @@ y_sort_enabled = true
 metadata/_edit_lock_ = true
 
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
-position = Vector2(-718, 9560)
+position = Vector2(-186, 508)
 
 [node name="town" type="Node2D" parent="world_sort" unique_id=568757174]
 y_sort_enabled = true
@@ -867,6 +867,7 @@ position = Vector2(-1642, 2651)
 
 [node name="intro_cutscene" type="Node" parent="." unique_id=1248851468 node_paths=PackedStringArray("pigeon", "start_position", "end_position", "dialogue")]
 script = ExtResource("31_oej6q")
+enabled = false
 pigeon = NodePath("../world_sort/pigeon")
 start_position = NodePath("start")
 end_position = NodePath("end")

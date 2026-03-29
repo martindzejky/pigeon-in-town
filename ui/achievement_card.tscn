@@ -1,32 +1,31 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://otf3c7suxf6h"]
 
-[ext_resource type="Script" path="res://scripts/achievement_card.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://sprites/ui/checkbox.png" id="2_checkbox"]
+[ext_resource type="Script" uid="uid://c6eayet1kn4gq" path="res://scripts/achievement_card.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dwxtskx8noc07" path="res://sprites/ui/card_sir_pigeon.png" id="2_8oclm"]
+[ext_resource type="Texture2D" uid="uid://cwjunjhiesc4" path="res://sprites/ui/checkbox.png" id="2_checkbox"]
 
-[node name="achievement_card" type="PanelContainer" node_paths=PackedStringArray("checkbox", "card_art")]
-custom_minimum_size = Vector2(140, 180)
+[node name="achievement_card" type="Control" unique_id=302501265 node_paths=PackedStringArray("checkbox", "card_art")]
+custom_minimum_size = Vector2(243, 366)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 243.0
+offset_bottom = 366.0
 pivot_offset = Vector2(70, 90)
 size_flags_horizontal = 4
 script = ExtResource("1_script")
-checkbox = NodePath("content/checkbox")
-card_art = NodePath("content/card_art")
+checkbox = NodePath("check")
+card_art = NodePath("art")
 
-[node name="content" type="VBoxContainer" parent="."]
-layout_mode = 2
-theme_override_constants/separation = 4
-alignment = 1
+[node name="art" type="TextureRect" parent="." unique_id=1998850487]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_8oclm")
 
-[node name="card_art" type="TextureRect" parent="content"]
-layout_mode = 2
-size_flags_horizontal = 4
-expand_mode = 1
-stretch_mode = 5
-
-[node name="checkbox" type="TextureRect" parent="content"]
-visible = false
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
+[node name="check" type="TextureRect" parent="." unique_id=2010826658]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 255.0
+offset_right = 289.0
+offset_bottom = 409.0
 texture = ExtResource("2_checkbox")
-expand_mode = 1
-stretch_mode = 5

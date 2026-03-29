@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Control
 
 @export var checkbox: TextureRect
 @export var card_art: TextureRect
