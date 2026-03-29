@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cl7qs17byie7w" path="res://sprites/ui/path.png" id="4_r77uv"]
 [ext_resource type="Texture2D" uid="uid://7m20yu2vxucl" path="res://sprites/ui/arrow.png" id="5_r77uv"]
 [ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="6_4nqmc"]
+[ext_resource type="PackedScene" uid="uid://s0se3on64np3" path="res://ui/map_hill.tscn" id="8_7plkq"]
+[ext_resource type="PackedScene" uid="uid://c7ax1vtgdimw3" path="res://ui/map_tree.tscn" id="9_ckc44"]
 
 [sub_resource type="Gradient" id="Gradient_tbmy8"]
 colors = PackedColorArray(0.90746313, 0.95471174, 0.90558094, 1, 0.7387667, 0.817412, 0.67955375, 1)
@@ -278,3 +280,228 @@ label_settings = SubResource("LabelSettings_r77uv")
 [node name="animation" type="AnimationPlayer" parent="center/arrow" unique_id=22620334]
 libraries/ = SubResource("AnimationLibrary_7plkq")
 autoplay = &"loop"
+
+[node name="stuff" type="Control" parent="." unique_id=1348507492]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="map_hill" parent="stuff" unique_id=101712562 instance=ExtResource("8_7plkq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.753125
+anchor_top = 0.18333334
+anchor_right = 0.753125
+anchor_bottom = 0.18333334
+metadata/_edit_use_anchors_ = true
+
+[node name="map_hill2" parent="stuff" unique_id=1065753775 instance=ExtResource("8_7plkq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.855
+anchor_top = 0.26166666
+anchor_right = 0.855
+anchor_bottom = 0.26166666
+metadata/_edit_use_anchors_ = true
+
+[node name="map_hill3" parent="stuff" unique_id=374641609 instance=ExtResource("8_7plkq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.894375
+anchor_top = 0.105
+anchor_right = 0.894375
+anchor_bottom = 0.105
+metadata/_edit_use_anchors_ = true
+
+[node name="map_hill4" parent="stuff" unique_id=54404364 instance=ExtResource("8_7plkq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.771875
+anchor_top = 0.043333333
+anchor_right = 0.771875
+anchor_bottom = 0.043333333
+metadata/_edit_use_anchors_ = true
+
+[node name="map_hill5" parent="stuff" unique_id=9305909 instance=ExtResource("8_7plkq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5525
+anchor_top = 0.13916667
+anchor_right = 0.5525
+anchor_bottom = 0.13916667
+metadata/_edit_use_anchors_ = true
+
+[node name="map_hill6" parent="stuff" unique_id=1885792841 instance=ExtResource("8_7plkq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.128125
+anchor_top = 0.8016667
+anchor_right = 0.128125
+anchor_bottom = 0.8016667
+metadata/_edit_use_anchors_ = true
+
+[node name="map_hill7" parent="stuff" unique_id=395826503 instance=ExtResource("8_7plkq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.17625
+anchor_top = 0.67833334
+anchor_right = 0.17625
+anchor_bottom = 0.67833334
+metadata/_edit_use_anchors_ = true
+
+[node name="map_hill8" parent="stuff" unique_id=416668801 instance=ExtResource("8_7plkq")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.103125
+anchor_top = 0.5675
+anchor_right = 0.103125
+anchor_bottom = 0.5675
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree" parent="stuff" unique_id=526278181 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.661875
+anchor_top = 0.75916666
+anchor_right = 0.661875
+anchor_bottom = 0.75916666
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree2" parent="stuff" unique_id=837564922 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.795
+anchor_top = 0.7841667
+anchor_right = 0.795
+anchor_bottom = 0.7841667
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree3" parent="stuff" unique_id=1130983712 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.845
+anchor_top = 0.7108333
+anchor_right = 0.845
+anchor_bottom = 0.7108333
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree4" parent="stuff" unique_id=47158177 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.903125
+anchor_top = 0.8
+anchor_right = 0.903125
+anchor_bottom = 0.8
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree5" parent="stuff" unique_id=1818105866 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.711875
+anchor_top = 0.95
+anchor_right = 0.711875
+anchor_bottom = 0.95
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree6" parent="stuff" unique_id=1763326499 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.78625
+anchor_top = 0.9675
+anchor_right = 0.78625
+anchor_bottom = 0.9675
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree7" parent="stuff" unique_id=507313111 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.861875
+anchor_top = 0.9316667
+anchor_right = 0.861875
+anchor_bottom = 0.9316667
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree8" parent="stuff" unique_id=1955164076 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.921875
+anchor_top = 0.3875
+anchor_right = 0.921875
+anchor_bottom = 0.3875
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree9" parent="stuff" unique_id=188241453 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.759375
+anchor_top = 0.325
+anchor_right = 0.759375
+anchor_bottom = 0.325
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree10" parent="stuff" unique_id=168303834 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8125
+anchor_top = 0.40833333
+anchor_right = 0.8125
+anchor_bottom = 0.40833333
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree11" parent="stuff" unique_id=518105148 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.191875
+anchor_top = 0.06333333
+anchor_right = 0.191875
+anchor_bottom = 0.06333333
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree12" parent="stuff" unique_id=681822673 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.144375
+anchor_top = 0.14583333
+anchor_right = 0.144375
+anchor_bottom = 0.14583333
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree13" parent="stuff" unique_id=29348980 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_top = 0.09916667
+anchor_right = 0.075
+anchor_bottom = 0.09916667
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree14" parent="stuff" unique_id=1097879481 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023125
+anchor_top = 0.24916667
+anchor_right = 0.023125
+anchor_bottom = 0.24916667
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree15" parent="stuff" unique_id=1782417601 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.30333334
+anchor_right = 0.08
+anchor_bottom = 0.30333334
+metadata/_edit_use_anchors_ = true
+
+[node name="map_tree16" parent="stuff" unique_id=927617120 instance=ExtResource("9_ckc44")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.129375
+anchor_top = 0.28666666
+anchor_right = 0.129375
+anchor_bottom = 0.28666666
+metadata/_edit_use_anchors_ = true

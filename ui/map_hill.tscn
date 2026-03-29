@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://s0se3on64np3"]
+
+[ext_resource type="Texture2D" uid="uid://davk0elvuag7o" path="res://sprites/ui/map_hill_1.png" id="1_hill_1"]
+[ext_resource type="Texture2D" uid="uid://c6iittqmj5oys" path="res://sprites/ui/map_hill_2.png" id="2_hill_2"]
+[ext_resource type="Texture2D" uid="uid://upw4c62ggmic" path="res://sprites/ui/map_hill_3.png" id="3_hill_3"]
+[ext_resource type="Texture2D" uid="uid://bmju3yj2pgi8c" path="res://sprites/ui/map_hill_4.png" id="4_hill_4"]
+[ext_resource type="Script" uid="uid://bd1ki1t1pfrcn" path="res://scripts/components/random_texture_rect.gd" id="5_random_texture_rect"]
+
+[node name="map_hill" type="Control" unique_id=101712562]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="texture" type="TextureRect" parent="." unique_id=1435556763]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -50.5
+offset_right = 98.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hill_1")
+stretch_mode = 3
+script = ExtResource("5_random_texture_rect")
+textures = Array[Texture2D]([ExtResource("1_hill_1"), ExtResource("2_hill_2"), ExtResource("3_hill_3"), ExtResource("4_hill_4")])
