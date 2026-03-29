@@ -5,11 +5,14 @@ extends Node
 
 
 func _ready() -> void:
-  var button := get_parent() as BaseButton
-  assert(button, 'button_sounds must be a child of a BaseButton')
-  button.pressed.connect(_on_pressed)
-  button.mouse_entered.connect(_on_hover)
-  button.focus_entered.connect(_on_hover)
+  var parent := get_parent() as Control
+  assert(parent, 'button_sounds must be a child of a Control')
+  parent.mouse_entered.connect(_on_hover)
+  parent.focus_entered.connect(_on_hover)
+  if parent is BaseButton:
+    parent.pressed.connect(_on_pressed)
+  else:
+    parent.gui_input.connect(_on_gui_input)
 
 
 func _on_pressed() -> void:
@@ -18,3 +21,8 @@ func _on_pressed() -> void:
 
 func _on_hover() -> void:
   hover_player.play()
+
+
+func _on_gui_input(event: InputEvent) -> void:
+  if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+    click_player.play()

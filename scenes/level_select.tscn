@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cl7qs17byie7w" path="res://sprites/ui/path.png" id="4_r77uv"]
 [ext_resource type="Texture2D" uid="uid://7m20yu2vxucl" path="res://sprites/ui/arrow.png" id="5_r77uv"]
 [ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="6_4nqmc"]
+[ext_resource type="PackedScene" path="res://ui/button_sounds.tscn" id="7_sounds"]
 [ext_resource type="PackedScene" uid="uid://s0se3on64np3" path="res://ui/map_hill.tscn" id="8_7plkq"]
 [ext_resource type="PackedScene" uid="uid://c7ax1vtgdimw3" path="res://ui/map_tree.tscn" id="9_ckc44"]
 
@@ -169,6 +170,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 2
 texture = ExtResource("3_town_icon")
 stretch_mode = 5
+
+[node name="button_sounds" parent="center/town_icon_parent/town_icon" instance=ExtResource("7_sounds")]
 
 [node name="squash" type="Node" parent="center/town_icon_parent" unique_id=1043599339 node_paths=PackedStringArray("target")]
 script = ExtResource("6_4nqmc")
