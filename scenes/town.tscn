@@ -37,7 +37,7 @@
 [ext_resource type="Script" uid="uid://dvawjdkc4g4hg" path="res://scripts/intro_cutscene.gd" id="31_oej6q"]
 [ext_resource type="PackedScene" path="res://dialogues/dialogue_intro.tscn" id="32_dialogue_intro"]
 [ext_resource type="PackedScene" path="res://objects/characters/folk_hugh.tscn" id="35_8svx7"]
-[ext_resource type="PackedScene" path="res://ui/pause_menu.tscn" id="36_pause"]
+[ext_resource type="PackedScene" uid="uid://gokyjm1wxgtb" path="res://ui/pause_menu.tscn" id="36_pause"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie20d"]
 size = Vector2(20143, 1461)
