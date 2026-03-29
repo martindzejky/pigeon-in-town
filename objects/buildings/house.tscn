@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dp8tpseim0ftg"]
+
+[ext_resource type="Texture2D" uid="uid://ctwrdjcxgg5j2" path="res://sprites/buildings/house_1.png" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://bcu74mr16y021" path="res://sprites/buildings/house_2.png" id="2_tex"]
+[ext_resource type="Texture2D" uid="uid://dst6xneuule8c" path="res://sprites/buildings/house_3.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://f85v0fym3co" path="res://sprites/buildings/house_4.png" id="4_tex"]
+[ext_resource type="Texture2D" uid="uid://bivxhcn4b3d2y" path="res://sprites/buildings/house_5.png" id="5_tex"]
+[ext_resource type="Texture2D" uid="uid://cqtf38cvi25k2" path="res://sprites/buildings/house_6.png" id="6_tex"]
+[ext_resource type="Script" uid="uid://cl7qwum1tj45m" path="res://scripts/components/random_sprite.gd" id="7_random_sprite"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="8_shadow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(374, 180)
+
+[node name="house" type="Node2D" unique_id=402885739]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1365302348 node_paths=PackedStringArray("update_shadow_scale")]
+position = Vector2(0, -387)
+texture = ExtResource("1_tex")
+script = ExtResource("7_random_sprite")
+sprites = Array[Texture2D]([ExtResource("1_tex"), ExtResource("2_tex"), ExtResource("3_tex"), ExtResource("4_tex"), ExtResource("5_tex"), ExtResource("6_tex")])
+update_shadow_scale = NodePath("../shadow")
+
+[node name="shadow" parent="." unique_id=1575948937 instance=ExtResource("8_shadow")]
+scale = Vector2(2.2, 0.8)
+
+[node name="collider" type="StaticBody2D" parent="." unique_id=1119133352]
+
+[node name="shape" type="CollisionShape2D" parent="collider" unique_id=1250002661]
+position = Vector2(-13, -90)
+shape = SubResource("RectangleShape2D_body")
