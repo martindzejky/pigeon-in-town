@@ -12,7 +12,7 @@ text = "Huh. That was... all of it."
 
 [node name="say_2" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "A prophet, a knight, a ghost whisperer, and a friend. Not bad for one afternoon."
+text = "A [color=#a8554c]prophet[/color], a [color=#4c7ea8]knight[/color], a [color=#8a6ca8]ghost whisperer[/color], and a [color=#6ca87a]friend[/color]. Not bad for one afternoon."
 
 [node name="say_3" type="Node" parent="."]
 script = ExtResource("2_say")
