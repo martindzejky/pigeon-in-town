@@ -32,3 +32,4 @@ Landmarks characters might reference:
   - the church, the graveyard, the well, the tavern/inn, the field, the farm
   - the crossroads as the center of town
   - muddy paths connecting everything
+  - forest in the north west

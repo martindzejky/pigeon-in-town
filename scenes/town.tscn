@@ -139,7 +139,7 @@ y_sort_enabled = true
 metadata/_edit_lock_ = true
 
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
-position = Vector2(-871, 9800)
+position = Vector2(3176, 939)
 
 [node name="town" type="Node2D" parent="world_sort" unique_id=568757174]
 y_sort_enabled = true
@@ -786,6 +786,68 @@ density = 0.02
 [node name="polygon" parent="world_sort/south/flowers2" index="0"]
 polygon = PackedVector2Array(346, 7035, -12, 7765, -114, 8604, -354, 9576, -114, 10720, 5405, 10948, 5973, 10263, 5848, 3928, 4926, 4243, 4447, 4873, 4357, 5349, 3791, 5528, 3709, 6444, 3319, 6721, 2198, 6740, 987, 6668)
 
+[node name="west" type="Node2D" parent="world_sort" unique_id=1901444368]
+y_sort_enabled = true
+
+[node name="grass" parent="world_sort/west" unique_id=1754927382 instance=ExtResource("19_0havn")]
+objects = Array[PackedScene]([ExtResource("14_grass")])
+density = 0.2
+
+[node name="polygon" parent="world_sort/west/grass" index="0"]
+polygon = PackedVector2Array(-306, -913, -902, -317, -920, 559, -419, 1298, -848, 1941, -4090, 2245, -4543, 3199, -3727, 4218, -4597, 4468, -6366, 4307, -6974, 4849, -8506, 4486, -8482, -2242, -1045, -2588)
+
+[node name="bush" parent="world_sort/west" unique_id=2092598586 instance=ExtResource("19_0havn")]
+objects = Array[PackedScene]([ExtResource("12_bush")])
+density = 0.008
+
+[node name="polygon" parent="world_sort/west/bush" index="0"]
+polygon = PackedVector2Array(-2100, -561, -1635, 761, -2380, 1703, -4090, 1941, -5073, 2907, -6325, 3711, -6885, 2275, -5550, 863, -4138, 1196, -3613, 291, -2666, 326)
+
+[node name="trees" parent="world_sort/west" unique_id=371633790 instance=ExtResource("19_0havn")]
+objects = Array[PackedScene]([ExtResource("11_tree")])
+density = 0.03
+
+[node name="polygon" parent="world_sort/west/trees" index="0"]
+polygon = PackedVector2Array(-8399, -2194, -1772, -2135, -1301, -919, -1975, -1426, -1939, 46, -3053, -716, -2994, 750, -3792, -347, -4126, 791, -5639, -329, -6009, 744, -6468, -162, -6623, 1012, -7350, -91, -7356, 1214, -8285, 1935)
+
+[node name="trees2" parent="world_sort/west" unique_id=325317965 instance=ExtResource("19_0havn")]
+objects = Array[PackedScene]([ExtResource("11_tree")])
+density = 0.07
+
+[node name="polygon" parent="world_sort/west/trees2" index="0"]
+polygon = PackedVector2Array(-8279, -2093, -8244, 535, -7123, -573, -5890, -734, -5461, -1485, -4942, -2117)
+
+[node name="east" type="Node2D" parent="world_sort" unique_id=1145736478]
+y_sort_enabled = true
+
+[node name="grass" parent="world_sort/east" unique_id=1737613838 instance=ExtResource("19_0havn")]
+objects = Array[PackedScene]([ExtResource("14_grass")])
+density = 0.2
+
+[node name="polygon" parent="world_sort/east/grass" index="0"]
+polygon = PackedVector2Array(695, 683, 2726, 606, 2958, 456, 2994, -2068, 5602, -2585, 6351, -1836, 6279, 1710, 4621, 2018, 3579, 1579, 1619, 1304, 786, 1271)
+
+[node name="tree" parent="world_sort/east" unique_id=747361600 instance=ExtResource("11_tree")]
+position = Vector2(4204, -769)
+
+[node name="tree2" parent="world_sort/east" unique_id=1209167765 instance=ExtResource("11_tree")]
+position = Vector2(4242, -509)
+
+[node name="tree3" parent="world_sort/east" unique_id=1697925973 instance=ExtResource("11_tree")]
+position = Vector2(3717, -5)
+
+[node name="tree4" parent="world_sort/east" unique_id=218873565 instance=ExtResource("11_tree")]
+position = Vector2(3500, -265)
+
+[node name="tree5" parent="world_sort/east" unique_id=993851130 instance=ExtResource("11_tree")]
+position = Vector2(4638, 873)
+
+[node name="tree6" parent="world_sort/east" unique_id=1544968840 instance=ExtResource("11_tree")]
+position = Vector2(4849, 537)
+
+[node name="tree7" parent="world_sort/east" unique_id=673780369 instance=ExtResource("11_tree")]
+position = Vector2(5104, 1306)
+
 [node name="intro_cutscene" type="Node" parent="." unique_id=1248851468 node_paths=PackedStringArray("pigeon", "start_position", "end_position", "dialogue")]
 script = ExtResource("31_oej6q")
 enabled = false
@@ -808,3 +870,8 @@ position = Vector2(-862, 9781)
 [editable path="world_sort/south/flowers"]
 [editable path="world_sort/south/grass2"]
 [editable path="world_sort/south/flowers2"]
+[editable path="world_sort/west/grass"]
+[editable path="world_sort/west/bush"]
+[editable path="world_sort/west/trees"]
+[editable path="world_sort/west/trees2"]
+[editable path="world_sort/east/grass"]
