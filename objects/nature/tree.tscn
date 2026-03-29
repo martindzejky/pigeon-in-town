@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="5_shadow"]
 [ext_resource type="Material" uid="uid://gci118i37dpt" path="res://materials/white_modulate_only.tres" id="6_material"]
 [ext_resource type="Script" uid="uid://fma4r3v31i0u" path="res://scripts/components/random_color.gd" id="7_random_color"]
+[ext_resource type="Script" uid="uid://d0q00i8th6b0" path="res://scripts/components/wind_sway.gd" id="8_wind_sway"]
 
 [sub_resource type="Gradient" id="Gradient_foliage"]
 offsets = PackedFloat32Array(0, 0.4977169, 1)
@@ -17,15 +18,17 @@ radius = 39.012817
 
 [node name="tree" type="Node2D" unique_id=1696048237]
 
-[node name="sprite" type="Sprite2D" parent="." unique_id=1691229569 node_paths=PackedStringArray("update_shadow_scale")]
+[node name="sway_root" type="Node2D" parent="." unique_id=259672786]
+
+[node name="sprite" type="Sprite2D" parent="sway_root" unique_id=1691229569 node_paths=PackedStringArray("update_shadow_scale")]
 material = ExtResource("6_material")
 position = Vector2(0, -297)
 texture = ExtResource("1_tex")
 script = ExtResource("4_random_sprite")
 sprites = Array[Texture2D]([ExtResource("1_tex"), ExtResource("2_tex"), ExtResource("3_tex")])
-update_shadow_scale = NodePath("../shadow")
+update_shadow_scale = NodePath("../../shadow")
 
-[node name="random_color" type="Node" parent="sprite" unique_id=1086127069 node_paths=PackedStringArray("target")]
+[node name="random_color" type="Node" parent="sway_root/sprite" unique_id=1086127069 node_paths=PackedStringArray("target")]
 script = ExtResource("7_random_color")
 target = NodePath("..")
 gradient = SubResource("Gradient_foliage")
@@ -38,3 +41,8 @@ scale = Vector2(0.9, 0.5)
 [node name="shape" type="CollisionShape2D" parent="collider" unique_id=81516178]
 position = Vector2(2, -7)
 shape = SubResource("CircleShape2D_s4c57")
+
+[node name="wind_sway" type="Node" parent="." unique_id=611283425 node_paths=PackedStringArray("target")]
+script = ExtResource("8_wind_sway")
+target = NodePath("../sway_root")
+strength = 0.13
