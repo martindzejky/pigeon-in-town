@@ -1,23 +1,22 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bcjgtr8k4hx4f"]
 
-[ext_resource type="Script" path="res://scripts/npc.gd" id="1_npc_script"]
-[ext_resource type="Material" path="res://materials/outline.tres" id="2_p78av"]
-[ext_resource type="Texture2D" path="res://sprites/ghost/ghost_talk.png" id="3_talk"]
-[ext_resource type="Texture2D" path="res://sprites/ghost/ghost_float.png" id="4_run_1"]
-[ext_resource type="Texture2D" path="res://sprites/ghost/ghost_idle.png" id="5_run_2"]
-[ext_resource type="Script" path="res://scripts/components/squash.gd" id="6_squash_script"]
-[ext_resource type="PackedScene" path="res://objects/shadow.tscn" id="7_shadow"]
-[ext_resource type="Script" path="res://scripts/states/state_machine.gd" id="8_state_machine"]
-[ext_resource type="Script" path="res://scripts/npc_states/idle_state.gd" id="9_idle_state"]
-[ext_resource type="Script" path="res://scripts/npc_states/wander_state.gd" id="10_wander_state"]
-[ext_resource type="Script" path="res://scripts/npc_states/dialogue_state.gd" id="11_dialogue_state"]
-[ext_resource type="Script" path="res://scripts/npc_states/talking_state.gd" id="12_talking_state"]
-[ext_resource type="Script" path="res://scripts/dialogue_ui_anchor.gd" id="13_dialogue_ui_anchor"]
-[ext_resource type="PackedScene" path="res://dialogues/ghost_fred.tscn" id="14_dialogue_scene"]
-[ext_resource type="PackedScene" path="res://ui/say_bubble.tscn" id="15_h4j8l"]
-[ext_resource type="PackedScene" path="res://ui/choice_bubble.tscn" id="16_p78av"]
-[ext_resource type="Script" path="res://scripts/components/npc_memory.gd" id="19_5uyk3"]
-[ext_resource type="PackedScene" path="res://ui/interaction_hint.tscn" id="21_u24br"]
+[ext_resource type="Script" uid="uid://d1h13oi6p4q1d" path="res://scripts/npc.gd" id="1_npc_script"]
+[ext_resource type="Material" uid="uid://dycmpk6phjwap" path="res://materials/outline.tres" id="2_p78av"]
+[ext_resource type="Texture2D" uid="uid://plmqngxjkti3" path="res://sprites/ghost/ghost_talk.png" id="3_talk"]
+[ext_resource type="Texture2D" uid="uid://b7tooseoqnsis" path="res://sprites/ghost/ghost_float.png" id="4_run_1"]
+[ext_resource type="Texture2D" uid="uid://bhc3dwm5pe8qv" path="res://sprites/ghost/ghost_idle.png" id="5_run_2"]
+[ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="6_squash_script"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="7_shadow"]
+[ext_resource type="Script" uid="uid://bexn1jrfmr1s3" path="res://scripts/states/state_machine.gd" id="8_state_machine"]
+[ext_resource type="Script" uid="uid://ddocedl8ihsrb" path="res://scripts/npc_states/idle_state.gd" id="9_idle_state"]
+[ext_resource type="Script" uid="uid://cj430kpbcknjp" path="res://scripts/npc_states/wander_state.gd" id="10_wander_state"]
+[ext_resource type="Script" uid="uid://c64xiyiuac5wq" path="res://scripts/npc_states/dialogue_state.gd" id="11_dialogue_state"]
+[ext_resource type="Script" uid="uid://bveb7au0piwb5" path="res://scripts/npc_states/talking_state.gd" id="12_talking_state"]
+[ext_resource type="Script" uid="uid://b4qt8n87qojtp" path="res://scripts/dialogue_ui_anchor.gd" id="13_dialogue_ui_anchor"]
+[ext_resource type="PackedScene" uid="uid://cas88nkps4twa" path="res://ui/say_bubble.tscn" id="15_h4j8l"]
+[ext_resource type="PackedScene" uid="uid://bks27hc7rj431" path="res://ui/choice_bubble.tscn" id="16_p78av"]
+[ext_resource type="Script" uid="uid://ug10meqw1gjf" path="res://scripts/components/npc_memory.gd" id="19_5uyk3"]
+[ext_resource type="PackedScene" uid="uid://cfj7ylxguuhqh" path="res://ui/interaction_hint.tscn" id="21_u24br"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -300,94 +299,91 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_interaction"]
 radius = 94.42987
 
-[node name="ghost_fred" type="Node2D" node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "dialogue_walker", "interaction_hint")]
+[node name="ghost" type="Node2D" unique_id=1015056895 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "interaction_hint")]
 script = ExtResource("1_npc_script")
 flip_node = NodePath("squash_root/Node2D/animation_root/flip")
 squash = NodePath("squash")
 animation = NodePath("animation")
 sprite = NodePath("squash_root/Node2D/animation_root/flip/sprite")
-dialogue_walker = NodePath("dialogue_walker")
 outline_material = ExtResource("2_p78av")
 interaction_hint = NodePath("interaction_hint")
 
-[node name="shadow" parent="." instance=ExtResource("7_shadow")]
+[node name="shadow" parent="." unique_id=188997925 instance=ExtResource("7_shadow")]
 scale = Vector2(0.72320753, 0.66027397)
 
-[node name="squash_root" type="Node2D" parent="."]
+[node name="squash_root" type="Node2D" parent="." unique_id=133748983]
 
-[node name="Node2D" type="Node2D" parent="squash_root"]
+[node name="Node2D" type="Node2D" parent="squash_root" unique_id=646576399]
 
-[node name="animation_root" type="Node2D" parent="squash_root/Node2D"]
+[node name="animation_root" type="Node2D" parent="squash_root/Node2D" unique_id=1159663331]
 
-[node name="flip" type="Node2D" parent="squash_root/Node2D/animation_root"]
+[node name="flip" type="Node2D" parent="squash_root/Node2D/animation_root" unique_id=1860119434]
 
-[node name="sprite" type="Sprite2D" parent="squash_root/Node2D/animation_root/flip"]
+[node name="sprite" type="Sprite2D" parent="squash_root/Node2D/animation_root/flip" unique_id=1790166913]
 modulate = Color(0.8, 0.85, 1, 0.7)
 position = Vector2(0, -185.33214)
 texture = ExtResource("5_run_2")
 
-[node name="squash" type="Node" parent="." node_paths=PackedStringArray("target")]
+[node name="squash" type="Node" parent="." unique_id=1896743715 node_paths=PackedStringArray("target")]
 script = ExtResource("6_squash_script")
 target = NodePath("../squash_root")
 force = 0.5
 
-[node name="state_machine" type="Node" parent="."]
+[node name="state_machine" type="Node" parent="." unique_id=1658651660]
 script = ExtResource("8_state_machine")
 
-[node name="idle" type="Node" parent="state_machine" node_paths=PackedStringArray("npc", "state_machine")]
+[node name="idle" type="Node" parent="state_machine" unique_id=389820091 node_paths=PackedStringArray("npc", "state_machine")]
 script = ExtResource("9_idle_state")
 npc = NodePath("../..")
 state_machine = NodePath("..")
 
-[node name="wander" type="Node" parent="state_machine" node_paths=PackedStringArray("npc", "state_machine")]
+[node name="wander" type="Node" parent="state_machine" unique_id=970689639 node_paths=PackedStringArray("npc", "state_machine")]
 script = ExtResource("10_wander_state")
 npc = NodePath("../..")
 state_machine = NodePath("..")
 
-[node name="dialogue" type="Node" parent="state_machine" node_paths=PackedStringArray("dialogue_ui_anchor", "talking_state", "npc", "state_machine")]
+[node name="dialogue" type="Node" parent="state_machine" unique_id=738755670 node_paths=PackedStringArray("dialogue_ui_anchor", "talking_state", "npc", "state_machine")]
 script = ExtResource("11_dialogue_state")
 dialogue_ui_anchor = NodePath("../../dialogue_ui_anchor")
 talking_state = NodePath("../talking")
 npc = NodePath("../..")
 state_machine = NodePath("..")
 
-[node name="talking" type="Node" parent="state_machine" node_paths=PackedStringArray("dialogue_ui_anchor", "npc", "state_machine")]
+[node name="talking" type="Node" parent="state_machine" unique_id=686817130 node_paths=PackedStringArray("dialogue_ui_anchor", "npc", "state_machine")]
 script = ExtResource("12_talking_state")
 dialogue_ui_anchor = NodePath("../../dialogue_ui_anchor")
 npc = NodePath("../..")
 state_machine = NodePath("..")
 
-[node name="dialogue_walker" parent="." node_paths=PackedStringArray("memory") instance=ExtResource("14_dialogue_scene")]
-memory = NodePath("../memory")
-
-[node name="dialogue_ui_anchor" type="Node2D" parent="."]
+[node name="dialogue_ui_anchor" type="Node2D" parent="." unique_id=1941351856]
 position = Vector2(5, -380)
 script = ExtResource("13_dialogue_ui_anchor")
 say_bubble_scene = ExtResource("15_h4j8l")
 choice_bubble_scene = ExtResource("16_p78av")
 
-[node name="animation" type="AnimationPlayer" parent="."]
+[node name="animation" type="AnimationPlayer" parent="." unique_id=1740686627]
 libraries/ = SubResource("AnimationLibrary_main")
 autoplay = &"idle"
 
-[node name="floating" type="AnimationPlayer" parent="."]
+[node name="floating" type="AnimationPlayer" parent="." unique_id=175007157]
 libraries/ = SubResource("AnimationLibrary_b05iq")
 autoplay = &"floating"
 
-[node name="interaction_area" type="Area2D" parent="."]
+[node name="interaction_area" type="Area2D" parent="." unique_id=521964502]
 collision_layer = 2
 collision_mask = 0
 
-[node name="interaction_shape" type="CollisionShape2D" parent="interaction_area"]
+[node name="interaction_shape" type="CollisionShape2D" parent="interaction_area" unique_id=469388217]
 shape = SubResource("CircleShape2D_interaction")
 debug_color = Color(0.6956506, 0.48855472, 0.21236292, 0.23137255)
 
-[node name="interaction_hint" parent="." instance=ExtResource("21_u24br")]
+[node name="interaction_hint" parent="." unique_id=706904321 instance=ExtResource("21_u24br")]
 visible = false
 offset_left = -97.0
 offset_top = -430.0
 offset_right = 97.0
 offset_bottom = -354.0
 
-[node name="memory" type="Node" parent="."]
+[node name="memory" type="Node" parent="." unique_id=710878328]
 script = ExtResource("19_5uyk3")
+metadata/_custom_type_script = "uid://ug10meqw1gjf"

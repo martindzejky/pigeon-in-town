@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://ddocedl8ihsrb" path="res://scripts/npc_states/idle_state.gd" id="9_idle_state"]
 [ext_resource type="Script" uid="uid://cj430kpbcknjp" path="res://scripts/npc_states/wander_state.gd" id="10_wander_state"]
 [ext_resource type="Script" uid="uid://c64xiyiuac5wq" path="res://scripts/npc_states/dialogue_state.gd" id="11_dialogue_state"]
-[ext_resource type="PackedScene" uid="uid://cksqipd056rpp" path="res://dialogues/dialogue_prototype.tscn" id="11_h4j8l"]
 [ext_resource type="Script" uid="uid://bveb7au0piwb5" path="res://scripts/npc_states/talking_state.gd" id="12_talking_state"]
 [ext_resource type="Script" uid="uid://b4qt8n87qojtp" path="res://scripts/dialogue_ui_anchor.gd" id="13_dialogue_ui_anchor"]
 [ext_resource type="PackedScene" uid="uid://cas88nkps4twa" path="res://ui/say_bubble.tscn" id="15_h4j8l"]
@@ -309,7 +308,7 @@ flip_node = NodePath("squash_root/animation_root/flip")
 squash = NodePath("squash")
 animation = NodePath("animation")
 sprite = NodePath("squash_root/animation_root/flip/sprite")
-dialogue_walker = NodePath("dialogue_walker")
+dialogue_walker = NodePath("")
 outline_material = ExtResource("2_p78av")
 interaction_hint = NodePath("interaction_hint")
 
@@ -356,9 +355,6 @@ script = ExtResource("12_talking_state")
 dialogue_ui_anchor = NodePath("../../dialogue_ui_anchor")
 npc = NodePath("../..")
 state_machine = NodePath("..")
-
-[node name="dialogue_walker" parent="." unique_id=1099826637 node_paths=PackedStringArray("memory") instance=ExtResource("11_h4j8l")]
-memory = NodePath("../memory")
 
 [node name="dialogue_ui_anchor" type="Node2D" parent="." unique_id=1410963628]
 position = Vector2(5, -513)

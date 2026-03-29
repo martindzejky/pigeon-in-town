@@ -2,12 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://mt7oxu4mesgd" path="res://objects/shadow/shadow_canvas_group.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bi13ymg3xdf50" path="res://objects/characters/pigeon.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://dilh58yingxqj" path="res://objects/characters/regular_folk_prototype.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://b7dd7pydkko1e" path="res://scripts/camera.gd" id="4_cam"]
+[ext_resource type="PackedScene" uid="uid://bieelgkigu5df" path="res://objects/characters/regular_folk_test.tscn" id="5_b0eaf"]
 [ext_resource type="Script" uid="uid://lqimfot170uf" path="res://scripts/town.gd" id="5_town"]
-[ext_resource type="PackedScene" path="res://objects/characters/ghost_fred.tscn" id="7_ghost_fred"]
-[ext_resource type="PackedScene" uid="uid://bcjgtr8k4hx4f" path="res://objects/characters/ghost_gerald.tscn" id="8_ckatl"]
-[ext_resource type="PackedScene" uid="uid://l3bug163acfx" path="res://objects/characters/pig.tscn" id="9_pig"]
 [ext_resource type="PackedScene" uid="uid://b36xo7lkrm4nb" path="res://objects/nature/tree.tscn" id="11_tree"]
 [ext_resource type="PackedScene" uid="uid://rmlke1ng5an0" path="res://objects/nature/bush.tscn" id="12_bush"]
 [ext_resource type="PackedScene" uid="uid://b504k2unq1i0" path="res://objects/nature/flower.tscn" id="13_flower"]
@@ -43,17 +40,8 @@ y_sort_enabled = true
 
 [node name="pigeon" parent="world_sort" unique_id=974217913 instance=ExtResource("1_ig7tw")]
 
-[node name="regular_folk" parent="world_sort" unique_id=1269615729 instance=ExtResource("3_h2yge")]
-position = Vector2(534, 245)
-
-[node name="ghost_fred" parent="world_sort" unique_id=1332936328 instance=ExtResource("7_ghost_fred")]
-position = Vector2(-557, -756)
-
-[node name="ghost_gerald" parent="world_sort" unique_id=1015056895 instance=ExtResource("8_ckatl")]
-position = Vector2(-826, -985)
-
-[node name="pig" parent="world_sort" unique_id=450804156 instance=ExtResource("9_pig")]
-position = Vector2(-500, 600)
+[node name="regular_folk_test" parent="world_sort" unique_id=1083386034 instance=ExtResource("5_b0eaf")]
+position = Vector2(716, -59)
 
 [node name="tree_1" parent="world_sort" unique_id=1260288349 instance=ExtResource("11_tree")]
 position = Vector2(-1200, -600)

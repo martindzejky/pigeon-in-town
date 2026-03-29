@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://b4kwghmomxwky" path="res://scripts/dialogue/dialogue_choose.gd" id="3_h38hb"]
 [ext_resource type="Script" uid="uid://bngy74khot6cl" path="res://scripts/dialogue/dialogue_option.gd" id="4_ey17j"]
 
-[node name="dialogue_walker" type="Node" unique_id=1099826637]
+[node name="dialogue_prototype" type="Node" unique_id=1099826637]
 script = ExtResource("1_m4k5m")
 
 [node name="say_1" type="Node" parent="." unique_id=264975612]

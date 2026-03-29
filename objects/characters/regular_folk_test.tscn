@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bieelgkigu5df"]
+
+[ext_resource type="PackedScene" uid="uid://dilh58yingxqj" path="res://objects/characters/regular_folk.tscn" id="1_pbptx"]
+[ext_resource type="PackedScene" uid="uid://cksqipd056rpp" path="res://dialogues/dialogue_prototype.tscn" id="2_5glw2"]
+
+[node name="regular_folk_test" unique_id=1083386034 node_paths=PackedStringArray("dialogue_walker") instance=ExtResource("1_pbptx")]
+dialogue_walker = NodePath("dialogue")
+
+[node name="dialogue" parent="." index="9" unique_id=1099826637 node_paths=PackedStringArray("memory") instance=ExtResource("2_5glw2")]
+memory = NodePath("../memory")
