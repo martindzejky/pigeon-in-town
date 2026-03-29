@@ -230,18 +230,18 @@ sprite = NodePath("squash_root/animation_root/flip/sprite")
 outline_material = ExtResource("2_p78av")
 interaction_hint = NodePath("interaction_hint")
 
-[node name="shadow" parent="." unique_id=1988116556 instance=ExtResource("7_shadow")]
-scale = Vector2(1.1560528, 0.6525616)
-
-[node name="shadow2" parent="." unique_id=115606452 instance=ExtResource("7_shadow")]
-position = Vector2(199, 4)
-scale = Vector2(0.33012295, 0.31888077)
-
 [node name="squash_root" type="Node2D" parent="." unique_id=189340914]
 
 [node name="animation_root" type="Node2D" parent="squash_root" unique_id=1617434468]
 
 [node name="flip" type="Node2D" parent="squash_root/animation_root" unique_id=1667958687]
+
+[node name="shadow" parent="squash_root/animation_root/flip" unique_id=1988116556 instance=ExtResource("7_shadow")]
+scale = Vector2(1.1560528, 0.6525616)
+
+[node name="shadow2" parent="squash_root/animation_root/flip" unique_id=115606452 instance=ExtResource("7_shadow")]
+position = Vector2(199, 4)
+scale = Vector2(0.33012295, 0.31888077)
 
 [node name="sprite" type="Sprite2D" parent="squash_root/animation_root/flip" unique_id=695460570]
 position = Vector2(77, -168)
