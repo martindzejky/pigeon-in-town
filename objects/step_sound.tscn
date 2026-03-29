@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bj35dosskjegc"]
+
+[ext_resource type="AudioStream" uid="uid://q7cx7ku5e2vq" path="res://sounds/step_random.tres" id="1_step_random"]
+
+[node name="step_sound" type="AudioStreamPlayer2D" unique_id=133537541]
+stream = ExtResource("1_step_random")
+max_polyphony = 3

@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://ca2p4b7lmngsu" path="res://scripts/pigeon_states/talking_state.gd" id="14_talking_state"]
 [ext_resource type="Script" uid="uid://cr44fmp2q46av" path="res://scripts/pigeon_states/choice_state.gd" id="15_choice_state"]
 [ext_resource type="Script" uid="uid://b4qt8n87qojtp" path="res://scripts/dialogue_ui_anchor.gd" id="16_dialogue_ui_anchor"]
+[ext_resource type="PackedScene" uid="uid://bj35dosskjegc" path="res://objects/step_sound.tscn" id="17_step_sound"]
 
 [sub_resource type="Animation" id="Animation_reset"]
 length = 0.001
@@ -216,6 +217,23 @@ tracks/5/keys = {
 "method": &"squash"
 }]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("step_sound")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_talk"]
 resource_name = "talk"
@@ -386,6 +404,8 @@ debug_color = Color(0, 0.6, 0.69803923, 0.14117648)
 
 [node name="body_shape" type="CollisionShape2D" parent="." unique_id=1564531847]
 shape = SubResource("CircleShape2D_body")
+
+[node name="step_sound" parent="." unique_id=1593836336 instance=ExtResource("17_step_sound")]
 
 [connection signal="area_entered" from="npc_detection_area" to="npc_detection_area" method="_on_area_entered"]
 [connection signal="area_exited" from="npc_detection_area" to="npc_detection_area" method="_on_area_exited"]
