@@ -1,0 +1,298 @@
+[gd_scene format=3 uid="uid://idjp5tvo5svs"]
+
+[ext_resource type="Script" uid="uid://d1h13oi6p4q1d" path="res://scripts/npc.gd" id="1_npc_script"]
+[ext_resource type="Texture2D" uid="uid://boo3ggchhvq6c" path="res://sprites/priest/priest_idle.png" id="2_idle"]
+[ext_resource type="Material" uid="uid://dycmpk6phjwap" path="res://materials/outline.tres" id="2_p78av"]
+[ext_resource type="Texture2D" uid="uid://c3gnavxxolb4r" path="res://sprites/priest/priest_talk.png" id="3_talk"]
+[ext_resource type="Script" uid="uid://bh0dnd5ra0qst" path="res://scripts/components/squash.gd" id="6_squash_script"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="7_shadow"]
+[ext_resource type="Script" uid="uid://bexn1jrfmr1s3" path="res://scripts/states/state_machine.gd" id="8_state_machine"]
+[ext_resource type="Script" uid="uid://ddocedl8ihsrb" path="res://scripts/npc_states/idle_state.gd" id="9_idle_state"]
+[ext_resource type="Script" uid="uid://c64xiyiuac5wq" path="res://scripts/npc_states/dialogue_state.gd" id="11_dialogue_state"]
+[ext_resource type="Script" uid="uid://bveb7au0piwb5" path="res://scripts/npc_states/talking_state.gd" id="12_talking_state"]
+[ext_resource type="Script" uid="uid://b4qt8n87qojtp" path="res://scripts/dialogue_ui_anchor.gd" id="13_dialogue_ui_anchor"]
+[ext_resource type="PackedScene" uid="uid://cas88nkps4twa" path="res://ui/say_bubble.tscn" id="15_h4j8l"]
+[ext_resource type="PackedScene" uid="uid://bks27hc7rj431" path="res://ui/choice_bubble.tscn" id="16_p78av"]
+[ext_resource type="Script" uid="uid://ug10meqw1gjf" path="res://scripts/components/npc_memory.gd" id="19_memory"]
+[ext_resource type="PackedScene" uid="uid://cfj7ylxguuhqh" path="res://ui/interaction_hint.tscn" id="21_u24br"]
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_idle")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squash_root/animation_root:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("squash_root/animation_root:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("squash_root/animation_root:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("squash_root/animation_root:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_idle"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_idle")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squash_root/animation_root:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.036, 0.016, 1.04, -0.25, 0, 0.25, 0, 0.976, -0.25, 0, 0.25, 0, 1, -0.067, -0.014, 0.25, 0),
+"times": PackedFloat32Array(0, 0.32, 0.656, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("squash_root/animation_root:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.068, -0.015, 0.98, -0.25, 0, 0.25, 0, 1.032, -0.25, 0, 0.25, 0, 1, -0.055, 0.012, 0.25, 0),
+"times": PackedFloat32Array(0, 0.32, 0.656, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("squash_root/animation_root:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("squash_root/animation_root:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_talk"]
+resource_name = "talk"
+length = 0.45
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("squash_root/animation_root/flip/sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.225),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_talk"), ExtResource("2_idle")]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("squash_root/animation_root:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.036, 0.016, 1.04, -0.25, 0, 0.25, 0, 0.976, -0.25, 0, 0.25, 0, 1, -0.067, -0.014, 0.25, 0),
+"times": PackedFloat32Array(0, 0.144, 0.296, 0.45)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("squash_root/animation_root:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.068, -0.015, 0.98, -0.25, 0, 0.25, 0, 1.032, -0.25, 0, 0.25, 0, 1, -0.055, 0.012, 0.25, 0),
+"times": PackedFloat32Array(0, 0.144, 0.296, 0.45)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("squash_root/animation_root:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("squash_root/animation_root:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("squash")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"squash"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_main"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"idle": SubResource("Animation_idle"),
+&"talk": SubResource("Animation_talk")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interaction"]
+radius = 94.42987
+
+[node name="priest" type="Node2D" unique_id=745624266 node_paths=PackedStringArray("flip_node", "squash", "animation", "sprite", "interaction_hint")]
+script = ExtResource("1_npc_script")
+flip_node = NodePath("squash_root/animation_root/flip")
+squash = NodePath("squash")
+animation = NodePath("animation")
+sprite = NodePath("squash_root/animation_root/flip/sprite")
+outline_material = ExtResource("2_p78av")
+interaction_hint = NodePath("interaction_hint")
+
+[node name="shadow" parent="." unique_id=597675234 instance=ExtResource("7_shadow")]
+scale = Vector2(1.0091296, 0.9484871)
+
+[node name="squash_root" type="Node2D" parent="." unique_id=33372088]
+
+[node name="animation_root" type="Node2D" parent="squash_root" unique_id=684840875]
+
+[node name="flip" type="Node2D" parent="squash_root/animation_root" unique_id=1929420662]
+
+[node name="sprite" type="Sprite2D" parent="squash_root/animation_root/flip" unique_id=212071366]
+position = Vector2(-12, -264)
+texture = ExtResource("2_idle")
+
+[node name="squash" type="Node" parent="." unique_id=2017130441 node_paths=PackedStringArray("target")]
+script = ExtResource("6_squash_script")
+target = NodePath("../squash_root")
+force = 0.5
+
+[node name="state_machine" type="Node" parent="." unique_id=550166964]
+script = ExtResource("8_state_machine")
+
+[node name="idle" type="Node" parent="state_machine" unique_id=1900666572 node_paths=PackedStringArray("npc", "state_machine")]
+script = ExtResource("9_idle_state")
+can_wander = false
+npc = NodePath("../..")
+state_machine = NodePath("..")
+
+[node name="dialogue" type="Node" parent="state_machine" unique_id=508245489 node_paths=PackedStringArray("dialogue_ui_anchor", "talking_state", "npc", "state_machine")]
+script = ExtResource("11_dialogue_state")
+dialogue_ui_anchor = NodePath("../../dialogue_ui_anchor")
+talking_state = NodePath("../talking")
+npc = NodePath("../..")
+state_machine = NodePath("..")
+
+[node name="talking" type="Node" parent="state_machine" unique_id=317831240 node_paths=PackedStringArray("dialogue_ui_anchor", "npc", "state_machine")]
+script = ExtResource("12_talking_state")
+dialogue_ui_anchor = NodePath("../../dialogue_ui_anchor")
+npc = NodePath("../..")
+state_machine = NodePath("..")
+
+[node name="dialogue_ui_anchor" type="Node2D" parent="." unique_id=1439410628]
+position = Vector2(-16, -595)
+script = ExtResource("13_dialogue_ui_anchor")
+say_bubble_scene = ExtResource("15_h4j8l")
+choice_bubble_scene = ExtResource("16_p78av")
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=1950102213]
+libraries/ = SubResource("AnimationLibrary_main")
+autoplay = &"idle"
+
+[node name="interaction_area" type="Area2D" parent="." unique_id=607837762]
+collision_layer = 2
+collision_mask = 0
+
+[node name="interaction_shape" type="CollisionShape2D" parent="interaction_area" unique_id=1958990196]
+shape = SubResource("CircleShape2D_interaction")
+debug_color = Color(0.6956506, 0.48855472, 0.21236292, 0.23137255)
+
+[node name="interaction_hint" parent="." unique_id=1663966420 instance=ExtResource("21_u24br")]
+visible = false
+offset_left = -151.5
+offset_top = -719.0
+offset_right = 151.5
+offset_bottom = -587.0
+
+[node name="memory" type="Node" parent="." unique_id=1251824246]
+script = ExtResource("19_memory")

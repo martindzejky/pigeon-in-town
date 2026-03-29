@@ -1,5 +1,6 @@
 extends NpcState
 
+@export var can_wander := true
 @export var wander_min_sec: float = 3.0
 @export var wander_max_sec: float = 7.0
 
@@ -7,6 +8,8 @@ var _wander_timer: RandomTimer
 
 
 func _ready() -> void:
+  if not can_wander:
+    return
   _wander_timer = RandomTimer.new()
   _wander_timer.min_time = wander_min_sec
   _wander_timer.max_time = wander_max_sec
@@ -17,11 +20,13 @@ func _ready() -> void:
 
 func enter() -> void:
   npc.animation.play('idle')
-  _wander_timer.start()
+  if _wander_timer:
+    _wander_timer.start()
 
 
 func exit() -> void:
-  _wander_timer.stop()
+  if _wander_timer:
+    _wander_timer.stop()
 
 
 func update(_delta: float) -> void:
