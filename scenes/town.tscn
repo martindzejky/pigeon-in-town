@@ -759,17 +759,31 @@ position = Vector2(-7214, 5224)
 position = Vector2(-7417, 4980)
 
 [node name="grass" parent="world_sort/south" unique_id=1054625755 instance=ExtResource("19_0havn")]
-objects = Array[PackedScene]([ExtResource("14_grass"), ExtResource("13_flower")])
+objects = Array[PackedScene]([ExtResource("14_grass")])
 density = 0.3
 
 [node name="polygon" parent="world_sort/south/grass" index="0"]
 polygon = PackedVector2Array(-8608, 4374, -6845, 4788, -6904, 7378, -6825, 8348, -5968, 8708, -1969, 8764, -1560, 8848, -1487, 10092, -1890, 10773, -8702, 10771)
 
+[node name="flowers" parent="world_sort/south" unique_id=902623255 instance=ExtResource("19_0havn")]
+objects = Array[PackedScene]([ExtResource("13_flower")])
+density = 0.02
+
+[node name="polygon" parent="world_sort/south/flowers" index="0"]
+polygon = PackedVector2Array(-8608, 4374, -6845, 4788, -6904, 7378, -6825, 8348, -5968, 8708, -1969, 8764, -1560, 8848, -1487, 10092, -1890, 10773, -8702, 10771)
+
 [node name="grass2" parent="world_sort/south" unique_id=1826091371 instance=ExtResource("19_0havn")]
-objects = Array[PackedScene]([ExtResource("14_grass"), ExtResource("13_flower")])
+objects = Array[PackedScene]([ExtResource("14_grass")])
 density = 0.3
 
 [node name="polygon" parent="world_sort/south/grass2" index="0"]
+polygon = PackedVector2Array(346, 7035, -12, 7765, -114, 8604, -354, 9576, -114, 10720, 5405, 10948, 5973, 10263, 5848, 3928, 4926, 4243, 4447, 4873, 4357, 5349, 3791, 5528, 3709, 6444, 3319, 6721, 2198, 6740, 987, 6668)
+
+[node name="flowers2" parent="world_sort/south" unique_id=1074444672 instance=ExtResource("19_0havn")]
+objects = Array[PackedScene]([ExtResource("13_flower")])
+density = 0.02
+
+[node name="polygon" parent="world_sort/south/flowers2" index="0"]
 polygon = PackedVector2Array(346, 7035, -12, 7765, -114, 8604, -354, 9576, -114, 10720, 5405, 10948, 5973, 10263, 5848, 3928, 4926, 4243, 4447, 4873, 4357, 5349, 3791, 5528, 3709, 6444, 3319, 6721, 2198, 6740, 987, 6668)
 
 [node name="intro_cutscene" type="Node" parent="." unique_id=1248851468 node_paths=PackedStringArray("pigeon", "start_position", "end_position", "dialogue")]
@@ -791,4 +805,6 @@ position = Vector2(-862, 9781)
 [editable path="world_sort/town/graveyard/grass"]
 [editable path="world_sort/farm/bush_below_farm"]
 [editable path="world_sort/south/grass"]
+[editable path="world_sort/south/flowers"]
 [editable path="world_sort/south/grass2"]
+[editable path="world_sort/south/flowers2"]
