@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://c6eayet1kn4gq" path="res://scripts/achievement_card.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://dwxtskx8noc07" path="res://sprites/ui/card_sir_pigeon.png" id="2_8oclm"]
 [ext_resource type="Texture2D" uid="uid://cwjunjhiesc4" path="res://sprites/ui/checkbox.png" id="2_checkbox"]
+[ext_resource type="AudioStream" uid="uid://ds33oplivodgs" path="res://sounds/achievement.wav" id="4_sbkno"]
+[ext_resource type="AudioStream" uid="uid://sc6uvo6s117g" path="res://sounds/stamp.wav" id="5_6d0u1"]
 
-[node name="achievement_card" type="Control" unique_id=302501265 node_paths=PackedStringArray("checkbox", "card_art")]
+[node name="achievement_card" type="Control" unique_id=302501265 node_paths=PackedStringArray("checkbox", "card_art", "achievement_sound", "stamp_sound")]
 custom_minimum_size = Vector2(243, 366)
 layout_mode = 3
 anchors_preset = 0
@@ -16,6 +18,8 @@ size_flags_horizontal = 4
 script = ExtResource("1_script")
 checkbox = NodePath("check")
 card_art = NodePath("art")
+achievement_sound = NodePath("achievement")
+stamp_sound = NodePath("stamp")
 
 [node name="art" type="TextureRect" parent="." unique_id=1998850487]
 layout_mode = 0
@@ -25,6 +29,7 @@ pivot_offset = Vector2(121, 182)
 texture = ExtResource("2_8oclm")
 
 [node name="check" type="TextureRect" parent="." unique_id=2010826658]
+z_index = 1
 layout_mode = 0
 offset_left = 144.0
 offset_top = 255.0
@@ -32,3 +37,9 @@ offset_right = 289.0
 offset_bottom = 409.0
 pivot_offset = Vector2(72, 77)
 texture = ExtResource("2_checkbox")
+
+[node name="achievement" type="AudioStreamPlayer" parent="." unique_id=848214253]
+stream = ExtResource("4_sbkno")
+
+[node name="stamp" type="AudioStreamPlayer" parent="." unique_id=2070499466]
+stream = ExtResource("5_6d0u1")
