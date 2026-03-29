@@ -29,11 +29,11 @@ func _unhandled_input(event: InputEvent) -> void:
     get_viewport().set_input_as_handled()
 
 
-func _open() -> void:
+func _open(skip_refresh: Array[String] = []) -> void:
   _is_open = true
   visible = true
   get_tree().paused = true
-  _refresh_cards()
+  _refresh_cards(skip_refresh)
   resume_button.grab_focus()
 
 
@@ -60,14 +60,17 @@ func _build_cards() -> void:
     _cards[def['id']] = card
 
 
-func _refresh_cards() -> void:
-  for card: Node in _cards.values():
-    card.refresh()
+func _refresh_cards(skip: Array[String] = []) -> void:
+  for id: String in _cards:
+    if id not in skip:
+      _cards[id].refresh()
 
 
 func _on_achievement_unlocked(ids: Array[String]) -> void:
-  _open()
+  _open(ids)
   for id: String in ids:
     Achievements.mark_revealed(id)
     if _cards.has(id):
-      _cards[id].play_reveal()
+      var tween: Tween = _cards[id].play_reveal()
+      await tween.finished
+      await get_tree().create_timer(0.2).timeout

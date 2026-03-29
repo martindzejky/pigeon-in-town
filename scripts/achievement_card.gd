@@ -21,7 +21,7 @@ func refresh() -> void:
   checkbox.visible = _unlocked
 
 
-func play_reveal() -> void:
+func play_reveal() -> Tween:
   _unlocked = true
   modulate = Color.WHITE
   checkbox.visible = true
@@ -41,3 +41,5 @@ func play_reveal() -> void:
   tween.tween_callback(stamp_sound.play)
   tween.tween_property(self, 'scale', Vector2(0.9, 0.9), 0.08).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
   tween.tween_property(self, 'scale', Vector2.ONE, 0.15).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+
+  return tween
