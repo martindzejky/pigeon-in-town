@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" path="res://objects/characters/folk_gilbert.tscn" id="27_bnnb0"]
 [ext_resource type="Script" uid="uid://dvawjdkc4g4hg" path="res://scripts/intro_cutscene.gd" id="31_oej6q"]
 [ext_resource type="PackedScene" uid="uid://cy4xf0mmhswwa" path="res://dialogues/dialogue_intro.tscn" id="32_dialogue_intro"]
+[ext_resource type="PackedScene" uid="uid://b0jilux028iir" path="res://objects/characters/folk_cedric.tscn" id="33_idu3t"]
 [ext_resource type="PackedScene" path="res://objects/characters/folk_hugh.tscn" id="35_8svx7"]
 [ext_resource type="PackedScene" uid="uid://gokyjm1wxgtb" path="res://ui/pause_menu.tscn" id="36_pause"]
 [ext_resource type="Script" uid="uid://dywregod52bd2" path="res://scripts/ending_cutscene.gd" id="37_ending"]
@@ -146,7 +147,7 @@ y_sort_enabled = true
 metadata/_edit_lock_ = true
 
 [node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
-position = Vector2(-821, 9550)
+position = Vector2(-674, 9561)
 
 [node name="town" type="Node2D" parent="world_sort" unique_id=568757174]
 y_sort_enabled = true
@@ -553,6 +554,9 @@ position = Vector2(2542, 5555)
 
 [node name="pig_hamlet" parent="world_sort/farm" unique_id=1810334285 instance=ExtResource("23_8m6oo")]
 position = Vector2(1281, 5437)
+
+[node name="folk_cedric" parent="world_sort/farm" unique_id=1389625824 instance=ExtResource("33_idu3t")]
+position = Vector2(3255, 5088)
 
 [node name="field" type="Node2D" parent="world_sort" unique_id=2083222913]
 y_sort_enabled = true

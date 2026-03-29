@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dlejnmneskqtg"]
+
+[ext_resource type="Script" uid="uid://b17ntoj3nod3j" path="res://scripts/dialogue/dialogue_walker.gd" id="1_walker"]
+[ext_resource type="Script" uid="uid://6o1qum4v3dph" path="res://scripts/dialogue/dialogue_say.gd" id="2_say"]
+[ext_resource type="Script" uid="uid://x14vq2g8by13" path="res://scripts/dialogue/dialogue_condition.gd" id="3_condition"]
+[ext_resource type="Script" uid="uid://fcepmhl2eb11" path="res://scripts/dialogue/dialogue_set_flag.gd" id="4_set_flag"]
+
+[node name="folk_cedric" type="Node" unique_id=112669380]
+script = ExtResource("1_walker")
+
+[node name="cond_talked" type="Node" parent="." unique_id=1282055488]
+script = ExtResource("3_condition")
+flag = "talked_to"
+
+[node name="return_visit" type="Node" parent="cond_talked" unique_id=1925397770]
+
+[node name="say_return" type="Node" parent="cond_talked/return_visit" unique_id=766800524]
+script = ExtResource("2_say")
+speaker = 1
+text = "Pigs are still pigs. Fed 'em already. No news."
+
+[node name="first_visit" type="Node" parent="cond_talked" unique_id=396955423]
+
+[node name="say_greet" type="Node" parent="cond_talked/first_visit" unique_id=493048458]
+script = ExtResource("2_say")
+speaker = 1
+text = "What're you doing here? This is a [color=#a8554c]pig pen[/color], not a bird bath."
+
+[node name="say_pigeon" type="Node" parent="cond_talked/first_visit" unique_id=419397923]
+script = ExtResource("2_say")
+text = "I was just saying hello to the pigs."
+
+[node name="say_reply" type="Node" parent="cond_talked/first_visit" unique_id=79799156]
+script = ExtResource("2_say")
+speaker = 1
+text = "Saying hello to the... You can [i]talk[/i] to 'em?"
+
+[node name="say_pigs" type="Node" parent="cond_talked/first_visit"]
+script = ExtResource("2_say")
+speaker = 1
+text = "Good luck with that lot. The big one thinks he's a [i]king[/i]. The gloomy one mutters about fences. And the wee digger keeps sneaking off toward the [color=#a8554c]graveyard[/color]."
+
+[node name="say_complaint" type="Node" parent="cond_talked/first_visit" unique_id=22045849]
+script = ExtResource("2_say")
+speaker = 1
+text = "Ten years slopping those troughs. Not once has any of 'em said thank you."
+
+[node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=7958784]
+script = ExtResource("4_set_flag")
+flag = "talked_to"
