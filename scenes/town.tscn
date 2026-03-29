@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bvrp86m6h4ur7"]
 
 [ext_resource type="PackedScene" uid="uid://mt7oxu4mesgd" path="res://objects/shadow/shadow_canvas_group.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bi13ymg3xdf50" path="res://objects/characters/pigeon.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://b7dd7pydkko1e" path="res://scripts/camera.gd" id="4_cam"]
 [ext_resource type="Script" uid="uid://lqimfot170uf" path="res://scripts/town.gd" id="5_town"]
 
@@ -25,7 +24,8 @@ script = ExtResource("4_cam")
 dialogue_y_offset = -600.0
 dialogue_zoom = 0.835
 
+[node name="ground" type="Node2D" parent="." unique_id=118990941]
+z_index = -1
+
 [node name="world_sort" type="Node2D" parent="." unique_id=1702403875]
 y_sort_enabled = true
-
-[node name="pigeon" parent="world_sort" unique_id=974217913 instance=ExtResource("1_ig7tw")]

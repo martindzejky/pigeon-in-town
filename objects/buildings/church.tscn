@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b1wibpa6f5rno"]
+
+[ext_resource type="Texture2D" uid="uid://jjsu7vsdxfk6" path="res://sprites/buildings/church.png" id="1_tex"]
+[ext_resource type="PackedScene" uid="uid://rmry584k3jtx" path="res://objects/shadow/shadow.tscn" id="2_shadow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ld6pr"]
+size = Vector2(837, 265)
+
+[node name="church" type="Node2D" unique_id=1314122662]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1598417554]
+position = Vector2(0, -479)
+texture = ExtResource("1_tex")
+
+[node name="shadow" parent="." unique_id=750276948 instance=ExtResource("2_shadow")]
+scale = Vector2(3.9165044, 1.0955386)
+
+[node name="collider" type="StaticBody2D" parent="." unique_id=1377196026]
+
+[node name="shape" type="CollisionShape2D" parent="collider" unique_id=1987655793]
+position = Vector2(-5.5, -110.5)
+shape = SubResource("RectangleShape2D_ld6pr")
