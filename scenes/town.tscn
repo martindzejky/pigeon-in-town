@@ -50,6 +50,7 @@ script = ExtResource("5_town")
 metadata/_edit_lock_ = true
 
 [node name="camera" type="Camera2D" parent="." unique_id=2034125516]
+position = Vector2(-827, 10096)
 zoom = Vector2(0.55, 0.55)
 limit_left = -8435
 limit_top = -2439
@@ -133,6 +134,9 @@ metadata/_edit_lock_ = true
 [node name="world_sort" type="Node2D" parent="." unique_id=1702403875]
 y_sort_enabled = true
 metadata/_edit_lock_ = true
+
+[node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
+position = Vector2(-871, 9800)
 
 [node name="church" parent="world_sort" unique_id=1314122662 instance=ExtResource("4_eruj1")]
 
@@ -269,9 +273,6 @@ position = Vector2(1418, -435)
 
 [node name="ghost_mildred" parent="world_sort/graveyard" unique_id=85686780 instance=ExtResource("16_ov17k")]
 position = Vector2(2045, -85)
-
-[node name="pigeon" parent="world_sort" unique_id=553052625 instance=ExtResource("1_ig7tw")]
-position = Vector2(-2841, 6708)
 
 [node name="tavern" parent="world_sort" unique_id=79349673 instance=ExtResource("13_icc4n")]
 position = Vector2(1348, 2581)
