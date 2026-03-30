@@ -8,28 +8,24 @@ script = ExtResource("1_walker")
 
 [node name="say_1" type="Node" parent="." unique_id=2021319805]
 script = ExtResource("2_say")
-text = "Huh. A whole [u]town[/u]. With roofs and everything."
+text = "A [u]town[/u]. Proper little place too. Press [color=#a8554c]E[/color], [color=#a8554c]Space[/color], or [color=#a8554c]Enter[/color] to keep me talking a moment longer."
 
 [node name="say_2" type="Node" parent="." unique_id=11637006]
 script = ExtResource("2_say")
-text = "Let me stretch my legs. [color=#a8554c]WASD[/color] or the [color=#a8554c]arrow keys[/color] to waddle around."
+text = "When I stop talking, [color=#a8554c]WASD[/color] or the [color=#a8554c]arrow keys[/color] make me move."
 
 [node name="say_3" type="Node" parent="." unique_id=1728339636]
 script = ExtResource("2_say")
-text = "If someone looks interesting, I walk up and press [color=#a8554c]E[/color], [color=#a8554c]Space[/color], or [color=#a8554c]Enter[/color] to talk."
+text = "Same buttons talk to the local townfolk, if any seem worth bothering."
 
 [node name="say_4" type="Node" parent="." unique_id=553416692]
 script = ExtResource("2_say")
-text = "Same keys to keep the conversation going. Very advanced stuff."
+text = "Looks quiet. Muddy too. Promising."
 
 [node name="say_5" type="Node" parent="." unique_id=1277955215]
 script = ExtResource("2_say")
-text = "And [color=#a8554c]Escape[/color] if I need a break. Opens some kind of menu."
+text = "Alright then. Let's see who lives here."
 
 [node name="say_6" type="Node" parent="." unique_id=583974454]
 script = ExtResource("2_say")
-text = "Alright. I'm sure the locals are [i]very[/i] interesting and [i]absolutely[/i] worth getting to know."
-
-[node name="say_7" type="Node" parent="." unique_id=1052542704]
-script = ExtResource("2_say")
-text = "And if anyone has [color=#a8554c]breadcrumbs[/color]... I won't say no."
+text = "And if they have [color=#a8554c]breadcrumbs[/color], even better."
