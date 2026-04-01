@@ -18,12 +18,13 @@ corner_radius_bottom_left = 12
 
 [resource]
 default_font = ExtResource("1_g1fjd")
-default_font_size = 56
+default_font_size = 52
 Button/colors/font_color = Color(0.09019608, 0.12156863, 0.13333334, 1)
 Button/colors/font_focus_color = Color(0.25, 0.2, 0.15, 1)
 Button/colors/font_hover_color = Color(0.15, 0.13, 0.1, 1)
 Button/colors/font_pressed_color = Color(0.09019608, 0.12156863, 0.13333334, 1)
 Button/constants/h_separation = 12
+Button/font_sizes/font_size = 48
 Button/styles/focus = ExtResource("3_hover")
 Button/styles/hover = ExtResource("3_hover")
 Button/styles/normal = ExtResource("2_normal")

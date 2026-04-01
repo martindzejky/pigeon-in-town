@@ -53,11 +53,6 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="title" type="Label" parent="center/panel/margin/content" unique_id=1440496237]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "ui.pause.title.text"
-
 [node name="spacer" type="Control" parent="center/panel/margin/content" unique_id=239433609]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
