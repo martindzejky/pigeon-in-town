@@ -11,52 +11,52 @@ script = ExtResource("1_m4k5m")
 [node name="say_1" type="Node" parent="." unique_id=264975612]
 script = ExtResource("2_7qplt")
 speaker = 1
-text = "Oh, a pigeon! Hello there."
+text = "dialogue.dialogue_prototype.say_1.text"
 
 [node name="say_2" type="Node" parent="." unique_id=738038409]
 script = ExtResource("2_7qplt")
-text = "Hi!"
+text = "dialogue.dialogue_prototype.say_2.text"
 
 [node name="choose" type="Node" parent="." unique_id=730086633]
 script = ExtResource("3_h38hb")
 
 [node name="option_town" type="Node" parent="choose" unique_id=2117521456]
 script = ExtResource("4_ey17j")
-label = "Ask about the town"
+label = "dialogue.dialogue_prototype.option_town.label"
 
 [node name="say_town_1" type="Node" parent="choose/option_town" unique_id=1425696558]
 script = ExtResource("2_7qplt")
-text = "Tell me more about this town."
+text = "dialogue.dialogue_prototype.say_town_1.text"
 
 [node name="say_town_3" type="Node" parent="choose/option_town" unique_id=1736448156]
 script = ExtResource("2_7qplt")
 speaker = 1
-text = "This is a lovely little town. Not much happens here."
+text = "dialogue.dialogue_prototype.say_town_3.text"
 
 [node name="say_town_2" type="Node" parent="choose/option_town" unique_id=1801907245]
 script = ExtResource("2_7qplt")
-text = "Hmm..."
+text = "dialogue.dialogue_prototype.say_town_2.text"
 
 [node name="option_nod" type="Node" parent="choose" unique_id=1081170858]
 script = ExtResource("4_ey17j")
-label = "Just nod"
+label = "dialogue.dialogue_prototype.option_nod.label"
 
 [node name="say_nod" type="Node" parent="choose/option_nod" unique_id=1843783894]
 script = ExtResource("2_7qplt")
 speaker = 1
-text = "Not much of a talker, huh?"
+text = "dialogue.dialogue_prototype.say_nod.text"
 
 [node name="say_bbcode_test" type="Node" parent="." unique_id=2025771876]
 script = ExtResource("2_7qplt")
 speaker = 1
-text = "The [i]harvest[/i] is coming, and I feel [color=red]dread[/color] in me bones. They say the [i]omens[/i] point to a [color=green]good[/color] year, but I ain't so sure."
+text = "dialogue.dialogue_prototype.say_bbcode_test.text"
 
 [node name="say_3" type="Node" parent="." unique_id=1783419476]
 script = ExtResource("2_7qplt")
 speaker = 1
-text = "Well, nice meeting you!"
+text = "dialogue.dialogue_prototype.say_3.text"
 
 [node name="say_4" type="Node" parent="." unique_id=456669179]
 script = ExtResource("2_7qplt")
 speaker = 1
-text = "Bye!"
+text = "dialogue.dialogue_prototype.say_4.text"

@@ -32,32 +32,32 @@ flag = "reacted_to_knight"
 [node name="say_knight_short" type="Node" parent="cond_talked/return_visit/cond_knight_return/knight_ending/cond_reacted_knight/already_reacted_k" unique_id=1808960358]
 script = ExtResource("2_say")
 speaker = 1
-text = "Sir Prophet Pigeon! Still holy? Still knightly? Of course you are. Every day is a [color=#6b8e5e]holy day[/color]!"
+text = "dialogue.priest_cuthbert.say_knight_short.text"
 
 [node name="first_knight" type="Node" parent="cond_talked/return_visit/cond_knight_return/knight_ending/cond_reacted_knight" unique_id=205457021]
 
 [node name="say_return_knight" type="Node" parent="cond_talked/return_visit/cond_knight_return/knight_ending/cond_reacted_knight/first_knight" unique_id=975213073]
 script = ExtResource("2_say")
 speaker = 1
-text = "Wait. You... you are a [color=#a8554c]knight[/color] now too?!"
+text = "dialogue.priest_cuthbert.say_return_knight.text"
 
 [node name="say_pigeon_yep" type="Node" parent="cond_talked/return_visit/cond_knight_return/knight_ending/cond_reacted_knight/first_knight" unique_id=2035226272]
 script = ExtResource("2_say")
-text = "A pig in a pen knighted me. It was a whole ceremony."
+text = "dialogue.priest_cuthbert.say_pigeon_yep.text"
 
 [node name="say_holy_day_2" type="Node" parent="cond_talked/return_visit/cond_knight_return/knight_ending/cond_reacted_knight/first_knight" unique_id=513631556]
 script = ExtResource("2_say")
 speaker = 1
-text = "A prophet [i]and[/i] a knight! The scrolls said nothing of this... but they [color=#a8554c]should[/color] have! I declare this a [color=#6b8e5e]holy day[/color]!"
+text = "dialogue.priest_cuthbert.say_holy_day_2.text"
 
 [node name="say_pigeon_again" type="Node" parent="cond_talked/return_visit/cond_knight_return/knight_ending/cond_reacted_knight/first_knight" unique_id=1933010562]
 script = ExtResource("2_say")
-text = "You seem to declare a lot of holy days."
+text = "dialogue.priest_cuthbert.say_pigeon_again.text"
 
 [node name="say_every_day" type="Node" parent="cond_talked/return_visit/cond_knight_return/knight_ending/cond_reacted_knight/first_knight" unique_id=240771044]
 script = ExtResource("2_say")
 speaker = 1
-text = "Every day could be holy if you [i]believe[/i] hard enough!"
+text = "dialogue.priest_cuthbert.say_every_day.text"
 
 [node name="set_reacted_knight" type="Node" parent="cond_talked/return_visit/cond_knight_return/knight_ending/cond_reacted_knight/first_knight" unique_id=2031927056]
 script = ExtResource("6_set_flag")
@@ -80,23 +80,23 @@ flag = "done_blessed_return"
 [node name="say_blessed_short" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/already_blessed/cond_done_blessed/repeat_blessed" unique_id=1937284649]
 script = ExtResource("2_say")
 speaker = 1
-text = "The crops are still blessed! Or still rained on. Either way, praise be!"
+text = "dialogue.priest_cuthbert.say_blessed_short.text"
 
 [node name="first_blessed" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/already_blessed/cond_done_blessed" unique_id=240450594]
 
 [node name="say_blessed_return" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/already_blessed/cond_done_blessed/first_blessed" unique_id=1579431182]
 script = ExtResource("2_say")
 speaker = 1
-text = "The prophet graces us again! The crops have been growing better since your blessing. Or maybe it rained. Hard to tell."
+text = "dialogue.priest_cuthbert.say_blessed_return.text"
 
 [node name="say_pigeon_rain" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/already_blessed/cond_done_blessed/first_blessed" unique_id=488214716]
 script = ExtResource("2_say")
-text = "Probably the rain."
+text = "dialogue.priest_cuthbert.say_pigeon_rain.text"
 
 [node name="say_faith" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/already_blessed/cond_done_blessed/first_blessed" unique_id=1468570115]
 script = ExtResource("2_say")
 speaker = 1
-text = "That's what a prophet would say!"
+text = "dialogue.priest_cuthbert.say_faith.text"
 
 [node name="set_done_blessed" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/already_blessed/cond_done_blessed/first_blessed" unique_id=1024780689]
 script = ExtResource("6_set_flag")
@@ -107,36 +107,36 @@ flag = "done_blessed_return"
 [node name="say_return_hello" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch" unique_id=1637950704]
 script = ExtResource("2_say")
 speaker = 1
-text = "The prophet returns! Oh, what a blessed day! Could you... bless something for us?"
+text = "dialogue.priest_cuthbert.say_return_hello.text"
 
 [node name="choose_bless" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch" unique_id=1041110042]
 script = ExtResource("3_choose")
 
 [node name="option_bless" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch/choose_bless" unique_id=1782973683]
 script = ExtResource("4_option")
-label = "Sure, I'll bless something"
+label = "dialogue.priest_cuthbert.option_bless.label"
 
 [node name="say_pigeon_bless" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch/choose_bless/option_bless" unique_id=2042268502]
 script = ExtResource("2_say")
-text = "Fine. I bless this... ground. And that rock over there. You're all blessed."
+text = "dialogue.priest_cuthbert.say_pigeon_bless.text"
 
 [node name="say_bless_reply" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch/choose_bless/option_bless" unique_id=1757399552]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=30.0 level=20]MAGNIFICENT![/shake] Did you feel that? The air just got holier! I could weep!"
+text = "dialogue.priest_cuthbert.say_bless_reply.text"
 
 [node name="option_no_bless" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch/choose_bless" unique_id=1814036860]
 script = ExtResource("4_option")
-label = "I don't have that power"
+label = "dialogue.priest_cuthbert.option_no_bless.label"
 
 [node name="say_pigeon_no" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch/choose_bless/option_no_bless" unique_id=1466941100]
 script = ExtResource("2_say")
-text = "I really don't think I can bless things. I'm a pigeon."
+text = "dialogue.priest_cuthbert.say_pigeon_no.text"
 
 [node name="say_humble" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch/choose_bless/option_no_bless" unique_id=535791045]
 script = ExtResource("2_say")
 speaker = 1
-text = "Such [i]humility[/i]! Truly divine! Only a real prophet would deny their own power!"
+text = "dialogue.priest_cuthbert.say_humble.text"
 
 [node name="set_blessed" type="Node" parent="cond_talked/return_visit/cond_knight_return/normal_return/cond_blessed/bless_branch" unique_id=563161559]
 script = ExtResource("6_set_flag")
@@ -152,29 +152,29 @@ global = true
 [node name="say_shock_k" type="Node" parent="cond_talked/first_visit/knight_first" unique_id=1081082692]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=30.0 level=20]BY THE SAINTS![/shake] A [color=#a8554c]talking bird[/color]! AND you carry a knightly title?!"
+text = "dialogue.priest_cuthbert.say_shock_k.text"
 
 [node name="say_pigeon_k" type="Node" parent="cond_talked/first_visit/knight_first" unique_id=2087790075]
 script = ExtResource("2_say")
-text = "A pig gave it to me. Long story."
+text = "dialogue.priest_cuthbert.say_pigeon_k.text"
 
 [node name="say_holy_day" type="Node" parent="cond_talked/first_visit/knight_first" unique_id=691498485]
 script = ExtResource("2_say")
 speaker = 1
-text = "A prophet [i]and[/i] a knight! The scrolls said nothing of this... but they [color=#a8554c]should[/color] have! I declare this a [color=#6b8e5e]holy day[/color]!"
+text = "dialogue.priest_cuthbert.say_holy_day.text"
 
 [node name="say_pigeon_holy" type="Node" parent="cond_talked/first_visit/knight_first" unique_id=1256992373]
 script = ExtResource("2_say")
-text = "Does that mean free breadcrumbs?"
+text = "dialogue.priest_cuthbert.say_pigeon_holy.text"
 
 [node name="say_no_bread" type="Node" parent="cond_talked/first_visit/knight_first" unique_id=647932010]
 script = ExtResource("2_say")
 speaker = 1
-text = "It means prayers! Which are better than breadcrumbs!"
+text = "dialogue.priest_cuthbert.say_no_bread.text"
 
 [node name="say_pigeon_disagree" type="Node" parent="cond_talked/first_visit/knight_first" unique_id=1917260733]
 script = ExtResource("2_say")
-text = "They are really not."
+text = "dialogue.priest_cuthbert.say_pigeon_disagree.text"
 
 [node name="set_talked_k" type="Node" parent="cond_talked/first_visit/knight_first" unique_id=462948775]
 script = ExtResource("6_set_flag")
@@ -190,45 +190,45 @@ global = true
 [node name="say_shock" type="Node" parent="cond_talked/first_visit/normal_first" unique_id=715468671]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=30.0 level=20]BY THE SAINTS![/shake] A [color=#a8554c]talking bird[/color]! The ancient scrolls foretold this!"
+text = "dialogue.priest_cuthbert.say_shock.text"
 
 [node name="choose_react" type="Node" parent="cond_talked/first_visit/normal_first" unique_id=1510039728]
 script = ExtResource("3_choose")
 
 [node name="option_scrolls" type="Node" parent="cond_talked/first_visit/normal_first/choose_react" unique_id=312773604]
 script = ExtResource("4_option")
-label = "What scrolls?"
+label = "dialogue.priest_cuthbert.option_scrolls.label"
 
 [node name="say_pigeon_scrolls" type="Node" parent="cond_talked/first_visit/normal_first/choose_react/option_scrolls" unique_id=643048933]
 script = ExtResource("2_say")
-text = "What scrolls? I just got here."
+text = "dialogue.priest_cuthbert.say_pigeon_scrolls.text"
 
 [node name="say_scrolls_reply" type="Node" parent="cond_talked/first_visit/normal_first/choose_react/option_scrolls" unique_id=1819019760]
 script = ExtResource("2_say")
 speaker = 1
-text = "The scrolls! The ones I keep behind the altar! Well, it's mostly shopping lists. But one of them [i]definitely[/i] mentions a bird."
+text = "dialogue.priest_cuthbert.say_scrolls_reply.text"
 
 [node name="option_just_pigeon" type="Node" parent="cond_talked/first_visit/normal_first/choose_react" unique_id=1563063299]
 script = ExtResource("4_option")
-label = "I'm just a pigeon"
+label = "dialogue.priest_cuthbert.option_just_pigeon.label"
 
 [node name="say_pigeon_normal" type="Node" parent="cond_talked/first_visit/normal_first/choose_react/option_just_pigeon" unique_id=2116164824]
 script = ExtResource("2_say")
-text = "I'm just a regular pigeon. Nothing special about me."
+text = "dialogue.priest_cuthbert.say_pigeon_normal.text"
 
 [node name="say_normal_reply" type="Node" parent="cond_talked/first_visit/normal_first/choose_react/option_just_pigeon" unique_id=1014429126]
 script = ExtResource("2_say")
 speaker = 1
-text = "That is [i]exactly[/i] what the scroll says the divine messenger would say! Such humility!"
+text = "dialogue.priest_cuthbert.say_normal_reply.text"
 
 [node name="say_prophet" type="Node" parent="cond_talked/first_visit/normal_first" unique_id=1942333853]
 script = ExtResource("2_say")
 speaker = 1
-text = "It is decided. You are the [color=#a8554c]feathered prophet[/color], sent to guide this village! I shall spread the word!"
+text = "dialogue.priest_cuthbert.say_prophet.text"
 
 [node name="say_pigeon_ok" type="Node" parent="cond_talked/first_visit/normal_first" unique_id=878841804]
 script = ExtResource("2_say")
-text = "I was looking for breadcrumbs, but sure."
+text = "dialogue.priest_cuthbert.say_pigeon_ok.text"
 
 [node name="set_talked" type="Node" parent="cond_talked/first_visit/normal_first" unique_id=142274807]
 script = ExtResource("6_set_flag")

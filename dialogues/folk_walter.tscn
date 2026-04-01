@@ -17,28 +17,28 @@ flag = "talked_to"
 [node name="say_return" type="Node" parent="cond_talked/return_visit" unique_id=1537818838]
 script = ExtResource("2_say")
 speaker = 1
-text = "Still no crows on you, I see. Good. Good. Can't trust birds. No offense."
+text = "dialogue.folk_walter.say_return.text"
 
 [node name="first_visit" type="Node" parent="cond_talked" unique_id=605329710]
 
 [node name="say_greet" type="Node" parent="cond_talked/first_visit" unique_id=1361278121]
 script = ExtResource("2_say")
 speaker = 1
-text = "Don't step on my turnips! I've been growing those for... well, a long time. I lost count."
+text = "dialogue.folk_walter.say_greet.text"
 
 [node name="say_pigeon" type="Node" parent="cond_talked/first_visit" unique_id=1247446245]
 script = ExtResource("2_say")
-text = "I'm not stepping on anything."
+text = "dialogue.folk_walter.say_pigeon.text"
 
 [node name="say_reply" type="Node" parent="cond_talked/first_visit" unique_id=2179442]
 script = ExtResource("2_say")
 speaker = 1
-text = "Good. [i]Good.[/i] The crows already took half of them. And that scarecrow over in the field? [color=#a8554c]Cornelius?[/color] Just stands there! Smiling!"
+text = "dialogue.folk_walter.say_reply.text"
 
 [node name="say_rant" type="Node" parent="cond_talked/first_visit" unique_id=1519503155]
 script = ExtResource("2_say")
 speaker = 1
-text = "I swear the crows land ON him sometimes. On purpose. Like they're friends."
+text = "dialogue.folk_walter.say_rant.text"
 
 [node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=202971023]
 script = ExtResource("4_set_flag")

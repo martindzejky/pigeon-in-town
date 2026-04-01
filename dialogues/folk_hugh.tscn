@@ -17,28 +17,28 @@ flag = "talked_to"
 [node name="say_return" type="Node" parent="cond_talked/return_visit" unique_id=36366001]
 script = ExtResource("2_say")
 speaker = 1
-text = "Hmm? Oh. You again. Sorry, I was... resting my eyes."
+text = "dialogue.folk_hugh.say_return.text"
 
 [node name="first_visit" type="Node" parent="cond_talked" unique_id=1767296862]
 
 [node name="say_greet" type="Node" parent="cond_talked/first_visit" unique_id=1414700833]
 script = ExtResource("2_say")
 speaker = 1
-text = "...Oh. A bird. Haven't seen one up close in a while. Or maybe I have. I fall asleep a lot."
+text = "dialogue.folk_hugh.say_greet.text"
 
 [node name="say_pigeon" type="Node" parent="cond_talked/first_visit" unique_id=1309848842]
 script = ExtResource("2_say")
-text = "Sounds like a good life."
+text = "dialogue.folk_hugh.say_pigeon.text"
 
 [node name="say_reply" type="Node" parent="cond_talked/first_visit" unique_id=802296217]
 script = ExtResource("2_say")
 speaker = 1
-text = "It would be, if those [color=#a8554c]church bells[/color] didn't ring every hour. Father Cuthbert loves those bells. The rest of us do not."
+text = "dialogue.folk_hugh.say_reply.text"
 
 [node name="say_sleep" type="Node" parent="cond_talked/first_visit" unique_id=145139985]
 script = ExtResource("2_say")
 speaker = 1
-text = "I just want to nap in peace. Is that too much to ask? ...What were we talking about? I dozed off."
+text = "dialogue.folk_hugh.say_sleep.text"
 
 [node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=723317954]
 script = ExtResource("4_set_flag")

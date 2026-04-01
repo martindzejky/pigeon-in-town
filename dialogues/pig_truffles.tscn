@@ -25,36 +25,36 @@ flag = "done_return"
 [node name="say_return_short" type="Node" parent="cond_talked/return_visit/cond_done_return/repeat_return" unique_id=795324976]
 script = ExtResource("2_say")
 speaker = 1
-text = "Still digging. Still smells great down here. Snff."
+text = "dialogue.pig_truffles.say_return_short.text"
 
 [node name="first_return" type="Node" parent="cond_talked/return_visit/cond_done_return" unique_id=1655989589]
 
 [node name="say_found" type="Node" parent="cond_talked/return_visit/cond_done_return/first_return" unique_id=1219865046]
 script = ExtResource("2_say")
 speaker = 1
-text = "I found something near the [color=#a8554c]church[/color]! It smells like... soil and regret. And mushrooms. Lots of mushrooms."
+text = "dialogue.pig_truffles.say_found.text"
 
 [node name="say_pigeon_church" type="Node" parent="cond_talked/return_visit/cond_done_return/first_return" unique_id=461616799]
 script = ExtResource("2_say")
-text = "Near the church? That's close to the graveyard."
+text = "dialogue.pig_truffles.say_pigeon_church.text"
 
 [node name="say_better" type="Node" parent="cond_talked/return_visit/cond_done_return/first_return" unique_id=1838869803]
 script = ExtResource("2_say")
 speaker = 1
-text = "Even BETTER! Dead things make the best soil! And the best soil makes the best [i]truffles[/i]! It's the circle of life!"
+text = "dialogue.pig_truffles.say_better.text"
 
 [node name="say_pigeon_circle" type="Node" parent="cond_talked/return_visit/cond_done_return/first_return" unique_id=450196888]
 script = ExtResource("2_say")
-text = "That's... one way to look at it."
+text = "dialogue.pig_truffles.say_pigeon_circle.text"
 
 [node name="say_sniff_2" type="Node" parent="cond_talked/return_visit/cond_done_return/first_return" unique_id=1792577335]
 script = ExtResource("2_say")
 speaker = 1
-text = "Snff... I can smell you too, by the way. You smell like breadcrumbs and [color=#6b8e5e]adventure[/color]."
+text = "dialogue.pig_truffles.say_sniff_2.text"
 
 [node name="say_pigeon_thanks" type="Node" parent="cond_talked/return_visit/cond_done_return/first_return" unique_id=2002456451]
 script = ExtResource("2_say")
-text = "Thanks. I think."
+text = "dialogue.pig_truffles.say_pigeon_thanks.text"
 
 [node name="set_done_return" type="Node" parent="cond_talked/return_visit/cond_done_return/first_return" unique_id=1122918730]
 script = ExtResource("6_set_flag")
@@ -76,14 +76,14 @@ flag = "reacted_to_ghost"
 [node name="say_ghost_short" type="Node" parent="cond_talked/return_visit/cond_ghost/ghost_branch/cond_reacted_ghost/already_reacted" unique_id=800651200]
 script = ExtResource("2_say")
 speaker = 1
-text = "That graveyard still smells interesting. Ghosts or no ghosts."
+text = "dialogue.pig_truffles.say_ghost_short.text"
 
 [node name="first_ghost" type="Node" parent="cond_talked/return_visit/cond_ghost/ghost_branch/cond_reacted_ghost" unique_id=131335373]
 
 [node name="say_ghost" type="Node" parent="cond_talked/return_visit/cond_ghost/ghost_branch/cond_reacted_ghost/first_ghost" unique_id=86979690]
 script = ExtResource("2_say")
 speaker = 1
-text = "I heard there are [color=#a8554c]ghosts[/color] near the church! I don't care. Ghosts can't eat truffles. ...Can they?"
+text = "dialogue.pig_truffles.say_ghost.text"
 
 [node name="set_reacted_ghost" type="Node" parent="cond_talked/return_visit/cond_ghost/ghost_branch/cond_reacted_ghost/first_ghost" unique_id=1670588803]
 script = ExtResource("6_set_flag")
@@ -96,32 +96,32 @@ flag = "reacted_to_ghost"
 [node name="say_sniff" type="Node" parent="cond_talked/first_visit" unique_id=547091177]
 script = ExtResource("2_say")
 speaker = 1
-text = "Snff... snfff... I smell something. [i]Underground.[/i] Could be truffles. Could be a turnip. Could be a [color=#a8554c]body[/color]."
+text = "dialogue.pig_truffles.say_sniff.text"
 
 [node name="choose_react" type="Node" parent="cond_talked/first_visit" unique_id=119290604]
 script = ExtResource("3_choose")
 
 [node name="option_what" type="Node" parent="cond_talked/first_visit/choose_react" unique_id=2067503309]
 script = ExtResource("4_option")
-label = "What are you digging for?"
+label = "dialogue.pig_truffles.option_what.label"
 
 [node name="say_pigeon_what" type="Node" parent="cond_talked/first_visit/choose_react/option_what" unique_id=647838782]
 script = ExtResource("2_say")
-text = "What exactly are you digging for down there?"
+text = "dialogue.pig_truffles.say_pigeon_what.text"
 
 [node name="say_everything" type="Node" parent="cond_talked/first_visit/choose_react/option_what" unique_id=1471942906]
 script = ExtResource("2_say")
 speaker = 1
-text = "EVERYTHING! The ground is full of [i]secrets[/i]! And worms. Mostly worms. But sometimes secrets!"
+text = "dialogue.pig_truffles.say_everything.text"
 
 [node name="say_pigeon_worms" type="Node" parent="cond_talked/first_visit/choose_react/option_what" unique_id=1502818859]
 script = ExtResource("2_say")
-text = "I like worms."
+text = "dialogue.pig_truffles.say_pigeon_worms.text"
 
 [node name="say_bonding" type="Node" parent="cond_talked/first_visit/choose_react/option_what" unique_id=847986302]
 script = ExtResource("2_say")
 speaker = 1
-text = "See?! You get it! The ground provides for those who DIG!"
+text = "dialogue.pig_truffles.say_bonding.text"
 
 [node name="set_encouraged" type="Node" parent="cond_talked/first_visit/choose_react/option_what" unique_id=1593455054]
 script = ExtResource("6_set_flag")
@@ -129,25 +129,25 @@ flag = "encouraged"
 
 [node name="option_dont" type="Node" parent="cond_talked/first_visit/choose_react" unique_id=283658239]
 script = ExtResource("4_option")
-label = "Maybe don't dig there"
+label = "dialogue.pig_truffles.option_dont.label"
 
 [node name="say_pigeon_dont" type="Node" parent="cond_talked/first_visit/choose_react/option_dont" unique_id=235132149]
 script = ExtResource("2_say")
-text = "Maybe you should stop digging. What if it really is a body?"
+text = "dialogue.pig_truffles.say_pigeon_dont.text"
 
 [node name="say_nose" type="Node" parent="cond_talked/first_visit/choose_react/option_dont" unique_id=1548921988]
 script = ExtResource("2_say")
 speaker = 1
-text = "My nose says DIG. I trust my nose more than I trust [i]anything[/i]. My nose has never been wrong."
+text = "dialogue.pig_truffles.say_nose.text"
 
 [node name="say_pigeon_never" type="Node" parent="cond_talked/first_visit/choose_react/option_dont" unique_id=1362491165]
 script = ExtResource("2_say")
-text = "Never?"
+text = "dialogue.pig_truffles.say_pigeon_never.text"
 
 [node name="say_once" type="Node" parent="cond_talked/first_visit/choose_react/option_dont" unique_id=975368774]
 script = ExtResource("2_say")
 speaker = 1
-text = "Well, once it said there were truffles and it was a rock. But it was a very [i]truffle-like[/i] rock."
+text = "dialogue.pig_truffles.say_once.text"
 
 [node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=591060125]
 script = ExtResource("6_set_flag")

@@ -17,33 +17,33 @@ flag = "talked_to"
 [node name="say_return" type="Node" parent="cond_talked/return_visit" unique_id=766800524]
 script = ExtResource("2_say")
 speaker = 1
-text = "Pigs are still pigs. Fed 'em already. No news."
+text = "dialogue.folk_cedric.say_return.text"
 
 [node name="first_visit" type="Node" parent="cond_talked" unique_id=396955423]
 
 [node name="say_greet" type="Node" parent="cond_talked/first_visit" unique_id=493048458]
 script = ExtResource("2_say")
 speaker = 1
-text = "What're you doing here? This is a [color=#a8554c]pig pen[/color], not a bird bath."
+text = "dialogue.folk_cedric.say_greet.text"
 
 [node name="say_pigeon" type="Node" parent="cond_talked/first_visit" unique_id=419397923]
 script = ExtResource("2_say")
-text = "I was just saying hello to the pigs."
+text = "dialogue.folk_cedric.say_pigeon.text"
 
 [node name="say_reply" type="Node" parent="cond_talked/first_visit" unique_id=79799156]
 script = ExtResource("2_say")
 speaker = 1
-text = "Saying hello to the... You can [i]talk[/i] to 'em?"
+text = "dialogue.folk_cedric.say_reply.text"
 
 [node name="say_pigs" type="Node" parent="cond_talked/first_visit"]
 script = ExtResource("2_say")
 speaker = 1
-text = "Good luck with that lot. The big one thinks he's a [i]king[/i]. The gloomy one mutters about fences. And the wee digger keeps sneaking off toward the [color=#a8554c]graveyard[/color]."
+text = "dialogue.folk_cedric.say_pigs.text"
 
 [node name="say_complaint" type="Node" parent="cond_talked/first_visit" unique_id=22045849]
 script = ExtResource("2_say")
 speaker = 1
-text = "Ten years slopping those troughs. Not once has any of 'em said thank you."
+text = "dialogue.folk_cedric.say_complaint.text"
 
 [node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=7958784]
 script = ExtResource("4_set_flag")

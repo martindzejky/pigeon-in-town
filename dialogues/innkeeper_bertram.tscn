@@ -19,7 +19,7 @@ flag = "talked_to"
 [node name="say_return" type="Node" parent="cond_talked/return_visit" unique_id=1945211623]
 script = ExtResource("2_say")
 speaker = 1
-text = "The pigeon is back! Want a room? I've got a bucket under a table. Very cozy."
+text = "dialogue.innkeeper_bertram.say_return.text"
 
 [node name="cond_prophet" type="Node" parent="cond_talked/return_visit" unique_id=1288402359]
 script = ExtResource("5_condition")
@@ -37,18 +37,18 @@ flag = "reacted_to_prophet"
 [node name="say_prophet_short" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/already_reacted" unique_id=1718012227]
 script = ExtResource("2_say")
 speaker = 1
-text = "Any prophecies about carrots? I really need a carrot day."
+text = "dialogue.innkeeper_bertram.say_prophet_short.text"
 
 [node name="first_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet" unique_id=1586416821]
 
 [node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=1321875884]
 script = ExtResource("2_say")
 speaker = 1
-text = "Wait, you're a [i]prophet[/i]? Can you tell me if the stew will be ready by noon? ...It's just water. It's always ready."
+text = "dialogue.innkeeper_bertram.say_prophet.text"
 
 [node name="say_pigeon_stew" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=421577028]
 script = ExtResource("2_say")
-text = "Yes, Bertram. The water is ready."
+text = "dialogue.innkeeper_bertram.say_pigeon_stew.text"
 
 [node name="set_reacted_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=913030393]
 script = ExtResource("6_set_flag")
@@ -78,23 +78,23 @@ flag = "done_ghost_panic"
 [node name="say_still_scared_short" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/already_told/cond_done_panic/repeat_panic" unique_id=484643510]
 script = ExtResource("2_say")
 speaker = 1
-text = "Still hearing noises. The garlic isn't working."
+text = "dialogue.innkeeper_bertram.say_still_scared_short.text"
 
 [node name="first_panic" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/already_told/cond_done_panic" unique_id=2008698751]
 
 [node name="say_still_scared" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/already_told/cond_done_panic/first_panic" unique_id=460524701]
 script = ExtResource("2_say")
 speaker = 1
-text = "I keep hearing noises from the graveyard. Or maybe it's the wind. Or maybe it's [color=#a8554c]GHOSTS[/color]. I can't sleep!"
+text = "dialogue.innkeeper_bertram.say_still_scared.text"
 
 [node name="say_pigeon_sleep" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/already_told/cond_done_panic/first_panic" unique_id=1811095949]
 script = ExtResource("2_say")
-text = "You'll be fine, Bertram."
+text = "dialogue.innkeeper_bertram.say_pigeon_sleep.text"
 
 [node name="say_fine" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/already_told/cond_done_panic/first_panic" unique_id=435138774]
 script = ExtResource("2_say")
 speaker = 1
-text = "Easy for you to say! You can FLY away!"
+text = "dialogue.innkeeper_bertram.say_fine.text"
 
 [node name="set_done_panic" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/already_told/cond_done_panic/first_panic" unique_id=2130103614]
 script = ExtResource("6_set_flag")
@@ -107,25 +107,25 @@ script = ExtResource("3_choose")
 
 [node name="option_ghosts" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost" unique_id=1341572365]
 script = ExtResource("4_option")
-label = "The graveyard is haunted"
+label = "dialogue.innkeeper_bertram.option_ghosts.label"
 
 [node name="say_pigeon_ghosts" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts" unique_id=1906381137]
 script = ExtResource("2_say")
-text = "You know the graveyard up by the church? It's haunted. Actual ghosts. I talked to them."
+text = "dialogue.innkeeper_bertram.say_pigeon_ghosts.text"
 
 [node name="say_panic" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts" unique_id=1506460915]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=30.0 level=20]GHOSTS?![/shake] I KNEW the graveyard was too quiet! That's NOT normal quiet! That's [color=#a8554c]ghost quiet[/color]!"
+text = "dialogue.innkeeper_bertram.say_panic.text"
 
 [node name="say_pigeon_calm" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts" unique_id=2132863071]
 script = ExtResource("2_say")
-text = "They seemed pretty harmless."
+text = "dialogue.innkeeper_bertram.say_pigeon_calm.text"
 
 [node name="say_no_harmless" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts" unique_id=1389387417]
 script = ExtResource("2_say")
 speaker = 1
-text = "HARMLESS?! Ghosts are NEVER harmless! I'm putting garlic on the door! And the windows! And the stew! ...The stew already has nothing in it so garlic might help actually."
+text = "dialogue.innkeeper_bertram.say_no_harmless.text"
 
 [node name="set_told_ghosts" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_ghosts" unique_id=1022698580]
 script = ExtResource("6_set_flag")
@@ -138,64 +138,64 @@ global = true
 
 [node name="option_nevermind" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost" unique_id=1831674287]
 script = ExtResource("4_option")
-label = "Never mind"
+label = "dialogue.innkeeper_bertram.option_nevermind.label"
 
 [node name="say_pigeon_nvm" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_nevermind" unique_id=536524632]
 script = ExtResource("2_say")
-text = "Actually, never mind. Forget I said anything."
+text = "dialogue.innkeeper_bertram.say_pigeon_nvm.text"
 
 [node name="say_ok" type="Node" parent="cond_talked/return_visit/cond_rumor/rumor_branch/cond_scared/not_told/choose_ghost/option_nevermind" unique_id=2094922621]
 script = ExtResource("2_say")
 speaker = 1
-text = "Said what? I already forgot. ...What were we talking about?"
+text = "dialogue.innkeeper_bertram.say_ok.text"
 
 [node name="no_rumor" type="Node" parent="cond_talked/return_visit/cond_rumor" unique_id=2001706421]
 
 [node name="say_bye" type="Node" parent="cond_talked/return_visit" unique_id=1831338724]
 script = ExtResource("2_say")
 speaker = 1
-text = "Come back anytime! The stew is always... here. The stew is always here."
+text = "dialogue.innkeeper_bertram.say_bye.text"
 
 [node name="first_visit" type="Node" parent="cond_talked" unique_id=1820520479]
 
 [node name="say_welcome" type="Node" parent="cond_talked/first_visit" unique_id=1921350771]
 script = ExtResource("2_say")
 speaker = 1
-text = "Welcome to the tavern! Best stew in town! Well, [i]only[/i] stew in town. But still the best!"
+text = "dialogue.innkeeper_bertram.say_welcome.text"
 
 [node name="say_pigeon_hi" type="Node" parent="cond_talked/first_visit" unique_id=373683308]
 script = ExtResource("2_say")
-text = "Thanks. What's in the stew?"
+text = "dialogue.innkeeper_bertram.say_pigeon_hi.text"
 
 [node name="say_recipe" type="Node" parent="cond_talked/first_visit" unique_id=1744829554]
 script = ExtResource("2_say")
 speaker = 1
-text = "Water! And sometimes a carrot. Today is a [color=#a8554c]no carrot[/color] day, though. So it's extra watery. Very smooth."
+text = "dialogue.innkeeper_bertram.say_recipe.text"
 
 [node name="choose_stew" type="Node" parent="cond_talked/first_visit" unique_id=589389413]
 script = ExtResource("3_choose")
 
 [node name="option_water" type="Node" parent="cond_talked/first_visit/choose_stew" unique_id=320022119]
 script = ExtResource("4_option")
-label = "This is just water"
+label = "dialogue.innkeeper_bertram.option_water.label"
 
 [node name="say_pigeon_water" type="Node" parent="cond_talked/first_visit/choose_stew/option_water" unique_id=1195370259]
 script = ExtResource("2_say")
-text = "Bertram, this is just warm water. There's nothing in it."
+text = "dialogue.innkeeper_bertram.say_pigeon_water.text"
 
 [node name="say_secret" type="Node" parent="cond_talked/first_visit/choose_stew/option_water" unique_id=1425361099]
 script = ExtResource("2_say")
 speaker = 1
-text = "Water is the [i]secret ingredient[/i]. Most cooks use too much food. I figured out you don't need any!"
+text = "dialogue.innkeeper_bertram.say_secret.text"
 
 [node name="say_pigeon_genius" type="Node" parent="cond_talked/first_visit/choose_stew/option_water" unique_id=1520383470]
 script = ExtResource("2_say")
-text = "That's not how cooking works."
+text = "dialogue.innkeeper_bertram.say_pigeon_genius.text"
 
 [node name="say_works" type="Node" parent="cond_talked/first_visit/choose_stew/option_water" unique_id=1124179304]
 script = ExtResource("2_say")
 speaker = 1
-text = "Then why does everyone keep coming back? ...Nobody comes back. But they [i]could[/i]!"
+text = "dialogue.innkeeper_bertram.say_works.text"
 
 [node name="set_criticized" type="Node" parent="cond_talked/first_visit/choose_stew/option_water" unique_id=1422414158]
 script = ExtResource("6_set_flag")
@@ -203,16 +203,16 @@ flag = "criticized_stew"
 
 [node name="option_great" type="Node" parent="cond_talked/first_visit/choose_stew" unique_id=2107445534]
 script = ExtResource("4_option")
-label = "Smells great!"
+label = "dialogue.innkeeper_bertram.option_great.label"
 
 [node name="say_pigeon_great" type="Node" parent="cond_talked/first_visit/choose_stew/option_great" unique_id=782908714]
 script = ExtResource("2_say")
-text = "You know what? It smells great. Pour me another bowl."
+text = "dialogue.innkeeper_bertram.say_pigeon_great.text"
 
 [node name="say_happy" type="Node" parent="cond_talked/first_visit/choose_stew/option_great" unique_id=1179772852]
 script = ExtResource("2_say")
 speaker = 1
-text = "A customer with [i]taste[/i]! Here, have a second bowl! Same water, fresh temperature!"
+text = "dialogue.innkeeper_bertram.say_happy.text"
 
 [node name="set_liked" type="Node" parent="cond_talked/first_visit/choose_stew/option_great" unique_id=1675540252]
 script = ExtResource("6_set_flag")

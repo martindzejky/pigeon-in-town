@@ -17,28 +17,28 @@ flag = "talked_to"
 [node name="say_return" type="Node" parent="cond_talked/return_visit" unique_id=889623534]
 script = ExtResource("2_say")
 speaker = 1
-text = "Nothing new to report. Well, Bertram burned his stew again. But that happens every day."
+text = "dialogue.folk_gilbert.say_return.text"
 
 [node name="first_visit" type="Node" parent="cond_talked" unique_id=465229826]
 
 [node name="say_greet" type="Node" parent="cond_talked/first_visit" unique_id=1089601803]
 script = ExtResource("2_say")
 speaker = 1
-text = "[i]Psst.[/i] You didn't hear this from me. But old Agnes? By the well? She talks to it. The well. Like it's a person."
+text = "dialogue.folk_gilbert.say_greet.text"
 
 [node name="say_pigeon" type="Node" parent="cond_talked/first_visit" unique_id=1473168573]
 script = ExtResource("2_say")
-text = "Maybe the well talks back."
+text = "dialogue.folk_gilbert.say_pigeon.text"
 
 [node name="say_reply" type="Node" parent="cond_talked/first_visit" unique_id=1037841868]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=30.0 level=20]Don't even joke about that![/shake] This village has enough problems. Father Cuthbert thinks everything is a [color=#a8554c]sign from God[/color]. Even puddles."
+text = "dialogue.folk_gilbert.say_reply.text"
 
 [node name="say_gossip" type="Node" parent="cond_talked/first_visit" unique_id=1041395923]
 script = ExtResource("2_say")
 speaker = 1
-text = "And now there's a talking pigeon walking around. He'll have a field day with this one."
+text = "dialogue.folk_gilbert.say_gossip.text"
 
 [node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=1659368312]
 script = ExtResource("4_set_flag")

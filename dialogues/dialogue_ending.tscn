@@ -8,24 +8,24 @@ script = ExtResource("1_walker")
 
 [node name="say_1" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "Huh. That was... all of it."
+text = "dialogue.dialogue_ending.say_1.text"
 
 [node name="say_2" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "A [color=#a8554c]prophet[/color], a [color=#4c7ea8]knight[/color], a [color=#8a6ca8]ghost whisperer[/color], and a [color=#6ca87a]friend[/color]. Not bad for one afternoon."
+text = "dialogue.dialogue_ending.say_2.text"
 
 [node name="say_3" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "I don't think there's anything left to uncover here. Just the mud and the memories."
+text = "dialogue.dialogue_ending.say_3.text"
 
 [node name="say_4" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "But hey. If you want to keep waddling around, I'm not stopping you."
+text = "dialogue.dialogue_ending.say_4.text"
 
 [node name="say_5" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "Thank you for playing. [color=#a8554c]Seriously[/color]. You're pretty great."
+text = "dialogue.dialogue_ending.say_5.text"
 
 [node name="say_6" type="Node" parent="."]
 script = ExtResource("2_say")
-text = "Now if you'll excuse me, I think I saw some breadcrumbs by the well."
+text = "dialogue.dialogue_ending.say_6.text"

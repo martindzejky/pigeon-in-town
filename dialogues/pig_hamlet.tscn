@@ -32,23 +32,23 @@ flag = "reacted_to_prophet"
 [node name="say_prophet_short" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/already_reacted_p" unique_id=1005863446]
 script = ExtResource("2_say")
 speaker = 1
-text = "The prophet returns. I have been composing a sonnet in your honor. It is not finished. It may never be."
+text = "dialogue.pig_hamlet.say_prophet_short.text"
 
 [node name="first_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet" unique_id=17345443]
 
 [node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=594322413]
 script = ExtResource("2_say")
 speaker = 1
-text = "A [i]prophet[/i]! Tell me, wise one. Is there meaning beyond the trough? Is there a world past the fence?"
+text = "dialogue.pig_hamlet.say_prophet.text"
 
 [node name="say_pigeon_meaning" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=936412377]
 script = ExtResource("2_say")
-text = "I've seen beyond the fence. There's a field and some more mud."
+text = "dialogue.pig_hamlet.say_pigeon_meaning.text"
 
 [node name="say_beautiful" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=34733014]
 script = ExtResource("2_say")
 speaker = 1
-text = "A field... and mud... How [color=#a8554c]beautifully[/color] simple. The universe gives us only what we need."
+text = "dialogue.pig_hamlet.say_beautiful.text"
 
 [node name="set_reacted_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=615187063]
 script = ExtResource("6_set_flag")
@@ -65,23 +65,23 @@ flag = "done_return"
 [node name="say_return_short" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet/cond_done_return/repeat_return" unique_id=1538936072]
 script = ExtResource("2_say")
 speaker = 1
-text = "I have had more thoughts. About the trough. About the fence. About [i]everything[/i]."
+text = "dialogue.pig_hamlet.say_return_short.text"
 
 [node name="first_return" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet/cond_done_return" unique_id=384667839]
 
 [node name="say_return_hi" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet/cond_done_return/first_return" unique_id=1531426365]
 script = ExtResource("2_say")
 speaker = 1
-text = "Ah, the pigeon returns. I have been thinking about the nature of flight. You can fly. I cannot. And yet we both eat from the ground. What does that [i]mean[/i]?"
+text = "dialogue.pig_hamlet.say_return_hi.text"
 
 [node name="say_pigeon_nothing" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet/cond_done_return/first_return" unique_id=642958143]
 script = ExtResource("2_say")
-text = "I think it means we both like food."
+text = "dialogue.pig_hamlet.say_pigeon_nothing.text"
 
 [node name="say_deep" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet/cond_done_return/first_return" unique_id=1487985612]
 script = ExtResource("2_say")
 speaker = 1
-text = "[i]Exactly.[/i] Food is the great equalizer. The trough does not care if you have wings."
+text = "dialogue.pig_hamlet.say_deep.text"
 
 [node name="set_done_return" type="Node" parent="cond_talked/return_visit/cond_prophet/no_prophet/cond_done_return/first_return" unique_id=527987730]
 script = ExtResource("6_set_flag")
@@ -89,54 +89,54 @@ flag = "done_return"
 
 [node name="say_pigeon_sure" type="Node" parent="cond_talked/return_visit" unique_id=399589386]
 script = ExtResource("2_say")
-text = "Sure, Hamlet."
+text = "dialogue.pig_hamlet.say_pigeon_sure.text"
 
 [node name="say_farewell" type="Node" parent="cond_talked/return_visit" unique_id=1895432263]
 script = ExtResource("2_say")
 speaker = 1
-text = "Go well, pigeon. And remember. To oink... is to [i]live[/i]."
+text = "dialogue.pig_hamlet.say_farewell.text"
 
 [node name="first_visit" type="Node" parent="cond_talked" unique_id=1688595132]
 
 [node name="say_monologue" type="Node" parent="cond_talked/first_visit" unique_id=325783724]
 script = ExtResource("2_say")
 speaker = 1
-text = "To [i]oink[/i]... or not to oink... THAT is the question."
+text = "dialogue.pig_hamlet.say_monologue.text"
 
 [node name="say_monologue_2" type="Node" parent="cond_talked/first_visit" unique_id=161345434]
 script = ExtResource("2_say")
 speaker = 1
-text = "Whether it is nobler in the trough to suffer the slops of outrageous fortune..."
+text = "dialogue.pig_hamlet.say_monologue_2.text"
 
 [node name="choose_react" type="Node" parent="cond_talked/first_visit" unique_id=2137901837]
 script = ExtResource("3_choose")
 
 [node name="option_question" type="Node" parent="cond_talked/first_visit/choose_react" unique_id=1091120676]
 script = ExtResource("4_option")
-label = "That IS the question"
+label = "dialogue.pig_hamlet.option_question.label"
 
 [node name="say_pigeon_yes" type="Node" parent="cond_talked/first_visit/choose_react/option_question" unique_id=136202338]
 script = ExtResource("2_say")
-text = "You know what? That [i]is[/i] the question. To oink or not to oink. Deep stuff."
+text = "dialogue.pig_hamlet.say_pigeon_yes.text"
 
 [node name="say_delighted" type="Node" parent="cond_talked/first_visit/choose_react/option_question" unique_id=487210795]
 script = ExtResource("2_say")
 speaker = 1
-text = "Finally! A [color=#6b8e5e]kindred spirit[/color]! Someone who UNDERSTANDS the weight of existence!"
+text = "dialogue.pig_hamlet.say_delighted.text"
 
 [node name="say_weight" type="Node" parent="cond_talked/first_visit/choose_react/option_question" unique_id=1088770122]
 script = ExtResource("2_say")
 speaker = 1
-text = "Oinksworth thinks I'm being dramatic. But is it dramatic to ask [i]why[/i] we eat from a trough? Is it dramatic to wonder what lies beyond the fence?"
+text = "dialogue.pig_hamlet.say_weight.text"
 
 [node name="say_pigeon_fence" type="Node" parent="cond_talked/first_visit/choose_react/option_question" unique_id=1421784205]
 script = ExtResource("2_say")
-text = "More mud, mostly."
+text = "dialogue.pig_hamlet.say_pigeon_fence.text"
 
 [node name="say_poetic" type="Node" parent="cond_talked/first_visit/choose_react/option_question" unique_id=1380228248]
 script = ExtResource("2_say")
 speaker = 1
-text = "...Poetic."
+text = "dialogue.pig_hamlet.say_poetic.text"
 
 [node name="set_art" type="Node" parent="cond_talked/first_visit/choose_react/option_question" unique_id=105080912]
 script = ExtResource("6_set_flag")
@@ -144,25 +144,25 @@ flag = "appreciates_art"
 
 [node name="option_stop" type="Node" parent="cond_talked/first_visit/choose_react" unique_id=170224923]
 script = ExtResource("4_option")
-label = "Please stop"
+label = "dialogue.pig_hamlet.option_stop.label"
 
 [node name="say_pigeon_stop" type="Node" parent="cond_talked/first_visit/choose_react/option_stop" unique_id=1840214634]
 script = ExtResource("2_say")
-text = "Please stop. I just walked over to say hello."
+text = "dialogue.pig_hamlet.say_pigeon_stop.text"
 
 [node name="say_hurt" type="Node" parent="cond_talked/first_visit/choose_react/option_stop" unique_id=1297271994]
 script = ExtResource("2_say")
 speaker = 1
-text = "The world is full of those who cannot see [i]art[/i]. But art does not stop for them. Art OINKS on."
+text = "dialogue.pig_hamlet.say_hurt.text"
 
 [node name="say_pigeon_oinks" type="Node" parent="cond_talked/first_visit/choose_react/option_stop" unique_id=1458262754]
 script = ExtResource("2_say")
-text = "Did you just say art oinks on?"
+text = "dialogue.pig_hamlet.say_pigeon_oinks.text"
 
 [node name="say_yes" type="Node" parent="cond_talked/first_visit/choose_react/option_stop" unique_id=379879521]
 script = ExtResource("2_say")
 speaker = 1
-text = "I did. And I meant every word."
+text = "dialogue.pig_hamlet.say_yes.text"
 
 [node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=390963261]
 script = ExtResource("6_set_flag")

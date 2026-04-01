@@ -31,23 +31,23 @@ flag = "done_friends_return"
 [node name="say_friend_short" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends/repeat_friends" unique_id=1787796000]
 script = ExtResource("2_say")
 speaker = 1
-text = "...You're here. Good. Now stop standing around. You're making me look lazy."
+text = "dialogue.scarecrow_cornelius.say_friend_short.text"
 
 [node name="first_friends" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends" unique_id=734777313]
 
 [node name="say_friend_return" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends/first_friends" unique_id=911727730]
 script = ExtResource("2_say")
 speaker = 1
-text = "Oh. It's you. ...Good."
+text = "dialogue.scarecrow_cornelius.say_friend_return.text"
 
 [node name="say_pigeon_friend" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends/first_friends" unique_id=1839916806]
 script = ExtResource("2_say")
-text = "Good to see you too, Cornelius."
+text = "dialogue.scarecrow_cornelius.say_pigeon_friend.text"
 
 [node name="say_nice" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends/first_friends" unique_id=490337254]
 script = ExtResource("2_say")
 speaker = 1
-text = "Don't make it weird. I still don't like birds. You're just... an exception."
+text = "dialogue.scarecrow_cornelius.say_nice.text"
 
 [node name="set_done_friends" type="Node" parent="cond_talked/return_visit/cond_friends/friends_branch/cond_done_friends/first_friends" unique_id=534719840]
 script = ExtResource("6_set_flag")
@@ -58,11 +58,11 @@ flag = "done_friends_return"
 [node name="say_return_greet" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends" unique_id=1296239819]
 script = ExtResource("2_say")
 speaker = 1
-text = "Oh. You again. At least you haven't eaten any crops. ...Have you?"
+text = "dialogue.scarecrow_cornelius.say_return_greet.text"
 
 [node name="say_pigeon_no" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends" unique_id=490237520]
 script = ExtResource("2_say")
-text = "No. Still not interested in your crops."
+text = "dialogue.scarecrow_cornelius.say_pigeon_no.text"
 
 [node name="cond_secret" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends" unique_id=440763710]
 script = ExtResource("5_condition")
@@ -76,16 +76,16 @@ script = ExtResource("3_choose")
 
 [node name="option_compliment" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return" unique_id=214158571]
 script = ExtResource("4_option")
-label = "You're doing a great job"
+label = "dialogue.scarecrow_cornelius.option_compliment.label"
 
 [node name="say_pigeon_good" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_compliment" unique_id=129628474]
 script = ExtResource("2_say")
-text = "I mean it. You're doing a really good job out here."
+text = "dialogue.scarecrow_cornelius.say_pigeon_good.text"
 
 [node name="say_touched" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_compliment" unique_id=285742380]
 script = ExtResource("2_say")
 speaker = 1
-text = "I... nobody has ever said that to me. Not once. ...Thank you."
+text = "dialogue.scarecrow_cornelius.say_touched.text"
 
 [node name="set_complimented" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_compliment" unique_id=1241297528]
 script = ExtResource("6_set_flag")
@@ -93,48 +93,48 @@ flag = "complimented"
 
 [node name="option_boring" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return" unique_id=853974455]
 script = ExtResource("4_option")
-label = "Isn't this boring?"
+label = "dialogue.scarecrow_cornelius.option_boring.label"
 
 [node name="say_pigeon_bored" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_boring" unique_id=828980885]
 script = ExtResource("2_say")
-text = "Don't you get bored? Just standing here all day?"
+text = "dialogue.scarecrow_cornelius.say_pigeon_bored.text"
 
 [node name="say_boring_reply" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_boring" unique_id=299487638]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=30.0 level=20]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take EVERYTHING!"
+text = "dialogue.scarecrow_cornelius.say_boring_reply.text"
 
 [node name="option_agnes" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return" unique_id=1149488979]
 script = ExtResource("4_option")
-label = "Agnes told me something..."
+label = "dialogue.scarecrow_cornelius.option_agnes.label"
 
 [node name="say_pigeon_agnes" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes" unique_id=1470399982]
 script = ExtResource("2_say")
-text = "Agnes told me you've been standing here for thirty years. Alone."
+text = "dialogue.scarecrow_cornelius.say_pigeon_agnes.text"
 
 [node name="say_quiet" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes" unique_id=1797371380]
 script = ExtResource("2_say")
 speaker = 1
-text = "..."
+text = "dialogue.scarecrow_cornelius.say_quiet.text"
 
 [node name="say_thirty" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes" unique_id=1346875683]
 script = ExtResource("2_say")
 speaker = 1
-text = "...Thirty years. Nobody's counted but her."
+text = "dialogue.scarecrow_cornelius.say_thirty.text"
 
 [node name="say_pigeon_long" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes" unique_id=420139688]
 script = ExtResource("2_say")
-text = "That's a long time to stand alone."
+text = "dialogue.scarecrow_cornelius.say_pigeon_long.text"
 
 [node name="say_it_is" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes" unique_id=1537867209]
 script = ExtResource("2_say")
 speaker = 1
-text = "...It is."
+text = "dialogue.scarecrow_cornelius.say_it_is.text"
 
 [node name="say_pause" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes" unique_id=1809383979]
 script = ExtResource("2_say")
 speaker = 1
-text = "You're alright. [color=#6b8e5e]For a bird.[/color]"
+text = "dialogue.scarecrow_cornelius.say_pause.text"
 
 [node name="set_friends" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_known/choose_return/option_agnes" unique_id=999025324]
 script = ExtResource("6_set_flag")
@@ -147,16 +147,16 @@ script = ExtResource("3_choose")
 
 [node name="option_compliment_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2" unique_id=1240631530]
 script = ExtResource("4_option")
-label = "You're doing a great job"
+label = "dialogue.scarecrow_cornelius.option_compliment_2.label"
 
 [node name="say_pigeon_good_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_compliment_2" unique_id=1355948241]
 script = ExtResource("2_say")
-text = "I mean it. You're doing a really good job out here."
+text = "dialogue.scarecrow_cornelius.say_pigeon_good_2.text"
 
 [node name="say_touched_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_compliment_2" unique_id=542503371]
 script = ExtResource("2_say")
 speaker = 1
-text = "I... nobody has ever said that to me. Not once. ...Thank you."
+text = "dialogue.scarecrow_cornelius.say_touched_2.text"
 
 [node name="set_complimented_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_compliment_2" unique_id=80467053]
 script = ExtResource("6_set_flag")
@@ -164,61 +164,61 @@ flag = "complimented"
 
 [node name="option_boring_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2" unique_id=819341773]
 script = ExtResource("4_option")
-label = "Isn't this boring?"
+label = "dialogue.scarecrow_cornelius.option_boring_2.label"
 
 [node name="say_pigeon_bored_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_boring_2" unique_id=479137372]
 script = ExtResource("2_say")
-text = "Don't you get bored? Just standing here all day?"
+text = "dialogue.scarecrow_cornelius.say_pigeon_bored_2.text"
 
 [node name="say_boring_reply_2" type="Node" parent="cond_talked/return_visit/cond_friends/not_friends/cond_secret/secret_unknown/choose_return_2/option_boring_2" unique_id=1629888658]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=30.0 level=20]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take EVERYTHING!"
+text = "dialogue.scarecrow_cornelius.say_boring_reply_2.text"
 
 [node name="first_visit" type="Node" parent="cond_talked" unique_id=1933876183]
 
 [node name="say_scream" type="Node" parent="cond_talked/first_visit" unique_id=303590348]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=30.0 level=20]BIRD! BIRD IN THE FIELD![/shake] THIS IS A RESTRICTED AREA! LEAVE IMMEDIATELY!"
+text = "dialogue.scarecrow_cornelius.say_scream.text"
 
 [node name="choose_react" type="Node" parent="cond_talked/first_visit" unique_id=1767889332]
 script = ExtResource("3_choose")
 
 [node name="option_pigeon" type="Node" parent="cond_talked/first_visit/choose_react" unique_id=1475695193]
 script = ExtResource("4_option")
-label = "I'm not a crow"
+label = "dialogue.scarecrow_cornelius.option_pigeon.label"
 
 [node name="say_pigeon_not_crow" type="Node" parent="cond_talked/first_visit/choose_react/option_pigeon" unique_id=571805035]
 script = ExtResource("2_say")
-text = "Relax. I'm a pigeon, not a crow. I don't even like crops."
+text = "dialogue.scarecrow_cornelius.say_pigeon_not_crow.text"
 
 [node name="say_all_birds" type="Node" parent="cond_talked/first_visit/choose_react/option_pigeon" unique_id=1673286986]
 script = ExtResource("2_say")
 speaker = 1
-text = "ALL birds are the enemy! I don't [i]discriminate[/i]! Pigeons, crows, sparrows, ducks. ALL OF THEM!"
+text = "dialogue.scarecrow_cornelius.say_all_birds.text"
 
 [node name="option_peace" type="Node" parent="cond_talked/first_visit/choose_react" unique_id=963583218]
 script = ExtResource("4_option")
-label = "I come in peace"
+label = "dialogue.scarecrow_cornelius.option_peace.label"
 
 [node name="say_pigeon_peace" type="Node" parent="cond_talked/first_visit/choose_react/option_peace" unique_id=1714759975]
 script = ExtResource("2_say")
-text = "Easy there. I come in peace. Not here for your crops."
+text = "dialogue.scarecrow_cornelius.say_pigeon_peace.text"
 
 [node name="say_sparrow" type="Node" parent="cond_talked/first_visit/choose_react/option_peace" unique_id=823380620]
 script = ExtResource("2_say")
 speaker = 1
-text = "That's [i]exactly[/i] what the last sparrow said! And then he ate a seed! [shake rate=30.0 level=20]A SEED![/shake] Right in front of me!"
+text = "dialogue.scarecrow_cornelius.say_sparrow.text"
 
 [node name="say_calm" type="Node" parent="cond_talked/first_visit" unique_id=1795985725]
 script = ExtResource("2_say")
 speaker = 1
-text = "Fine. FINE. You can stay. But I'm [color=#a8554c]watching[/color] you. Don't touch the wheat."
+text = "dialogue.scarecrow_cornelius.say_calm.text"
 
 [node name="say_pigeon_ok" type="Node" parent="cond_talked/first_visit" unique_id=737402135]
 script = ExtResource("2_say")
-text = "Wouldn't dream of it."
+text = "dialogue.scarecrow_cornelius.say_pigeon_ok.text"
 
 [node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=822326170]
 script = ExtResource("6_set_flag")

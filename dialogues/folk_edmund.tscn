@@ -17,28 +17,28 @@ flag = "talked_to"
 [node name="say_return" type="Node" parent="cond_talked/return_visit" unique_id=1858727796]
 script = ExtResource("2_say")
 speaker = 1
-text = "Oh, you again. Still dry, are you? Must be nice having feathers."
+text = "dialogue.folk_edmund.say_return.text"
 
 [node name="first_visit" type="Node" parent="cond_talked" unique_id=1763440201]
 
 [node name="say_greet" type="Node" parent="cond_talked/first_visit" unique_id=1009895009]
 script = ExtResource("2_say")
 speaker = 1
-text = "Another mouth to feed. Or beak. Whatever you've got there."
+text = "dialogue.folk_edmund.say_greet.text"
 
 [node name="say_pigeon" type="Node" parent="cond_talked/first_visit" unique_id=1781576913]
 script = ExtResource("2_say")
-text = "I'm just passing through."
+text = "dialogue.folk_edmund.say_pigeon.text"
 
 [node name="say_reply" type="Node" parent="cond_talked/first_visit" unique_id=849321217]
 script = ExtResource("2_say")
 speaker = 1
-text = "That's what everyone says. Then they stay. And then they need [color=#a8554c]clean linens[/color]. And guess who washes them?"
+text = "dialogue.folk_edmund.say_reply.text"
 
 [node name="say_guess" type="Node" parent="cond_talked/first_visit" unique_id=1238949130]
 script = ExtResource("2_say")
 speaker = 1
-text = "Me. It's always me. The mud here never dries. I wash a sheet, I turn around, it's filthy again. I think the mud is alive."
+text = "dialogue.folk_edmund.say_guess.text"
 
 [node name="set_talked" type="Node" parent="cond_talked/first_visit" unique_id=1107586455]
 script = ExtResource("4_set_flag")

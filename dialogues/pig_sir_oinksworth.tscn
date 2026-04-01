@@ -38,23 +38,23 @@ flag = "done_knight_return"
 [node name="say_knight_short" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/already_knight/cond_done_knight/repeat_knight" unique_id=1872301710]
 script = ExtResource("2_say")
 speaker = 1
-text = "Sir Pigeon! The empire endures! ...How many puddles now?"
+text = "dialogue.pig_sir_oinksworth.say_knight_short.text"
 
 [node name="first_knight" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/already_knight/cond_done_knight" unique_id=2047077850]
 
 [node name="say_knight_return" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/already_knight/cond_done_knight/first_knight" unique_id=1425067942]
 script = ExtResource("2_say")
 speaker = 1
-text = "Sir Pigeon! How goes the knighting? Have you conquered any lands? Claimed any puddles?"
+text = "dialogue.pig_sir_oinksworth.say_knight_return.text"
 
 [node name="say_pigeon_puddle" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/already_knight/cond_done_knight/first_knight" unique_id=769209563]
 script = ExtResource("2_say")
-text = "I found a nice puddle by the well. I'm claiming that one."
+text = "dialogue.pig_sir_oinksworth.say_pigeon_puddle.text"
 
 [node name="say_excellent" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/already_knight/cond_done_knight/first_knight" unique_id=859160477]
 script = ExtResource("2_say")
 speaker = 1
-text = "[i]Excellent![/i] The empire grows! Soon we shall have TWO puddles!"
+text = "dialogue.pig_sir_oinksworth.say_excellent.text"
 
 [node name="set_done_knight" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/already_knight/cond_done_knight/first_knight" unique_id=79080489]
 script = ExtResource("6_set_flag")
@@ -65,40 +65,40 @@ flag = "done_knight_return"
 [node name="say_title_offer" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight" unique_id=1261711671]
 script = ExtResource("2_say")
 speaker = 1
-text = "Pigeon! For your loyal service and good manners, I shall grant you a [color=#a8554c]title[/color]. Kneel! ...Or just stand there. Birds don't have knees."
+text = "dialogue.pig_sir_oinksworth.say_title_offer.text"
 
 [node name="choose_knight" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight" unique_id=1346946247]
 script = ExtResource("3_choose")
 
 [node name="option_decline" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight" unique_id=1285457847]
 script = ExtResource("4_option")
-label = "I'm good, thanks"
+label = "dialogue.pig_sir_oinksworth.option_decline.label"
 
 [node name="say_pigeon_decline" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_decline" unique_id=1093333171]
 script = ExtResource("2_say")
-text = "That's kind of you, but I don't really need a title."
+text = "dialogue.pig_sir_oinksworth.say_pigeon_decline.text"
 
 [node name="say_shocked" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_decline" unique_id=802296304]
 script = ExtResource("2_say")
 speaker = 1
-text = "Refusing a title?! Unheard of! The offer stands. Come back when you've come to your senses."
+text = "dialogue.pig_sir_oinksworth.say_shocked.text"
 
 [node name="option_accept" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight" unique_id=1944622213]
 script = ExtResource("4_option")
-label = "I accept the title"
+label = "dialogue.pig_sir_oinksworth.option_accept.label"
 
 [node name="say_pigeon_accept" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_accept" unique_id=1662817651]
 script = ExtResource("2_say")
-text = "Sure. Why not. Knight me."
+text = "dialogue.pig_sir_oinksworth.say_pigeon_accept.text"
 
 [node name="say_dub" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_accept" unique_id=521997732]
 script = ExtResource("2_say")
 speaker = 1
-text = "I dub thee [color=#6b8e5e]Sir Pigeon of the Puddle[/color], Knight of the Crossroads! Rise! ...You're already standing. Good enough!"
+text = "dialogue.pig_sir_oinksworth.say_dub.text"
 
 [node name="say_pigeon_thanks" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_accept" unique_id=334904183]
 script = ExtResource("2_say")
-text = "I'm honored. I think."
+text = "dialogue.pig_sir_oinksworth.say_pigeon_thanks.text"
 
 [node name="set_knight" type="Node" parent="cond_talked/return_visit/cond_respect/respect_branch/cond_knight/not_knight/choose_knight/option_accept" unique_id=953092709]
 script = ExtResource("6_set_flag")
@@ -116,23 +116,23 @@ flag = "done_cold_return"
 [node name="say_cold_short" type="Node" parent="cond_talked/return_visit/cond_respect/no_respect/cond_done_cold/repeat_cold" unique_id=102412811]
 script = ExtResource("2_say")
 speaker = 1
-text = "Still rude. Still remembered. Hamlet is still not glaring. Disappointing all around."
+text = "dialogue.pig_sir_oinksworth.say_cold_short.text"
 
 [node name="first_cold" type="Node" parent="cond_talked/return_visit/cond_respect/no_respect/cond_done_cold" unique_id=579132237]
 
 [node name="say_cold" type="Node" parent="cond_talked/return_visit/cond_respect/no_respect/cond_done_cold/first_cold" unique_id=1784013674]
 script = ExtResource("2_say")
 speaker = 1
-text = "Oh. It's the rude one. I have not forgotten your insult. Hamlet has been told to glare at you."
+text = "dialogue.pig_sir_oinksworth.say_cold.text"
 
 [node name="say_pigeon_sorry" type="Node" parent="cond_talked/return_visit/cond_respect/no_respect/cond_done_cold/first_cold" unique_id=793367498]
 script = ExtResource("2_say")
-text = "Is he? He looks like he's doing a monologue."
+text = "dialogue.pig_sir_oinksworth.say_pigeon_sorry.text"
 
 [node name="say_always" type="Node" parent="cond_talked/return_visit/cond_respect/no_respect/cond_done_cold/first_cold" unique_id=1084070097]
 script = ExtResource("2_say")
 speaker = 1
-text = "He's ALWAYS doing a monologue. Very hard to get good guards around here."
+text = "dialogue.pig_sir_oinksworth.say_always.text"
 
 [node name="set_done_cold" type="Node" parent="cond_talked/return_visit/cond_respect/no_respect/cond_done_cold/first_cold" unique_id=1234632573]
 script = ExtResource("6_set_flag")
@@ -154,23 +154,23 @@ flag = "reacted_to_prophet"
 [node name="say_prophet_short" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/already_reacted_p" unique_id=597610990]
 script = ExtResource("2_say")
 speaker = 1
-text = "The prophecy still stands. As do I. In this mud."
+text = "dialogue.pig_sir_oinksworth.say_prophet_short.text"
 
 [node name="first_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet" unique_id=2100168650]
 
 [node name="say_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=343266790]
 script = ExtResource("2_say")
 speaker = 1
-text = "I hear the priest called you a [i]prophet[/i]. A prophet! In MY pen! I demand a royal blessing at once!"
+text = "dialogue.pig_sir_oinksworth.say_prophet.text"
 
 [node name="say_pigeon_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=2001727010]
 script = ExtResource("2_say")
-text = "I bless your mud."
+text = "dialogue.pig_sir_oinksworth.say_pigeon_prophet.text"
 
 [node name="say_satisfied" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=1765515]
 script = ExtResource("2_say")
 speaker = 1
-text = "[i]Excellent.[/i] The mud is now [color=#6b8e5e]holy mud[/color]. This changes everything. Well, nothing. But it feels important."
+text = "dialogue.pig_sir_oinksworth.say_satisfied.text"
 
 [node name="set_reacted_prophet" type="Node" parent="cond_talked/return_visit/cond_prophet/prophet_branch/cond_reacted_prophet/first_prophet" unique_id=789610112]
 script = ExtResource("6_set_flag")
@@ -183,41 +183,41 @@ flag = "reacted_to_prophet"
 [node name="say_halt" type="Node" parent="cond_talked/first_visit" unique_id=10559929]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=30.0 level=20]HALT![/shake] State your name and title before the Third of His Name, [color=#a8554c]Sir Oinksworth[/color], Lord of the Mud Patch, Duke of the Feed Bin!"
+text = "dialogue.pig_sir_oinksworth.say_halt.text"
 
 [node name="choose_react" type="Node" parent="cond_talked/first_visit" unique_id=1492585119]
 script = ExtResource("3_choose")
 
 [node name="option_pig" type="Node" parent="cond_talked/first_visit/choose_react" unique_id=545736672]
 script = ExtResource("4_option")
-label = "You're a pig in a pen"
+label = "dialogue.pig_sir_oinksworth.option_pig.label"
 
 [node name="say_pigeon_pig" type="Node" parent="cond_talked/first_visit/choose_react/option_pig" unique_id=1481399098]
 script = ExtResource("2_say")
-text = "You're a pig. In a pen. With mud on your face."
+text = "dialogue.pig_sir_oinksworth.say_pigeon_pig.text"
 
 [node name="say_outrage" type="Node" parent="cond_talked/first_visit/choose_react/option_pig" unique_id=1998498347]
 script = ExtResource("2_say")
 speaker = 1
-text = "[shake rate=30.0 level=20]HOW DARE![/shake] Guards! Seize this bird! ...We don't have guards. HAMLET! BE A GUARD!"
+text = "dialogue.pig_sir_oinksworth.say_outrage.text"
 
 [node name="say_hamlet" type="Node" parent="cond_talked/first_visit/choose_react/option_pig" unique_id=38784255]
 script = ExtResource("2_say")
 speaker = 1
-text = "...Hamlet is doing a monologue. Useless. You may go. But I shall [i]remember[/i] this insult."
+text = "dialogue.pig_sir_oinksworth.say_hamlet.text"
 
 [node name="option_majesty" type="Node" parent="cond_talked/first_visit/choose_react" unique_id=792710104]
 script = ExtResource("4_option")
-label = "Your Majesty"
+label = "dialogue.pig_sir_oinksworth.option_majesty.label"
 
 [node name="say_pigeon_bow" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty" unique_id=1594271162]
 script = ExtResource("2_say")
-text = "My apologies, Your Majesty. I am but a humble pigeon passing through your... lands."
+text = "dialogue.pig_sir_oinksworth.say_pigeon_bow.text"
 
 [node name="say_pleased" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty" unique_id=50032]
 script = ExtResource("2_say")
 speaker = 1
-text = "Ah! Finally, someone with [i]breeding[/i]. You may stay. But do not touch the mud. That is [color=#a8554c]royal mud[/color]."
+text = "dialogue.pig_sir_oinksworth.say_pleased.text"
 
 [node name="set_respect" type="Node" parent="cond_talked/first_visit/choose_react/option_majesty" unique_id=1105746880]
 script = ExtResource("6_set_flag")
