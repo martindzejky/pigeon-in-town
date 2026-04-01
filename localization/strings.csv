@@ -1,5 +1,6 @@
 key,en,sk
 ui.main_menu.start_button.text,Start,Začať
+ui.options.button.text,Options,Nastavenia
 ui.main_menu.exit_button.text,Quit,Ukončiť
 ui.level_select.label.text,Go to Town,Ísť do mesta
 ui.level_select.pigeon_icon.tooltip,You,Ty
@@ -11,6 +12,11 @@ ui.pause.achievements_label.text,Achievements,Úspechy
 ui.pause.warning.text,"There's no save system.
 Exiting loses all progress.","Táto hra nemá ukladanie.
 Odchodom stratíš všetok postup."
+ui.options.title.text,Options,Nastavenia
+ui.options.language_label.text,Language,Jazyk
+ui.options.language.english,English,Angličtina
+ui.options.language.slovak,Slovak,Slovenčina
+ui.options.close_button.text,Close,Zavrieť
 ui.interaction_hint.label.text,Talk,Hovoriť
 dialogue.dialogue_ending.say_1.text,Huh. That was... all of it.,Hm. Tak to bolo... všetko.
 dialogue.dialogue_ending.say_2.text,"A [color=#a8554c]prophet[/color], a [color=#a8554c]knight[/color], a [color=#a8554c]ghost whisperer[/color], and a [color=#a8554c]friend[/color]. Not bad for one afternoon.","[color=#a8554c]Prorok[/color], [color=#a8554c]rytier[/color], [color=#a8554c]šepkár s duchmi[/color] a [color=#a8554c]priateľ[/color]. Na jedno popoludnie celkom slušné."

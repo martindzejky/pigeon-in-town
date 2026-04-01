@@ -3,20 +3,23 @@
 [ext_resource type="Script" uid="uid://bhv3jg8er2jha" path="res://scripts/pause_menu.gd" id="1_script"]
 [ext_resource type="StyleBox" uid="uid://jrtvkwk1elat" path="res://ui/dark_panel_stylebox.tres" id="2_fob5h"]
 [ext_resource type="PackedScene" uid="uid://cma61sgomrj6y" path="res://ui/button_sounds.tscn" id="2_sounds"]
-[ext_resource type="PackedScene" path="res://ui/achievement_card.tscn" id="3_card"]
+[ext_resource type="PackedScene" uid="uid://otf3c7suxf6h" path="res://ui/achievement_card.tscn" id="3_card"]
+[ext_resource type="PackedScene" uid="uid://62m66b5qa1ir" path="res://ui/options_menu.tscn" id="4_options"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ejwgg"]
 font_size = 33
 
-[node name="pause_menu" type="CanvasLayer" unique_id=1375568042 node_paths=PackedStringArray("overlay", "panel", "resume_button", "exit_button", "cards_container")]
+[node name="pause_menu" type="CanvasLayer" unique_id=1375568042 node_paths=PackedStringArray("overlay", "panel", "resume_button", "options_button", "exit_button", "cards_container", "options_menu")]
 process_mode = 3
 layer = 90
 script = ExtResource("1_script")
 overlay = NodePath("overlay")
 panel = NodePath("center/panel")
 resume_button = NodePath("center/panel/margin/content/resume_button")
+options_button = NodePath("center/panel/margin/content/options_button")
 exit_button = NodePath("center/panel/margin/content/exit_button")
 cards_container = NodePath("center/panel/margin/content/cards")
+options_menu = NodePath("options_menu")
 card_scene = ExtResource("3_card")
 
 [node name="overlay" type="ColorRect" parent="." unique_id=1053459210]
@@ -67,6 +70,14 @@ text = "ui.pause.resume_button.text"
 
 [node name="button_sounds" parent="center/panel/margin/content/resume_button" unique_id=481961514 instance=ExtResource("2_sounds")]
 
+[node name="options_button" type="Button" parent="center/panel/margin/content" unique_id=107535184]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ui.options.button.text"
+
+[node name="button_sounds" parent="center/panel/margin/content/options_button" unique_id=1723054348 instance=ExtResource("2_sounds")]
+
 [node name="exit_button" type="Button" parent="center/panel/margin/content" unique_id=1361844055]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
@@ -96,3 +107,6 @@ text = "ui.pause.warning.text"
 label_settings = SubResource("LabelSettings_ejwgg")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="options_menu" parent="." unique_id=1850587446 instance=ExtResource("4_options")]
+close_focus = NodePath("../center/panel/margin/content/options_button")

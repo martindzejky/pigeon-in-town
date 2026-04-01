@@ -3,8 +3,10 @@ extends CanvasLayer
 @export var overlay: ColorRect
 @export var panel: PanelContainer
 @export var resume_button: Button
+@export var options_button: Button
 @export var exit_button: Button
 @export var cards_container: HBoxContainer
+@export var options_menu: CanvasLayer
 
 @export var card_scene: PackedScene
 
@@ -15,12 +17,16 @@ var _cards: Dictionary[String, Node] = { }
 func _ready() -> void:
   visible = false
   resume_button.pressed.connect(_on_resume_pressed)
+  options_button.pressed.connect(_on_options_pressed)
   exit_button.pressed.connect(_on_exit_pressed)
   Achievements.achievement_unlocked.connect(_on_achievement_unlocked)
   _build_cards()
 
 
 func _unhandled_input(event: InputEvent) -> void:
+  if options_menu.visible:
+    return
+
   if event.is_action_pressed('pause'):
     if _is_open:
       _close()
@@ -45,6 +51,10 @@ func _close() -> void:
 
 func _on_resume_pressed() -> void:
   _close()
+
+
+func _on_options_pressed() -> void:
+  options_menu.call('open')
 
 
 func _on_exit_pressed() -> void:

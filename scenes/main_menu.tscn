@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d21olpprk4eox" path="res://sprites/title/title2.png" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://yepuufocmgdk" path="res://sprites/title/title3.png" id="5_oa1go"]
 [ext_resource type="PackedScene" uid="uid://cma61sgomrj6y" path="res://ui/button_sounds.tscn" id="8_sounds"]
+[ext_resource type="PackedScene" path="res://ui/options_menu.tscn" id="9_options"]
 
 [sub_resource type="Gradient" id="Gradient_ekxnf"]
 colors = PackedColorArray(0.77304435, 0.9419222, 0.99341327, 1, 0.49150628, 0.7858084, 0.89622927, 1)
@@ -284,7 +285,7 @@ _data = {
 &"loop": SubResource("Animation_8ln24")
 }
 
-[node name="main_menu" type="Control" unique_id=2059424883 node_paths=PackedStringArray("start_button", "exit_button")]
+[node name="main_menu" type="Control" unique_id=2059424883 node_paths=PackedStringArray("start_button", "options_button", "exit_button", "options_menu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -293,7 +294,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 start_button = NodePath("center/start_button")
+options_button = NodePath("center/options_button")
 exit_button = NodePath("center/exit_button")
+options_menu = NodePath("options_menu")
 
 [node name="sky" type="TextureRect" parent="." unique_id=1844136315]
 z_index = -10
@@ -388,7 +391,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_left = -52.5
 offset_top = -170.5
-offset_right = -52.5
+offset_right = -838.5
 offset_bottom = 38.5
 grow_horizontal = 2
 pivot_offset = Vector2(161, 209)
@@ -403,6 +406,14 @@ next/enter = &"loop"
 
 [node name="button_sounds" parent="center/start_button" unique_id=569178304 instance=ExtResource("8_sounds")]
 
+[node name="options_button" type="Button" parent="center" unique_id=1697017598]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ui.options.button.text"
+
+[node name="button_sounds" parent="center/options_button" unique_id=1589386639 instance=ExtResource("8_sounds")]
+
 [node name="exit_button" type="Button" parent="center" unique_id=1252416295]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
@@ -410,3 +421,6 @@ size_flags_horizontal = 4
 text = "ui.main_menu.exit_button.text"
 
 [node name="button_sounds" parent="center/exit_button" unique_id=1451339755 instance=ExtResource("8_sounds")]
+
+[node name="options_menu" parent="." unique_id=594457379 instance=ExtResource("9_options")]
+close_focus = NodePath("../center/options_button")

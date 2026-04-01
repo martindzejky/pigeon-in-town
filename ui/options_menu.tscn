@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://62m66b5qa1ir"]
+
+[ext_resource type="Script" uid="uid://cqol2m30yi3v8" path="res://scripts/options_menu.gd" id="1_script"]
+[ext_resource type="StyleBox" uid="uid://jrtvkwk1elat" path="res://ui/dark_panel_stylebox.tres" id="2_style"]
+[ext_resource type="PackedScene" uid="uid://cma61sgomrj6y" path="res://ui/button_sounds.tscn" id="3_sounds"]
+
+[node name="options_menu" type="CanvasLayer" unique_id=935394116 node_paths=PackedStringArray("language_option", "close_button")]
+process_mode = 3
+layer = 95
+script = ExtResource("1_script")
+language_option = NodePath("center/panel/margin/content/language_row/language_option")
+close_button = NodePath("center/panel/margin/content/close_button")
+
+[node name="overlay" type="ColorRect" parent="." unique_id=1438202638]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.08, 0.12, 0.6)
+
+[node name="center" type="CenterContainer" parent="." unique_id=802367902]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panel" type="PanelContainer" parent="center" unique_id=884829883]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_style")
+
+[node name="margin" type="MarginContainer" parent="center/panel" unique_id=1076294247]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="content" type="VBoxContainer" parent="center/panel/margin" unique_id=461279371]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="title" type="Label" parent="center/panel/margin/content" unique_id=1816255727]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ui.options.title.text"
+horizontal_alignment = 1
+
+[node name="language_row" type="HBoxContainer" parent="center/panel/margin/content" unique_id=908922998]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="language_label" type="Label" parent="center/panel/margin/content/language_row" unique_id=544012413]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ui.options.language_label.text"
+vertical_alignment = 1
+
+[node name="language_option" type="OptionButton" parent="center/panel/margin/content/language_row" unique_id=211225302]
+custom_minimum_size = Vector2(220, 60)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="close_button" type="Button" parent="center/panel/margin/content" unique_id=986662063]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ui.options.close_button.text"
+
+[node name="button_sounds" parent="center/panel/margin/content/close_button" unique_id=1727922164 instance=ExtResource("3_sounds")]
