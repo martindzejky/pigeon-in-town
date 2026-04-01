@@ -30,7 +30,8 @@ func show_bubble(text: String) -> void:
   _typing_done = false
   _exiting = false
 
-  var wrapped := _wrap_text(text, chars_per_line)
+  var translated_text := tr(text)
+  var wrapped := _wrap_text(translated_text, chars_per_line)
 
   _bubble = say_bubble_scene.instantiate()
   add_child(_bubble)
@@ -68,7 +69,8 @@ func show_choices(options: Array[String]) -> void:
   var choice_items: Array[ChoiceButton] = []
   for i in options.size():
     var choice := choice_button_scene.instantiate() as ChoiceButton
-    choice.button.text = _wrap_text(options[i], chars_per_line)
+    var translated_option := tr(options[i])
+    choice.button.text = _wrap_text(translated_option, chars_per_line)
     choice.button.pressed.connect(_on_choice_pressed.bind(i))
     choice.scale = Vector2.ZERO
     var wrapper := PassthroughContainer.new()
