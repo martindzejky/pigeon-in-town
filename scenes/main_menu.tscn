@@ -378,7 +378,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Start"
+text = "ui.main_menu.start_button.text"
 
 [node name="pigeon" type="TextureRect" parent="center/start_button" unique_id=726136333]
 z_index = -1
@@ -407,6 +407,6 @@ next/enter = &"loop"
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Quit"
+text = "ui.main_menu.exit_button.text"
 
 [node name="button_sounds" parent="center/exit_button" unique_id=1451339755 instance=ExtResource("8_sounds")]

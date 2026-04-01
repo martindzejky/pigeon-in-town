@@ -53,7 +53,7 @@ theme_override_constants/separation = 16
 [node name="title" type="Label" parent="center/panel/margin/content" unique_id=1440496237]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Paused"
+text = "ui.pause.title.text"
 
 [node name="spacer" type="Control" parent="center/panel/margin/content" unique_id=239433609]
 custom_minimum_size = Vector2(0, 8)
@@ -63,7 +63,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Resume"
+text = "ui.pause.resume_button.text"
 
 [node name="button_sounds" parent="center/panel/margin/content/resume_button" unique_id=481961514 instance=ExtResource("2_sounds")]
 
@@ -71,14 +71,14 @@ text = "Resume"
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Exit to menu"
+text = "ui.pause.exit_button.text"
 
 [node name="button_sounds" parent="center/panel/margin/content/exit_button" unique_id=818101233 instance=ExtResource("2_sounds")]
 
 [node name="achievements_label" type="Label" parent="center/panel/margin/content" unique_id=1537531708]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Achievements"
+text = "ui.pause.achievements_label.text"
 
 [node name="cards" type="HBoxContainer" parent="center/panel/margin/content" unique_id=1948658771]
 layout_mode = 2
@@ -92,8 +92,7 @@ layout_mode = 2
 [node name="warning" type="Label" parent="center/panel/margin/content" unique_id=875484516]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "There's no save system.
-Exiting loses all progress."
+text = "ui.pause.warning.text"
 label_settings = SubResource("LabelSettings_ejwgg")
 horizontal_alignment = 1
 vertical_alignment = 1

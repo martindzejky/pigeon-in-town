@@ -73,6 +73,6 @@ autoplay = &"run"
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.15, 0.15, 0.15, 1)
-text = "Talk"
+text = "ui.interaction_hint.label.text"
 label_settings = SubResource("LabelSettings_68ltb")
 vertical_alignment = 1

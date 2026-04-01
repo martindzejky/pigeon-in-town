@@ -194,7 +194,7 @@ offset_right = 172.5
 offset_bottom = 224.5
 grow_horizontal = 2
 grow_vertical = 0
-text = "Go to Town"
+text = "ui.level_select.label.text"
 label_settings = SubResource("LabelSettings_rif6e")
 horizontal_alignment = 1
 
@@ -240,7 +240,7 @@ offset_bottom = 130.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(119, 130)
-tooltip_text = "You"
+tooltip_text = "ui.level_select.pigeon_icon.tooltip"
 mouse_filter = 2
 texture = ExtResource("2_pigeon_icon")
 stretch_mode = 5
@@ -283,7 +283,7 @@ offset_right = 126.0
 offset_bottom = 85.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Click"
+text = "ui.level_select.hint.text"
 label_settings = SubResource("LabelSettings_r77uv")
 
 [node name="animation" type="AnimationPlayer" parent="center/arrow" unique_id=22620334]

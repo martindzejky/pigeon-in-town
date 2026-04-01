@@ -5,11 +5,36 @@ extends Node
 signal achievement_unlocked(ids: Array[String])
 
 const DEFINITIONS: Array[Dictionary] = [
-  { 'id': 'feathered_prophet', 'title': 'The Feathered Prophet', 'hint': 'Receive a divine calling.', 'art': 'res://sprites/ui/card_feathered_prophet.png' },
-  { 'id': 'sir_pigeon', 'title': 'Sir Pigeon of the Puddle', 'hint': 'Earn a noble title.', 'art': 'res://sprites/ui/card_sir_pigeon.png' },
-  { 'id': 'prophet_and_knight', 'title': 'Prophet and Knight', 'hint': 'Be both holy and noble.', 'art': 'res://sprites/ui/card_prophet_and_knight.png' },
-  { 'id': 'great_haunting', 'title': 'The Great Haunting', 'hint': 'Spread a spooky rumor.', 'art': 'res://sprites/ui/card_great_haunting.png' },
-  { 'id': 'unlikely_friends', 'title': 'Unlikely Friends', 'hint': 'Befriend someone lonely.', 'art': 'res://sprites/ui/card_unlikely_friends.png' },
+  {
+    'id': 'feathered_prophet',
+    'title': 'achievement.feathered_prophet.title',
+    'hint': 'achievement.feathered_prophet.hint',
+    'art': 'res://sprites/ui/card_feathered_prophet.png',
+  },
+  {
+    'id': 'sir_pigeon',
+    'title': 'achievement.sir_pigeon.title',
+    'hint': 'achievement.sir_pigeon.hint',
+    'art': 'res://sprites/ui/card_sir_pigeon.png',
+  },
+  {
+    'id': 'prophet_and_knight',
+    'title': 'achievement.prophet_and_knight.title',
+    'hint': 'achievement.prophet_and_knight.hint',
+    'art': 'res://sprites/ui/card_prophet_and_knight.png',
+  },
+  {
+    'id': 'great_haunting',
+    'title': 'achievement.great_haunting.title',
+    'hint': 'achievement.great_haunting.hint',
+    'art': 'res://sprites/ui/card_great_haunting.png',
+  },
+  {
+    'id': 'unlikely_friends',
+    'title': 'achievement.unlikely_friends.title',
+    'hint': 'achievement.unlikely_friends.hint',
+    'art': 'res://sprites/ui/card_unlikely_friends.png',
+  },
 ]
 
 var _achieved: Dictionary[String, bool] = { }
