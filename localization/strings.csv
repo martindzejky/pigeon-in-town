@@ -27,7 +27,7 @@ dialogue.folk_cedric.say_return.text,Pigs are still pigs. Fed 'em already. No ne
 dialogue.folk_cedric.say_greet.text,"What're you doing here? This is a [color=#6b8e5e]pig pen[/color], not a bird bath."
 dialogue.folk_cedric.say_pigeon.text,I was just saying hello to the pigs.
 dialogue.folk_cedric.say_reply.text,Saying hello to the... You can [i]TALK[/i] to 'em?
-dialogue.folk_cedric.say_pigs.text,Good luck with that lot. The big one thinks he's a [i][color=#a8554c]KING[/color][/i]. The gloomy one mutters about fences. And the wee digger keeps sneaking off toward the [color=#6b8e5e]graveyard[/color].
+dialogue.folk_cedric.say_pigs.text,Good luck with that lot. The big one thinks he's a [color=#a8554c]KING[/color]. The gloomy one mutters about fences. And the wee digger keeps sneaking off toward the [color=#6b8e5e]graveyard[/color].
 dialogue.folk_cedric.say_complaint.text,Ten years slopping those troughs. Not once has any of 'em said thank you.
 dialogue.folk_edmund.say_return.text,"Oh, you again. Still dry, are you? Must be nice having feathers."
 dialogue.folk_edmund.say_greet.text,Another mouth to feed. Or beak. Whatever you've got there.
@@ -48,7 +48,7 @@ dialogue.folk_walter.say_return.text,"Still no crows on you, I see. Good. Good. 
 dialogue.folk_walter.say_greet.text,"Don't step on my turnips! I've been growing those for... well, a long time. I lost count."
 dialogue.folk_walter.say_pigeon.text,I'm not stepping on anything.
 dialogue.folk_walter.say_reply.text,Good. [i]GOOD.[/i] The crows already took half of them. And that scarecrow over [color=#6b8e5e]in the field[/color]? [color=#8a6ca8]Cornelius[/color]? Just stands there! Smiling!
-dialogue.folk_walter.say_rant.text,I swear the crows land ON him sometimes. On purpose. Like they're friends.
+dialogue.folk_walter.say_rant.text,I swear the crows land [i]ON[/i] him sometimes. On purpose. Like they're friends.
 dialogue.ghost_jeff.say_return_short.text,Oh. You again. ...Still not dead.
 dialogue.ghost_jeff.say_return.text,"You're back. Bold choice, visiting a [color=#6b8e5e]graveyard[/color] twice."
 dialogue.ghost_jeff.say_pigeon_back.text,I like the quiet.
@@ -99,17 +99,17 @@ dialogue.ghost_mildred.say_thrilled.text,"Did you hear that, [color=#8a6ca8]Jeff
 dialogue.ghost_mildred.say_jeff_react.text,This is the greatest day of my afterlife!
 dialogue.innkeeper_bertram.say_return.text,The pigeon is back! Want a room? I've got a bucket under a table. Very cozy.
 dialogue.innkeeper_bertram.say_prophet_short.text,Any prophecies about carrots? I really need a carrot day.
-dialogue.innkeeper_bertram.say_prophet.text,"Wait, you're a [i][color=#a8554c]PROPHET[/color][/i]? Can you tell me if the stew will be ready by noon? ...It's just water. It's always ready."
+dialogue.innkeeper_bertram.say_prophet.text,"Wait, you're a [color=#a8554c]PROPHET[/color]? Can you tell me if the stew will be ready by noon? ...It's just water. It's always ready."
 dialogue.innkeeper_bertram.say_pigeon_stew.text,"Yes, [color=#8a6ca8]Bertram[/color]. The water is ready."
 dialogue.innkeeper_bertram.say_still_scared_short.text,Still hearing noises. The garlic isn't working.
 dialogue.innkeeper_bertram.say_still_scared.text,I keep hearing noises from the [color=#6b8e5e]graveyard[/color]. Or maybe it's the wind. Or maybe it's [color=#a8554c]GHOSTS[/color]. I can't sleep!
 dialogue.innkeeper_bertram.say_pigeon_sleep.text,"You'll be fine, [color=#8a6ca8]Bertram[/color]."
-dialogue.innkeeper_bertram.say_fine.text,Easy for you to say! You can FLY away!
+dialogue.innkeeper_bertram.say_fine.text,Easy for you to say! You can [i]FLY[/i] away!
 dialogue.innkeeper_bertram.option_ghosts.label,The graveyard is haunted
 dialogue.innkeeper_bertram.say_pigeon_ghosts.text,You know the [color=#6b8e5e]graveyard[/color] up by the [color=#6b8e5e]church[/color]? It's [color=#a8554c]haunted[/color]. Actual [color=#a8554c]ghosts[/color]. I talked to them.
-dialogue.innkeeper_bertram.say_panic.text,[shake rate=30.0 level=20]GHOSTS?![/shake] I KNEW the [color=#6b8e5e]graveyard[/color] was too quiet! That's NOT normal quiet! That's [i][color=#a8554c]GHOST[/color] QUIET[/i]!
+dialogue.innkeeper_bertram.say_panic.text,[shake rate=30.0 level=20]GHOSTS?![/shake] [i]I KNEW[/i] the [color=#6b8e5e]graveyard[/color] was too quiet! That's [i]NOT[/i] normal quiet! That's [color=#a8554c]GHOST[/color] [i]QUIET[/i]!
 dialogue.innkeeper_bertram.say_pigeon_calm.text,They seemed pretty harmless.
-dialogue.innkeeper_bertram.say_no_harmless.text,HARMLESS?! [color=#a8554c]Ghosts[/color] are NEVER harmless! I'm putting garlic on the door! And the windows! And the stew! ...The stew already has nothing in it so garlic might help actually.
+dialogue.innkeeper_bertram.say_no_harmless.text,[i]HARMLESS?![/i] [color=#a8554c]Ghosts[/color] are [i]NEVER[/i] harmless! I'm putting garlic on the door! And the windows! And the stew! ...The stew already has nothing in it so garlic might help actually.
 dialogue.innkeeper_bertram.option_nevermind.label,Never mind
 dialogue.innkeeper_bertram.say_pigeon_nvm.text,"Actually, never mind. Forget I said anything."
 dialogue.innkeeper_bertram.say_ok.text,Said what? I already forgot. ...What were we talking about?
@@ -127,7 +127,7 @@ dialogue.innkeeper_bertram.say_pigeon_great.text,You know what? It smells great.
 dialogue.innkeeper_bertram.say_happy.text,"A customer with [i]TASTE[/i]! Here, have a second bowl! Same water, fresh temperature!"
 dialogue.old_lady_agnes.say_return.text,"You came [i]BACK[/i]! Nobody comes back! Oh, this is wonderful!"
 dialogue.old_lady_agnes.say_prophet_short.text,"My knees still ache, by the way. That pigeon blessing hasn't kicked in yet."
-dialogue.old_lady_agnes.say_prophet.text,[color=#8a6ca8]Father Cuthbert[/color] says you're a [i][color=#a8554c]PROPHET[/color][/i]! Can you bless my knees? They ache something terrible.
+dialogue.old_lady_agnes.say_prophet.text,[color=#8a6ca8]Father Cuthbert[/color] says you're a [color=#a8554c]PROPHET[/color]! Can you bless my knees? They ache something terrible.
 dialogue.old_lady_agnes.say_pigeon_knees.text,I don't think pigeon blessings work on knees.
 dialogue.old_lady_agnes.say_worth_try.text,Worth a try! Nothing else has worked. Not even the turnip poultice.
 dialogue.old_lady_agnes.say_ghost_short.text,"I'm still not going near that [color=#6b8e5e]graveyard[/color], mind you."
@@ -149,7 +149,7 @@ dialogue.old_lady_agnes.say_pigeon_grave.text,Is there anything going on in the 
 dialogue.old_lady_agnes.say_grave_reply.text,I've heard strange noises from there at night. Could be the wind. Could be [color=#a8554c]ghosts[/color]. I don't go near it. My knees can't handle running away.
 dialogue.old_lady_agnes.say_goodbye.text,"Oh, please come back and talk to me again! You're the best conversation I've had since the goat escaped in '08."
 dialogue.pig_hamlet.say_prophet_short.text,The [color=#a8554c]prophet[/color] returns. I have been composing a sonnet in your honor. It is not finished. It may never be.
-dialogue.pig_hamlet.say_prophet.text,"A [i][color=#a8554c]PROPHET[/color][/i]! Tell me, wise one. Is there meaning beyond the trough? Is there a world past the fence?"
+dialogue.pig_hamlet.say_prophet.text,"A [color=#a8554c]PROPHET[/color]! Tell me, wise one. Is there meaning beyond the trough? Is there a world past the fence?"
 dialogue.pig_hamlet.say_pigeon_meaning.text,I've seen beyond the fence. There's a field and some more mud.
 dialogue.pig_hamlet.say_beautiful.text,A field... and mud... How [i]BEAUTIFULLY[/i] simple. The universe gives us only what we need.
 dialogue.pig_hamlet.say_return_short.text,I have had more thoughts. About the trough. About the fence. About [i]EVERYTHING[/i].
@@ -158,23 +158,23 @@ dialogue.pig_hamlet.say_pigeon_nothing.text,I think it means we both like food.
 dialogue.pig_hamlet.say_deep.text,[i]EXACTLY.[/i] Food is the great equalizer. The trough does not care if you have wings.
 dialogue.pig_hamlet.say_pigeon_sure.text,"Sure, [color=#8a6ca8]Hamlet[/color]."
 dialogue.pig_hamlet.say_farewell.text,"Go well, pigeon. And remember. To oink... is to [i]LIVE[/i]."
-dialogue.pig_hamlet.say_monologue.text,To [i]OINK[/i]... or not to oink... THAT is the question.
+dialogue.pig_hamlet.say_monologue.text,To [i]OINK[/i]... or not to oink... [i]THAT[/i] is the question.
 dialogue.pig_hamlet.say_monologue_2.text,Whether it is nobler in the trough to suffer the slops of outrageous fortune...
 dialogue.pig_hamlet.option_question.label,That IS the question
 dialogue.pig_hamlet.say_pigeon_yes.text,You know what? That [i]IS[/i] the question. To oink or not to oink. Deep stuff.
-dialogue.pig_hamlet.say_delighted.text,Finally! A [i]KINDRED SPIRIT[/i]! Someone who UNDERSTANDS the weight of existence!
+dialogue.pig_hamlet.say_delighted.text,Finally! A [i]KINDRED SPIRIT[/i]! Someone who [i]UNDERSTANDS[/i] the weight of existence!
 dialogue.pig_hamlet.say_weight.text,[color=#8a6ca8]Oinksworth[/color] thinks I'm being dramatic. But is it dramatic to ask [i]WHY[/i] we eat from a trough? Is it dramatic to wonder what lies beyond the fence?
 dialogue.pig_hamlet.say_pigeon_fence.text,"More mud, mostly."
 dialogue.pig_hamlet.say_poetic.text,...Poetic.
 dialogue.pig_hamlet.option_stop.label,Please stop
 dialogue.pig_hamlet.say_pigeon_stop.text,Please stop. I just walked over to say hello.
-dialogue.pig_hamlet.say_hurt.text,The world is full of those who cannot see [i]ART[/i]. But art does not stop for them. Art OINKS on.
+dialogue.pig_hamlet.say_hurt.text,The world is full of those who cannot see [i]ART[/i]. But art does not stop for them. Art [i]OINKS[/i] on.
 dialogue.pig_hamlet.say_pigeon_oinks.text,Did you just say art oinks on?
 dialogue.pig_hamlet.say_yes.text,I did. And I meant every word.
 dialogue.pig_sir_oinksworth.say_knight_short.text,Sir Pigeon! The empire endures! ...How many puddles now?
 dialogue.pig_sir_oinksworth.say_knight_return.text,Sir Pigeon! How goes the knighting? Have you conquered any lands? Claimed any puddles?
 dialogue.pig_sir_oinksworth.say_pigeon_puddle.text,I found a nice puddle [color=#6b8e5e]by the well[/color]. I'm claiming that one.
-dialogue.pig_sir_oinksworth.say_excellent.text,[i]EXCELLENT![/i] The empire grows! Soon we shall have TWO puddles!
+dialogue.pig_sir_oinksworth.say_excellent.text,[i]EXCELLENT![/i] The empire grows! Soon we shall have [i]TWO[/i] puddles!
 dialogue.pig_sir_oinksworth.say_title_offer.text,"Pigeon! For your loyal service and good manners, I shall grant you a [color=#a8554c]title[/color]. Kneel! ...Or just stand there. Birds don't have knees."
 dialogue.pig_sir_oinksworth.option_decline.label,"I'm good, thanks"
 dialogue.pig_sir_oinksworth.say_pigeon_decline.text,"That's kind of you, but I don't really need a [color=#a8554c]title[/color]."
@@ -186,15 +186,15 @@ dialogue.pig_sir_oinksworth.say_pigeon_thanks.text,I'm honored. I think.
 dialogue.pig_sir_oinksworth.say_cold_short.text,Still rude. Still remembered. [color=#8a6ca8]Hamlet[/color] is still not glaring. Disappointing all around.
 dialogue.pig_sir_oinksworth.say_cold.text,Oh. It's the rude one. I have not forgotten your insult. [color=#8a6ca8]Hamlet[/color] has been told to glare at you.
 dialogue.pig_sir_oinksworth.say_pigeon_sorry.text,Is he? He looks like he's doing a monologue.
-dialogue.pig_sir_oinksworth.say_always.text,He's ALWAYS doing a monologue. Very hard to get good guards around here.
+dialogue.pig_sir_oinksworth.say_always.text,He's [i]ALWAYS[/i] doing a monologue. Very hard to get good guards around here.
 dialogue.pig_sir_oinksworth.say_prophet_short.text,The prophecy still stands. As do I. In this mud.
-dialogue.pig_sir_oinksworth.say_prophet.text,I hear the priest called you a [i][color=#a8554c]PROPHET[/color][/i]. A [color=#a8554c]prophet[/color]! In MY pen! I demand a royal blessing at once!
+dialogue.pig_sir_oinksworth.say_prophet.text,I hear the priest called you a [color=#a8554c]PROPHET[/color]. A [color=#a8554c]prophet[/color]! In [i]MY[/i] pen! I demand a royal blessing at once!
 dialogue.pig_sir_oinksworth.say_pigeon_prophet.text,I bless your mud.
 dialogue.pig_sir_oinksworth.say_satisfied.text,"[i]EXCELLENT.[/i] The mud is now [color=#a8554c]holy mud[/color]. This changes everything. Well, nothing. But it feels important."
 dialogue.pig_sir_oinksworth.say_halt.text,"[shake rate=30.0 level=20]HALT![/shake] State your name and [color=#a8554c]title[/color] before the Third of His Name, [color=#8a6ca8]Sir Oinksworth[/color], Lord of the [color=#6b8e5e]Mud Patch[/color], Duke of the [color=#6b8e5e]Feed Bin[/color]!"
 dialogue.pig_sir_oinksworth.option_pig.label,You're a pig in a pen
 dialogue.pig_sir_oinksworth.say_pigeon_pig.text,You're a pig. In a pen. With mud on your face.
-dialogue.pig_sir_oinksworth.say_outrage.text,[shake rate=30.0 level=20]HOW DARE![/shake] Guards! Seize this bird! ...We don't have guards. [color=#8a6ca8]HAMLET[/color]! BE A GUARD!
+dialogue.pig_sir_oinksworth.say_outrage.text,[shake rate=30.0 level=20]HOW DARE![/shake] Guards! Seize this bird! ...We don't have guards. [shake rate=30.0 level=20][color=#8a6ca8]HAMLET[/color]! BE A GUARD![/shake]
 dialogue.pig_sir_oinksworth.say_hamlet.text,...[color=#8a6ca8]Hamlet[/color] is doing a monologue. Useless. You may go. But I shall [i]REMEMBER[/i] this insult.
 dialogue.pig_sir_oinksworth.option_majesty.label,Your Majesty
 dialogue.pig_sir_oinksworth.say_pigeon_bow.text,"My apologies, Your Majesty. I am but a humble pigeon passing through your... lands."
@@ -202,7 +202,7 @@ dialogue.pig_sir_oinksworth.say_pleased.text,"Ah! Finally, someone with [i]BREED
 dialogue.pig_truffles.say_return_short.text,Still digging. Still smells great down here. Snff.
 dialogue.pig_truffles.say_found.text,I found something near the [color=#6b8e5e]church[/color]! It smells like... soil and regret. And mushrooms. Lots of mushrooms.
 dialogue.pig_truffles.say_pigeon_church.text,Near the [color=#6b8e5e]church[/color]? That's close to the [color=#6b8e5e]graveyard[/color].
-dialogue.pig_truffles.say_better.text,Even BETTER! Dead things make the best soil! And the best soil makes the best [i]TRUFFLES[/i]! It's the circle of life!
+dialogue.pig_truffles.say_better.text,Even [i]BETTER![/i] Dead things make the best soil! And the best soil makes the best [i]TRUFFLES[/i]! It's the circle of life!
 dialogue.pig_truffles.say_pigeon_circle.text,That's... one way to look at it.
 dialogue.pig_truffles.say_sniff_2.text,"Snff... I can smell you too, by the way. You smell like [color=#a8554c]breadcrumbs[/color] and [i]ADVENTURE[/i]."
 dialogue.pig_truffles.say_pigeon_thanks.text,Thanks. I think.
@@ -211,12 +211,12 @@ dialogue.pig_truffles.say_ghost.text,I heard there are [color=#a8554c]ghosts[/co
 dialogue.pig_truffles.say_sniff.text,Snff... snfff... I smell something. [i]UNDERGROUND.[/i] Could be truffles. Could be a turnip. Could be a [color=#a8554c]body[/color].
 dialogue.pig_truffles.option_what.label,What are you digging for?
 dialogue.pig_truffles.say_pigeon_what.text,What exactly are you digging for down there?
-dialogue.pig_truffles.say_everything.text,EVERYTHING! The ground is full of [i]SECRETS[/i]! And worms. Mostly worms. But sometimes secrets!
+dialogue.pig_truffles.say_everything.text,[i]EVERYTHING![/i] The ground is full of [i]SECRETS[/i]! And worms. Mostly worms. But sometimes secrets!
 dialogue.pig_truffles.say_pigeon_worms.text,I like worms.
-dialogue.pig_truffles.say_bonding.text,See?! You get it! The ground provides for those who DIG!
+dialogue.pig_truffles.say_bonding.text,See?! You get it! The ground provides for those who [i]DIG[/i]!
 dialogue.pig_truffles.option_dont.label,Maybe don't dig there
 dialogue.pig_truffles.say_pigeon_dont.text,Maybe you should stop digging. What if it really is a [color=#a8554c]body[/color]?
-dialogue.pig_truffles.say_nose.text,My nose says DIG. I trust my nose more than I trust [i]ANYTHING[/i]. My nose has never been wrong.
+dialogue.pig_truffles.say_nose.text,My nose says [i]DIG[/i]. I trust my nose more than I trust [i]ANYTHING[/i]. My nose has never been wrong.
 dialogue.pig_truffles.say_pigeon_never.text,Never?
 dialogue.pig_truffles.say_once.text,"Well, once it said there were truffles and it was a rock. But it was a very [i]TRUFFLE-LIKE[/i] rock."
 dialogue.priest_cuthbert.say_knight_short.text,Sir [color=#a8554c]Prophet[/color] Pigeon! Still holy? Still knightly? Of course you are. Every day is a [color=#a8554c]holy day[/color]!
@@ -236,7 +236,7 @@ dialogue.priest_cuthbert.say_bless_reply.text,[shake rate=30.0 level=20]MAGNIFIC
 dialogue.priest_cuthbert.option_no_bless.label,I don't have that power
 dialogue.priest_cuthbert.say_pigeon_no.text,I really don't think I can bless things. I'm a pigeon.
 dialogue.priest_cuthbert.say_humble.text,Such [i]HUMILITY[/i]! Truly divine! Only a real [color=#a8554c]prophet[/color] would deny their own power!
-dialogue.priest_cuthbert.say_shock_k.text,[shake rate=30.0 level=20]BY THE SAINTS![/shake] A [color=#a8554c]talking bird[/color]! AND you carry a knightly [color=#a8554c]title[/color]?!
+dialogue.priest_cuthbert.say_shock_k.text,[shake rate=30.0 level=20]BY THE SAINTS![/shake] A [color=#a8554c]talking bird[/color]! [i]AND[/i] you carry a knightly [color=#a8554c]title[/color]?!
 dialogue.priest_cuthbert.say_pigeon_k.text,A pig gave it to me. Long story.
 dialogue.priest_cuthbert.say_holy_day.text,A [color=#a8554c]prophet[/color] [i]AND[/i] a [color=#a8554c]knight[/color]! The scrolls said nothing of this... but they [i]SHOULD[/i] have! I declare this a [color=#a8554c]holy day[/color]!
 dialogue.priest_cuthbert.say_pigeon_holy.text,Does that mean free [color=#a8554c]breadcrumbs[/color]?
@@ -262,7 +262,7 @@ dialogue.scarecrow_cornelius.say_pigeon_good.text,I mean it. You're doing a real
 dialogue.scarecrow_cornelius.say_touched.text,I... nobody has ever said that to me. Not once. ...Thank you.
 dialogue.scarecrow_cornelius.option_boring.label,Isn't this boring?
 dialogue.scarecrow_cornelius.say_pigeon_bored.text,Don't you get bored? Just standing here all day?
-dialogue.scarecrow_cornelius.say_boring_reply.text,[shake rate=30.0 level=20]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take EVERYTHING!
+dialogue.scarecrow_cornelius.say_boring_reply.text,[shake rate=30.0 level=20]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take [i]EVERYTHING[/i]!
 dialogue.scarecrow_cornelius.option_agnes.label,Agnes told me something...
 dialogue.scarecrow_cornelius.say_pigeon_agnes.text,[color=#8a6ca8]Agnes[/color] told me you've been standing here for thirty years. Alone.
 dialogue.scarecrow_cornelius.say_quiet.text,...
@@ -275,15 +275,15 @@ dialogue.scarecrow_cornelius.say_pigeon_good_2.text,I mean it. You're doing a re
 dialogue.scarecrow_cornelius.say_touched_2.text,I... nobody has ever said that to me. Not once. ...Thank you.
 dialogue.scarecrow_cornelius.option_boring_2.label,Isn't this boring?
 dialogue.scarecrow_cornelius.say_pigeon_bored_2.text,Don't you get bored? Just standing here all day?
-dialogue.scarecrow_cornelius.say_boring_reply_2.text,[shake rate=30.0 level=20]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take EVERYTHING!
-dialogue.scarecrow_cornelius.say_scream.text,[shake rate=30.0 level=20]BIRD! BIRD IN THE FIELD![/shake] THIS IS A RESTRICTED AREA! LEAVE IMMEDIATELY!
+dialogue.scarecrow_cornelius.say_boring_reply_2.text,[shake rate=30.0 level=20]BORING?![/shake] Every day is life and death out here! One moment of weakness and the crows take [i]EVERYTHING[/i]!
+dialogue.scarecrow_cornelius.say_scream.text,[shake rate=30.0 level=20]BIRD! BIRD IN THE FIELD! THIS IS A RESTRICTED AREA! LEAVE IMMEDIATELY![/shake]
 dialogue.scarecrow_cornelius.option_pigeon.label,I'm not a crow
 dialogue.scarecrow_cornelius.say_pigeon_not_crow.text,"Relax. I'm a pigeon, not a crow. I don't even like crops."
-dialogue.scarecrow_cornelius.say_all_birds.text,"ALL birds are the enemy! I don't [i]DISCRIMINATE[/i]! Pigeons, crows, sparrows, ducks. ALL OF THEM!"
+dialogue.scarecrow_cornelius.say_all_birds.text,"[i]ALL[/i] birds are the enemy! I don't [i]DISCRIMINATE[/i]! Pigeons, crows, sparrows, ducks. [i]ALL OF THEM![/i]"
 dialogue.scarecrow_cornelius.option_peace.label,I come in peace
 dialogue.scarecrow_cornelius.say_pigeon_peace.text,Easy there. I come in peace. Not here for your crops.
 dialogue.scarecrow_cornelius.say_sparrow.text,That's [i]EXACTLY[/i] what the last sparrow said! And then he ate a seed! [shake rate=30.0 level=20]A SEED![/shake] Right in front of me!
-dialogue.scarecrow_cornelius.say_calm.text,Fine. FINE. You can stay. But I'm [i]WATCHING[/i] you. Don't touch the wheat.
+dialogue.scarecrow_cornelius.say_calm.text,Fine. [i]FINE.[/i] You can stay. But I'm [i]WATCHING[/i] you. Don't touch the wheat.
 dialogue.scarecrow_cornelius.say_pigeon_ok.text,Wouldn't dream of it.
 achievement.feathered_prophet.title,The Feathered Prophet
 achievement.feathered_prophet.hint,Receive a divine calling.
