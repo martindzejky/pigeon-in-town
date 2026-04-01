@@ -4,4 +4,5 @@
 
 [node name="folk_talk_sound" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_talk_random")
+bus = &"sounds"
 max_polyphony = 3

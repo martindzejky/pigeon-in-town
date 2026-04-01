@@ -14,6 +14,8 @@ Exiting loses all progress.","Táto hra nemá ukladanie.
 Odchodom stratíš všetok postup."
 ui.options.title.text,Options,Nastavenia
 ui.options.language_label.text,Language,Jazyk
+ui.options.music_volume_label.text,Music and ambience,Hlasitosť hudby a atmosféry
+ui.options.sound_volume_label.text,Sound effects,Hlasitosť zvukov
 ui.options.language.english,English,Angličtina
 ui.options.language.slovak,Slovak,Slovenčina
 ui.options.close_button.text,Close,Zavrieť

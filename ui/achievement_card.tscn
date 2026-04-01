@@ -40,7 +40,9 @@ texture = ExtResource("2_checkbox")
 
 [node name="achievement" type="AudioStreamPlayer" parent="." unique_id=848214253]
 stream = ExtResource("4_sbkno")
+bus = &"sounds"
 volume_db = -9.506
 
 [node name="stamp" type="AudioStreamPlayer" parent="." unique_id=2070499466]
 stream = ExtResource("5_6d0u1")
+bus = &"sounds"

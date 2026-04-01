@@ -13,6 +13,7 @@ var _fade_tween: Tween
 func _ready() -> void:
   _player = AudioStreamPlayer.new()
   _player.stream = preload('res://music/main_menu.mp3')
+  _player.bus = 'music'
   _player.volume_db = FULL_VOLUME_DB
   add_child(_player)
 

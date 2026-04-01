@@ -4,5 +4,6 @@
 
 [node name="old_lady_talk_sound" type="AudioStreamPlayer2D" unique_id=1603694277]
 stream = ExtResource("1_talk_random")
+bus = &"sounds"
 volume_db = 4.26
 max_polyphony = 3

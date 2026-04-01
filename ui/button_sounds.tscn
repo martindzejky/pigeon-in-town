@@ -11,7 +11,9 @@ hover_player = NodePath("hover")
 
 [node name="click" type="AudioStreamPlayer" parent="." unique_id=746777134]
 stream = ExtResource("2_click")
+bus = &"sounds"
 
 [node name="hover" type="AudioStreamPlayer" parent="." unique_id=1849998068]
 stream = ExtResource("3_hover")
+bus = &"sounds"
 volume_db = -1.444

@@ -4,4 +4,5 @@
 
 [node name="step_sound" type="AudioStreamPlayer2D" unique_id=133537541]
 stream = ExtResource("1_step_random")
+bus = &"sounds"
 max_polyphony = 3

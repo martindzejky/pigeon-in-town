@@ -292,9 +292,11 @@ autoplay = &"loop"
 
 [node name="path_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_path")
+bus = &"sounds"
 
 [node name="enter_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_enter")
+bus = &"sounds"
 
 [node name="stuff" type="Control" parent="." unique_id=1348507492]
 layout_mode = 1

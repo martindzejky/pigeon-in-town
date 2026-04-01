@@ -3,12 +3,52 @@
 [ext_resource type="Script" uid="uid://cqol2m30yi3v8" path="res://scripts/options_menu.gd" id="1_script"]
 [ext_resource type="StyleBox" uid="uid://jrtvkwk1elat" path="res://ui/dark_panel_stylebox.tres" id="2_style"]
 [ext_resource type="PackedScene" uid="uid://cma61sgomrj6y" path="res://ui/button_sounds.tscn" id="3_sounds"]
+[ext_resource type="Texture2D" uid="uid://df7ntc82fqr81" path="res://sprites/ui/settings_slider_knob.png" id="4_knob"]
+[ext_resource type="Texture2D" uid="uid://c0tr42n08smbp" path="res://sprites/ui/settings_slider_knob_highlight.png" id="5_knob_highlight"]
+[ext_resource type="Texture2D" uid="uid://bngdjh7qmlpqk" path="res://sprites/ui/settings_slider_track.png" id="6_track"]
+[ext_resource type="Texture2D" uid="uid://xe6sjs2fe6yk" path="res://sprites/ui/settings_language_flag_en.png" id="7_flag_en"]
+[ext_resource type="Texture2D" uid="uid://bgsaff4weat4m" path="res://sprites/ui/settings_language_flag_de.png" id="8_flag_de"]
+[ext_resource type="Texture2D" uid="uid://c8qjsowjrr15a" path="res://sprites/ui/settings_language_flag_sk.png" id="9_flag_sk"]
 
-[node name="options_menu" type="CanvasLayer" unique_id=935394116 node_paths=PackedStringArray("language_option", "close_button")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_slider_bg"]
+texture = ExtResource("6_track")
+texture_margin_left = 21.0
+texture_margin_top = 18.0
+texture_margin_right = 21.0
+texture_margin_bottom = 18.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(0.58, 0.56, 0.52, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_slider_fill"]
+texture = ExtResource("6_track")
+texture_margin_left = 21.0
+texture_margin_top = 18.0
+texture_margin_right = 21.0
+texture_margin_bottom = 18.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(0.94, 0.92, 0.84, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_slider_fill_highlight"]
+texture = ExtResource("6_track")
+texture_margin_left = 21.0
+texture_margin_top = 18.0
+texture_margin_right = 21.0
+texture_margin_bottom = 18.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+modulate_color = Color(1, 0.98, 0.9, 1)
+
+[node name="options_menu" type="CanvasLayer" unique_id=935394116 node_paths=PackedStringArray("english_button", "german_button", "slovak_button", "music_slider", "sounds_slider", "close_button")]
 process_mode = 3
 layer = 95
 script = ExtResource("1_script")
-language_option = NodePath("center/panel/margin/content/language_row/language_option")
+english_button = NodePath("center/panel/margin/content/language_buttons_center/language_buttons/english_button")
+german_button = NodePath("center/panel/margin/content/language_buttons_center/language_buttons/german_button")
+slovak_button = NodePath("center/panel/margin/content/language_buttons_center/language_buttons/slovak_button")
+music_slider = NodePath("center/panel/margin/content/music_slider_center/music_slider")
+sounds_slider = NodePath("center/panel/margin/content/sounds_slider_center/sounds_slider")
 close_button = NodePath("center/panel/margin/content/close_button")
 
 [node name="overlay" type="ColorRect" parent="." unique_id=1438202638]
@@ -27,7 +67,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="panel" type="PanelContainer" parent="center" unique_id=884829883]
-custom_minimum_size = Vector2(480, 0)
+custom_minimum_size = Vector2(1040, 0)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("2_style")
 
@@ -40,7 +80,7 @@ theme_override_constants/margin_bottom = 40
 
 [node name="content" type="VBoxContainer" parent="center/panel/margin" unique_id=461279371]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 18
 
 [node name="title" type="Label" parent="center/panel/margin/content" unique_id=1816255727]
 layout_mode = 2
@@ -48,25 +88,96 @@ size_flags_horizontal = 4
 text = "ui.options.title.text"
 horizontal_alignment = 1
 
-[node name="language_row" type="HBoxContainer" parent="center/panel/margin/content" unique_id=908922998]
+[node name="language_label" type="Label" parent="center/panel/margin/content" unique_id=544012413]
 layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="language_label" type="Label" parent="center/panel/margin/content/language_row" unique_id=544012413]
-layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
 text = "ui.options.language_label.text"
-vertical_alignment = 1
+horizontal_alignment = 1
 
-[node name="language_option" type="OptionButton" parent="center/panel/margin/content/language_row" unique_id=211225302]
-custom_minimum_size = Vector2(220, 60)
+[node name="language_buttons_center" type="CenterContainer" parent="center/panel/margin/content" unique_id=358527270]
 layout_mode = 2
-size_flags_horizontal = 10
+
+[node name="language_buttons" type="HBoxContainer" parent="center/panel/margin/content/language_buttons_center" unique_id=908922998]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="english_button" type="TextureButton" parent="center/panel/margin/content/language_buttons_center/language_buttons" unique_id=211225302]
+layout_mode = 2
+texture_normal = ExtResource("7_flag_en")
+stretch_mode = 3
+
+[node name="button_sounds" parent="center/panel/margin/content/language_buttons_center/language_buttons/english_button" unique_id=1727922164 instance=ExtResource("3_sounds")]
+
+[node name="german_button" type="TextureButton" parent="center/panel/margin/content/language_buttons_center/language_buttons" unique_id=788554153]
+layout_mode = 2
+texture_normal = ExtResource("8_flag_de")
+stretch_mode = 3
+
+[node name="button_sounds" parent="center/panel/margin/content/language_buttons_center/language_buttons/german_button" unique_id=1249563651 instance=ExtResource("3_sounds")]
+
+[node name="slovak_button" type="TextureButton" parent="center/panel/margin/content/language_buttons_center/language_buttons" unique_id=1746061984]
+layout_mode = 2
+texture_normal = ExtResource("9_flag_sk")
+stretch_mode = 3
+
+[node name="button_sounds" parent="center/panel/margin/content/language_buttons_center/language_buttons/slovak_button" unique_id=898036864 instance=ExtResource("3_sounds")]
+
+[node name="music_label" type="Label" parent="center/panel/margin/content" unique_id=879406094]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ui.options.music_volume_label.text"
+horizontal_alignment = 1
+
+[node name="music_slider_center" type="CenterContainer" parent="center/panel/margin/content" unique_id=451886674]
+layout_mode = 2
+
+[node name="music_slider" type="HSlider" parent="center/panel/margin/content/music_slider_center" unique_id=1323979659]
+custom_minimum_size = Vector2(760, 84)
+layout_mode = 2
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = ExtResource("4_knob")
+theme_override_icons/grabber_highlight = ExtResource("5_knob_highlight")
+theme_override_icons/grabber_disabled = ExtResource("4_knob")
+theme_override_styles/slider = SubResource("StyleBoxTexture_slider_bg")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_slider_fill")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_slider_fill_highlight")
+max_value = 1.0
+step = 0.01
+value = 1.0
+scrollable = false
+
+[node name="button_sounds" parent="center/panel/margin/content/music_slider_center/music_slider" unique_id=1208450220 instance=ExtResource("3_sounds")]
+
+[node name="sounds_label" type="Label" parent="center/panel/margin/content" unique_id=1168439651]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ui.options.sound_volume_label.text"
+horizontal_alignment = 1
+
+[node name="sounds_slider_center" type="CenterContainer" parent="center/panel/margin/content" unique_id=814056293]
+layout_mode = 2
+
+[node name="sounds_slider" type="HSlider" parent="center/panel/margin/content/sounds_slider_center" unique_id=506588026]
+custom_minimum_size = Vector2(760, 84)
+layout_mode = 2
+theme_override_constants/center_grabber = 1
+theme_override_icons/grabber = ExtResource("4_knob")
+theme_override_icons/grabber_highlight = ExtResource("5_knob_highlight")
+theme_override_icons/grabber_disabled = ExtResource("4_knob")
+theme_override_styles/slider = SubResource("StyleBoxTexture_slider_bg")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_slider_fill")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_slider_fill_highlight")
+max_value = 1.0
+step = 0.01
+value = 1.0
+scrollable = false
+
+[node name="button_sounds" parent="center/panel/margin/content/sounds_slider_center/sounds_slider" unique_id=214053495 instance=ExtResource("3_sounds")]
 
 [node name="close_button" type="Button" parent="center/panel/margin/content" unique_id=986662063]
-custom_minimum_size = Vector2(200, 80)
+custom_minimum_size = Vector2(220, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "ui.options.close_button.text"
 
-[node name="button_sounds" parent="center/panel/margin/content/close_button" unique_id=1727922164 instance=ExtResource("3_sounds")]
+[node name="button_sounds" parent="center/panel/margin/content/close_button" unique_id=1712959280 instance=ExtResource("3_sounds")]

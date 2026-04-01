@@ -83,6 +83,7 @@ metadata/_edit_lock_ = true
 
 [node name="ambience" type="AudioStreamPlayer" parent="." unique_id=786186696]
 stream = ExtResource("4_8qite")
+bus = &"music"
 volume_db = -7.62
 autoplay = true
 
