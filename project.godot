@@ -82,7 +82,7 @@ pause={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://localization/strings.en.translation", "res://localization/strings.sk.translation")
+locale/translations=PackedStringArray("res://localization/strings.en.translation", "res://localization/strings.sk.translation", "res://localization/strings.de.translation")
 locale/locale_filter_mode=0
 
 [layer_names]
