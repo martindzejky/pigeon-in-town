@@ -53,9 +53,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -513.5
-offset_top = -646.0
-offset_right = 513.5
+offset_left = -100.0
+offset_top = -182.0
+offset_right = 100.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = -22
@@ -64,19 +64,11 @@ choices = NodePath("panel/choices")
 button_indicator = NodePath("bottom/button_indicator")
 
 [node name="panel" type="PanelContainer" parent="." unique_id=583911993]
+custom_minimum_size = Vector2(200, 150)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("1_gr8rd")
 
 [node name="choices" type="VBoxContainer" parent="panel" unique_id=946470808]
-layout_mode = 2
-
-[node name="placeholder_1" parent="panel/choices" unique_id=218872983 instance_placeholder="res://ui/choice_button.tscn"]
-layout_mode = 2
-
-[node name="placeholder_2" parent="panel/choices" unique_id=1693089453 instance_placeholder="res://ui/choice_button.tscn"]
-layout_mode = 2
-
-[node name="placeholder_3" parent="panel/choices" unique_id=92332481 instance_placeholder="res://ui/choice_button.tscn"]
 layout_mode = 2
 
 [node name="tail" type="TextureRect" parent="." unique_id=1592166201]
@@ -106,3 +98,7 @@ stretch_mode = 5
 [node name="animation" type="AnimationPlayer" parent="bottom/button_indicator" unique_id=943735886]
 libraries/ = SubResource("AnimationLibrary_mxpra")
 autoplay = &"run"
+
+[node name="spacer" type="Control" parent="." unique_id=1079379429]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
